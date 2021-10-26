@@ -1,0 +1,224 @@
+//> Default Static Information
+SetStaticsCount 99
+SetDefaultStatic 23 16
+SetDefaultStatic 51 16
+//<
+
+:MainFunction//>
+Function 0 2
+PushB 31
+SetStatic1 0
+PushB 33
+SetStatic1 1
+Push_1
+SetStatic1 2
+PushF_2
+SetStatic1 3
+Push_0
+SetStatic1 15
+Push_0
+SetStatic1 16
+Push_0
+SetStatic1 17
+PushF 60
+SetStatic1 44
+Push_0
+SetStatic1 91
+Push_0
+SetStatic1 92
+Push_0
+SetStatic1 93
+Push_0
+SetStatic1 94
+Push_0
+SetStatic1 95
+Push_0
+SetStatic1 96
+Push_0
+SetStatic1 97
+Push_0
+SetStatic1 98
+CallNative hud_clear_help_queue 0 0
+PushString "mp_tip"
+Push_-1
+Call @Function_0
+CallNative terminate_this_script 0 0
+Return 0 0
+//<
+
+:Function_0//>
+Function 2 20
+GetFrame1 1
+Push_-1
+JumpNE @Label_0
+GetFrame1 0
+GetFrameP1 4
+StrCopy 32
+PushString "_count"
+GetFrameP1 4
+StrAdd 32
+GetFrameP1 4
+CallNative ui_get_string 1 1
+CallNative string_to_int 1 1
+SetFrame1 1
+
+:Label_0
+GetGlobal2 6286
+Push_0
+JumpNE @Label_1
+CallNative get_profile_time 0 1
+PushF 1000
+fMult
+CallNative round 1 1
+SetGlobal2 6286
+
+:Label_1
+GetFrame1 0
+GetFrameP1 12
+StrCopy 32
+PushString "_"
+GetFrameP1 12
+StrAdd 32
+GetGlobal2 6286
+GetFrame1 1
+Mod
+CallNative unk_0x47EF426D 1 1
+GetFrameP1 12
+StrAdd 32
+GetGlobal2 6286
+Add1 1
+SetGlobal2 6286
+GetFrameP1 12
+Push 1092616192
+Push_1
+Push_0
+Push_2
+Push_1
+Push_0
+Call @Function_1
+Return 2 0
+//<
+
+:Function_1//>
+Function 7 14
+GetGlobal2 3380
+Push_1
+CmpEq
+GetGlobal2 6269
+Push_-1
+CmpNe
+And
+JumpFalse @Label_2
+Push_4
+GetGlobal2 6269
+GetGlobalP2 3422
+GetArrayP1 40
+Add1 12
+ToStack
+Push_4
+GetFrameP1 9
+FromStack
+GetGlobal2 6269
+PushB 11
+CmpEq
+GetGlobal2 6269
+PushB 16
+CmpEq
+Or
+GetGlobal2 6269
+PushB 15
+CmpEq
+Or
+GetGlobal2 6269
+PushB 43
+CmpEq
+Or
+JumpFalse @Label_3
+GetGlobal2 6269
+Call @Function_2
+Push_4
+GetFrameP1 9
+FromStack
+
+:Label_3
+GetFrame1 0
+GetFrame1 1
+GetFrame1 2
+GetFrame1 3
+GetFrame1 4
+GetFrame1 5
+GetFrameP1 9
+GetFrame1 6
+CallNative unk_0xE42A8278 8 0
+Jump @Label_4
+
+:Label_2
+PushString ""
+pGet
+SetFrame1 13
+GetFrame1 0
+GetFrame1 1
+GetFrame1 2
+GetFrame1 3
+GetFrame1 4
+GetFrame1 5
+GetFrame1 13
+GetFrame1 6
+CallNative unk_0xE42A8278 8 0
+
+:Label_4
+Return 7 0
+//<
+
+:Function_2//>
+Function 1 7
+Call @Function_3
+Not
+JumpFalse @Label_5
+PushString "miss"
+GetFrameP1 3
+StrCopy 16
+Jump @Label_6
+
+:Label_5
+PushString "ziss"
+GetFrameP1 3
+StrCopy 16
+
+:Label_6
+GetFrame1 0
+GetFrameP1 3
+StrAddi 16
+PushString "_short"
+GetFrameP1 3
+StrAdd 16
+Push_4
+GetFrameP1 3
+ToStack
+Return 1 4
+//<
+
+:Function_3//>
+Function 0 2
+GetGlobalP3 83864
+GetImm2 1252
+PushS 1024
+Call @Function_4
+JumpFalse @Label_7
+CallNative unk_0x6CC9CCE7 0 1
+Return 0 1
+
+:Label_7
+Push_0
+Return 0 1
+//<
+
+:Function_4//>
+Function 2 4
+GetFrame1 0
+GetFrame1 1
+And
+Push_0
+CmpNe
+Return 2 1
+//<

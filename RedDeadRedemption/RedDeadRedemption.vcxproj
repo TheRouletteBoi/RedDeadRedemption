@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|PS3">
+      <Configuration>Debug</Configuration>
+      <Platform>PS3</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|PS3">
+      <Configuration>Release</Configuration>
+      <Platform>PS3</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCTargetsPath Condition="'$(VCTargetsPath12)' != '' and '$(VSVersion)' == '' and '$(VisualStudioVersion)' == ''">$(VCTargetsPath12)</VCTargetsPath>
+    <ProjectGuid>{EAA78935-747D-420B-B45E-7FC2F5EFBF91}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PS3'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>SNC</PlatformToolset>
+    <NoTocRestore>NoTocRestore1</NoTocRestore>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|PS3'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>SNC</PlatformToolset>
+    <NoTocRestore>NoTocRestore1</NoTocRestore>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <PropertyGroup Condition="'$(DebuggerFlavor)'=='PS3Debugger'" Label="OverrideDebuggerDefaults">
+    <!--LocalDebuggerCommand>$(TargetPath)</LocalDebuggerCommand-->
+    <!--LocalDebuggerCommandArguments></LocalDebuggerCommandArguments-->
+    <!--LocalDebuggerCommandLine>-r -e -m</LocalDebuggerCommandLine-->
+    <!--LocalRunCommandLine>-r</LocalRunCommandLine-->
+    <!--LocalTunerCommandLine></LocalTunerCommandLine-->
+    <!--LocalDebuggerFileServingDirectory>$(ProjectDir)</LocalDebuggerFileServingDirectory-->
+    <!--LocalDebuggerHomeDirectory>$(ProjectDir)</LocalDebuggerHomeDirectory-->
+    <!--LocalDebuggerProjectFile></LocalDebuggerProjectFile-->
+    <!--LocalDebuggerResetType>Soft</LocalDebuggerResetType-->
+    <!--LocalDebuggerClearTty>False</LocalDebuggerClearTty-->
+  </PropertyGroup>
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|PS3'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|PS3'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PS3'">
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\$(ProjectName)\</IntDir>
+    <SourcePath>$(ProjectDir)src;$(SourcePath)</SourcePath>
+    <IgnoreImportLibrary>true</IgnoreImportLibrary>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|PS3'">
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\$(ProjectName)\</IntDir>
+    <SourcePath>$(ProjectDir)src;$(SourcePath)</SourcePath>
+    <IgnoreImportLibrary>true</IgnoreImportLibrary>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PS3'">
+    <ClCompile>
+      <PreprocessorDefinitions>_DEBUG;__CELL_ASSERT__;%(PreprocessorDefinitions);</PreprocessorDefinitions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <AdditionalIncludeDirectories>.$(SN_PS3_PATH)\ppu\include\sn;$(SCE_PS3_ROOT)\target\ppu\include;$(SCE_PS3_ROOT)\target\common\include</AdditionalIncludeDirectories>
+      <CppLanguageStd>Cpp11</CppLanguageStd>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>-lsysutil_np_stub;-lnet_stub;-lnetctl_stub;$(SCE_PS3_ROOT)\target\ppu\lib\libc.a;$(SN_PS3_PATH)\ppu\lib\sn\libsn.a;$(SCE_PS3_ROOT)\target\ppu\lib\libm.a;$(SCE_PS3_ROOT)\target\ppu\lib\libio_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\liblv2_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libc_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libsysutil_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libsyscall.a;$(SCE_PS3_ROOT)\target\ppu\lib\hash\libsha256.a;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <Link>
+      <MapFileName>$(IntDir)$(TargetName).map</MapFileName>
+      <GenerateSnMapFile>FullMapFile</GenerateSnMapFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|PS3'">
+    <ClCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions);</PreprocessorDefinitions>
+      <OptimizationLevel>Level2</OptimizationLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <AdditionalIncludeDirectories>.$(SN_PS3_PATH)\ppu\include\sn;$(SCE_PS3_ROOT)\target\ppu\include;$(SCE_PS3_ROOT)\target\common\include</AdditionalIncludeDirectories>
+      <CppLanguageStd>Cpp11</CppLanguageStd>
+      <FastMath>true</FastMath>
+      <Branchless>Branchless2</Branchless>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>-lsysutil_np_stub;-lnet_stub;-lnetctl_stub;$(SCE_PS3_ROOT)\target\ppu\lib\libc.a;$(SN_PS3_PATH)\ppu\lib\sn\libsn.a;$(SCE_PS3_ROOT)\target\ppu\lib\libm.a;$(SCE_PS3_ROOT)\target\ppu\lib\libio_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\liblv2_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libc_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libsysutil_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libsyscall.a;$(SCE_PS3_ROOT)\target\ppu\lib\hash\libsha256.a;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <Link>
+      <MapFileName>$(IntDir)$(TargetName).map</MapFileName>
+      <InfoStripping>StripSymsAndDebug</InfoStripping>
+      <DataStripping>StripFuncsAndData</DataStripping>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Game.cpp" />
+    <ClCompile Include="src\Helpers.cpp" />
+    <ClCompile Include="src\Invoker.cpp" />
+    <ClCompile Include="src\Memory\DetourHook.cpp" />
+    <ClCompile Include="src\Hooking.cpp" />
+    <ClCompile Include="src\Memory\Pattern.cpp" />
+    <ClCompile Include="src\Main.cpp" />
+    <ClCompile Include="src\Menu.cpp" />
+    <ClCompile Include="src\NativeMemory.cpp" />
+    <ClCompile Include="src\Submenus.cpp" />
+    <ClCompile Include="src\Util\Memory.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Game.hpp" />
+    <ClInclude Include="src\Helpers.hpp" />
+    <ClInclude Include="src\Invoker.hpp" />
+    <ClInclude Include="src\Keyboard.hpp" />
+    <ClInclude Include="src\Memory\DetourHook.hpp" />
+    <ClInclude Include="src\Hooking.hpp" />
+    <ClInclude Include="src\Memory\Pattern.hpp" />
+    <ClInclude Include="src\Menu.hpp" />
+    <ClInclude Include="src\NativeMemory.hpp" />
+    <ClInclude Include="src\Natives.hpp" />
+    <ClInclude Include="src\RDR\Actor.hpp" />
+    <ClInclude Include="src\RDR\CSCInstructions.hpp" />
+    <ClInclude Include="src\RDR\Enums.hpp" />
+    <ClInclude Include="src\RDR\Layout.hpp" />
+    <ClInclude Include="src\RDR\Native.hpp" />
+    <ClInclude Include="src\RDR\ScriptProgram.hpp" />
+    <ClInclude Include="src\RDR\ScriptThread.hpp" />
+    <ClInclude Include="src\RDR\SnuGamer.hpp" />
+    <ClInclude Include="src\RDR\Vector.hpp" />
+    <ClInclude Include="src\RDR\Weapon.hpp" />
+    <ClInclude Include="src\ScriptGlobal.hpp" />
+    <ClInclude Include="src\Submenus.hpp" />
+    <ClInclude Include="src\Util\Exports.hpp" />
+    <ClInclude Include="src\Util\Memory.hpp" />
+    <ClInclude Include="src\Util\NewDeleteOverride.hpp" />
+    <ClInclude Include="src\Util\TimeHelpers.hpp" />
+  </ItemGroup>
+  <Import Condition="'$(ConfigurationType)' == 'Makefile' and Exists('$(VCTargetsPath)\Platforms\$(Platform)\SCE.Makefile.$(Platform).targets')" Project="$(VCTargetsPath)\Platforms\$(Platform)\SCE.Makefile.$(Platform).targets" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,124 @@
+//--------------------------------------
+//--- 010 Editor v3.1.2 Binary Template
+//
+// File: rdr-xst.bt
+// Author: listener
+// Revision: 0.1
+// Purpose: parse RDR string table
+//--------------------------------------
+// #include "rdr-types.bth"
+
+// rage::pgPtr<rage::sysString>
+typedef struct {    
+    int type: 4;
+    int offset: 28  <format=hex>;
+    if (type == 5) {
+        local uint doffset = FTell();
+        FSeek(offset);
+        string data;
+        FSeek(doffset);        
+    }
+} pgPtr_String <read=PtrString_read>;
+
+string PtrString_read (pgPtr_String& ps) {
+    return ps.type == 5 ? ps.data : "";
+}
+
+struct pgPtr_OffsetMap {
+    int type:4;
+    int offset:28  <format=hex>;
+    if (type == 5) {   // RAM location
+        // SetBackColor (0xC0C0C0);
+        local uint doffset = FTell();
+        FSeek(offset);
+        DWORD OffsetMap[132];
+        FSeek(doffset);
+    }
+};
+
+// == end of RDR-types ===
+struct txtStringTableItemData {
+    DWORD   dwKey<format=hex>;  
+    pgPtr_String    pString;	
+};
+
+struct pgPtr_StringTableItemData {
+    int type: 4;
+    int offset: 28;
+    if (5 == type) {
+        local int doffset = FTell ();
+        FSeek (offset);
+        txtStringTableItemData  data;
+        FSeek (doffset);
+    }
+};
+
+struct pgPtr_StringTableItem;
+
+struct txtStringTableItem {
+    DWORD   dwKey<format=hex>;  
+    pgPtr_StringTableItemData   pData;  // +4
+    pgPtr_StringTableItem       pNext; // +8
+};
+
+typedef struct  {
+    int type: 4;
+    int offset: 28;
+    if (5 == type) {
+        local int doffset = FTell ();
+        FSeek (offset);
+        txtStringTableItem  data;
+        FSeek (doffset);
+    }
+} pgPtr_StringTableItem <read=pgPtr_StringTableItem_read>;
+
+string pgPtr_StringTableItem_read (pgPtr_StringTableItem& p) {
+    if (5 == p.type) 
+        if (5 == p.data.pData.type)             
+            return PtrString_read (p.data.pData.data.pString);
+    return "";
+}
+
+struct pgObjectArray_StringTableItem {
+    int     type:4;
+    int     offset:28;
+    WORD    m_wCount;
+    WORD    m_wSize;
+    if (5 == type) {
+        local int doffset = FTell ();
+        FSeek (offset);
+        pgPtr_StringTableItem  data[m_wSize]<optimize=false>;
+        FSeek (doffset);
+    }
+};
+
+struct txtStringTableData {
+    DWORD   m_dwCount;
+    pgObjectArray_StringTableItem m_items;	// TODO: hash table
+    DWORD   _fC;				// TODO: hash table item count
+};
+
+struct pgPtr_StringTableData {
+    int type: 4;
+    int offset: 28;
+    if (5 == type) {
+        local int doffset = FTell ();
+        FSeek (offset);
+        txtStringTableData  data;
+        FSeek (doffset);
+    }
+};
+struct txtStringTable {
+    DWORD __vmt<format=hex>;    
+    pgPtr_OffsetMap m_pOffsetMap;
+    // >> pgBase ends here
+    pgPtr_StringTableData   m_pTable;
+    DWORD   _fC;    // must be 0
+    DWORD   _f10;   // must be 0    
+};
+
+BigEndian();
+SetBackColor( cLtGreen );
+// FSeek (FileSize() & ~0x3FFF );   // another main object location
+txtStringTable  xst;
+SetBackColor( cWhite );

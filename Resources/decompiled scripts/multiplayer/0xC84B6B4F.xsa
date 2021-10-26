@@ -1,0 +1,476 @@
+//> Default Static Information
+SetStaticsCount 14
+//<
+
+:MainFunction//>
+Function 0 4
+PushString ""
+pGet
+SetStatic1 13
+
+:Label_1
+Call @Function_0
+Not
+CallNative is_exitflag_set 0 1
+Not
+And
+JumpFalse @Label_0
+Push_0
+CallNative wait 1 0
+Jump @Label_1
+
+:Label_0
+PushString "NetSesssionLayout"
+CallNative find_named_layout 1 1
+SetStatic1 0
+GetStatic1 0
+CallNative create_object_iterator 1 1
+SetStatic1 12
+GetStatic1 12
+PushB 59
+CallNative iterate_on_object_type 2 0
+GetStatic1 12
+GetStatic1 0
+CallNative iterate_in_layout 2 0
+Call @Function_1
+Push_0
+Push_0
+Push_0
+Push_0
+CallNative set_player_control 4 0
+PushString "testInventory"
+PushString "btn_PromptText"
+PushString "Back"
+Push_1
+Push_1
+CallNative unk_0x35CDFDC5 5 1
+Drop
+PushString "testInventory"
+PushString "btn_PromptID"
+Push_5
+Push_1
+CallNative unk_0x8A2A1A51 4 1
+Drop
+PushString "testInventory"
+PushString "btn_PromptAlpha"
+PushB 100
+Push_1
+CallNative unk_0x8A2A1A51 4 1
+Drop
+Push_-1
+SetFrame1 2
+Push_0
+SetFrame1 3
+
+:Label_5
+CallNative is_exitflag_set 0 1
+Not
+GetFrame1 3
+Not
+And
+JumpFalse @Label_2
+Call @Function_2
+CallNative unk_0x581CAC89 0 1
+GetFrame1 2
+JumpEQ @Label_3
+Call @Function_3
+CallNative unk_0x581CAC89 0 1
+SetFrame1 2
+Call @Function_2
+
+:Label_3
+Call @Function_4
+Push_5
+Push_1
+Push_0
+CallNative is_button_pressed 4 1
+JumpFalse @Label_4
+Push_1
+SetFrame1 3
+
+:Label_4
+Push_0
+CallNative wait 1 0
+Jump @Label_5
+
+:Label_2
+Push_0
+Push_1
+Push_0
+Push_0
+CallNative set_player_control 4 0
+PushString "testInventory"
+PushString "btn_PromptText"
+PushString ""
+Push_1
+Push_1
+CallNative unk_0x35CDFDC5 5 1
+Drop
+Call @Function_5
+GetStatic1 12
+CallNative destroy_iterator 1 0
+CallNative terminate_this_script 0 0
+Return 0 0
+//<
+
+:Function_5//>
+Function 0 2
+GetStatic1 1
+CallNative gui_close_window 1 1
+Drop
+Return 0 0
+//<
+
+:Function_4//>
+Function 0 3
+Call @Function_6
+SetFrame1 2
+GetFrame1 2
+CallNative is_actor_valid 1 1
+JumpFalse @Label_6
+GetFrame1 2
+CallNative unk_0x524F6981 1 1
+Return 0 1
+
+:Label_6
+Push_0
+Return 0 1
+//<
+
+:Function_6//>
+Function 0 2
+Push_0
+CallNative is_local_player_valid 1 1
+Not
+JumpFalse @Label_7
+PushString ""
+pGet
+Return 0 1
+
+:Label_7
+Push_0
+CallNative get_player_actor 1 1
+Return 0 1
+//<
+
+:Function_3//>
+Function 0 3
+Call @Function_7
+GetStatic1 12
+CallNative start_object_iterator 1 1
+SetFrame1 2
+GetFrame1 2
+CallNative is_object_valid 1 1
+JumpFalse @Label_8
+
+:Label_9
+GetFrame1 2
+CallNative is_object_valid 1 1
+JumpFalse @Label_8
+GetFrame1 2
+Call @Function_8
+GetStatic1 12
+CallNative object_iterator_next 1 1
+SetFrame1 2
+Jump @Label_9
+
+:Label_8
+Return 0 0
+//<
+
+:Function_8//>
+Function 1 18
+GetFrame1 0
+GetFrameP1 3
+GetFrameP1 4
+Call @Function_9
+GetFrame1 0
+CallNative get_object_name 1 1
+SetFrame1 5
+GetFrame1 3
+PushF 65
+fSub
+SetFrame1 6
+GetFrame1 3
+PushF 65
+fAdd
+GetFrameP1 6
+SetImm1 8
+GetFrame1 4
+PushF_5
+fSub
+GetFrameP1 6
+SetImm1 4
+GetFrame1 4
+PushF_5
+fAdd
+GetFrameP1 6
+SetImm1 12
+PushF_1
+SetFrame1 10
+PushF_0
+GetFrameP1 10
+SetImm1 4
+PushF_0
+GetFrameP1 10
+SetImm1 8
+PushF_1
+GetFrameP1 10
+SetImm1 12
+Push_1
+CallNative unk_0x45589499 1 0
+GetStatic1 2
+GetFrameP1 6
+GetFrame1 5
+PushString "tahoma"
+PushF 0.8
+CallNative gui_make_text 5 1
+SetFrame1 14
+GetFrame1 14
+Push_1
+CallNative gui_set_text_justify 2 1
+Drop
+GetFrame1 14
+GetFrame1 5
+CallNative gui_set_text 2 1
+Drop
+GetFrame1 14
+GetFrameP1 10
+CallNative gui_set_text_color 2 1
+Drop
+Push_0
+CallNative unk_0x45589499 1 0
+GetFrame1 0
+PushString "ItemWND"
+GetFrame1 14
+CallNative decor_set_int 3 1
+Drop
+GetFrame1 0
+GetFrameP1 15
+CallNative unk_0x79AFAB1F 2 1
+Drop
+GetFrame1 5
+CallNative printstring 1 0
+PushString " X:"
+CallNative printstring 1 0
+GetFrame1 3
+CallNative floor 1 1
+CallNative printint 1 0
+PushString " Y:"
+CallNative printstring 1 0
+GetFrame1 4
+CallNative floor 1 1
+CallNative printint 1 0
+PushString "  -  "
+CallNative printstring 1 0
+Push_3
+GetFrameP1 15
+ToStack
+CallNative printvector 3 0
+CallNative printnl 0 0
+Return 1 0
+//<
+
+:Function_9//>
+Function 3 8
+GetFrame1 0
+GetFrameP1 5
+CallNative unk_0x79AFAB1F 2 1
+Drop
+GetFrame1 5
+PushF 1000
+fMult
+PushF 50
+fAdd
+GetFrame1 1
+pSet
+GetFrameP1 5
+GetImm1 8
+PushF 600
+fMult
+PushF 50
+fAdd
+GetFrame1 2
+pSet
+Return 3 0
+//<
+
+:Function_7//>
+Function 0 6
+GetStatic1 2
+CallNative gui_close_window 1 1
+Drop
+PushF 50
+SetStatic1 8
+PushF 50
+GetStaticP1 8
+SetImm1 4
+PushF 1050
+GetStaticP1 8
+SetImm1 8
+PushF 650
+GetStaticP1 8
+SetImm1 12
+PushF_1
+SetFrame1 2
+PushF_1
+GetFrameP1 2
+SetImm1 4
+PushF_1
+GetFrameP1 2
+SetImm1 8
+PushF_1
+GetFrameP1 2
+SetImm1 12
+GetStatic1 1
+GetStaticP1 8
+PushString "MP_Session_Item_Containr"
+GetFrameP1 2
+GetFrameP1 2
+Push_0
+CallNative gui_make_overlay 6 1
+SetStatic1 2
+Return 0 0
+//<
+
+:Function_2//>
+Function 0 8
+GetStatic1 13
+CallNative is_object_valid 1 1
+Not
+JumpFalse @Label_10
+GetStatic1 12
+CallNative start_object_iterator 1 1
+SetStatic1 13
+
+:Label_10
+GetStatic1 13
+CallNative is_object_valid 1 1
+JumpFalse @Label_11
+GetStatic1 13
+Call @Function_10
+Push_0
+SetFrame1 2
+GetStatic1 13
+PushString "ItemWND"
+GetFrameP1 2
+CallNative unk_0x1F003E6C 3 1
+JumpFalse @Label_11
+GetFrame1 2
+CallNative unk_0xD019FF37 1 1
+SetFrame1 3
+GetFrame1 3
+GetFrameP1 4
+CallNative gui_set_text_color 2 1
+Drop
+
+:Label_11
+Return 0 0
+//<
+
+:Function_10//>
+Function 1 5
+GetFrame1 0
+GetFrameP1 3
+GetFrameP1 4
+Call @Function_9
+GetFrame1 3
+PushF 68
+fSub
+SetFrame1 3
+GetFrame1 4
+PushF 8
+fSub
+SetFrame1 4
+GetStatic1 3
+GetFrame1 3
+GetFrame1 4
+CallNative unk_0xA7FF2899 3 1
+Drop
+Return 1 0
+//<
+
+:Function_1//>
+Function 0 14
+PushF_0
+SetFrame1 2
+PushF_0
+GetFrameP1 2
+SetImm1 4
+PushF_1
+GetFrameP1 2
+SetImm1 8
+PushF 0.5
+GetFrameP1 2
+SetImm1 12
+PushF 50
+SetStatic1 4
+PushF 50
+GetStaticP1 4
+SetImm1 4
+PushF 1230
+GetStaticP1 4
+SetImm1 8
+PushF 670
+GetStaticP1 4
+SetImm1 12
+CallNative gui_main_window 0 1
+GetStaticP1 4
+PushString "MP_Session_map"
+GetFrameP1 2
+GetFrameP1 2
+Push_0
+CallNative gui_make_overlay 6 1
+SetStatic1 1
+Call @Function_7
+PushF 50
+SetFrame1 6
+PushF 50
+GetFrameP1 6
+SetImm1 4
+GetFrame1 6
+PushF 65
+fAdd
+PushF 65
+fAdd
+PushF_3
+fAdd
+GetFrameP1 6
+SetImm1 8
+GetFrameP1 6
+GetImm1 4
+PushF_5
+fAdd
+PushF_5
+fAdd
+PushF_3
+fAdd
+GetFrameP1 6
+SetImm1 12
+PushF_0
+SetFrame1 2
+PushF_1
+GetFrameP1 2
+SetImm1 4
+PushF_0
+GetFrameP1 2
+SetImm1 8
+PushF 0.2
+GetFrameP1 2
+SetImm1 12
+GetStatic1 1
+GetFrameP1 6
+PushString "MP_Session_Item_Highlight"
+GetFrameP1 10
+GetFrameP1 10
+Push_0
+CallNative gui_make_overlay 6 1
+SetStatic1 3
+Return 0 0
+//<
+
+:Function_0//>
+Function 0 2
+CallNative unk_0x84B0B5D6 0 1
+Return 0 1
+//<

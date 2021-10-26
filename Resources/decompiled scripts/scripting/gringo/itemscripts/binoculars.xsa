@@ -1,0 +1,6012 @@
+SetParamCount 1
+
+//> Default Static Information
+SetStaticsCount 15
+SetStaticName 14 ScriptParameter0
+
+//<
+
+:MainFunction//>
+Function 0 3
+Push_0
+SetStatic1 1
+Push_0
+SetStatic1 2
+Push_1
+SetStatic1 3
+Push_0
+SetStatic1 13
+Push_0
+SetFrame1 2
+
+:Label_5
+GetFrame1 2
+CallNative is_exitflag_set 0 1
+Or
+Not
+JumpFalse @Label_0
+GetStatic1 1
+Push_0
+JumpNE @Label_1
+CallNative unk_0x7BF01CCB 0 1
+Push_4
+JumpNE @Label_2
+Push_1
+SetStatic1 1
+Jump @Label_3
+
+:Label_2
+CallNative unk_0x7BF01CCB 0 1
+Push_1
+JumpEQ @Label_3
+PushString "GRINGOITEM State: "
+CallNative printstring 1 0
+CallNative unk_0x7BF01CCB 0 1
+CallNative printint 1 0
+CallNative printnl 0 0
+PushString "GRINGOITEM is in an unknown state. Check spew for state number"
+CallNative log_error 1 0
+CallNative unk_0x9C424E0D 0 1
+CallNative terminate_script 1 0
+
+:Label_3
+Jump @Label_4
+
+:Label_1
+GetStatic1 ScriptParameter0
+Call @Function_0
+SetFrame1 2
+
+:Label_4
+Push_0
+CallNative gringo_wait 1 0
+Jump @Label_5
+
+:Label_0
+GetFrame1 2
+Not
+GetStatic1 1
+Push_4
+CmpLt
+And
+JumpFalse @Label_6
+Push_4
+SetStatic1 1
+GetStatic1 ScriptParameter0
+Call @Function_0
+Drop
+
+:Label_6
+GetStatic1 2
+CallNative unk_0x8EA46104 1 0
+Push_0
+Push_0
+Push_1
+Push_1
+Call @Function_1
+Not
+GetGlobal2 34573
+PushString "ItemSave"
+CallNative decor_get_bool 2 1
+And
+JumpFalse @Label_7
+Push_1
+Call @Function_2
+Push_1
+Push_0
+Call @Function_3
+Jump @Label_7
+
+:Label_7
+GetGlobal2 34573
+PushString "ItemSave"
+CallNative decor_remove 2 1
+Drop
+Push_0
+SetStatic1 2
+CallNative terminate_this_script 0 0
+Return 0 0
+//<
+
+:Function_3//>
+Function 2 4
+GetGlobal2 3381
+JumpFalse @Label_8
+Return 2 0
+
+:Label_8
+GetFrame1 0
+SetGlobal2 3412
+GetFrame1 1
+SetGlobal2 3416
+GetGlobal2 3365
+Not
+Call @Function_4
+Not
+And
+JumpFalse @Label_9
+Return 2 0
+
+:Label_9
+Push_0
+CallNative get_player_actor 1 1
+PushString "CanSaveNowAutoSave"
+Push_1
+CallNative decor_set_bool 3 1
+Drop
+Return 2 0
+//<
+
+:Function_4//>
+Function 0 2
+CallNative unk_0x84B0B5D6 0 1
+Return 0 1
+//<
+
+:Function_2//>
+Function 1 3
+GetGlobal2 3395
+GetGlobal2 3381
+Or
+GetGlobal2 3396
+Or
+JumpFalse @Label_10
+Return 1 0
+
+:Label_10
+Push_-1
+GetGlobalP2 34165
+SetImm1 24
+Call @Function_5
+Push_0
+GetGlobalP2 34165
+SetImm1 28
+Push_1
+GetGlobalP2 34165
+SetImm1 32
+CallNative get_time_of_day 0 1
+GetGlobalP2 34165
+SetImm1 52
+Call @Function_6
+Push_0
+CallNative save_soft_save 1 0
+GetFrame1 0
+JumpFalse @Label_11
+GetGlobalP2 63095
+Push_1
+Call @Function_7
+GetGlobalP2 63095
+Push_2
+Call @Function_7
+
+:Label_11
+Push_1
+SetGlobal3 88793
+Return 1 0
+//<
+
+:Function_7//>
+Function 2 4
+GetFrame1 0
+pGet
+GetFrame1 0
+pGet
+GetFrame1 1
+And
+Sub
+GetFrame1 0
+pSet
+Return 2 0
+//<
+
+:Function_6//>
+Function 0 2
+Call @Function_8
+Call @Function_9
+Drop
+Drop
+Call @Function_10
+Drop
+Drop
+Call @Function_11
+Drop
+Drop
+Push_0
+Call @Function_12
+Drop
+Drop
+Call @Function_4
+Not
+JumpFalse @Label_12
+Call @Function_13
+Call @Function_14
+Call @Function_15
+Call @Function_16
+PushB 199
+GetGlobalP3 74542
+GetArrayP1 10
+GetImm1 16
+Push_1
+CmpEq
+CallNative unk_0xBAB151CB 0 1
+Or
+JumpFalse @Label_12
+Push_1
+PushB 199
+GetGlobalP3 74542
+GetArrayP1 10
+SetImm1 16
+
+:Label_12
+Call @Function_17
+Return 0 0
+//<
+
+:Function_17//>
+Function 0 2
+Push_0
+CallNative unk_0x5545C218 1 1
+PushS 372
+GetGlobalP2 34581
+SetArray1 1
+Push_1
+CallNative unk_0x5545C218 1 1
+PushS 373
+GetGlobalP2 34581
+SetArray1 1
+Push_2
+CallNative unk_0x5545C218 1 1
+PushS 374
+GetGlobalP2 34581
+SetArray1 1
+Push_3
+CallNative unk_0x5545C218 1 1
+PushS 375
+GetGlobalP2 34581
+SetArray1 1
+Push_4
+CallNative unk_0x5545C218 1 1
+PushS 376
+GetGlobalP2 34581
+SetArray1 1
+Push_5
+CallNative unk_0x5545C218 1 1
+PushS 377
+GetGlobalP2 34581
+SetArray1 1
+Push_6
+CallNative unk_0x5545C218 1 1
+PushS 378
+GetGlobalP2 34581
+SetArray1 1
+Push_1
+CallNative unk_0xE623B382 1 1
+PushS 379
+GetGlobalP2 34581
+SetArray1 1
+Push_2
+CallNative unk_0xE623B382 1 1
+PushS 380
+GetGlobalP2 34581
+SetArray1 1
+Push_7
+CallNative unk_0x5545C218 1 1
+PushS 381
+GetGlobalP2 34581
+SetArray1 1
+PushB 8
+CallNative unk_0x5545C218 1 1
+PushS 382
+GetGlobalP2 34581
+SetArray1 1
+PushB 9
+CallNative unk_0x5545C218 1 1
+PushS 383
+GetGlobalP2 34581
+SetArray1 1
+Push_0
+CallNative unk_0xE623B382 1 1
+PushS 385
+GetGlobalP2 34581
+SetArray1 1
+PushB 10
+CallNative unk_0x5545C218 1 1
+PushS 387
+GetGlobalP2 34581
+SetArray1 1
+PushB 11
+CallNative unk_0x5545C218 1 1
+PushS 388
+GetGlobalP2 34581
+SetArray1 1
+PushB 12
+CallNative unk_0x5545C218 1 1
+PushS 394
+GetGlobalP2 34581
+SetArray1 1
+Push_3
+CallNative unk_0xE623B382 1 1
+PushB 44
+GetGlobalP2 34581
+SetArray1 1
+Push_4
+CallNative unk_0xE623B382 1 1
+PushS 392
+GetGlobalP2 34581
+SetArray1 1
+Push_6
+CallNative unk_0xE623B382 1 1
+PushS 391
+GetGlobalP2 34581
+SetArray1 1
+Push_5
+CallNative unk_0xE623B382 1 1
+PushS 393
+GetGlobalP2 34581
+SetArray1 1
+Push_7
+CallNative unk_0xE623B382 1 1
+PushS 395
+GetGlobalP2 34581
+SetArray1 1
+Return 0 0
+//<
+
+:Function_16//>
+Function 0 3
+Push_0
+CallNative get_player_deadeye_points 1 1
+SetFrame1 2
+Push_1
+GetGlobalP2 25986
+GetArray1 1
+JumpFalse @Label_13
+GetFrame1 2
+PushF 50
+fCmpLt
+JumpFalse @Label_14
+PushF 50
+SetFrame1 2
+
+:Label_14
+Jump @Label_15
+
+:Label_13
+PushF_0
+SetFrame1 2
+
+:Label_15
+GetFrame1 2
+SetGlobal3 83815
+Return 0 0
+//<
+
+:Function_15//>
+Function 0 6
+Push_1
+CallNative get_num_journal_entries_in_list 1 1
+SetFrame1 2
+Push_0
+SetFrame1 4
+Push_0
+SetFrame1 3
+
+:Label_19
+GetFrame1 3
+GetFrame1 2
+Push_1
+Sub
+JumpGT @Label_16
+Push_1
+GetFrame1 3
+CallNative get_journal_entry_in_list 2 1
+SetFrame1 5
+GetFrame1 5
+Push_-1
+CmpNe
+GetFrame1 5
+Push_0
+CmpNe
+And
+JumpFalse @Label_17
+GetFrame1 5
+CallNative get_journal_entry_type 1 1
+Push_2
+JumpNE @Label_17
+GetFrame1 4
+PushB 49
+JumpLE @Label_18
+PushString "For whatever reason, the system thinks we have more than 50 completed quests. This is bad, since the array we save them in only has 20 elements. Capping it and saving. Your save may not include all of the things you like in it."
+CallNative log_error 1 0
+GetFrame1 2
+SetFrame1 3
+Jump @Label_17
+
+:Label_18
+GetFrame1 5
+GetFrame1 4
+GetGlobalP3 76695
+SetArray1 3
+GetFrame1 5
+CallNative get_journal_entry_misc_flag 1 1
+GetFrame1 4
+GetGlobalP3 76695
+GetArrayP1 3
+SetImm1 4
+GetFrame1 5
+CallNative is_journal_entry_updated 1 1
+GetFrame1 4
+GetGlobalP3 76695
+GetArrayP1 3
+SetImm1 8
+GetFrame1 4
+Add1 1
+SetFrame1 4
+
+:Label_17
+GetFrame1 3
+Add1 1
+SetFrame1 3
+Jump @Label_19
+
+:Label_16
+GetFrame1 4
+SetFrame1 3
+
+:Label_21
+GetFrame1 3
+PushB 49
+JumpGT @Label_20
+Push_-1
+GetFrame1 3
+GetGlobalP3 76695
+SetArray1 3
+Push_-1
+GetFrame1 3
+GetGlobalP3 76695
+GetArrayP1 3
+SetImm1 4
+GetFrame1 3
+Add1 1
+SetFrame1 3
+Jump @Label_21
+
+:Label_20
+Return 0 0
+//<
+
+:Function_14//>
+Function 0 6
+Push_0
+CallNative get_num_journal_entries_in_list 1 1
+SetFrame1 2
+Push_0
+SetFrame1 4
+Push_0
+SetFrame1 3
+
+:Label_25
+GetFrame1 3
+GetFrame1 2
+Push_1
+Sub
+JumpGT @Label_22
+Push_0
+GetFrame1 3
+CallNative get_journal_entry_in_list 2 1
+SetFrame1 5
+GetFrame1 5
+Push_-1
+CmpNe
+GetFrame1 5
+Push_0
+CmpNe
+And
+JumpFalse @Label_23
+GetFrame1 5
+CallNative get_journal_entry_type 1 1
+Push_2
+JumpNE @Label_23
+GetFrame1 4
+PushB 49
+JumpLE @Label_24
+PushString "For whatever reason, the system thinks we have more than 20 active quests. This is bad, since the array we save them in only has 20 elements. Capping it and saving. Your save may not include all of the things you like in it."
+CallNative log_error 1 0
+GetFrame1 2
+SetFrame1 3
+Jump @Label_23
+
+:Label_24
+GetFrame1 5
+GetFrame1 4
+GetGlobalP3 76543
+SetArray1 3
+GetFrame1 5
+CallNative get_journal_entry_misc_flag 1 1
+GetFrame1 4
+GetGlobalP3 76543
+GetArrayP1 3
+SetImm1 4
+GetFrame1 5
+CallNative is_journal_entry_updated 1 1
+GetFrame1 4
+GetGlobalP3 76543
+GetArrayP1 3
+SetImm1 8
+GetFrame1 4
+Add1 1
+SetFrame1 4
+
+:Label_23
+GetFrame1 3
+Add1 1
+SetFrame1 3
+Jump @Label_25
+
+:Label_22
+GetFrame1 4
+SetFrame1 3
+
+:Label_27
+GetFrame1 3
+PushB 49
+JumpGT @Label_26
+Push_-1
+GetFrame1 3
+GetGlobalP3 76543
+SetArray1 3
+Push_-1
+GetFrame1 3
+GetGlobalP3 76543
+GetArrayP1 3
+SetImm1 4
+GetFrame1 3
+Add1 1
+SetFrame1 3
+Jump @Label_27
+
+:Label_26
+CallNative get_targeted_journal_entry 0 1
+SetGlobal3 76694
+GetGlobal3 76694
+Push_-1
+CmpNe
+GetGlobal3 76694
+Push_0
+CmpNe
+And
+JumpFalse @Label_28
+GetGlobal3 76694
+CallNative get_journal_entry_type 1 1
+Push_2
+CmpEq
+Not
+JumpFalse @Label_28
+Push_-1
+SetGlobal3 76694
+
+:Label_28
+Return 0 0
+//<
+
+:Function_13//>
+Function 0 2
+GetGlobalP2 28260
+Push_1
+Push_0
+Call @Function_18
+Return 0 0
+//<
+
+:Function_18//>
+Function 3 19
+Call @Function_19
+SetFrame1 5
+GetFrame1 5
+CallNative is_actor_valid 1 1
+JumpFalse @Label_29
+GetFrame1 5
+CallNative unk_0x118D085E 1 1
+GetFrame1 0
+SetImm2 1012
+PushS -2
+SetFrame1 12
+GetFrame1 5
+CallNative get_weapon_in_hand 1 1
+SetFrame1 13
+GetFrame1 13
+Push_-1
+JumpEQ @Label_30
+GetFrame1 5
+GetFrame1 13
+CallNative unk_0x6262DC5E 2 1
+GetFrame1 2
+Or
+JumpFalse @Label_30
+GetFrame1 5
+CallNative unk_0x0CDD6F94 1 1
+SetFrame1 12
+
+:Label_30
+Push_0
+SetFrame1 6
+
+:Label_33
+GetFrame1 6
+GetFrame1 0
+GetImm2 1012
+Push_1
+Sub
+JumpGT @Label_31
+GetFrame1 6
+GetFrame1 5
+CallNative unk_0x7BF75BCE 2 1
+SetFrame1 14
+GetFrame1 14
+GetFrame1 12
+JumpEQ @Label_32
+GetFrame1 14
+GetFrame1 6
+GetFrame1 0
+Add1 48
+SetArray1 2
+GetFrame1 6
+GetFrame1 0
+Add1 48
+GetArray1 2
+GetFrame1 5
+CallNative unk_0x4BB2BC20 2 1
+GetFrame1 6
+GetFrame1 0
+Add1 48
+GetArrayP1 2
+SetImm1 4
+
+:Label_32
+GetFrame1 6
+Add1 1
+SetFrame1 6
+Jump @Label_33
+
+:Label_31
+GetFrame1 1
+JumpFalse @Label_34
+GetFrame1 5
+CallNative unk_0x78A3CD3D 1 1
+GetFrame1 0
+SetImm1 44
+Push_0
+SetFrame1 7
+
+:Label_35
+GetFrame1 7
+GetFrame1 0
+GetImm1 44
+Push_1
+Sub
+JumpGT @Label_34
+GetFrame1 7
+GetFrame1 5
+CallNative unk_0x7F4D5AE0 2 1
+GetFrame1 7
+GetFrame1 0
+SetArray1 1
+GetFrame1 7
+Add1 1
+SetFrame1 7
+Jump @Label_35
+
+:Label_34
+Push_0
+SetFrame1 8
+
+:Label_37
+GetFrame1 8
+PushB 17
+Push_1
+Sub
+JumpGT @Label_36
+GetFrame1 5
+GetFrame1 8
+Push_0
+CallNative is_frontend_death 3 1
+GetFrame1 8
+GetFrame1 0
+Add2 1016
+SetArray1 1
+GetFrame1 8
+Add1 1
+SetFrame1 8
+Jump @Label_37
+
+:Label_36
+Push_-1
+GetFrame1 0
+SetImm2 1120
+Push_0
+SetFrame1 9
+
+:Label_40
+GetFrame1 9
+Push_7
+Push_1
+Sub
+JumpGT @Label_38
+GetFrame1 9
+SetFrame1 15
+GetFrame1 5
+GetFrame1 15
+CallNative get_weapon_equipped 2 1
+GetFrame1 9
+GetFrame1 0
+Add2 1088
+SetArray1 1
+GetFrame1 9
+GetFrame1 0
+Add2 1088
+GetArray1 1
+Push_-1
+JumpNE @Label_39
+GetFrame1 13
+CallNative unk_0x0E0EFB13 1 1
+GetFrame1 15
+JumpNE @Label_39
+GetFrame1 13
+GetFrame1 9
+GetFrame1 0
+Add2 1088
+SetArray1 1
+GetFrame1 13
+GetFrame1 0
+SetImm2 1120
+
+:Label_39
+GetFrame1 9
+Add1 1
+SetFrame1 9
+Jump @Label_40
+
+:Label_38
+GetFrame1 5
+CallNative unk_0x2C23CBE7 1 1
+GetFrame1 0
+SetImm2 2160
+Push_0
+SetFrame1 6
+
+:Label_42
+GetFrame1 6
+GetFrame1 0
+GetImm2 2160
+Push_1
+Sub
+JumpGT @Label_41
+GetFrame1 6
+GetFrame1 5
+CallNative unk_0x608DCAEF 2 1
+SetFrame1 16
+GetFrame1 16
+GetFrame1 6
+GetFrame1 0
+Add2 1132
+SetArray1 2
+GetFrame1 6
+GetFrame1 0
+Add2 1132
+GetArray1 2
+GetFrame1 5
+CallNative unk_0x4BB2BC20 2 1
+GetFrame1 6
+GetFrame1 0
+Add2 1132
+GetArrayP1 2
+SetImm1 4
+GetFrame1 6
+Add1 1
+SetFrame1 6
+Jump @Label_42
+
+:Label_41
+GetFrame1 5
+CallNative unk_0xCC02BBD3 1 1
+SetFrame1 17
+GetFrame1 17
+Push_-1
+JumpEQ @Label_43
+GetFrame1 5
+GetFrame1 17
+CallNative get_weapon_equipped 2 1
+GetFrame1 0
+SetImm2 1124
+Jump @Label_44
+
+:Label_43
+Push_-1
+GetFrame1 0
+SetImm2 1124
+
+:Label_44
+GetFrame1 5
+CallNative unk_0xA8040D70 1 1
+SetFrame1 18
+GetFrame1 18
+Push_-1
+JumpEQ @Label_45
+GetFrame1 5
+GetFrame1 18
+CallNative get_weapon_equipped 2 1
+GetFrame1 0
+SetImm2 1128
+Jump @Label_46
+
+:Label_45
+Push_-1
+GetFrame1 0
+SetImm2 1128
+
+:Label_46
+Push_0
+SetFrame1 10
+
+:Label_47
+GetFrame1 10
+PushB 39
+Push_1
+Sub
+JumpGT @Label_29
+GetFrame1 10
+CallNative unk_0xCCE4A339 1 1
+GetFrame1 10
+GetFrame1 0
+Add2 2164
+SetArray1 1
+GetFrame1 10
+Add1 1
+SetFrame1 10
+Jump @Label_47
+
+:Label_29
+Return 3 0
+//<
+
+:Function_19//>
+Function 0 2
+Push_0
+CallNative is_local_player_valid 1 1
+Not
+JumpFalse @Label_48
+PushString ""
+pGet
+Return 0 1
+
+:Label_48
+Push_0
+CallNative get_player_actor 1 1
+Return 0 1
+//<
+
+:Function_12//>
+Function 1 9
+PushString "fav_non"
+GetFrameP1 3
+StrCopy 8
+Push_0
+SetFrame1 6
+Push_0
+SetFrame1 7
+
+:Label_55
+GetFrame1 7
+PushB 39
+JumpGE @Label_49
+GetFrame1 7
+Switch [21 @Label_50]:[22 @Label_50]
+Jump @Label_51
+
+:Label_50
+Push_0
+SetFrame1 5
+Jump @Label_52
+
+:Label_51
+GetFrame1 7
+PushB 31
+CmpNe
+GetFrame1 0
+Or
+JumpFalse @Label_53
+PushB 50
+GetFrame1 7
+Add
+Call @Function_20
+PushB 183
+GetFrame1 7
+Add
+Call @Function_20
+Add
+PushB 90
+GetFrame1 7
+Add
+Call @Function_20
+Add
+SetFrame1 5
+
+:Label_53
+Jump @Label_52
+
+:Label_52
+GetFrame1 5
+GetFrame1 6
+JumpLT @Label_54
+GetFrame1 7
+SetFrame1 8
+GetFrame1 5
+SetFrame1 6
+
+:Label_54
+GetFrame1 7
+Add1 1
+SetFrame1 7
+Jump @Label_55
+
+:Label_49
+GetFrame1 6
+Push_0
+JumpGT @Label_56
+Push_2
+GetFrameP1 3
+ToStack
+Return 1 2
+
+:Label_56
+PushB 182
+GetFrame1 8
+Push_0
+Call @Function_21
+Drop
+PushString "fwep_"
+GetFrameP1 3
+StrCopy 8
+GetFrame1 8
+GetFrameP1 3
+StrAddi 8
+Push_2
+GetFrameP1 3
+ToStack
+Return 1 2
+//<
+
+:Function_21//>
+Function 3 6
+GetFrame1 0
+SetFrame1 5
+GetFrame1 5
+PushS 696
+JumpLE @Label_57
+PushString "STAT_SET_VALUE_AS_INT_NOW: Attempting to use a Stat out of bounds."
+CallNative log_error 1 0
+Push_0
+Return 3 1
+
+:Label_57
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+GetImm1 48
+Push_5
+JumpNE @Label_58
+PushString "STAT_SET_VALUE_AS_INT_NOW: You cannot set value of this STAT_TYPE_LIFETIME directly: "
+CallNative printstring 1 0
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+CallNative printstring 1 0
+CallNative printnl 0 0
+PushString "STAT_SET_VALUE_AS_INT_NOW: You cannot set value of a STAT_TYPE_LIFETIME directly, use the COLLECTION version instead!"
+CallNative log_error 1 0
+Push_0
+Return 3 1
+
+:Label_58
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+GetImm1 48
+Push_2
+JumpNE @Label_59
+PushString "STAT_SET_VALUE_AS_INT_NOW: You cannot set value of this STAT_TYPE_COLLECTIBLE directly: "
+CallNative printstring 1 0
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+CallNative printstring 1 0
+CallNative printnl 0 0
+PushString "STAT_SET_VALUE_AS_INT_NOW: You cannot set value of a STAT_TYPE_COLLECTIBLE directly, only increase and decrease operations are allowed"
+CallNative log_error 1 0
+Push_0
+Return 3 1
+
+:Label_59
+GetFrame1 0
+GetGlobalP2 34581
+GetArray1 1
+GetFrame1 1
+CallNative to_float 1 1
+fCmpLt
+JumpFalse @Label_60
+GetFrame1 0
+GetFrame1 1
+CallNative to_float 1 1
+Push_0
+Call @Function_22
+Drop
+
+:Label_60
+GetFrame1 1
+CallNative to_float 1 1
+GetFrame1 0
+GetGlobalP2 34581
+SetArray1 1
+GetFrame1 0
+Call @Function_23
+GetFrame1 2
+JumpFalse @Label_61
+GetFrame1 0
+Push_1
+GetFrame1 1
+CallNative to_float 1 1
+Push_1
+Push_0
+Push 1077936128
+Push_0
+Push_0
+Call @Function_24
+
+:Label_61
+Push_1
+Return 3 1
+//<
+
+:Function_24//>
+Function 8 32
+GetFrame1 3
+JumpFalse @Label_62
+GetFrame1 2
+CallNative round 1 1
+CallNative unk_0x47EF426D 1 1
+SetFrame1 10
+Jump @Label_63
+
+:Label_62
+GetFrame1 2
+Push_6
+Push_2
+CallNative unk_0xFA6BDD8E 3 1
+SetFrame1 10
+
+:Label_63
+PushString ""
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+Add1 16
+StrCopy 32
+GetFrame1 4
+JumpFalse @Label_64
+GetFrame1 1
+JumpFalse @Label_65
+PushString "+"
+GetFrameP1 11
+StrCopy 4
+Jump @Label_66
+
+:Label_65
+PushString "-"
+GetFrameP1 11
+StrCopy 4
+
+:Label_66
+GetFrameP1 11
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+Add1 16
+StrAdd 32
+
+:Label_64
+GetFrame1 1
+JumpFalse @Label_67
+Push_0
+SetFrame1 12
+Jump @Label_68
+
+:Label_67
+Push_1
+SetFrame1 12
+
+:Label_68
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+GetImm1 76
+Push_3
+CmpEq
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+GetImm1 48
+PushB 21
+CmpEq
+Or
+JumpFalse @Label_69
+PushString "$"
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+Add1 16
+StrAdd 32
+
+:Label_69
+GetFrame1 10
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+Add1 16
+StrAdd 32
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+GetImm1 48
+Switch [16 @Label_70]:[17 @Label_70]:[22 @Label_71]:[23 @Label_72]:[24 @Label_73]:[25 @Label_74]:[15 @Label_75]
+Jump @Label_76
+
+:Label_70
+PushString ""
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+Add1 16
+StrCopy 32
+Jump @Label_76
+
+:Label_71
+GetFrame1 2
+PushF 2000
+fCmpLt
+JumpFalse @Label_77
+PushString " lbs"
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+Add1 16
+StrAdd 32
+Jump @Label_78
+
+:Label_77
+GetFrame1 2
+PushF 2000
+fDiv
+SetFrame1 2
+GetFrame1 11
+Push_1
+PushB 8
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+Add1 16
+MemCopy
+GetFrame1 2
+Push_6
+Push_2
+CallNative unk_0x8ED1FF95 3 1
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+Add1 16
+StrAdd 32
+PushString " ton"
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+Add1 16
+StrAdd 32
+
+:Label_78
+Jump @Label_76
+
+:Label_72
+GetFrame1 11
+Push_1
+PushB 8
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+Add1 16
+MemCopy
+GetFrame1 2
+PushF 60
+fCmpGe
+JumpFalse @Label_79
+Push_0
+SetFrame1 17
+GetFrame1 2
+CallNative floor 1 1
+PushB 60
+Div
+SetFrame1 15
+GetFrame1 15
+PushB 60
+JumpLT @Label_80
+GetFrame1 15
+PushB 60
+Div
+SetFrame1 14
+GetFrame1 15
+GetFrame1 14
+Mult1 60
+Sub
+SetFrame1 15
+GetFrame1 2
+GetFrame1 14
+Mult1 60
+Mult1 60
+CallNative to_float 1 1
+fSub
+GetFrame1 15
+Mult1 60
+CallNative to_float 1 1
+fSub
+CallNative floor 1 1
+SetFrame1 16
+GetFrame1 14
+PushB 24
+JumpLT @Label_81
+GetFrame1 14
+PushB 24
+Div
+SetFrame1 13
+GetFrame1 14
+GetFrame1 13
+Mult1 24
+Sub
+SetFrame1 14
+GetFrame1 13
+CallNative int_to_string 1 1
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+Add1 16
+StrAdd 32
+GetFrame1 13
+Push_1
+JumpLE @Label_82
+PushString " days"
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+Add1 16
+StrAdd 32
+Jump @Label_83
+
+:Label_82
+PushString " day"
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+Add1 16
+StrAdd 32
+
+:Label_83
+Push_1
+SetFrame1 17
+
+:Label_81
+GetFrame1 14
+Push_0
+JumpLE @Label_84
+GetFrame1 17
+JumpFalse @Label_85
+PushString " "
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+Add1 16
+StrAdd 32
+
+:Label_85
+GetFrame1 14
+CallNative int_to_string 1 1
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+Add1 16
+StrAdd 32
+PushString " hr"
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+Add1 16
+StrAdd 32
+Push_1
+SetFrame1 17
+
+:Label_84
+GetFrame1 15
+Push_0
+JumpLE @Label_86
+GetFrame1 17
+JumpFalse @Label_87
+PushString " "
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+Add1 16
+StrAdd 32
+
+:Label_87
+GetFrame1 15
+CallNative int_to_string 1 1
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+Add1 16
+StrAdd 32
+PushString " min"
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+Add1 16
+StrAdd 32
+Push_1
+SetFrame1 17
+
+:Label_86
+GetFrame1 16
+Push_0
+JumpLE @Label_88
+GetFrame1 17
+JumpFalse @Label_89
+PushString " "
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+Add1 16
+StrAdd 32
+
+:Label_89
+GetFrame1 16
+CallNative int_to_string 1 1
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+Add1 16
+StrAdd 32
+PushString " sec"
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+Add1 16
+StrAdd 32
+Push_0
+SetFrame1 17
+
+:Label_88
+Jump @Label_90
+
+:Label_80
+GetFrame1 15
+CallNative int_to_string 1 1
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+Add1 16
+StrAdd 32
+PushString " min"
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+Add1 16
+StrAdd 32
+GetFrame1 2
+GetFrame1 15
+Mult1 60
+CallNative to_float 1 1
+fSub
+CallNative floor 1 1
+SetFrame1 16
+GetFrame1 16
+Push_0
+JumpLE @Label_90
+PushString " "
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+Add1 16
+StrAdd 32
+GetFrame1 16
+CallNative int_to_string 1 1
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+Add1 16
+StrAdd 32
+PushString " sec"
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+Add1 16
+StrAdd 32
+
+:Label_90
+Jump @Label_91
+
+:Label_79
+GetFrame1 10
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+Add1 16
+StrAdd 32
+PushString " sec"
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+Add1 16
+StrAdd 32
+
+:Label_91
+Jump @Label_76
+
+:Label_73
+GetFrame1 11
+Push_1
+PushB 8
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+Add1 16
+MemCopy
+GetFrame1 2
+PushF 3.28084
+fMult
+SetFrame1 2
+GetFrame1 2
+PushF 5280
+fCmpLt
+JumpFalse @Label_92
+Push_0
+SetFrame1 18
+Jump @Label_93
+
+:Label_92
+GetFrame1 2
+PushF 5280
+fDiv
+SetFrame1 2
+Push_1
+SetFrame1 18
+
+:Label_93
+GetFrame1 2
+GetFrame1 2
+CallNative floor 1 1
+ItoF
+fSub
+PushF_0
+fCmpGt
+JumpFalse @Label_94
+GetFrame1 2
+Push_6
+Push_2
+CallNative unk_0x8ED1FF95 3 1
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+Add1 16
+StrAdd 32
+Jump @Label_95
+
+:Label_94
+GetFrame1 2
+CallNative floor 1 1
+CallNative int_to_string 1 1
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+Add1 16
+StrAdd 32
+
+:Label_95
+GetFrame1 18
+JumpFalse @Label_96
+PushString " mi"
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+Add1 16
+StrAdd 32
+Jump @Label_97
+
+:Label_96
+PushString " ft"
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+Add1 16
+StrAdd 32
+
+:Label_97
+Jump @Label_76
+
+:Label_74
+GetFrame1 11
+Push_1
+PushB 8
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+Add1 16
+MemCopy
+GetFrame1 2
+GetFrame1 2
+CallNative floor 1 1
+ItoF
+fSub
+PushF_0
+fCmpGt
+JumpFalse @Label_98
+GetFrame1 2
+Push_6
+Push_2
+CallNative unk_0x8ED1FF95 3 1
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+Add1 16
+StrAdd 32
+Jump @Label_99
+
+:Label_98
+GetFrame1 2
+CallNative floor 1 1
+CallNative int_to_string 1 1
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+Add1 16
+StrAdd 32
+
+:Label_99
+GetFrame1 2
+PushF_1
+fCmpGt
+JumpFalse @Label_100
+PushString " days"
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+Add1 16
+StrAdd 32
+Jump @Label_101
+
+:Label_100
+PushString " day"
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+Add1 16
+StrAdd 32
+
+:Label_101
+Jump @Label_76
+
+:Label_75
+GetFrame1 0
+PushS 390
+JumpNE @Label_102
+PushString "stat_of"
+CallNative ui_get_string 1 1
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+Add1 16
+StrAdd 32
+PushS 390
+Call @Function_25
+CallNative floor 1 1
+CallNative int_to_string 1 1
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+Add1 16
+StrAdd 32
+
+:Label_102
+Jump @Label_76
+
+:Label_76
+CallNative clear_stat_message 0 0
+GetGlobal2 49306
+Not
+JumpFalse @Label_103
+Push_0
+SetFrame1 31
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+GetImm1 48
+Switch [16 @Label_104]:[17 @Label_104]:[8 @Label_104]:[12 @Label_104]:[9 @Label_104]:[10 @Label_104]:[6 @Label_104]
+Jump @Label_105
+
+:Label_104
+GetFrame1 6
+JumpFalse @Label_106
+GetFrame1 2
+SetFrame1 29
+PushF_0
+SetFrame1 30
+Jump @Label_107
+
+:Label_106
+GetFrame1 1
+JumpFalse @Label_108
+GetFrame1 0
+Call @Function_26
+GetFrame1 2
+fSub
+SetFrame1 29
+GetFrame1 2
+SetFrame1 30
+Jump @Label_107
+
+:Label_108
+GetFrame1 0
+Call @Function_26
+GetFrame1 2
+fAdd
+SetFrame1 29
+GetFrame1 2
+PushF_-1
+fMult
+SetFrame1 30
+
+:Label_107
+GetFrame1 0
+Switch [3 @Label_109]:[487 @Label_110]
+Jump @Label_111
+
+:Label_109
+Push_1
+SetFrame1 31
+
+:Label_111
+GetFrame1 0
+GetFrame1 29
+GetFrame1 30
+GetFrameP1 27
+GetFrameP1 28
+Call @Function_27
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+CallNative string_to_hash 1 1
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+Add1 16
+GetFrame1 5
+PushString ""
+Push_2
+GetFrame1 27
+GetFrame1 28
+GetFrame1 12
+GetFrame1 31
+Push_0
+Push_0
+Push_0
+Push_0
+CallNative set_stat_message 13 0
+Jump @Label_112
+
+:Label_110
+Push_2
+SetFrame1 31
+GetGlobalP3 83864
+GetImm2 1264
+PushB 49
+JumpGE @Label_113
+GetFrame1 29
+GetFrame1 2
+GetFrameP1 27
+GetFrameP1 28
+Call @Function_28
+GetFrame1 7
+CallNative is_string_valid 1 1
+Not
+JumpFalse @Label_114
+PushString "Common_Null"
+SetFrame1 7
+
+:Label_114
+GetGlobalP3 83864
+GetImm2 1264
+GetGlobalP3 84364
+GetImm2 708
+Push_0
+Push_1
+Call @Function_29
+PushB 8
+GetFrameP1 19
+FromStack
+GetFrame1 7
+CallNative string_to_hash 1 1
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+Add1 16
+GetFrame1 28
+Call @Function_30
+PushString ""
+Push_0
+GetFrame1 27
+GetFrame1 28
+Push_4
+Push_2
+Push_0
+GetGlobalP3 83864
+GetImm2 1264
+Add1 1
+Call @Function_31
+GetFrameP1 19
+CallNative set_stat_message 13 0
+
+:Label_113
+Jump @Label_112
+
+:Label_112
+Jump @Label_103
+
+:Label_105
+GetFrame1 0
+Push_0
+JumpNE @Label_115
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+CallNative string_to_hash 1 1
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+Add1 16
+GetFrame1 5
+PushString ""
+Push_2
+Push_-1
+Push_0
+GetFrame1 12
+Push_0
+Push_1
+Push_0
+Push_0
+Push_0
+CallNative set_stat_message 13 0
+Jump @Label_116
+
+:Label_115
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+CallNative string_to_hash 1 1
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+Add1 16
+GetFrame1 5
+PushString ""
+Push_2
+Push_-1
+Push_0
+GetFrame1 12
+Push_0
+Push_0
+Push_0
+Push_0
+Push_0
+CallNative set_stat_message 13 0
+
+:Label_116
+Jump @Label_103
+
+:Label_103
+Return 8 0
+//<
+
+:Function_31//>
+Function 0 3
+GetFrame1 2
+Return 0 1
+//<
+
+:Function_30//>
+Function 1 3
+PushF_2
+PushF 0.07
+GetFrame1 0
+ItoF
+fMult
+fAdd
+Return 1 1
+//<
+
+:Function_29//>
+Function 4 14
+GetFrame1 3
+JumpFalse @Label_117
+GetFrame1 1
+Push_0
+JumpGT @Label_118
+PushString "lvl_"
+GetFrameP1 6
+StrCopy 32
+GetFrame1 0
+Add1 1
+GetFrameP1 6
+StrAddi 32
+PushString "_icon"
+GetFrameP1 6
+StrAdd 32
+PushB 8
+GetFrameP1 6
+ToStack
+Return 4 8
+Jump @Label_117
+
+:Label_118
+PushString "icon_prestige_award_"
+GetFrame1 1
+Push_1
+Sub
+CallNative unk_0x47EF426D 1 1
+Call @Function_32
+PushB 8
+GetFrameP1 6
+FromStack
+
+:Label_117
+GetFrame1 1
+Push_0
+JumpGT @Label_119
+PushString "icon_prestige_"
+GetFrame1 0
+Push_5
+Div
+CallNative unk_0x47EF426D 1 1
+Call @Function_32
+PushB 8
+GetFrameP1 6
+FromStack
+Jump @Label_120
+
+:Label_119
+GetFrame1 1
+Push_4
+CmpEq
+GetFrame1 0
+PushB 49
+CmpEq
+And
+JumpFalse @Label_121
+PushString "icon_prestige_award_4"
+GetFrameP1 6
+StrCopy 32
+Jump @Label_120
+
+:Label_121
+PushString "icon_prestige_award_"
+GetFrame1 1
+Push_1
+Sub
+CallNative unk_0x47EF426D 1 1
+Call @Function_32
+PushB 8
+GetFrameP1 6
+FromStack
+
+:Label_120
+GetFrame1 2
+JumpFalse @Label_122
+PushString "_color"
+GetFrameP1 6
+StrAdd 32
+
+:Label_122
+PushB 8
+GetFrameP1 6
+ToStack
+Return 4 8
+//<
+
+:Function_32//>
+Function 2 12
+GetFrame1 0
+GetFrameP1 4
+StrCopy 32
+GetFrame1 1
+GetFrameP1 4
+StrAdd 32
+PushB 8
+GetFrameP1 4
+ToStack
+Return 2 8
+//<
+
+:Function_28//>
+Function 4 7
+GetGlobalP3 83864
+GetImm2 1264
+Add1 1
+GetGlobalP3 83864
+GetArray1 6
+GetGlobalP3 83864
+GetImm2 1264
+GetGlobalP3 83864
+GetArray1 6
+fSub
+SetFrame1 6
+PushB 100
+GetFrame1 0
+GetGlobalP3 83864
+GetImm2 1264
+GetGlobalP3 83864
+GetArray1 6
+fSub
+GetFrame1 6
+fDiv
+PushF 100
+fMult
+CallNative floor 1 1
+Call @Function_33
+GetFrame1 2
+pSet
+PushB 100
+GetFrame1 1
+GetFrame1 6
+fDiv
+PushF 100
+fMult
+CallNative floor 1 1
+Call @Function_33
+Push_1
+Call @Function_34
+GetFrame1 3
+pSet
+Return 4 0
+//<
+
+:Function_34//>
+Function 2 4
+GetFrame1 0
+GetFrame1 1
+JumpLE @Label_123
+GetFrame1 0
+Return 2 1
+
+:Label_123
+GetFrame1 1
+Return 2 1
+//<
+
+:Function_33//>
+Function 2 4
+GetFrame1 0
+GetFrame1 1
+JumpGE @Label_124
+GetFrame1 0
+Return 2 1
+
+:Label_124
+GetFrame1 1
+Return 2 1
+//<
+
+:Function_27//>
+Function 5 11
+GetFrame1 0
+Push_-1
+JumpNE @Label_125
+PushString "STAT_CALCULATE_PROGRESSBAR_VALUES: STAT_INVALID"
+CallNative log_error 1 0
+Return 5 0
+
+:Label_125
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+GetImm1 64
+PushF_0
+fCmpEq
+JumpFalse @Label_126
+PushF 100
+SetFrame1 7
+Jump @Label_127
+
+:Label_126
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+GetImm1 64
+SetFrame1 7
+
+:Label_127
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+GetImm1 60
+SetFrame1 8
+GetFrame1 0
+Call @Function_35
+PushB 19
+CmpEq
+GetFrame1 0
+Call @Function_35
+PushB 17
+CmpEq
+Or
+GetFrame1 0
+Call @Function_35
+PushB 10
+CmpEq
+Or
+GetFrame1 0
+Call @Function_35
+PushB 9
+CmpEq
+Or
+JumpFalse @Label_128
+GetFrame1 1
+GetFrame1 8
+fCmpLt
+JumpFalse @Label_129
+GetFrame1 8
+SetFrame1 1
+
+:Label_129
+GetFrame1 1
+GetFrame1 7
+fCmpGt
+JumpFalse @Label_130
+GetFrame1 7
+SetFrame1 1
+
+:Label_130
+GetFrame1 2
+GetFrame1 1
+GetFrame1 8
+fSub
+fNeg
+fCmpLt
+JumpFalse @Label_131
+GetFrame1 1
+GetFrame1 8
+fSub
+fNeg
+SetFrame1 2
+
+:Label_131
+GetFrame1 2
+GetFrame1 7
+GetFrame1 1
+fSub
+fCmpGt
+JumpFalse @Label_132
+GetFrame1 7
+GetFrame1 1
+fSub
+SetFrame1 2
+
+:Label_132
+GetFrame1 1
+GetFrame1 8
+fSub
+GetFrame1 7
+GetFrame1 8
+fSub
+fDiv
+SetFrame1 9
+GetFrame1 2
+GetFrame1 7
+GetFrame1 8
+fSub
+fDiv
+SetFrame1 10
+GetFrame1 9
+PushF 100
+fMult
+CallNative round 1 1
+GetFrame1 3
+pSet
+GetFrame1 10
+PushF 100
+fMult
+CallNative round 1 1
+GetFrame1 4
+pSet
+Jump @Label_133
+
+:Label_128
+GetFrame1 1
+PushF 100
+fMult
+GetFrame1 7
+fDiv
+CallNative round 1 1
+GetFrame1 3
+pSet
+GetFrame1 2
+PushF 100
+fMult
+GetFrame1 7
+fDiv
+CallNative round 1 1
+GetFrame1 4
+pSet
+
+:Label_133
+Return 5 0
+//<
+
+:Function_35//>
+Function 1 3
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+GetImm1 48
+Return 1 1
+//<
+
+:Function_26//>
+Function 1 3
+GetFrame1 0
+Push_-1
+CmpEq
+Not
+JumpFalse @Label_134
+GetFrame1 0
+GetGlobalP2 34581
+GetArray1 1
+Return 1 1
+
+:Label_134
+PushString "STAT_GET_VALUE: STAT_INVALID"
+CallNative log_error 1 0
+PushF_0
+Return 1 1
+//<
+
+:Function_25//>
+Function 1 3
+GetFrame1 0
+Push_-1
+JumpNE @Label_135
+PushString "STAT_GET_MAX_VALUE: STAT_INVALID"
+CallNative log_error 1 0
+PushF_-1
+Return 1 1
+
+:Label_135
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+GetImm1 64
+Return 1 1
+//<
+
+:Function_23//>
+Function 1 3
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+GetImm1 64
+PushF_0
+fCmpNe
+JumpFalse @Label_136
+GetFrame1 0
+GetGlobalP2 34581
+GetArray1 1
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+GetImm1 64
+fCmpGt
+JumpFalse @Label_136
+PushString "STAT_CHECK_RANGES: Attempting to decrement a STAT out of its fMaxRange - "
+CallNative printstring 1 0
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+CallNative printstring 1 0
+CallNative printnl 0 0
+PushString "STAT_CHECK_RANGES: Attempting to increment a STAT out of its fMaxRange"
+CallNative log_warning 1 0
+
+:Label_136
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+GetImm1 60
+PushF_0
+fCmpNe
+JumpFalse @Label_137
+GetFrame1 0
+GetGlobalP2 34581
+GetArray1 1
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+GetImm1 60
+fCmpLt
+JumpFalse @Label_137
+PushString "STAT_CHECK_RANGES: Attempting to decrement a STAT out of its fMinRange - "
+CallNative printstring 1 0
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+CallNative printstring 1 0
+CallNative printnl 0 0
+PushString "STAT_CHECK_RANGES: Attempting to decrement a STAT out of its fMinRange"
+CallNative log_error 1 0
+
+:Label_137
+Return 1 0
+//<
+
+:Function_22//>
+Function 3 7
+GetFrame1 0
+SetFrame1 5
+GetFrame1 5
+PushS 696
+JumpLE @Label_138
+PushString "STAT_UPDATE_MY_LIFETIME_STAT: Attempting to use a Stat out of bounds."
+CallNative log_error 1 0
+Push_0
+Return 3 1
+
+:Label_138
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+GetImm1 52
+SetFrame1 6
+GetFrame1 6
+Push_-1
+JumpNE @Label_139
+Push_0
+Return 3 1
+
+:Label_139
+GetFrame1 6
+SetFrame1 5
+GetFrame1 5
+PushS 696
+JumpLE @Label_140
+PushString "STAT_UPDATE_MY_LIFETIME_STAT: Attempting to use a LifetimeStat out of bounds."
+CallNative log_error 1 0
+Push_0
+Return 3 1
+
+:Label_140
+GetFrame1 2
+JumpFalse @Label_141
+GetFrame1 0
+PushS 500
+CmpGe
+GetFrame1 0
+PushS 586
+CmpLe
+And
+GetFrame1 0
+PushS 596
+CmpEq
+Or
+JumpFalse @Label_142
+GetFrame1 6
+GetGlobalP2 34581
+GetArray1 1
+PushF_1
+fAdd
+GetFrame1 6
+GetGlobalP2 34581
+SetArray1 1
+Jump @Label_143
+
+:Label_142
+GetFrame1 6
+GetGlobalP2 34581
+GetArray1 1
+GetFrame1 1
+fAdd
+GetFrame1 6
+GetGlobalP2 34581
+SetArray1 1
+
+:Label_143
+Jump @Label_144
+
+:Label_141
+GetFrame1 1
+GetFrame1 6
+GetGlobalP2 34581
+SetArray1 1
+
+:Label_144
+GetFrame1 6
+GetGlobalP2 35278
+GetArrayP1 20
+GetImm1 64
+PushF_0
+fCmpNe
+JumpFalse @Label_145
+GetFrame1 6
+GetGlobalP2 34581
+GetArray1 1
+GetFrame1 6
+GetGlobalP2 35278
+GetArrayP1 20
+GetImm1 64
+fCmpGt
+JumpFalse @Label_145
+PushString "STAT_UPDATE_MY_LIFETIME_STAT: Attempting to increment a LifetimeStat out of its fMaxRange."
+CallNative log_warning 1 0
+GetFrame1 6
+GetGlobalP2 35278
+GetArrayP1 20
+GetImm1 64
+GetFrame1 6
+GetGlobalP2 34581
+SetArray1 1
+
+:Label_145
+GetFrame1 6
+GetGlobalP2 35278
+GetArrayP1 20
+GetImm1 60
+PushF_0
+fCmpNe
+JumpFalse @Label_146
+GetFrame1 6
+GetGlobalP2 34581
+GetArray1 1
+GetFrame1 6
+GetGlobalP2 35278
+GetArrayP1 20
+GetImm1 60
+fCmpLt
+JumpFalse @Label_146
+PushString "STAT_UPDATE_MY_LIFETIME_STAT: Attempting to decrement a LifetimeStat out of its fMinRange."
+CallNative log_warning 1 0
+GetFrame1 6
+GetGlobalP2 35278
+GetArrayP1 20
+GetImm1 60
+GetFrame1 6
+GetGlobalP2 34581
+SetArray1 1
+
+:Label_146
+Push_1
+Return 3 1
+//<
+
+:Function_20//>
+Function 1 3
+GetFrame1 0
+Push_-1
+JumpNE @Label_147
+PushString "STAT_GET_VALUE_AS_INT: STAT_INVALID"
+CallNative log_error 1 0
+Push_0
+Return 1 1
+
+:Label_147
+GetFrame1 0
+GetGlobalP2 34581
+GetArray1 1
+CallNative floor 1 1
+Return 1 1
+//<
+
+:Function_11//>
+Function 0 8
+PushString "fav_non"
+GetFrameP1 2
+StrCopy 8
+Push_0
+SetFrame1 7
+Push_0
+SetFrame1 5
+
+:Label_150
+GetFrame1 5
+Push_4
+JumpGE @Label_148
+PushB 50
+GetFrame1 5
+Add
+Add1 15
+Call @Function_20
+PushB 183
+GetFrame1 5
+Add
+Add1 15
+Call @Function_20
+Add
+PushB 90
+GetFrame1 5
+Add
+Add1 15
+Call @Function_20
+Add
+SetFrame1 4
+GetFrame1 4
+GetFrame1 7
+JumpLT @Label_149
+GetFrame1 5
+SetFrame1 6
+GetFrame1 4
+SetFrame1 7
+
+:Label_149
+GetFrame1 5
+Add1 1
+SetFrame1 5
+Jump @Label_150
+
+:Label_148
+GetFrame1 7
+Push_0
+JumpGT @Label_151
+Push_2
+GetFrameP1 2
+ToStack
+Return 0 2
+
+:Label_151
+PushB 181
+GetFrame1 6
+Add1 15
+Push_0
+Call @Function_21
+Drop
+PushString "fwep_"
+GetFrameP1 2
+StrCopy 8
+PushB 15
+GetFrame1 6
+Add
+GetFrameP1 2
+StrAddi 8
+Push_2
+GetFrameP1 2
+ToStack
+Return 0 2
+//<
+
+:Function_10//>
+Function 0 8
+PushString "fav_non"
+GetFrameP1 2
+StrCopy 8
+Push_0
+SetFrame1 7
+Push_0
+SetFrame1 5
+
+:Label_154
+GetFrame1 5
+PushB 13
+JumpGE @Label_152
+GetFrame1 5
+Push_7
+CmpLt
+GetFrame1 5
+PushB 10
+CmpGt
+Or
+JumpFalse @Label_153
+PushB 50
+GetFrame1 5
+Add
+Add1 8
+Call @Function_20
+PushB 183
+GetFrame1 5
+Add
+Add1 8
+Call @Function_20
+Add
+PushB 90
+GetFrame1 5
+Add
+Add1 8
+Call @Function_20
+Add
+SetFrame1 4
+GetFrame1 4
+GetFrame1 7
+JumpLT @Label_153
+GetFrame1 5
+SetFrame1 6
+GetFrame1 4
+SetFrame1 7
+
+:Label_153
+GetFrame1 5
+Add1 1
+SetFrame1 5
+Jump @Label_154
+
+:Label_152
+GetFrame1 7
+Push_0
+JumpGT @Label_155
+Push_2
+GetFrameP1 2
+ToStack
+Return 0 2
+
+:Label_155
+PushB 180
+GetFrame1 6
+Add1 8
+Push_0
+Call @Function_21
+Drop
+PushString "fwep_"
+GetFrameP1 2
+StrCopy 8
+PushB 8
+GetFrame1 6
+Add
+GetFrameP1 2
+StrAddi 8
+Push_2
+GetFrameP1 2
+ToStack
+Return 0 2
+//<
+
+:Function_9//>
+Function 0 8
+PushString "fav_non"
+GetFrameP1 2
+StrCopy 8
+Push_0
+SetFrame1 7
+Push_0
+SetFrame1 5
+
+:Label_158
+GetFrame1 5
+PushB 8
+JumpGE @Label_156
+PushB 50
+GetFrame1 5
+Add
+Call @Function_20
+PushB 183
+GetFrame1 5
+Add
+Call @Function_20
+Add
+PushB 90
+GetFrame1 5
+Add
+Call @Function_20
+Add
+SetFrame1 4
+GetFrame1 4
+GetFrame1 7
+JumpLT @Label_157
+GetFrame1 5
+SetFrame1 6
+GetFrame1 4
+SetFrame1 7
+
+:Label_157
+GetFrame1 5
+Add1 1
+SetFrame1 5
+Jump @Label_158
+
+:Label_156
+GetFrame1 7
+Push_0
+JumpGT @Label_159
+Push_2
+GetFrameP1 2
+ToStack
+Return 0 2
+
+:Label_159
+PushB 179
+GetFrame1 6
+Push_0
+Call @Function_21
+Drop
+PushString "fwep_"
+GetFrameP1 2
+StrCopy 8
+GetFrame1 6
+GetFrameP1 2
+StrAddi 8
+Push_2
+GetFrameP1 2
+ToStack
+Return 0 2
+//<
+
+:Function_8//>
+Function 0 2
+GetGlobal2 49308
+PushF 0.1
+fCmpLt
+JumpFalse @Label_160
+CallNative unk_0x5842B9D1 0 1
+SetGlobal2 49308
+Return 0 0
+
+:Label_160
+Push_7
+CallNative unk_0x5842B9D1 0 1
+GetGlobal2 49308
+fSub
+Push_0
+Call @Function_36
+Drop
+CallNative unk_0x5842B9D1 0 1
+SetGlobal2 49308
+PushB 8
+Push_0
+CallNative get_day 1 1
+Push_2
+Sub
+Push_0
+Call @Function_21
+Drop
+Return 0 0
+//<
+
+:Function_36//>
+Function 3 7
+GetFrame1 0
+SetFrame1 5
+GetFrame1 5
+PushS 696
+JumpLE @Label_161
+PushString "STAT_INCREASE_NOW: Attempting to use a Stat out of bounds."
+CallNative log_error 1 0
+Push_0
+Return 3 1
+
+:Label_161
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+GetImm1 48
+Push_5
+JumpNE @Label_162
+PushString "STAT_INCREASE_NOW: You cannot increase this STAT_TYPE_LIFETIME directly: "
+CallNative printstring 1 0
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+CallNative printstring 1 0
+CallNative printnl 0 0
+PushString "STAT_INCREASE_NOW: You cannot increase a STAT_TYPE_LIFETIME directly, use the COLLECTION version instead!"
+CallNative log_error 1 0
+Push_0
+Return 3 1
+
+:Label_162
+GetFrame1 1
+PushF_0
+fCmpLt
+JumpFalse @Label_163
+PushString "STAT_INCREASE_NOW: fIncreaseValue < 0.0 - I am turning this into a positive number for you!"
+CallNative log_error 1 0
+GetFrame1 1
+CallNative fabs 1 1
+SetFrame1 1
+
+:Label_163
+GetFrame1 0
+GetGlobalP2 34581
+GetArray1 1
+GetFrame1 1
+fAdd
+GetFrame1 0
+GetGlobalP2 34581
+SetArray1 1
+GetFrame1 0
+GetFrame1 1
+Push_1
+Call @Function_22
+Drop
+GetFrame1 0
+Call @Function_23
+GetFrame1 2
+GetFrame1 1
+PushF_0
+fCmpNe
+And
+JumpFalse @Label_164
+GetFrame1 0
+Push_1
+GetFrame1 1
+Push_0
+Push_1
+Push 1077936128
+Push_0
+Push_0
+Call @Function_24
+
+:Label_164
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+GetImm1 48
+Push_2
+JumpNE @Label_165
+Push_0
+SetFrame1 6
+
+:Label_166
+GetFrame1 6
+GetFrame1 1
+CallNative round 1 1
+JumpGE @Label_165
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+GetGlobal2 34573
+Push_0
+CallNative add_collectable 3 1
+Drop
+GetFrame1 6
+Add1 1
+SetFrame1 6
+Jump @Label_166
+
+:Label_165
+Push_1
+Return 3 1
+//<
+
+:Function_5//>
+Function 0 8
+Push_-1
+GetGlobalP2 34165
+SetImm1 24
+Call @Function_37
+JumpFalse @Label_167
+GetGlobalP2 34165
+Add1 12
+GetGlobalP2 34165
+Add1 16
+Call @Function_38
+Push_3
+GetFrameP1 2
+FromStack
+Jump @Label_168
+
+:Label_167
+GetGlobalP2 34165
+Add1 12
+GetGlobalP2 34165
+Add1 16
+Push_0
+Push_0
+Call @Function_39
+Push_3
+GetFrameP1 2
+FromStack
+
+:Label_168
+Push_3
+GetFrameP1 2
+ToStack
+Call @Function_40
+JumpFalse @Label_169
+Push_3
+GetGlobalP2 34574
+ToStack
+Push_3
+GetFrameP1 2
+FromStack
+GetFrameP1 2
+GetImm1 4
+PushF 0.5
+fAdd
+GetFrameP1 2
+SetImm1 4
+GetFrameP1 2
+PushF 100
+GetGlobalP2 34165
+GetFrameP1 5
+CallNative find_ground_intersection 4 1
+Drop
+Jump @Label_170
+
+:Label_169
+Push_3
+GetFrameP1 2
+ToStack
+Push_3
+GetGlobalP2 34165
+FromStack
+
+:Label_170
+GetGlobalP2 34165
+GetImm1 12
+GetGlobalP2 34165
+SetImm1 156
+Push_3
+GetGlobalP2 34165
+ToStack
+Push_3
+GetGlobalP2 34165
+Add1 144
+FromStack
+GetGlobalP2 34165
+GetImm1 16
+GetGlobalP2 34165
+SetImm1 160
+Push_0
+GetGlobalP2 34165
+SetImm1 28
+Push_0
+GetGlobalP2 34165
+SetImm1 36
+Push_0
+GetGlobalP2 34165
+SetImm1 40
+Push_1
+GetGlobalP2 34165
+SetImm1 32
+CallNative get_time_of_day 0 1
+GetGlobalP2 34165
+SetImm1 52
+Push_1
+SetGlobal3 88793
+Return 0 0
+//<
+
+:Function_40//>
+Function 3 5
+GetFrame1 0
+PushF_0
+fCmpEq
+GetFrameP1 0
+GetImm1 4
+PushF_0
+fCmpEq
+And
+GetFrameP1 0
+GetImm1 8
+PushF_0
+fCmpEq
+And
+Return 3 1
+//<
+
+:Function_39//>
+Function 4 7
+GetFrame1 2
+GetFrame1 3
+Call @Function_41
+SetFrame1 6
+GetFrame1 6
+Call @Function_42
+JumpFalse @Label_171
+GetFrame1 6
+PushB 15
+JumpNE @Label_172
+GetGlobal2 29005
+GetGlobalP2 34165
+SetImm1 24
+GetGlobalP2 63095
+Push_1
+Call @Function_43
+GetGlobalP2 63095
+Push_2
+Call @Function_7
+Push_3
+GetFrame1 6
+GetGlobalP2 16537
+GetArrayP1 21
+ToStack
+Push_3
+GetGlobalP2 63084
+FromStack
+Push_0
+GetFrame1 1
+pSet
+Jump @Label_173
+
+:Label_172
+GetGlobalP2 63095
+Push_2
+Call @Function_43
+GetGlobalP2 63095
+Push_1
+Call @Function_7
+GetFrame1 6
+PushB 13
+CmpEq
+GetFrame1 6
+PushB 14
+CmpEq
+Or
+GetFrame1 6
+Push_4
+CmpEq
+Or
+JumpFalse @Label_174
+Push_0
+GetFrame1 1
+pSet
+Jump @Label_173
+
+:Label_174
+Push_1
+GetFrame1 1
+pSet
+
+:Label_173
+GetFrame1 6
+Push_1
+JumpNE @Label_175
+PushF 89.88
+GetFrame1 0
+pSet
+PushF -2158.348
+PushF 19.944
+PushF 2597.452
+Return 4 3
+
+:Label_175
+GetFrame1 6
+GetGlobalP2 16537
+GetArrayP1 21
+GetImm1 12
+GetFrame1 0
+pSet
+Push_3
+GetFrame1 6
+GetGlobalP2 16537
+GetArrayP1 21
+ToStack
+Return 4 3
+Jump @Label_176
+
+:Label_171
+GetGlobal2 16875
+JumpFalse @Label_176
+GetGlobalP2 63095
+Push_2
+Call @Function_43
+GetGlobalP2 63095
+Push_1
+Call @Function_7
+Push_1
+GetFrame1 1
+pSet
+PushF 290
+GetFrame1 0
+pSet
+PushF -2833.843
+PushF 50.332
+PushF 2418.003
+Return 4 3
+
+:Label_176
+Call @Function_44
+Return 4 3
+//<
+
+:Function_44//>
+Function 0 2
+PushF_0
+PushF_0
+PushF_0
+Return 0 3
+//<
+
+:Function_43//>
+Function 2 4
+GetFrame1 0
+pGet
+GetFrame1 1
+Or
+GetFrame1 0
+pSet
+Return 2 0
+//<
+
+:Function_42//>
+Function 1 3
+GetFrame1 0
+Push_0
+CmpLt
+GetFrame1 0
+PushB 15
+CmpGt
+Or
+JumpFalse @Label_177
+Push_0
+Return 1 1
+
+:Label_177
+Push_1
+Return 1 1
+//<
+
+:Function_41//>
+Function 2 8
+Push_-1
+SetFrame1 4
+PushF 1e+009
+SetFrame1 5
+Push_0
+SetFrame1 7
+
+:Label_180
+GetFrame1 7
+GetGlobal2 16537
+JumpGE @Label_178
+GetFrame1 7
+GetGlobalP2 16537
+GetArrayP1 21
+GetImm1 40
+Push_3
+CmpEq
+GetFrame1 7
+GetGlobalP2 16537
+GetArrayP1 21
+GetImm1 40
+Push_4
+CmpEq
+Or
+GetFrame1 7
+PushB 15
+CmpEq
+GetFrame1 0
+Not
+And
+Or
+GetFrame1 7
+GetGlobalP2 16537
+GetArrayP1 21
+GetImm1 52
+GetGlobal2 29004
+CmpEq
+GetFrame1 1
+Or
+And
+JumpFalse @Label_179
+GetGlobal2 3365
+GetFrame1 7
+Push_6
+CmpNe
+Or
+JumpFalse @Label_179
+Push_3
+GetGlobalP2 34574
+ToStack
+Push_3
+GetFrame1 7
+GetGlobalP2 16537
+GetArrayP1 21
+ToStack
+Call @Function_45
+SetFrame1 6
+GetFrame1 6
+GetFrame1 5
+fCmpLt
+JumpFalse @Label_179
+GetFrame1 6
+SetFrame1 5
+GetFrame1 7
+SetFrame1 4
+
+:Label_179
+GetFrame1 7
+Add1 1
+SetFrame1 7
+Jump @Label_180
+
+:Label_178
+GetGlobal2 16875
+JumpFalse @Label_181
+Push_3
+GetGlobalP2 34574
+ToStack
+PushF -2833.843
+PushF 50.332
+PushF 2418.003
+Call @Function_45
+SetFrame1 6
+GetFrame1 6
+GetFrame1 5
+fCmpLt
+JumpFalse @Label_181
+Push_-1
+Return 2 1
+
+:Label_181
+GetFrame1 4
+Call @Function_42
+Not
+GetFrame1 1
+Not
+And
+JumpFalse @Label_182
+GetFrame1 0
+Push_1
+Call @Function_41
+SetFrame1 4
+
+:Label_182
+GetFrame1 4
+Return 2 1
+//<
+
+:Function_45//>
+Function 6 8
+PushF_0
+GetFrameP1 0
+SetImm1 4
+PushF_0
+GetFrameP1 3
+SetImm1 4
+Push_3
+GetFrameP1 0
+ToStack
+Push_3
+GetFrameP1 3
+ToStack
+CallNative vdist 6 1
+Return 6 1
+//<
+
+:Function_38//>
+Function 2 15
+GetFrame1 0
+pGet
+GetFrame1 0
+pSet
+PushF 99999.99
+SetFrame1 4
+PushF_0
+PushF_0
+PushF_0
+Push_3
+GetFrameP1 5
+FromStack
+GetGlobal2 34573
+GetFrameP1 8
+Call @Function_46
+Push_0
+GetGlobalP2 30640
+GetArray1 1
+Call @Function_47
+Not
+JumpFalse @Label_183
+PushF -2158.996
+PushF 19.93287
+PushF 2597.94
+Push_3
+GetFrameP1 11
+FromStack
+Push_3
+GetFrameP1 8
+ToStack
+Push_3
+GetFrameP1 11
+ToStack
+CallNative vdist 6 1
+SetFrame1 14
+GetFrame1 14
+GetFrame1 4
+fCmpLt
+JumpFalse @Label_183
+PushF 90
+GetFrame1 0
+pSet
+GetFrame1 14
+SetFrame1 4
+Push_3
+GetFrameP1 11
+ToStack
+Push_3
+GetFrameP1 5
+FromStack
+
+:Label_183
+Push_2
+GetGlobalP2 30640
+GetArray1 1
+Call @Function_47
+Not
+JumpFalse @Label_184
+PushF -2424.093
+PushF 26.36347
+PushF 2122.362
+Push_3
+GetFrameP1 11
+FromStack
+Push_3
+GetFrameP1 8
+ToStack
+Push_3
+GetFrameP1 11
+ToStack
+CallNative vdist 6 1
+SetFrame1 14
+GetFrame1 14
+GetFrame1 4
+fCmpLt
+JumpFalse @Label_184
+PushF -130.87
+GetFrame1 0
+pSet
+GetFrame1 14
+SetFrame1 4
+Push_3
+GetFrameP1 11
+ToStack
+Push_3
+GetFrameP1 5
+FromStack
+
+:Label_184
+Push_1
+GetGlobalP2 30640
+GetArray1 1
+Call @Function_47
+Not
+JumpFalse @Label_185
+PushF -3242.193
+PushF 19.4623
+PushF 2725.147
+Push_3
+GetFrameP1 11
+FromStack
+Push_3
+GetFrameP1 8
+ToStack
+Push_3
+GetFrameP1 11
+ToStack
+CallNative vdist 6 1
+SetFrame1 14
+GetFrame1 14
+GetFrame1 4
+fCmpLt
+JumpFalse @Label_185
+PushF 90
+GetFrame1 0
+pSet
+GetFrame1 14
+SetFrame1 4
+Push_3
+GetFrameP1 11
+ToStack
+Push_3
+GetFrameP1 5
+FromStack
+
+:Label_185
+Push_1
+GetGlobalP2 30658
+GetArray1 1
+Call @Function_47
+Not
+JumpFalse @Label_186
+PushF -3658.131
+PushF 42.81397
+PushF 2092.973
+Push_3
+GetFrameP1 11
+FromStack
+Push_3
+GetFrameP1 8
+ToStack
+Push_3
+GetFrameP1 11
+ToStack
+CallNative vdist 6 1
+SetFrame1 14
+GetFrame1 14
+GetFrame1 4
+fCmpLt
+JumpFalse @Label_186
+PushF -135.09
+GetFrame1 0
+pSet
+GetFrame1 14
+SetFrame1 4
+Push_3
+GetFrameP1 11
+ToStack
+Push_3
+GetFrameP1 5
+FromStack
+
+:Label_186
+Push_3
+GetGlobalP2 30658
+GetArray1 1
+Call @Function_47
+Not
+JumpFalse @Label_187
+PushF -4454.145
+PushF 9.204829
+PushF 3220.642
+Push_3
+GetFrameP1 11
+FromStack
+Push_3
+GetFrameP1 8
+ToStack
+Push_3
+GetFrameP1 11
+ToStack
+CallNative vdist 6 1
+SetFrame1 14
+GetFrame1 14
+GetFrame1 4
+fCmpLt
+JumpFalse @Label_187
+PushF 206.26
+GetFrame1 0
+pSet
+GetFrame1 14
+SetFrame1 4
+Push_3
+GetFrameP1 11
+ToStack
+Push_3
+GetFrameP1 5
+FromStack
+
+:Label_187
+Push_2
+GetGlobalP2 30658
+GetArray1 1
+Call @Function_47
+Not
+JumpFalse @Label_188
+Push_2
+GetGlobalP2 30658
+GetArray1 1
+GetGlobalP2 29155
+GetArrayP1 10
+GetImm1 8
+GetFrameP1 11
+CallNative get_volume_center 2 0
+Push_3
+GetFrameP1 8
+ToStack
+Push_3
+GetFrameP1 11
+ToStack
+CallNative vdist 6 1
+SetFrame1 14
+GetFrame1 14
+GetFrame1 4
+fCmpLt
+JumpFalse @Label_188
+PushF_0
+GetFrame1 0
+pSet
+GetFrame1 14
+SetFrame1 4
+Push_3
+GetFrameP1 11
+ToStack
+Push_3
+GetFrameP1 5
+FromStack
+
+:Label_188
+Push_4
+GetGlobalP2 30658
+GetArray1 1
+Call @Function_47
+Not
+JumpFalse @Label_189
+PushF -3669.226
+PushF 8.477426
+PushF 3491.648
+Push_3
+GetFrameP1 11
+FromStack
+Push_3
+GetFrameP1 8
+ToStack
+Push_3
+GetFrameP1 11
+ToStack
+CallNative vdist 6 1
+SetFrame1 14
+GetFrame1 14
+GetFrame1 4
+fCmpLt
+JumpFalse @Label_189
+PushF 106.17
+GetFrame1 0
+pSet
+GetFrame1 14
+SetFrame1 4
+Push_3
+GetFrameP1 11
+ToStack
+Push_3
+GetFrameP1 5
+FromStack
+
+:Label_189
+Push_0
+GetGlobalP2 30668
+GetArray1 1
+Call @Function_47
+Not
+JumpFalse @Label_190
+PushF -821.1879
+PushF 93.8091
+PushF 2435.436
+Push_3
+GetFrameP1 11
+FromStack
+Push_3
+GetFrameP1 8
+ToStack
+Push_3
+GetFrameP1 11
+ToStack
+CallNative vdist 6 1
+SetFrame1 14
+GetFrame1 14
+GetFrame1 4
+fCmpLt
+JumpFalse @Label_190
+PushF 343.64
+GetFrame1 0
+pSet
+GetFrame1 14
+SetFrame1 4
+Push_3
+GetFrameP1 11
+ToStack
+Push_3
+GetFrameP1 5
+FromStack
+
+:Label_190
+Push_1
+GetGlobalP2 30668
+GetArray1 1
+Call @Function_47
+Not
+JumpFalse @Label_191
+PushF 124.6513
+PushF 76.73672
+PushF 2235.506
+Push_3
+GetFrameP1 11
+FromStack
+Push_3
+GetFrameP1 8
+ToStack
+Push_3
+GetFrameP1 11
+ToStack
+CallNative vdist 6 1
+SetFrame1 14
+GetFrame1 14
+GetFrame1 4
+fCmpLt
+JumpFalse @Label_191
+PushF 165.38
+GetFrame1 0
+pSet
+GetFrame1 14
+SetFrame1 4
+Push_3
+GetFrameP1 11
+ToStack
+Push_3
+GetFrameP1 5
+FromStack
+
+:Label_191
+Push_2
+GetGlobalP2 30668
+GetArray1 1
+Call @Function_47
+Not
+JumpFalse @Label_192
+Push_2
+GetGlobalP2 30668
+GetArray1 1
+GetGlobalP2 29155
+GetArrayP1 10
+GetImm1 8
+GetFrameP1 11
+CallNative get_volume_center 2 0
+Push_3
+GetFrameP1 8
+ToStack
+Push_3
+GetFrameP1 11
+ToStack
+CallNative vdist 6 1
+SetFrame1 14
+GetFrame1 14
+GetFrame1 4
+fCmpLt
+JumpFalse @Label_192
+PushF_0
+GetFrame1 0
+pSet
+GetFrame1 14
+SetFrame1 4
+Push_3
+GetFrameP1 11
+ToStack
+Push_3
+GetFrameP1 5
+FromStack
+
+:Label_192
+Push_0
+GetGlobalP2 30679
+GetArray1 1
+Call @Function_47
+Not
+JumpFalse @Label_193
+PushF -3195.612
+PushF 41.29269
+PushF 3752.929
+Push_3
+GetFrameP1 11
+FromStack
+Push_3
+GetFrameP1 8
+ToStack
+Push_3
+GetFrameP1 11
+ToStack
+CallNative vdist 6 1
+SetFrame1 14
+GetFrame1 14
+GetFrame1 4
+fCmpLt
+JumpFalse @Label_193
+PushF -97.3
+GetFrame1 0
+pSet
+GetFrame1 14
+SetFrame1 4
+Push_3
+GetFrameP1 11
+ToStack
+Push_3
+GetFrameP1 5
+FromStack
+
+:Label_193
+Push_0
+GetGlobalP2 30685
+GetArray1 1
+Call @Function_47
+Not
+JumpFalse @Label_194
+PushF -4287.014
+PushF 18.13315
+PushF 4453.605
+Push_3
+GetFrameP1 11
+FromStack
+Push_3
+GetFrameP1 8
+ToStack
+Push_3
+GetFrameP1 11
+ToStack
+CallNative vdist 6 1
+SetFrame1 14
+GetFrame1 14
+GetFrame1 4
+fCmpLt
+JumpFalse @Label_194
+PushF -6.71
+GetFrame1 0
+pSet
+GetFrame1 14
+SetFrame1 4
+Push_3
+GetFrameP1 11
+ToStack
+Push_3
+GetFrameP1 5
+FromStack
+
+:Label_194
+Push_1
+GetGlobalP2 30685
+GetArray1 1
+Call @Function_47
+Not
+JumpFalse @Label_195
+PushF -4708.083
+PushF 3.172676
+PushF 3968.105
+Push_3
+GetFrameP1 11
+FromStack
+Push_3
+GetFrameP1 8
+ToStack
+Push_3
+GetFrameP1 11
+ToStack
+CallNative vdist 6 1
+SetFrame1 14
+GetFrame1 14
+GetFrame1 4
+fCmpLt
+JumpFalse @Label_195
+PushF -90
+GetFrame1 0
+pSet
+GetFrame1 14
+SetFrame1 4
+Push_3
+GetFrameP1 11
+ToStack
+Push_3
+GetFrameP1 5
+FromStack
+
+:Label_195
+Push_2
+GetGlobalP2 30685
+GetArray1 1
+Call @Function_47
+Not
+JumpFalse @Label_196
+PushF -3245.478
+PushF 39.28797
+PushF 4563.465
+Push_3
+GetFrameP1 11
+FromStack
+Push_3
+GetFrameP1 8
+ToStack
+Push_3
+GetFrameP1 11
+ToStack
+CallNative vdist 6 1
+SetFrame1 14
+GetFrame1 14
+GetFrame1 4
+fCmpLt
+JumpFalse @Label_196
+PushF -90
+GetFrame1 0
+pSet
+GetFrame1 14
+SetFrame1 4
+Push_3
+GetFrameP1 11
+ToStack
+Push_3
+GetFrameP1 5
+FromStack
+
+:Label_196
+Push_0
+GetGlobalP2 30693
+GetArray1 1
+Call @Function_47
+Not
+JumpFalse @Label_197
+PushF -2687.509
+PushF 31.4827
+PushF 4295.249
+Push_3
+GetFrameP1 11
+FromStack
+Push_3
+GetFrameP1 8
+ToStack
+Push_3
+GetFrameP1 11
+ToStack
+CallNative vdist 6 1
+SetFrame1 14
+GetFrame1 14
+GetFrame1 4
+fCmpLt
+JumpFalse @Label_197
+PushF -90
+GetFrame1 0
+pSet
+GetFrame1 14
+SetFrame1 4
+Push_3
+GetFrameP1 11
+ToStack
+Push_3
+GetFrameP1 5
+FromStack
+
+:Label_197
+Push_1
+GetGlobalP2 30693
+GetArray1 1
+Call @Function_47
+Not
+JumpFalse @Label_198
+PushF -1719.171
+PushF 11.29226
+PushF 4214.298
+Push_3
+GetFrameP1 11
+FromStack
+Push_3
+GetFrameP1 8
+ToStack
+Push_3
+GetFrameP1 11
+ToStack
+CallNative vdist 6 1
+SetFrame1 14
+GetFrame1 14
+GetFrame1 4
+fCmpLt
+JumpFalse @Label_198
+PushF -180
+GetFrame1 0
+pSet
+GetFrame1 14
+SetFrame1 4
+Push_3
+GetFrameP1 11
+ToStack
+Push_3
+GetFrameP1 5
+FromStack
+
+:Label_198
+Push_2
+GetGlobalP2 30693
+GetArray1 1
+Call @Function_47
+Not
+JumpFalse @Label_199
+PushF -1462.607
+PushF 16.54457
+PushF 3952.801
+Push_3
+GetFrameP1 11
+FromStack
+Push_3
+GetFrameP1 8
+ToStack
+Push_3
+GetFrameP1 11
+ToStack
+CallNative vdist 6 1
+SetFrame1 14
+GetFrame1 14
+GetFrame1 4
+fCmpLt
+JumpFalse @Label_199
+PushF 22.55
+GetFrame1 0
+pSet
+GetFrame1 14
+SetFrame1 4
+Push_3
+GetFrameP1 11
+ToStack
+Push_3
+GetFrameP1 5
+FromStack
+
+:Label_199
+Push_2
+GetGlobalP2 30707
+GetArray1 1
+Call @Function_47
+Not
+JumpFalse @Label_200
+PushF -819.4399
+PushF 13.11084
+PushF 3712.137
+Push_3
+GetFrameP1 11
+FromStack
+Push_3
+GetFrameP1 8
+ToStack
+Push_3
+GetFrameP1 11
+ToStack
+CallNative vdist 6 1
+SetFrame1 14
+GetFrame1 14
+GetFrame1 4
+fCmpLt
+JumpFalse @Label_200
+PushF -135
+GetFrame1 0
+pSet
+GetFrame1 14
+SetFrame1 4
+Push_3
+GetFrameP1 11
+ToStack
+Push_3
+GetFrameP1 5
+FromStack
+
+:Label_200
+Push_3
+GetGlobalP2 30707
+GetArray1 1
+Call @Function_47
+Not
+JumpFalse @Label_201
+PushF 343.2535
+PushF 79.47575
+PushF 3448.062
+Push_3
+GetFrameP1 11
+FromStack
+Push_3
+GetFrameP1 8
+ToStack
+Push_3
+GetFrameP1 11
+ToStack
+CallNative vdist 6 1
+SetFrame1 14
+GetFrame1 14
+GetFrame1 4
+fCmpLt
+JumpFalse @Label_201
+PushF -104.45
+GetFrame1 0
+pSet
+GetFrame1 14
+SetFrame1 4
+Push_3
+GetFrameP1 11
+ToStack
+Push_3
+GetFrameP1 5
+FromStack
+
+:Label_201
+Push_0
+GetGlobalP2 30707
+GetArray1 1
+Call @Function_47
+Not
+JumpFalse @Label_202
+PushF -465.2258
+PushF 20.61027
+PushF 3913.855
+Push_3
+GetFrameP1 11
+FromStack
+Push_3
+GetFrameP1 8
+ToStack
+Push_3
+GetFrameP1 11
+ToStack
+CallNative vdist 6 1
+SetFrame1 14
+GetFrame1 14
+GetFrame1 4
+fCmpLt
+JumpFalse @Label_202
+PushF -90
+GetFrame1 0
+pSet
+GetFrame1 14
+SetFrame1 4
+Push_3
+GetFrameP1 11
+ToStack
+Push_3
+GetFrameP1 5
+FromStack
+
+:Label_202
+Push_0
+GetGlobalP2 30717
+GetArray1 1
+Call @Function_47
+Not
+JumpFalse @Label_203
+PushF 757.22
+PushF 86.90343
+PushF 1271.724
+Push_3
+GetFrameP1 11
+FromStack
+Push_3
+GetFrameP1 8
+ToStack
+Push_3
+GetFrameP1 11
+ToStack
+CallNative vdist 6 1
+SetFrame1 14
+GetFrame1 14
+GetFrame1 4
+fCmpLt
+JumpFalse @Label_203
+PushF 270
+GetFrame1 0
+pSet
+GetFrame1 14
+SetFrame1 4
+Push_3
+GetFrameP1 11
+ToStack
+Push_3
+GetFrameP1 5
+FromStack
+
+:Label_203
+Push_2
+GetGlobalP2 30723
+GetArray1 1
+Call @Function_47
+Not
+JumpFalse @Label_204
+PushF -298.7082
+PushF 84.35147
+PushF 2134.708
+Push_3
+GetFrameP1 11
+FromStack
+Push_3
+GetFrameP1 8
+ToStack
+Push_3
+GetFrameP1 11
+ToStack
+CallNative vdist 6 1
+SetFrame1 14
+GetFrame1 14
+GetFrame1 4
+fCmpLt
+JumpFalse @Label_204
+PushF 59.3
+GetFrame1 0
+pSet
+GetFrame1 14
+SetFrame1 4
+Push_3
+GetFrameP1 11
+ToStack
+Push_3
+GetFrameP1 5
+FromStack
+
+:Label_204
+Push_1
+GetGlobalP2 30723
+GetArray1 1
+Call @Function_47
+Not
+JumpFalse @Label_205
+PushF -448.9981
+PushF 153.3878
+PushF 1631.183
+Push_3
+GetFrameP1 11
+FromStack
+Push_3
+GetFrameP1 8
+ToStack
+Push_3
+GetFrameP1 11
+ToStack
+CallNative vdist 6 1
+SetFrame1 14
+GetFrame1 14
+GetFrame1 4
+fCmpLt
+JumpFalse @Label_205
+PushF 20.74
+GetFrame1 0
+pSet
+GetFrame1 14
+SetFrame1 4
+Push_3
+GetFrameP1 11
+ToStack
+Push_3
+GetFrameP1 5
+FromStack
+
+:Label_205
+Push_0
+GetGlobalP2 30723
+GetArray1 1
+Call @Function_47
+Not
+JumpFalse @Label_206
+PushF -884.3423
+PushF 202.5276
+PushF 1006.602
+Push_3
+GetFrameP1 11
+FromStack
+Push_3
+GetFrameP1 8
+ToStack
+Push_3
+GetFrameP1 11
+ToStack
+CallNative vdist 6 1
+SetFrame1 14
+GetFrame1 14
+GetFrame1 4
+fCmpLt
+JumpFalse @Label_206
+PushF 94.65
+GetFrame1 0
+pSet
+GetFrame1 14
+SetFrame1 4
+Push_3
+GetFrameP1 11
+ToStack
+Push_3
+GetFrameP1 5
+FromStack
+
+:Label_206
+Push_1
+GetGlobalP2 30679
+GetArray1 1
+Call @Function_47
+Not
+JumpFalse @Label_207
+PushF -2679.319
+PushF 71.65485
+PushF 3424.564
+Push_3
+GetFrameP1 11
+FromStack
+Push_3
+GetFrameP1 8
+ToStack
+Push_3
+GetFrameP1 11
+ToStack
+CallNative vdist 6 1
+SetFrame1 14
+GetFrame1 14
+GetFrame1 4
+fCmpLt
+JumpFalse @Label_207
+PushF -135
+GetFrame1 0
+pSet
+GetFrame1 14
+SetFrame1 4
+Push_3
+GetFrameP1 11
+ToStack
+Push_3
+GetFrameP1 5
+FromStack
+
+:Label_207
+Push_1
+GetGlobalP2 30707
+GetArray1 1
+Call @Function_47
+Not
+JumpFalse @Label_208
+PushF -720.3301
+PushF 67.5125
+PushF 3293.269
+Push_3
+GetFrameP1 11
+FromStack
+Push_3
+GetFrameP1 8
+ToStack
+Push_3
+GetFrameP1 11
+ToStack
+CallNative vdist 6 1
+SetFrame1 14
+GetFrame1 14
+GetFrame1 4
+fCmpLt
+JumpFalse @Label_208
+PushF -39.9
+GetFrame1 0
+pSet
+GetFrame1 14
+SetFrame1 4
+Push_3
+GetFrameP1 11
+ToStack
+Push_3
+GetFrameP1 5
+FromStack
+
+:Label_208
+PushF -63.861
+PushF 116.861
+PushF 1414.684
+Push_3
+GetFrameP1 11
+FromStack
+Push_3
+GetFrameP1 8
+ToStack
+Push_3
+GetFrameP1 11
+ToStack
+CallNative vdist 6 1
+SetFrame1 14
+GetFrame1 14
+GetFrame1 4
+fCmpLt
+JumpFalse @Label_209
+GetFrame1 14
+SetFrame1 4
+Push_3
+GetFrameP1 11
+ToStack
+Push_3
+GetFrameP1 5
+FromStack
+
+:Label_209
+GetGlobalP2 63095
+Push_2
+Call @Function_43
+GetGlobalP2 63095
+Push_1
+Call @Function_7
+Push_0
+GetFrame1 1
+pSet
+Push_3
+GetFrameP1 5
+ToStack
+Call @Function_40
+JumpFalse @Label_210
+PushF -63.861
+PushF 116.861
+PushF 1414.684
+Push_3
+GetFrameP1 5
+FromStack
+
+:Label_210
+PushString "Here's what we're returning as a save spot: "
+CallNative printstring 1 0
+Push_3
+GetFrameP1 5
+ToStack
+CallNative printvector 3 0
+CallNative printnl 0 0
+Push_3
+GetFrameP1 5
+ToStack
+Return 2 3
+//<
+
+:Function_47//>
+Function 1 4
+GetFrame1 0
+GetGlobalP2 29008
+GetArray1 1
+SetFrame1 3
+GetFrame1 3
+Push 16777216
+Call @Function_48
+GetFrame1 3
+Push 33554432
+Call @Function_48
+Or
+GetFrame1 3
+Push 67108864
+Call @Function_48
+Or
+GetFrame1 3
+Push 268435456
+Call @Function_48
+Not
+Or
+Return 1 1
+//<
+
+:Function_48//>
+Function 2 4
+GetFrame1 0
+GetFrame1 1
+And
+Push_0
+CmpNe
+Return 2 1
+//<
+
+:Function_46//>
+Function 2 4
+GetFrame1 0
+GetFrame1 1
+CallNative get_position 2 0
+Return 2 0
+//<
+
+:Function_37//>
+Function 0 2
+GetGlobalP3 83864
+GetImm2 1252
+PushS 1024
+Call @Function_48
+JumpFalse @Label_211
+CallNative unk_0x6CC9CCE7 0 1
+Return 0 1
+
+:Label_211
+Push_0
+Return 0 1
+//<
+
+:Function_1//>
+Function 4 6
+GetFrame1 0
+SetFrame1 0
+GetGlobal2 3380
+GetFrame1 1
+Push_1
+CmpEq
+Not
+And
+JumpFalse @Label_212
+Push_1
+Return 4 1
+
+:Label_212
+GetGlobal2 3382
+GetFrame1 1
+Push_2
+CmpEq
+Not
+And
+JumpFalse @Label_213
+Push_1
+Return 4 1
+
+:Label_213
+GetGlobal2 3392
+GetFrame1 1
+Push_6
+CmpEq
+Not
+And
+JumpFalse @Label_214
+Push_1
+Return 4 1
+
+:Label_214
+GetGlobal2 3384
+GetFrame1 1
+Push_4
+CmpEq
+Not
+And
+JumpFalse @Label_215
+Push_1
+Return 4 1
+
+:Label_215
+GetGlobal2 3393
+GetFrame1 2
+And
+JumpFalse @Label_216
+Push_1
+Return 4 1
+
+:Label_216
+GetGlobal2 3395
+GetGlobal2 3396
+Or
+JumpFalse @Label_217
+Push_1
+Return 4 1
+
+:Label_217
+GetGlobal2 3385
+GetFrame1 1
+Push_3
+CmpEq
+Not
+And
+JumpFalse @Label_218
+Push_1
+Return 4 1
+
+:Label_218
+GetGlobal2 59353
+GetFrame1 2
+And
+JumpFalse @Label_219
+Push_1
+Return 4 1
+
+:Label_219
+GetGlobal2 34573
+PushString "bPlayerSleeping"
+CallNative decor_check_exist 2 1
+JumpFalse @Label_220
+Push_1
+Return 4 1
+
+:Label_220
+Push_0
+Return 4 1
+//<
+
+:Function_0//>
+Function 1 6
+CallNative get_target_actor 0 1
+SetFrame1 3
+Push_1
+SetFrame1 4
+GetStatic1 1
+Switch [0 @Label_221]:[1 @Label_222]:[2 @Label_223]:[3 @Label_224]:[4 @Label_225]
+Jump @Label_226
+
+:Label_221
+Push_0
+SetFrame1 4
+Jump @Label_226
+
+:Label_222
+GetFrame1 0
+GetFrame1 3
+Call @Function_49
+JumpFalse @Label_227
+GetFrame1 0
+GetFrame1 3
+GetStaticP1 2
+Call @Function_50
+Push_2
+SetStatic1 1
+
+:Label_227
+Push_0
+SetFrame1 4
+Jump @Label_226
+
+:Label_223
+GetFrame1 0
+Call @Function_51
+SetFrame1 5
+GetFrame1 5
+CallNative is_gringo_component_valid 1 1
+GetStatic1 3
+And
+JumpFalse @Label_228
+GetFrame1 0
+GetFrame1 3
+GetStaticP1 2
+Call @Function_52
+Push_3
+SetStatic1 1
+Jump @Label_229
+
+:Label_228
+Push_3
+SetStatic1 1
+
+:Label_229
+Push_0
+SetFrame1 4
+Jump @Label_226
+
+:Label_224
+GetFrame1 0
+GetFrame1 3
+GetStaticP1 2
+Call @Function_53
+Not
+JumpFalse @Label_230
+Push_4
+SetStatic1 1
+
+:Label_230
+Push_0
+SetFrame1 4
+Jump @Label_226
+
+:Label_225
+GetFrame1 0
+GetFrame1 3
+GetStaticP1 2
+Call @Function_54
+Push_1
+SetStatic1 3
+Push_0
+SetStatic1 1
+Jump @Label_226
+
+:Label_226
+GetFrame1 4
+Return 1 1
+//<
+
+:Function_54//>
+Function 3 6
+GetFrame1 0
+Call @Function_51
+SetFrame1 5
+Push_0
+GetFrame1 2
+pSet
+GetFrame1 5
+CallNative is_gringo_component_valid 1 1
+JumpFalse @Label_231
+GetFrame1 5
+GetFrame1 1
+CallNative get_object_from_actor 1 1
+CallNative unk_0xBEF32D17 2 0
+
+:Label_231
+Push_0
+Push_1
+Push_0
+Push_0
+CallNative set_player_control 4 0
+Push_1
+CallNative enable_use_contexts 1 0
+CallNative unk_0x5842B9D1 0 1
+GetStatic1 12
+fSub
+SetStatic1 12
+PushS 471
+GetStatic1 12
+CallNative ceil 1 1
+Push_0
+Push_0
+Call @Function_55
+Drop
+PushString "BinocularsUI"
+CallNative ui_isactive 1 1
+PushString "Movies"
+CallNative ui_isactive 1 1
+Or
+CallNative unk_0x3B1B6407 0 1
+Or
+GetStatic1 5
+CallNative is_object_valid 1 1
+Or
+GetStatic1 4
+CallNative is_object_valid 1 1
+Or
+JumpFalse @Label_232
+PushString "BinocularsUI"
+CallNative ui_pop 1 0
+
+:Label_232
+Push_0
+CallNative unk_0xE6C1DBD9 1 0
+GetStatic1 4
+CallNative is_object_valid 1 1
+JumpFalse @Label_233
+GetStatic1 4
+CallNative destroy_camera 1 0
+
+:Label_233
+GetStatic1 5
+CallNative is_object_valid 1 1
+JumpFalse @Label_234
+GetStatic1 5
+CallNative destroy_object 1 0
+
+:Label_234
+GetStatic1 6
+Push_2
+CallNative unk_0x9603D3B2 2 0
+GetStatic1 7
+Push_2
+CallNative unk_0x6E303287 2 0
+GetStatic1 8
+Push_0
+CallNative unk_0x9603D3B2 2 0
+GetStatic1 9
+Push_0
+CallNative unk_0x6E303287 2 0
+GetStatic1 10
+Push_1
+CallNative unk_0x9603D3B2 2 0
+GetStatic1 11
+Push_1
+CallNative unk_0x6E303287 2 0
+Push_0
+SetGlobal2 63096
+CallNative unk_0xF5B7B208 0 1
+Not
+JumpFalse @Label_235
+Push_1
+CallNative unk_0xA094152A 1 0
+
+:Label_235
+Return 3 0
+//<
+
+:Function_55//>
+Function 4 8
+GetFrame1 0
+SetFrame1 6
+GetFrame1 6
+PushS 696
+JumpLE @Label_236
+PushString "STAT_INCREASE_INT_NOW: Attempting to use a Stat out of bounds."
+CallNative log_error 1 0
+Push_0
+Return 4 1
+
+:Label_236
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+GetImm1 48
+Push_5
+JumpNE @Label_237
+PushString "STAT_INCREASE_INT_NOW: You cannot increase this STAT_TYPE_LIFETIME directly: "
+CallNative printstring 1 0
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+CallNative printstring 1 0
+CallNative printnl 0 0
+PushString "STAT_INCREASE_INT_NOW: You cannot increase a STAT_TYPE_LIFETIME directly, use the COLLECTION version instead!"
+CallNative log_error 1 0
+Push_0
+Return 4 1
+
+:Label_237
+GetFrame1 1
+Push_0
+JumpGE @Label_238
+PushString "STAT_INCREASE_INT_NOW: iIncreaseValue < 0 - I am turning this into a positive number for you!"
+CallNative log_error 1 0
+GetFrame1 1
+CallNative abs 1 1
+SetFrame1 1
+
+:Label_238
+GetFrame1 0
+GetGlobalP2 34581
+GetArray1 1
+GetFrame1 1
+CallNative to_float 1 1
+fAdd
+GetFrame1 0
+GetGlobalP2 34581
+SetArray1 1
+GetFrame1 0
+GetFrame1 1
+CallNative to_float 1 1
+Push_1
+Call @Function_22
+Drop
+GetFrame1 0
+Call @Function_23
+GetFrame1 2
+GetFrame1 1
+Push_0
+CmpNe
+And
+JumpFalse @Label_239
+GetFrame1 0
+Push_1
+GetFrame1 1
+CallNative to_float 1 1
+Push_1
+Push_1
+PushF_3
+Push_0
+GetFrame1 3
+Call @Function_24
+
+:Label_239
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+GetImm1 48
+Push_2
+JumpNE @Label_240
+Push_0
+SetFrame1 7
+
+:Label_241
+GetFrame1 7
+GetFrame1 1
+JumpGE @Label_240
+GetFrame1 0
+GetGlobalP2 35278
+GetArrayP1 20
+GetGlobal2 34573
+Push_0
+CallNative add_collectable 3 1
+Drop
+GetFrame1 7
+Add1 1
+SetFrame1 7
+Jump @Label_241
+
+:Label_240
+Push_1
+Return 4 1
+//<
+
+:Function_53//>
+Function 3 54
+GetFrame1 0
+Call @Function_51
+SetFrame1 5
+GetFrame1 2
+pGet
+GetGlobal2 3378
+CallNative hud_is_fading 0 1
+Or
+CallNative hud_is_faded 0 1
+Or
+Not
+And
+JumpFalse @Label_242
+GetFrame1 5
+CallNative is_gringo_component_valid 1 1
+GetStatic1 3
+And
+JumpFalse @Label_243
+GetFrame1 1
+PushString "BinocularsStart"
+CallNative decor_check_exist 2 1
+JumpFalse @Label_244
+Call @Function_56
+JumpFalse @Label_244
+GetFrame1 1
+PushString "BinocularsStart"
+CallNative decor_remove 2 1
+Drop
+
+:Label_244
+GetGlobal2 34573
+PushString "quitbinos"
+CallNative decor_check_exist 2 1
+JumpFalse @Label_245
+PushString "BinocularsUI"
+CallNative ui_pop 1 0
+Push_0
+CallNative unk_0xE6C1DBD9 1 0
+GetStatic1 4
+CallNative destroy_camera 1 0
+GetStatic1 5
+CallNative destroy_object 1 0
+GetFrame1 1
+PushString "item_binoculars/lower"
+CallNative set_action_node_for_actor 2 1
+Drop
+GetGlobal2 34573
+PushString "quitbinos"
+CallNative decor_remove 2 1
+Drop
+Push_0
+Return 3 1
+
+:Label_245
+GetFrame1 1
+GetFrame1 5
+CallNative unk_0x35279C3F 2 1
+Not
+GetGlobal2 34573
+PushString "anthro04"
+CallNative decor_check_exist 2 1
+Not
+And
+JumpFalse @Label_246
+Push_0
+Return 3 1
+
+:Label_246
+Call @Function_57
+Push_5
+Push_1
+Push_0
+CallNative is_button_pressed 4 1
+Call @Function_58
+CallNative is_ps3 0 1
+And
+Not
+And
+Call @Function_57
+Push_6
+Push_1
+Push_0
+CallNative is_button_pressed 4 1
+Call @Function_58
+And
+CallNative is_ps3 0 1
+And
+Or
+JumpFalse @Label_247
+GetGlobal2 34573
+PushString "anthro04"
+CallNative decor_check_exist 2 1
+Not
+JumpFalse @Label_247
+PushString "HUD_MENU_SELECT_MASTER"
+CallNative play_sound_frontend 1 0
+PushString "BinocularsUI"
+CallNative ui_pop 1 0
+Push_0
+CallNative unk_0xE6C1DBD9 1 0
+GetStatic1 4
+CallNative destroy_camera 1 0
+GetStatic1 5
+CallNative destroy_object 1 0
+GetFrame1 1
+PushString "item_binoculars/lower"
+CallNative set_action_node_for_actor 2 1
+Drop
+
+:Label_247
+GetStatic1 4
+CallNative is_object_valid 1 1
+CallNative unk_0x00EF33EF 0 1
+And
+JumpFalse @Label_248
+CallNative unk_0x5842B9D1 0 1
+SetFrame1 6
+GetStatic1 4
+CallNative get_camera_fov 1 1
+SetFrame1 7
+GetFrameP1 8
+GetFrameP1 9
+GetStatic1 5
+PushString "roamNew"
+Push_1
+CallNative update_aimramp 5 0
+GetStatic1 4
+GetFrameP1 10
+CallNative get_object_orientation 2 1
+Drop
+GetFrame1 7
+CallNative tan_degree 1 1
+PushF 57.295
+fMult
+SetFrame1 13
+GetFrame1 10
+GetFrame1 8
+GetFrame1 13
+fMult
+fAdd
+SetFrame1 10
+GetFrameP1 10
+GetImm1 4
+GetFrame1 9
+GetFrame1 13
+fMult
+fAdd
+GetFrameP1 10
+SetImm1 4
+GetFrameP1 10
+PushF 60
+PushF -20
+Call @Function_59
+GetStatic1 4
+Push_3
+GetFrameP1 10
+ToStack
+CallNative set_object_orientation 4 1
+Drop
+GetFrame1 1
+CallNative get_object_from_actor 1 1
+SetFrame1 14
+GetFrame1 14
+PushString "head"
+GetFrameP1 15
+CallNative get_object_named_bone_position 3 1
+Drop
+GetFrame1 14
+GetFrameP1 18
+CallNative get_object_position 2 1
+Drop
+PushF_0
+PushF_0
+PushF 0.1
+Push_3
+GetFrameP1 24
+FromStack
+GetFrame1 1
+GetFrameP1 24
+GetFrameP1 27
+CallNative unk_0xB89CC342 3 1
+Drop
+Push_3
+GetFrameP1 27
+ToStack
+Push_3
+GetFrameP1 15
+ToStack
+Push_3
+GetFrameP1 18
+ToStack
+vSub
+vAdd
+Push_3
+GetFrameP1 15
+FromStack
+GetStatic1 4
+Push_3
+GetFrameP1 15
+ToStack
+CallNative set_camera_position 4 0
+
+:Label_248
+Jump @Label_249
+
+:Label_243
+GetStatic1 3
+Not
+JumpFalse @Label_250
+GetStatic1 4
+CallNative is_object_valid 1 1
+Not
+JumpFalse @Label_251
+Call @Function_56
+Drop
+Jump @Label_252
+
+:Label_251
+GetStatic1 4
+CallNative get_camera_fov 1 1
+SetFrame1 30
+CallNative unk_0x5842B9D1 0 1
+SetFrame1 31
+Call @Function_57
+Push_5
+Push_1
+Push_0
+CallNative is_button_pressed 4 1
+JumpFalse @Label_253
+GetGlobal2 34573
+PushString "anthro04"
+CallNative decor_check_exist 2 1
+Not
+JumpFalse @Label_253
+PushString "HUD_MENU_SELECT_MASTER"
+CallNative play_sound_frontend 1 0
+PushString "BinocularsUI"
+CallNative ui_pop 1 0
+Push_0
+CallNative unk_0xE6C1DBD9 1 0
+GetStatic1 4
+CallNative destroy_camera 1 0
+GetStatic1 5
+CallNative destroy_object 1 0
+Push_0
+Return 3 1
+
+:Label_253
+GetGlobal2 34573
+PushString "quitbinos"
+CallNative decor_check_exist 2 1
+JumpFalse @Label_254
+PushString "BinocularsUI"
+CallNative ui_pop 1 0
+Push_0
+CallNative unk_0xE6C1DBD9 1 0
+GetStatic1 4
+CallNative destroy_camera 1 0
+GetStatic1 5
+CallNative destroy_object 1 0
+GetGlobal2 34573
+PushString "quitbinos"
+CallNative decor_remove 2 1
+Drop
+Push_0
+Return 3 1
+
+:Label_254
+GetFrameP1 32
+GetFrameP1 33
+GetStatic1 5
+PushString "roamNew"
+Push_1
+CallNative update_aimramp 5 0
+GetStatic1 4
+GetFrameP1 34
+CallNative get_object_orientation 2 1
+Drop
+GetFrame1 30
+CallNative tan_degree 1 1
+PushF 57.295
+fMult
+SetFrame1 37
+GetFrame1 34
+GetFrame1 32
+GetFrame1 37
+fMult
+fAdd
+SetFrame1 34
+GetFrameP1 34
+GetImm1 4
+GetFrame1 33
+GetFrame1 37
+fMult
+fAdd
+GetFrameP1 34
+SetImm1 4
+GetFrameP1 34
+PushF 89
+PushF -89
+Call @Function_59
+GetStatic1 4
+Push_3
+GetFrameP1 34
+ToStack
+CallNative set_object_orientation 4 1
+Drop
+GetFrame1 1
+CallNative get_object_from_actor 1 1
+SetFrame1 38
+GetFrame1 38
+PushString "head"
+GetFrameP1 39
+CallNative get_object_named_bone_position 3 1
+Drop
+GetFrame1 38
+GetFrameP1 42
+CallNative get_object_position 2 1
+Drop
+PushF_0
+PushF_0
+PushF 0.1
+Push_3
+GetFrameP1 48
+FromStack
+GetFrame1 1
+GetFrameP1 48
+GetFrameP1 51
+CallNative unk_0xB89CC342 3 1
+Drop
+Push_3
+GetFrameP1 51
+ToStack
+Push_3
+GetFrameP1 39
+ToStack
+Push_3
+GetFrameP1 42
+ToStack
+vSub
+vAdd
+Push_3
+GetFrameP1 39
+FromStack
+GetStatic1 4
+Push_3
+GetFrameP1 39
+ToStack
+CallNative set_camera_position 4 0
+
+:Label_252
+Jump @Label_249
+
+:Label_250
+Push_0
+Return 3 1
+
+:Label_249
+Jump @Label_255
+
+:Label_242
+Push_0
+Return 3 1
+
+:Label_255
+Push_1
+Return 3 1
+//<
+
+:Function_59//>
+Function 3 5
+GetFrame1 0
+pGet
+GetFrame1 2
+fCmpLt
+JumpFalse @Label_256
+GetFrame1 2
+GetFrame1 0
+pSet
+Jump @Label_257
+
+:Label_256
+GetFrame1 0
+pGet
+GetFrame1 1
+fCmpGt
+JumpFalse @Label_257
+GetFrame1 1
+GetFrame1 0
+pSet
+
+:Label_257
+Return 3 0
+//<
+
+:Function_58//>
+Function 0 2
+PushString "jp"
+CallNative has_string_table_loaded 1 1
+Return 0 1
+//<
+
+:Function_57//>
+Function 0 3
+Call @Function_19
+SetFrame1 2
+GetFrame1 2
+CallNative is_actor_valid 1 1
+JumpFalse @Label_258
+GetFrame1 2
+CallNative unk_0x524F6981 1 1
+Return 0 1
+
+:Label_258
+Push_0
+Return 0 1
+//<
+
+:Function_56//>
+Function 0 18
+Push_0
+Push_0
+Push_1
+Push_1
+CallNative set_player_control 4 0
+GetStatic1 4
+CallNative is_object_valid 1 1
+Not
+JumpFalse @Label_259
+Call @Function_60
+PushString "bino_camera"
+Push_0
+CallNative unk_0x0B1569C5 3 1
+SetStatic1 4
+
+:Label_259
+GetStatic1 5
+CallNative is_object_valid 1 1
+Not
+JumpFalse @Label_260
+Call @Function_60
+PushString "bino_camera_ar"
+CallNative unk_0xDA50B18B 2 1
+SetStatic1 5
+
+:Label_260
+GetStatic1 4
+CallNative is_object_valid 1 1
+JumpFalse @Label_261
+CallNative unk_0x00EF33EF 0 1
+JumpFalse @Label_262
+GetStatic1 4
+CallNative init_camera_from_game_camera 1 0
+GetStatic1 4
+Push_0
+Push_0
+Push_0
+Push_0
+Push_0
+Push_0
+Push_0
+Push_0
+Push_0
+CallNative set_current_camera_on_channel 10 0
+GetGlobal2 34573
+CallNative get_object_from_actor 1 1
+SetFrame1 2
+GetFrame1 2
+PushString "head"
+GetFrameP1 3
+CallNative get_object_named_bone_position 3 1
+Drop
+GetFrame1 2
+GetFrameP1 6
+CallNative get_object_position 2 1
+Drop
+PushF_0
+PushF_0
+PushF -0.1
+Push_3
+GetFrameP1 12
+FromStack
+GetGlobal2 34573
+GetFrameP1 12
+GetFrameP1 15
+CallNative unk_0xB89CC342 3 1
+Drop
+Push_3
+GetFrameP1 15
+ToStack
+Push_3
+GetFrameP1 3
+ToStack
+Push_3
+GetFrameP1 6
+ToStack
+vSub
+vAdd
+Push_3
+GetFrameP1 3
+FromStack
+GetStatic1 4
+Push_3
+GetFrameP1 3
+ToStack
+CallNative set_camera_position 4 0
+GetStatic1 4
+PushF 0.35
+CallNative set_camera_near_clip_plane 2 0
+GetStatic1 4
+PushF 7.6
+CallNative set_camera_fov 2 0
+GetGlobal2 34573
+PushString "anthro04"
+CallNative decor_check_exist 2 1
+Not
+JumpFalse @Label_263
+PushString "BinocularsUI"
+CallNative ui_push 1 0
+
+:Label_263
+Push_1
+CallNative unk_0xE6C1DBD9 1 0
+Push_2
+CallNative unk_0x4062688A 1 1
+SetStatic1 6
+Push_2
+CallNative unk_0xE13B49BD 1 1
+SetStatic1 7
+Push_0
+CallNative unk_0x4062688A 1 1
+SetStatic1 8
+Push_0
+CallNative unk_0xE13B49BD 1 1
+SetStatic1 9
+Push_1
+CallNative unk_0x4062688A 1 1
+SetStatic1 10
+Push_1
+CallNative unk_0xE13B49BD 1 1
+SetStatic1 11
+Push_0
+Push_2
+CallNative unk_0x9603D3B2 2 0
+Push_0
+Push_2
+CallNative unk_0x6E303287 2 0
+Push_0
+Push_0
+CallNative unk_0x9603D3B2 2 0
+Push_0
+Push_0
+CallNative unk_0x6E303287 2 0
+Push_0
+Push_1
+CallNative unk_0x9603D3B2 2 0
+Push_0
+Push_1
+CallNative unk_0x6E303287 2 0
+Push_1
+SetGlobal2 63096
+CallNative unk_0xF5B7B208 0 1
+JumpFalse @Label_264
+Push_0
+CallNative unk_0xA094152A 1 0
+
+:Label_264
+Push_1
+Return 0 1
+Jump @Label_265
+
+:Label_262
+Push_0
+Return 0 1
+
+:Label_265
+Jump @Label_266
+
+:Label_261
+Push_0
+Return 0 1
+
+:Label_266
+Push_0
+Return 0 1
+//<
+
+:Function_60//>
+Function 0 3
+PushString "PlayerLayout"
+CallNative find_named_layout 1 1
+SetFrame1 2
+GetFrame1 2
+CallNative unk_0xFC8E55ED 1 1
+Not
+JumpFalse @Label_267
+PushString "PlayerLayout"
+CallNative create_layout 1 1
+SetFrame1 2
+GetFrame1 2
+CallNative unk_0xFC8E55ED 1 1
+Not
+JumpFalse @Label_267
+PushString "I created an INVALID PlayerLayout!!!"
+CallNative log_warning 1 0
+
+:Label_267
+GetFrame1 2
+Return 0 1
+//<
+
+:Function_52//>
+Function 3 8
+GetFrame1 0
+Call @Function_51
+SetFrame1 5
+GetFrame1 0
+Call @Function_61
+SetFrame1 6
+Push_0
+SetFrame1 7
+GetFrame1 5
+CallNative is_gringo_component_valid 1 1
+GetFrame1 2
+pGet
+And
+JumpFalse @Label_268
+GetFrame1 6
+CallNative is_gringo_component_valid 1 1
+JumpFalse @Label_269
+GetFrame1 1
+GetFrame1 5
+Push_0
+CallNative unk_0xE18BCD70 3 1
+JumpFalse @Label_270
+GetFrame1 1
+GetFrame1 6
+GetFrame1 6
+PushString "AttachBone"
+GetFrameP1 7
+Call @Function_62
+GetFrame1 6
+PushString "AttachLocator"
+GetFrameP1 7
+Call @Function_62
+Push_1
+CallNative unk_0x4DB7C61C 5 1
+JumpFalse @Label_270
+GetFrame1 6
+GetFrame1 1
+Call @Function_63
+Push_1
+GetFrame1 2
+pSet
+
+:Label_270
+Jump @Label_271
+
+:Label_269
+GetFrame1 1
+GetFrame1 5
+Push_0
+CallNative unk_0xE18BCD70 3 1
+Drop
+Push_1
+GetFrame1 2
+pSet
+
+:Label_271
+Jump @Label_268
+
+:Label_268
+Return 3 0
+//<
+
+:Function_63//>
+Function 2 11
+Push_2
+GetFrame1 0
+CallNative unk_0x3E8F94BE 2 1
+SetFrame1 4
+GetFrame1 4
+CallNative is_gringo_component_valid 1 1
+JumpFalse @Label_272
+GetFrame1 4
+GetFrame1 1
+CallNative unk_0x87BA5FE9 2 1
+SetFrame1 6
+GetFrame1 4
+CallNative unk_0x721FC9A4 1 1
+SetFrame1 7
+GetFrame1 4
+CallNative unk_0x6263F909 1 1
+SetFrame1 8
+GetFrame1 0
+CallNative gringo_get_physinst 1 1
+SetFrame1 5
+GetFrame1 5
+CallNative is_physinst_valid 1 1
+JumpFalse @Label_272
+GetFrame1 5
+CallNative get_object_animator_on_object 1 1
+SetFrame1 9
+GetFrame1 9
+CallNative is_object_animator_valid 1 1
+JumpFalse @Label_273
+PushString "Previous object animator not cleared - destroying now!"
+CallNative log_error 1 0
+GetFrame1 9
+CallNative destroy_object_animator 1 0
+
+:Label_273
+GetFrame1 5
+GetFrame1 6
+GetFrame1 7
+GetFrame1 8
+CallNative create_object_animator_on_object 4 1
+SetFrame1 10
+GetFrame1 10
+CallNative is_object_animator_valid 1 1
+JumpFalse @Label_272
+GetFrame1 10
+GetFrame1 1
+GetFrame1 0
+CallNative unk_0xB96874B4 1 1
+CallNative link_object_animator_to_actor 3 1
+Drop
+
+:Label_272
+Return 2 0
+//<
+
+:Function_62//>
+Function 3 7
+GetFrame1 1
+GetFrame1 0
+GetFrameP1 5
+CallNative get_gringo_string_attr 3 1
+SetFrame1 6
+GetFrame1 5
+Push_0
+CmpGt
+GetFrame1 2
+pSet
+GetFrame1 2
+pGet
+JumpFalse @Label_274
+GetFrame1 6
+CallNative string_length 1 1
+Push_0
+CmpEq
+GetFrame1 6
+PushString "NoString"
+CallNative unk_0x8218D693 2 1
+Or
+JumpFalse @Label_275
+Push_0
+GetFrame1 2
+pSet
+GetStatic1 0
+Return 3 1
+
+:Label_275
+GetFrame1 6
+Return 3 1
+
+:Label_274
+GetStatic1 0
+Return 3 1
+//<
+
+:Function_61//>
+Function 1 3
+PushString "UseProp"
+Push_1
+GetFrame1 0
+CallNative unk_0xE4C686BA 3 1
+Return 1 1
+//<
+
+:Function_51//>
+Function 1 3
+PushString "UseAnim"
+Push_2
+GetFrame1 0
+CallNative unk_0xE4C686BA 3 1
+Return 1 1
+//<
+
+:Function_50//>
+Function 3 5
+PushString "BINOCULARS: StartUse"
+Call @Function_64
+GetFrame1 0
+Call @Function_65
+SetFrame1 0
+Push_0
+GetFrame1 2
+pSet
+GetFrame1 1
+PushString "BinocularsStart"
+CallNative decor_check_exist 2 1
+JumpFalse @Label_276
+GetFrame1 1
+PushString "BinocularsStart"
+CallNative decor_remove 2 1
+Drop
+
+:Label_276
+GetFrame1 1
+CallNative unk_0x12325AE7 1 1
+GetGlobal2 34577
+Push_0
+CmpNe
+And
+GetGlobal2 34577
+Push_1
+CmpNe
+And
+JumpFalse @Label_277
+PushString "item_binoculars_fail"
+Push 1092616192
+Push_1
+Push_0
+Push_2
+Push_1
+Push_0
+Call @Function_66
+Push_0
+GetFrame1 2
+pSet
+Push_0
+SetStatic1 3
+Jump @Label_278
+
+:Label_277
+GetFrame1 1
+Push_0
+Push_0
+Call @Function_67
+GetFrame1 1
+CallNative is_weapon_drawn 1 1
+Or
+GetFrame1 1
+CallNative get_weapon_in_hand 1 1
+Push_-1
+CmpNe
+Or
+GetGlobal2 34573
+PushString "anthro04"
+CallNative decor_check_exist 2 1
+Or
+JumpFalse @Label_279
+Push_0
+SetStatic1 3
+
+:Label_279
+CallNative unk_0x5842B9D1 0 1
+SetStatic1 12
+GetGlobal2 34573
+PushString "anthro04"
+CallNative decor_check_exist 2 1
+JumpFalse @Label_280
+PushString "s_binoculars01x"
+Push_0
+CallNative get_asset_id 2 1
+Push_0
+CallNative streaming_request_prop 2 1
+Drop
+Push_1
+GetFrame1 2
+pSet
+Jump @Label_281
+
+:Label_280
+GetGlobalP2 63084
+GetImm1 32
+Push_1
+Call @Function_48
+JumpFalse @Label_282
+Push_0
+GetFrame1 2
+pSet
+PushString "item_binoculars_fail"
+Push 1092616192
+Push_1
+Push_0
+Push_2
+Push_1
+Push_0
+Call @Function_66
+Jump @Label_281
+
+:Label_282
+Push_0
+CallNative is_player_using_cover 1 1
+JumpFalse @Label_283
+Push_0
+GetFrame1 2
+pSet
+PushString "item_binoculars_fail"
+Push 1092616192
+Push_1
+Push_0
+Push_2
+Push_1
+Push_0
+Call @Function_66
+Jump @Label_281
+
+:Label_283
+GetFrame1 1
+CallNative get_current_gringo 1 1
+CallNative is_gringo_valid 1 1
+Not
+GetFrame1 1
+CallNative unk_0xF68C926F 1 1
+CallNative is_actor_valid 1 1
+Not
+Or
+JumpFalse @Label_284
+Push_0
+PushF 15
+CallNative unk_0x48B7C279 2 1
+Not
+JumpFalse @Label_285
+PushString "s_binoculars01x"
+Push_0
+CallNative get_asset_id 2 1
+Push_0
+CallNative streaming_request_prop 2 1
+Drop
+Push_1
+GetFrame1 2
+pSet
+Jump @Label_286
+
+:Label_285
+Push_0
+GetFrame1 2
+pSet
+PushString "item_binoculars_fail"
+Push 1092616192
+Push_1
+Push_0
+Push_2
+Push_1
+Push_0
+Call @Function_66
+
+:Label_286
+Jump @Label_281
+
+:Label_284
+Push_0
+GetFrame1 2
+pSet
+PushString "item_binoculars_fail"
+Push 1092616192
+Push_1
+Push_0
+Push_2
+Push_1
+Push_0
+Call @Function_66
+
+:Label_281
+GetFrame1 1
+CallNative is_weapon_drawn 1 1
+GetFrame1 2
+pGet
+And
+JumpFalse @Label_278
+GetGlobal2 34573
+Push_1
+CallNative actor_holster_weapon 2 1
+Drop
+
+:Label_278
+Return 3 0
+//<
+
+:Function_67//>
+Function 3 5
+Push_0
+CallNative unk_0x9613C2D0 1 1
+Not
+GetFrame1 1
+Not
+And
+JumpFalse @Label_287
+Push_1
+Return 3 1
+
+:Label_287
+Push_0
+CallNative is_player_deadeye 1 1
+JumpFalse @Label_288
+Push_1
+Return 3 1
+
+:Label_288
+Push_0
+CallNative is_player_using_cover 1 1
+JumpFalse @Label_289
+Push_1
+Return 3 1
+
+:Label_289
+GetFrame1 0
+PushF 0.3
+CallNative is_actor_being_dragged 2 1
+JumpFalse @Label_290
+Push_1
+Return 3 1
+
+:Label_290
+GetFrame1 0
+Call @Function_68
+JumpFalse @Label_291
+Push_1
+Return 3 1
+
+:Label_291
+GetFrame1 0
+Call @Function_69
+JumpFalse @Label_292
+Push_1
+Return 3 1
+
+:Label_292
+GetFrame1 0
+CallNative unk_0xF6BF4242 1 1
+GetFrame1 2
+Not
+And
+JumpFalse @Label_293
+Push_1
+Return 3 1
+
+:Label_293
+GetFrame1 0
+CallNative is_actor_drunk 1 1
+JumpFalse @Label_294
+Push_1
+Return 3 1
+
+:Label_294
+GetFrame1 0
+CallNative is_actor_hogtied 1 1
+JumpFalse @Label_295
+Push_1
+Return 3 1
+
+:Label_295
+GetFrame1 0
+CallNative is_actor_in_water 1 1
+JumpFalse @Label_296
+Push_1
+Return 3 1
+
+:Label_296
+GetFrame1 0
+CallNative is_actor_on_ladder 1 1
+JumpFalse @Label_297
+Push_1
+Return 3 1
+
+:Label_297
+GetFrame1 0
+CallNative is_actor_using_ledge 1 1
+JumpFalse @Label_298
+Push_1
+Return 3 1
+
+:Label_298
+GetFrame1 0
+CallNative unk_0xF68C926F 1 1
+CallNative is_actor_valid 1 1
+JumpFalse @Label_299
+Push_1
+Return 3 1
+
+:Label_299
+GetFrame1 0
+CallNative unk_0x30C4CA99 1 1
+JumpFalse @Label_300
+Push_1
+Return 3 1
+
+:Label_300
+GetFrame1 0
+CallNative get_current_gringo 1 1
+CallNative is_gringo_valid 1 1
+JumpFalse @Label_301
+Push_1
+Return 3 1
+
+:Label_301
+Call @Function_70
+JumpFalse @Label_302
+Push_1
+Return 3 1
+
+:Label_302
+Push_0
+Return 3 1
+//<
+
+:Function_70//>
+Function 0 2
+GetGlobal2 34578
+Push_0
+CmpEq
+GetGlobal2 34578
+Push_2
+CmpEq
+Or
+GetGlobal2 34578
+Push_3
+CmpEq
+Or
+Return 0 1
+//<
+
+:Function_69//>
+Function 1 3
+GetFrame1 0
+CallNative is_actor_in_hogtie 1 1
+Return 1 1
+//<
+
+:Function_68//>
+Function 1 3
+GetFrame1 0
+CallNative get_lasso_user 1 1
+CallNative is_actor_valid 1 1
+Return 1 1
+//<
+
+:Function_66//>
+Function 7 14
+GetGlobal2 3380
+Push_1
+CmpEq
+GetGlobal2 6269
+Push_-1
+CmpNe
+And
+JumpFalse @Label_303
+Push_4
+GetGlobal2 6269
+GetGlobalP2 3422
+GetArrayP1 40
+Add1 12
+ToStack
+Push_4
+GetFrameP1 9
+FromStack
+GetGlobal2 6269
+PushB 11
+CmpEq
+GetGlobal2 6269
+PushB 16
+CmpEq
+Or
+GetGlobal2 6269
+PushB 15
+CmpEq
+Or
+GetGlobal2 6269
+PushB 43
+CmpEq
+Or
+JumpFalse @Label_304
+GetGlobal2 6269
+Call @Function_71
+Push_4
+GetFrameP1 9
+FromStack
+
+:Label_304
+GetFrame1 0
+GetFrame1 1
+GetFrame1 2
+GetFrame1 3
+GetFrame1 4
+GetFrame1 5
+GetFrameP1 9
+GetFrame1 6
+CallNative unk_0xE42A8278 8 0
+Jump @Label_305
+
+:Label_303
+PushString ""
+pGet
+SetFrame1 13
+GetFrame1 0
+GetFrame1 1
+GetFrame1 2
+GetFrame1 3
+GetFrame1 4
+GetFrame1 5
+GetFrame1 13
+GetFrame1 6
+CallNative unk_0xE42A8278 8 0
+
+:Label_305
+Return 7 0
+//<
+
+:Function_71//>
+Function 1 7
+Call @Function_37
+Not
+JumpFalse @Label_306
+PushString "miss"
+GetFrameP1 3
+StrCopy 16
+Jump @Label_307
+
+:Label_306
+PushString "ziss"
+GetFrameP1 3
+StrCopy 16
+
+:Label_307
+GetFrame1 0
+GetFrameP1 3
+StrAddi 16
+PushString "_short"
+GetFrameP1 3
+StrAdd 16
+Push_4
+GetFrameP1 3
+ToStack
+Return 1 4
+//<
+
+:Function_65//>
+Function 1 3
+PushString "ItemAttribs"
+Push_4
+GetFrame1 0
+CallNative unk_0xE4C686BA 3 1
+Return 1 1
+//<
+
+:Function_64//>
+Function 1 3
+CallNative unk_0x5F7176D6 0 1
+CallNative get_target_object 0 1
+GetFrame1 0
+Push_0
+Push_0
+Push_0
+CallNative unk_0xC8C0C708 6 0
+Return 1 0
+//<
+
+:Function_49//>
+Function 2 6
+GetFrame1 0
+SetFrame1 0
+GetFrame1 0
+Call @Function_61
+SetFrame1 4
+GetFrame1 0
+Call @Function_51
+SetFrame1 5
+GetFrame1 5
+CallNative is_gringo_component_valid 1 1
+JumpFalse @Label_308
+GetStatic1 13
+Not
+JumpFalse @Label_309
+Push_0
+CallNative enable_use_contexts 1 0
+GetFrame1 5
+GetFrame1 1
+CallNative get_object_from_actor 1 1
+CallNative unk_0x7D600F2F 2 0
+Push_1
+SetStatic1 13
+
+:Label_309
+GetFrame1 5
+GetFrame1 1
+CallNative get_object_from_actor 1 1
+CallNative unk_0x2C57A529 2 1
+JumpFalse @Label_310
+GetFrame1 4
+CallNative is_gringo_component_valid 1 1
+JumpFalse @Label_311
+GetFrame1 4
+CallNative gringo_is_prop_ready 1 1
+JumpFalse @Label_312
+GetFrame1 4
+Push_0
+CallNative gringo_set_prop_collisions 2 0
+Push_0
+SetStatic1 13
+Push_1
+Return 2 1
+
+:Label_312
+Jump @Label_313
+
+:Label_311
+Push_0
+SetStatic1 13
+Push_1
+Return 2 1
+
+:Label_313
+Jump @Label_314
+
+:Label_310
+Push_0
+Return 2 1
+
+:Label_314
+Jump @Label_315
+
+:Label_308
+Push_0
+CallNative enable_use_contexts 1 0
+Push_1
+Return 2 1
+
+:Label_315
+Push_0
+Return 2 1
+//<

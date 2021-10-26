@@ -1,0 +1,780 @@
+SetParamCount 1
+
+//> Default Static Information
+SetStaticsCount 2
+SetStaticName 1 ScriptParameter0
+
+//<
+
+:MainFunction//>
+Function 0 4
+PushF_1
+SetStatic1 0
+GetStatic1 ScriptParameter0
+Push_1
+And
+Push_0
+CmpNe
+SetFrame1 2
+GetStatic1 ScriptParameter0
+Push_2
+And
+Push_0
+CmpNe
+SetFrame1 3
+GetGlobalP2 34165
+GetImm1 44
+JumpFalse @Label_0
+Jump @Label_0
+
+:Label_0
+GetFrame1 3
+JumpFalse @Label_1
+GetFrame1 2
+Call @Function_0
+Jump @Label_2
+
+:Label_1
+GetFrame1 2
+Call @Function_1
+
+:Label_2
+CallNative terminate_this_script 0 0
+Return 0 0
+//<
+
+:Function_1//>
+Function 1 4
+GetFrame1 0
+JumpFalse @Label_3
+PushString "$/content/DLC/MPCoopPack/mpcooppack.strtbl"
+SetFrame1 3
+GetFrame1 3
+CallNative unk_0xB3E44649 1 0
+Call @Function_2
+
+:Label_3
+GetGlobalP2 34165
+GetImm1 44
+JumpFalse @Label_4
+Call @Function_3
+
+:Label_4
+Push_1
+CallNative toggle_coop_journal_ui 1 0
+PushString "LbCat_DLC1"
+CallNative ui_include 1 0
+Return 1 0
+//<
+
+:Function_3//>
+Function 0 338
+GetFrameP1 2
+Dup
+Add1 76
+PushB 36
+pPeekSet
+Drop
+Drop
+GetFrameP1 170
+Dup
+Add1 76
+PushB 36
+pPeekSet
+Drop
+Drop
+GetFrameP1 2
+PushString "MULTI_ROTATION_COOPPACK"
+PushString "COOP_Barker"
+PushB 37
+Push_1
+Push_4
+PushS 449
+Push_0
+PushString "$/tune/refGroups/refGroups/mp_coop"
+Call @Function_4
+GetFrameP1 2
+PushString "AA_GAPMP"
+Call @Function_5
+Drop
+GetFrameP1 2
+PushString "AA_TUMMP"
+Call @Function_5
+Drop
+GetFrameP1 2
+PushString "AA_FOMMP"
+Call @Function_5
+Drop
+GetFrameP1 2
+PushString "AA_PIKMP"
+Call @Function_5
+Drop
+GetFrameP1 2
+PushString "AA_NOSMP"
+Call @Function_5
+Drop
+GetFrameP1 2
+PushString "AA_TESMP"
+Call @Function_5
+Drop
+GetFrameP1 2
+Push_1
+Call @Function_6
+Drop
+GetFrameP1 2
+PushString "MULTI_ROTATION_ADV_COOPPACK"
+PushString ""
+PushB 38
+Push_1
+Push_4
+PushS 449
+PushB 244
+Push_0
+Call @Function_4
+PushB 37
+GetFrameP1 170
+Call @Function_7
+JumpFalse @Label_5
+GetFrameP1 170
+GetFrameP1 2
+Call @Function_8
+
+:Label_5
+GetFrameP1 2
+Push_1
+Call @Function_6
+Drop
+Return 0 0
+//<
+
+:Function_8//>
+Function 2 5
+Push_0
+SetFrame1 4
+
+:Label_7
+GetFrame1 4
+GetFrame1 0
+GetImm1 72
+Push_1
+Sub
+JumpGT @Label_6
+GetFrame1 1
+GetFrame1 4
+GetFrame1 0
+Add1 76
+GetArrayP1 4
+Call @Function_5
+Drop
+GetFrame1 4
+Add1 1
+SetFrame1 4
+Jump @Label_7
+
+:Label_6
+Return 2 0
+//<
+
+:Function_7//>
+Function 2 5
+Push_0
+SetFrame1 4
+
+:Label_10
+GetFrame1 4
+PushB 20
+JumpGE @Label_8
+GetFrame1 4
+GetGlobalP2 0
+GetArrayP1 168
+GetImm1 64
+GetFrame1 0
+JumpNE @Label_9
+PushB 168
+GetFrame1 4
+GetGlobalP2 0
+GetArrayP1 168
+ToStack
+PushB 168
+GetFrame1 1
+FromStack
+Push_1
+Return 2 1
+
+:Label_9
+GetFrame1 4
+Add1 1
+SetFrame1 4
+Jump @Label_10
+
+:Label_8
+Push_0
+Return 2 1
+//<
+
+:Function_6//>
+Function 2 4
+GetGlobal2 3361
+PushB 20
+JumpGE @Label_11
+PushB 168
+GetFrame1 0
+ToStack
+PushB 168
+GetGlobal2 3361
+GetGlobalP2 0
+GetArrayP1 168
+FromStack
+GetGlobal2 3361
+Add1 1
+SetGlobal2 3361
+GetFrame1 1
+JumpFalse @Label_12
+GetFrame1 0
+GetFrame1 0
+GetImm1 64
+GetFrame1 0
+GetImm1 68
+CallNative unk_0xA9459BB6 3 0
+GetFrame1 0
+GetImm2 656
+Push_4
+Call @Function_9
+JumpFalse @Label_12
+GetFrame1 0
+Push_1
+CallNative unk_0x9D9784B8 2 0
+
+:Label_12
+Push_1
+Return 2 1
+Jump @Label_11
+
+:Label_11
+Push_0
+Return 2 1
+//<
+
+:Function_9//>
+Function 2 4
+GetFrame1 0
+GetFrame1 1
+And
+Push_0
+CmpNe
+Return 2 1
+//<
+
+:Function_5//>
+Function 2 65
+GetFrame1 1
+GetFrameP1 4
+CallNative unk_0xFAD5A270 2 1
+Not
+JumpFalse @Label_13
+PushString "Can't add nonexistent \""
+GetFrameP1 33
+StrCopy 64
+GetFrame1 1
+GetFrameP1 33
+StrAdd 64
+PushString "\" to playlist"
+GetFrameP1 33
+StrAdd 64
+
+:Label_13
+GetFrame1 0
+GetImm1 72
+PushB 36
+JumpGE @Label_14
+GetFrame1 1
+GetFrame1 0
+GetImm1 72
+GetFrame1 0
+Add1 76
+GetArrayP1 4
+StrCopy 16
+GetFrame1 0
+GetImm1 72
+Add1 1
+GetFrame1 0
+SetImm1 72
+Push_1
+Return 2 1
+
+:Label_14
+PushString "\""
+GetFrameP1 49
+StrCopy 64
+GetFrame1 1
+GetFrameP1 49
+StrAdd 64
+PushString "\" puts playlist \""
+GetFrameP1 49
+StrAdd 64
+GetFrame1 0
+GetFrameP1 49
+StrAdd 64
+PushString "\" over the limit"
+GetFrameP1 49
+StrAdd 64
+Push_0
+Return 2 1
+//<
+
+:Function_4//>
+Function 9 11
+GetFrame1 1
+GetFrame1 0
+StrCopy 32
+GetFrame1 2
+GetFrame1 0
+Add1 32
+StrCopy 32
+GetFrame1 5
+GetFrame1 0
+SetImm1 68
+GetFrame1 3
+GetFrame1 0
+SetImm1 64
+GetFrame1 6
+GetFrame1 0
+SetImm2 664
+GetFrame1 0
+PushS 1014
+Call @Function_10
+GetFrame1 8
+CallNative is_string_valid 1 1
+JumpFalse @Label_15
+GetFrame1 8
+Push_7
+CallNative unk_0xFDF42AAC 2 1
+Not
+JumpFalse @Label_16
+
+:Label_16
+GetFrame1 8
+Push_7
+CallNative get_asset_id 2 1
+GetFrame1 0
+SetImm2 668
+Jump @Label_17
+
+:Label_15
+PushString ""
+pGet
+GetFrame1 0
+SetImm2 668
+
+:Label_17
+GetFrame1 7
+GetFrame1 4
+Call @Function_11
+Or
+GetFrame1 0
+SetImm2 656
+GetFrame1 0
+Call @Function_12
+Return 9 0
+//<
+
+:Function_12//>
+Function 1 4
+Push_0
+GetFrame1 0
+SetImm1 72
+Push_0
+SetFrame1 3
+
+:Label_19
+GetFrame1 3
+PushB 36
+JumpGE @Label_18
+PushString "NONE"
+GetFrame1 3
+GetFrame1 0
+Add1 76
+GetArrayP1 4
+StrCopy 16
+GetFrame1 3
+Add1 1
+SetFrame1 3
+Jump @Label_19
+
+:Label_18
+Return 1 0
+//<
+
+:Function_11//>
+Function 1 3
+GetFrame1 0
+PushB 20
+CallNative shift_left 2 1
+Return 1 1
+//<
+
+:Function_10//>
+Function 2 4
+GetFrame1 1
+GetFrame1 0
+SetImm2 660
+Return 2 0
+//<
+
+:Function_2//>
+Function 0 3
+PushI24 500772
+SetFrame1 2
+PushString "AA_TUMMP"
+PushString "net_name_AA_TUMMP"
+GetFrame1 2
+PushB 20
+PushString "$/content/DLC/MPCoopPack/TUM_coop/TumbleweedMP_CO"
+PushString "$/content/DLC/MPCoopPack/Regions/TumBasic"
+PushF -4191.011
+PushF 23.11
+PushF 3776.966
+Push_1
+Call @Function_13
+Drop
+PushString "AA_FOMMP"
+PushString "net_name_AA_FOMMP"
+GetFrame1 2
+PushB 20
+PushString "$/content/DLC/MPCoopPack/FOM_Coop/FortMercerMP_CO"
+PushString "$/content/DLC/MPCoopPack/Regions/FomBasic"
+PushF -2601.073
+PushF 72.273
+PushF 3351.1
+Push_1
+Call @Function_13
+Drop
+PushString "AA_PIKMP"
+PushString "net_name_AA_PIKMP"
+GetFrame1 2
+PushB 20
+PushString "$/content/DLC/MPCoopPack/PIK_Coop/PikesBasinMP_CO"
+PushString "$/content/DLC/MPCoopPack/Regions/PikBasic"
+PushF -1205.566
+PushF 74.733
+PushF 2375.88
+Push_1
+Call @Function_13
+Drop
+PushString "AA_GAPMP"
+PushString "net_name_AA_GAPMP"
+GetFrame1 2
+PushB 20
+PushString "$/content/DLC/MPCoopPack/GAP_Coop/GaptoothBreachMP_CO"
+PushString "$/content/DLC/MPCoopPack/Regions/GapBasic"
+PushF -4436.313
+PushF 7.167
+PushF 3350.627
+Push_1
+Call @Function_13
+Drop
+PushString "AA_NOSMP"
+PushString "net_name_AA_NOSMP"
+GetFrame1 2
+PushB 20
+PushString "$/content/DLC/MPCoopPack/NOS_Coop/NosalidaMP_CO"
+PushString "$/content/DLC/MPCoopPack/Regions/NosalidaBasic"
+PushF -3636.443
+PushF 7.604
+PushF 4248.969
+Push_1
+Call @Function_13
+Drop
+PushString "AA_TESMP"
+PushString "net_name_AA_TESMP"
+GetFrame1 2
+PushS 4096
+Or
+PushB 20
+PushString "$/content/DLC/MPCoopPack/TES_Coop/TesoroAzulMP_CO"
+PushString "$/content/DLC/MPCoopPack/Regions/TesBasic"
+PushF -3261.275
+PushF 38.149
+PushF 4548
+Push_1
+Call @Function_13
+Drop
+Return 0 0
+//<
+
+:Function_13//>
+Function 10 41
+GetFrame1 3
+GetFrameP1 12
+SetImm1 16
+GetFrame1 1
+GetFrameP1 12
+Add1 48
+StrCopy 64
+GetFrame1 2
+GetFrameP1 12
+SetImm1 44
+GetFrame1 9
+GetFrameP1 12
+SetImm1 112
+GetFrame1 4
+CallNative is_string_valid 1 1
+JumpFalse @Label_20
+GetFrame1 4
+Push_4
+CallNative get_asset_id 2 1
+GetFrameP1 12
+SetImm1 20
+GetFrameP1 12
+GetImm1 20
+CallNative unk_0x214AFB8C 1 1
+Not
+JumpFalse @Label_21
+Push_-1
+Return 10 1
+
+:Label_21
+Jump @Label_22
+
+:Label_20
+Push_-1
+GetFrameP1 12
+SetImm1 20
+
+:Label_22
+GetFrame1 5
+CallNative is_string_valid 1 1
+JumpFalse @Label_23
+GetFrame1 5
+Push_4
+CallNative get_asset_id 2 1
+GetFrameP1 12
+SetImm1 24
+GetFrameP1 12
+GetImm1 24
+CallNative unk_0x214AFB8C 1 1
+Not
+JumpFalse @Label_24
+Push_-1
+Return 10 1
+
+:Label_24
+Jump @Label_25
+
+:Label_23
+Push_-1
+GetFrameP1 12
+SetImm1 24
+
+:Label_25
+GetGlobal3 83589
+PushB 125
+JumpLT @Label_26
+Push_-1
+Return 10 1
+
+:Label_26
+GetFrame1 0
+GetGlobal3 83589
+CallNative unk_0xE822010A 2 0
+Push_3
+GetFrameP1 6
+ToStack
+Push_3
+GetFrameP1 12
+Add1 28
+FromStack
+PushS -2
+GetFrameP1 12
+SetImm1 40
+GetFrame1 0
+GetFrameP1 12
+StrCopy 16
+GetFrameP1 12
+CallNative unk_0x55C5BB93 1 1
+Drop
+PushB 29
+GetFrameP1 12
+ToStack
+PushB 29
+GetGlobal3 83589
+GetGlobalP3 79963
+GetArrayP1 29
+FromStack
+GetGlobal3 83589
+Add1 1
+SetGlobal3 83589
+GetGlobal3 83589
+Push_1
+Sub
+Return 10 1
+//<
+
+:Function_0//>
+Function 1 3
+GetFrame1 0
+JumpFalse @Label_27
+PushString "dlc1_speech.dat"
+CallNative unk_0xBFCF32D9 1 1
+Drop
+PushString "sounds"
+PushString "dlc1_sounds.dat"
+PushString "DLC1"
+CallNative unk_0xE8FFE727 3 1
+Drop
+PushString "gameobjects"
+PushString "dlc1_game.dat"
+PushString "DLC1"
+CallNative unk_0xE8FFE727 3 1
+Drop
+PushString "curves"
+PushString "dlc1_curves.dat"
+PushString "DLC1"
+CallNative unk_0xE8FFE727 3 1
+Drop
+PushString "$/fragments/MPCoopPack/fragmentsList.bin"
+CallNative unk_0x57D9950B 1 0
+PushString "$/content/stringtable"
+PushString "MPCoopPack/StringTableList"
+CallNative unk_0xF4D0807E 2 0
+PushString "dlc_mpcooppack_mp_coop"
+PushB 10
+CallNative request_asset 2 1
+Drop
+PushString "dlc_mpcooppack_mp_coop_tum"
+PushB 10
+CallNative request_asset 2 1
+Drop
+PushString "dlc_mpcooppack_mp_coop_fom"
+PushB 10
+CallNative request_asset 2 1
+Drop
+PushString "dlc_mpcooppack_mp_coop_pik"
+PushB 10
+CallNative request_asset 2 1
+Drop
+PushString "dlc_mpcooppack_mp_coop_gap"
+PushB 10
+CallNative request_asset 2 1
+Drop
+PushString "dlc_mpcooppack_mp_coop_nos"
+PushB 10
+CallNative request_asset 2 1
+Drop
+PushString "dlc_mpcooppack_mp_coop_tes"
+PushB 10
+CallNative request_asset 2 1
+Drop
+PushString "$/content/DLC/MPCoopPack/Regions/TumBasic"
+Push_4
+CallNative request_asset 2 1
+Drop
+PushString "$/content/DLC/MPCoopPack/Regions/FomBasic"
+Push_4
+CallNative request_asset 2 1
+Drop
+PushString "$/content/DLC/MPCoopPack/Regions/PikBasic"
+Push_4
+CallNative request_asset 2 1
+Drop
+PushString "$/content/DLC/MPCoopPack/Regions/GapBasic"
+Push_4
+CallNative request_asset 2 1
+Drop
+PushString "$/content/DLC/MPCoopPack/Regions/TesBasic"
+Push_4
+CallNative request_asset 2 1
+Drop
+PushString "$/content/DLC/MPCoopPack/Regions/NosalidaBasic"
+Push_4
+CallNative request_asset 2 1
+Drop
+PushString "$/content/DLC/MPCoopPack/TUM_coop/TumbleweedMP_CO"
+Push_4
+CallNative request_asset 2 1
+Drop
+PushString "$/content/DLC/MPCoopPack/FOM_coop/FortMercerMP_CO"
+Push_4
+CallNative request_asset 2 1
+Drop
+PushString "$/content/DLC/MPCoopPack/PIK_coop/PikesBasinMP_CO"
+Push_4
+CallNative request_asset 2 1
+Drop
+PushString "$/content/DLC/MPCoopPack/GAP_coop/GaptoothBreachMP_CO"
+Push_4
+CallNative request_asset 2 1
+Drop
+PushString "$/content/DLC/MPCoopPack/NOS_coop/NosalidaMP_CO"
+Push_4
+CallNative request_asset 2 1
+Drop
+PushString "$/content/DLC/MPCoopPack/TES_coop/TesoroAzulMP_CO"
+Push_4
+CallNative request_asset 2 1
+Drop
+Call @Function_14
+
+:Label_27
+PushB 16
+Call @Function_15
+Call @Function_16
+Return 1 0
+//<
+
+:Function_16//>
+Function 0 2
+PushString "title_dlc_one_"
+Push_5
+GetGlobalP3 83864
+Add2 1288
+GetArrayP1 17
+StrCopy 64
+PushB 50
+Push_5
+GetGlobalP3 83864
+Add2 1288
+GetArrayP1 17
+SetImm1 64
+GetGlobalP3 83864
+Add2 1288
+GetImm2 684
+Add1 50
+GetGlobalP3 83864
+Add2 1288
+SetImm2 684
+Return 0 0
+//<
+
+:Function_15//>
+Function 1 3
+GetGlobalP3 83864
+Add2 1252
+GetFrame1 0
+Call @Function_17
+Return 1 0
+//<
+
+:Function_17//>
+Function 2 4
+GetFrame1 0
+GetFrame1 1
+Call @Function_18
+Return 2 0
+//<
+
+:Function_18//>
+Function 2 4
+GetFrame1 0
+pGet
+GetFrame1 1
+Or
+GetFrame1 0
+pSet
+Return 2 0
+//<
+
+:Function_14//>
+Function 0 2
+Return 0 0
+//<

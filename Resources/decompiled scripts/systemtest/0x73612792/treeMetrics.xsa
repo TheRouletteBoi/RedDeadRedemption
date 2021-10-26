@@ -1,0 +1,560 @@
+:MainFunction//>
+Function 0 19
+Push_0
+SetFrame1 2
+
+:Label_1
+GetFrame1 2
+PushS 300
+JumpGE @Label_0
+PushString "We be spinning"
+CallNative printstring 1 0
+CallNative printnl 0 0
+Push_0
+CallNative wait 1 0
+GetFrame1 2
+Add1 1
+SetFrame1 2
+Jump @Label_1
+
+:Label_0
+PushB 10
+SetFrame1 3
+Push_7
+SetFrame1 4
+PushB 20
+SetFrame1 5
+CallNative unk_0x95132289 0 1
+SetFrame1 6
+PushString "treeMetrics.sc: continue mark ("
+CallNative printstring 1 0
+GetFrame1 6
+CallNative printstring 1 0
+PushString ")"
+CallNative printstring 1 0
+CallNative printnl 0 0
+PushB 9
+Push_0
+Push_0
+CallNative make_time_of_day 3 1
+SetFrame1 7
+PushF_0
+CallNative set_time_acceleration 1 0
+Push_1
+Push_1
+Push_1
+CallNative unk_0x02DB5C93 3 0
+GetFrame1 4
+SetFrame1 8
+Push_0
+SetFrame1 9
+Push_0
+SetFrame1 9
+
+:Label_8
+GetFrame1 9
+GetFrame1 3
+JumpGT @Label_2
+GetFrame1 4
+SetFrame1 8
+
+:Label_7
+GetFrame1 8
+GetFrame1 5
+JumpGT @Label_3
+GetFrame1 8
+GetFrame1 9
+Call @Function_0
+Push_4
+GetFrameP1 10
+FromStack
+Push_1
+SetFrame1 14
+GetFrame1 6
+PushString ""
+CallNative unk_0x8218D693 2 1
+Not
+JumpFalse @Label_4
+GetFrame1 6
+GetFrameP1 10
+CallNative unk_0x8218D693 2 1
+Not
+JumpFalse @Label_5
+PushString "Continue Mark Skipping: "
+CallNative printstring 1 0
+GetFrameP1 10
+CallNative printstring 1 0
+PushString " Mark: "
+CallNative printstring 1 0
+GetFrame1 6
+CallNative printstring 1 0
+CallNative printnl 0 0
+Push_0
+SetFrame1 14
+Jump @Label_4
+
+:Label_5
+PushString ""
+SetFrame1 6
+
+:Label_4
+GetFrame1 14
+GetFrame1 8
+GetFrame1 9
+Call @Function_1
+And
+JumpFalse @Label_6
+GetFrame1 8
+GetFrame1 9
+Call @Function_0
+Push_4
+GetFrameP1 15
+FromStack
+GetFrameP1 15
+CallNative unk_0xEB8325B3 1 0
+GetFrame1 8
+GetFrame1 9
+Push_0
+Call @Function_2
+GetFrame1 8
+GetFrame1 9
+Push_1
+Call @Function_2
+GetFrame1 8
+GetFrame1 9
+Push_2
+Call @Function_2
+GetFrame1 8
+GetFrame1 9
+Push_3
+Call @Function_2
+
+:Label_6
+GetFrame1 8
+Add1 1
+SetFrame1 8
+Jump @Label_7
+
+:Label_3
+GetFrame1 9
+Add1 1
+SetFrame1 9
+Jump @Label_8
+
+:Label_2
+CallNative terminate_this_script 0 0
+Return 0 0
+//<
+
+:Function_2//>
+Function 3 33
+GetFrame1 2
+Switch [0 @Label_9]:[1 @Label_10]:[2 @Label_11]:[3 @Label_12]
+Jump @Label_13
+
+:Label_9
+PushB 128
+SetFrame1 5
+PushB 128
+SetFrame1 6
+Jump @Label_13
+
+:Label_10
+PushS 384
+SetFrame1 5
+PushB 128
+SetFrame1 6
+Jump @Label_13
+
+:Label_11
+PushB 128
+SetFrame1 5
+PushS 384
+SetFrame1 6
+Jump @Label_13
+
+:Label_12
+PushS 384
+SetFrame1 5
+PushS 384
+SetFrame1 6
+Jump @Label_13
+
+:Label_13
+PushS 512
+GetFrame1 0
+Push_7
+Sub
+Mult
+PushS 5120
+Sub
+GetFrame1 5
+Add
+SetFrame1 7
+GetFrame1 1
+Mult2 512
+GetFrame1 6
+Add
+SetFrame1 8
+GetFrame1 7
+CallNative to_float 1 1
+SetFrame1 9
+PushF 50
+GetFrameP1 9
+SetImm1 4
+GetFrame1 8
+CallNative to_float 1 1
+GetFrameP1 9
+SetImm1 8
+GetFrameP1 9
+CallNative unk_0x77C8F279 1 0
+Call @Function_3
+Call @Function_4
+Push_3
+GetFrameP1 12
+FromStack
+Push_1
+SetFrame1 18
+PushF 50
+GetFrameP1 9
+SetImm1 4
+GetFrameP1 9
+PushF 100
+GetFrameP1 12
+GetFrameP1 15
+CallNative find_ground_intersection 4 1
+Not
+JumpFalse @Label_14
+PushF 150
+GetFrameP1 9
+SetImm1 4
+GetFrameP1 9
+PushF 100
+GetFrameP1 12
+GetFrameP1 15
+CallNative find_ground_intersection 4 1
+Not
+JumpFalse @Label_14
+PushF -50
+GetFrameP1 9
+SetImm1 4
+GetFrameP1 9
+PushF 100
+GetFrameP1 12
+GetFrameP1 15
+CallNative find_ground_intersection 4 1
+Not
+JumpFalse @Label_14
+PushString "WARNING: FAILED TO FIND GROUND!!!... Skipping subCoord "
+CallNative printstring 1 0
+GetFrame1 2
+CallNative printint 1 0
+CallNative printnl 0 0
+Push_0
+SetFrame1 18
+
+:Label_14
+GetFrame1 18
+JumpFalse @Label_15
+GetFrameP1 12
+GetImm1 4
+PushF_2
+fAdd
+GetFrameP1 12
+SetImm1 4
+GetFrameP1 19
+Push_4
+pPeekSet
+Drop
+PushF_1
+PushF_0
+PushF_0
+Push_3
+Push_0
+GetFrameP1 19
+GetArrayP1 3
+FromStack
+PushF_0
+PushF_0
+PushF_1
+Push_3
+Push_1
+GetFrameP1 19
+GetArrayP1 3
+FromStack
+PushF_-1
+PushF_0
+PushF_0
+Push_3
+Push_2
+GetFrameP1 19
+GetArrayP1 3
+FromStack
+PushF_0
+PushF_0
+PushF_-1
+Push_3
+Push_3
+GetFrameP1 19
+GetArrayP1 3
+FromStack
+Push_0
+SetFrame1 32
+
+:Label_16
+GetFrame1 32
+Push_4
+JumpGE @Label_15
+GetFrameP1 12
+GetFrame1 32
+GetFrameP1 19
+GetArrayP1 3
+CallNative unk_0x868E29C1 2 0
+Call @Function_3
+PushString "TreeRotMetricsAngle="
+CallNative printstring 1 0
+GetFrame1 32
+CallNative printint 1 0
+CallNative printnl 0 0
+CallNative unk_0xCEED74A5 0 0
+GetFrame1 32
+Add1 1
+SetFrame1 32
+Jump @Label_16
+
+:Label_15
+Return 3 0
+//<
+
+:Function_4//>
+Function 0 2
+PushF_0
+PushF_0
+PushF_0
+Return 0 3
+//<
+
+:Function_3//>
+Function 0 3
+Push_0
+SetFrame1 2
+
+:Label_18
+GetFrame1 2
+PushB 100
+JumpGE @Label_17
+Push_0
+CallNative wait 1 0
+GetFrame1 2
+Add1 1
+SetFrame1 2
+Jump @Label_18
+
+:Label_17
+CallNative streaming_is_world_loaded 0 1
+Not
+JumpFalse @Label_19
+PushString "WORLD ISN'T LOADED - Waiting for world to load..."
+CallNative printstring 1 0
+
+:Label_19
+CallNative streaming_is_world_loaded 0 1
+Not
+JumpFalse @Label_20
+Push_0
+CallNative wait 1 0
+Jump @Label_19
+
+:Label_20
+Push_0
+SetFrame1 2
+
+:Label_22
+GetFrame1 2
+PushB 100
+JumpGE @Label_21
+Push_0
+CallNative wait 1 0
+GetFrame1 2
+Add1 1
+SetFrame1 2
+Jump @Label_22
+
+:Label_21
+CallNative printnl 0 0
+CallNative printnl 0 0
+Return 0 0
+//<
+
+:Function_1//>
+Function 2 4
+GetFrame1 1
+Switch [0 @Label_23]:[1 @Label_24]:[2 @Label_25]:[3 @Label_26]:[4 @Label_27]:[5 @Label_28]:[6 @Label_29]:[7 @Label_30]:[8 @Label_31]:[9 @Label_32]
+Jump @Label_33
+
+:Label_23
+Push_0
+Return 2 1
+
+:Label_24
+GetFrame1 0
+PushB 14
+CmpLe
+GetFrame1 0
+PushB 19
+CmpGe
+Or
+JumpFalse @Label_34
+Push_0
+Return 2 1
+
+:Label_34
+Jump @Label_35
+
+:Label_25
+GetFrame1 0
+PushB 13
+CmpLe
+GetFrame1 0
+PushB 20
+CmpGe
+Or
+JumpFalse @Label_36
+Push_0
+Return 2 1
+
+:Label_36
+Jump @Label_35
+
+:Label_26
+GetFrame1 0
+PushB 11
+CmpLe
+GetFrame1 0
+PushB 20
+CmpGe
+Or
+JumpFalse @Label_37
+Push_0
+Return 2 1
+
+:Label_37
+Jump @Label_35
+
+:Label_27
+GetFrame1 0
+Push_7
+CmpLe
+GetFrame1 0
+PushB 19
+CmpGe
+Or
+JumpFalse @Label_38
+Push_0
+Return 2 1
+
+:Label_38
+Jump @Label_35
+
+:Label_28
+GetFrame1 0
+Push_7
+CmpLe
+GetFrame1 0
+PushB 18
+CmpGe
+Or
+JumpFalse @Label_39
+Push_0
+Return 2 1
+
+:Label_39
+Jump @Label_35
+
+:Label_29
+GetFrame1 0
+Push_6
+CmpLe
+GetFrame1 0
+PushB 19
+CmpGe
+Or
+JumpFalse @Label_40
+Push_0
+Return 2 1
+
+:Label_40
+Jump @Label_35
+
+:Label_30
+GetFrame1 0
+Push_6
+CmpLe
+GetFrame1 0
+PushB 18
+CmpGe
+Or
+JumpFalse @Label_41
+Push_0
+Return 2 1
+
+:Label_41
+Jump @Label_35
+
+:Label_31
+GetFrame1 0
+Push_6
+CmpLe
+GetFrame1 0
+PushB 17
+CmpGe
+Or
+JumpFalse @Label_42
+Push_0
+Return 2 1
+
+:Label_42
+Jump @Label_35
+
+:Label_32
+GetFrame1 0
+Push_7
+CmpLe
+GetFrame1 0
+PushB 16
+CmpGe
+Or
+JumpFalse @Label_43
+Push_0
+Return 2 1
+
+:Label_43
+Jump @Label_35
+
+:Label_33
+Push_0
+Return 2 1
+
+:Label_35
+Push_1
+Return 2 1
+//<
+
+:Function_0//>
+Function 2 8
+GetFrame1 0
+CallNative int_to_string 1 1
+GetFrameP1 4
+StrCopy 16
+PushString "_"
+GetFrameP1 4
+StrAdd 16
+GetFrame1 1
+CallNative int_to_string 1 1
+GetFrameP1 4
+StrAdd 16
+Push_4
+GetFrameP1 4
+ToStack
+Return 2 4
+//<

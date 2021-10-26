@@ -1,0 +1,1879 @@
+SetParamCount 1
+
+//> Default Static Information
+SetStaticsCount 2
+SetStaticName 1 ScriptParameter0
+
+//<
+
+:MainFunction//>
+Function 0 42
+GetStatic1 ScriptParameter0
+SetStatic1 ScriptParameter0
+GetFrameP1 29
+PushF 35
+Call @Function_0
+Push_0
+SetFrame1 41
+CallNative unk_0x5F7176D6 0 1
+CallNative get_object_owner 1 1
+SetFrame1 3
+GetFrame1 3
+CallNative is_object_valid 1 1
+JumpFalse @Label_0
+GetFrame1 3
+CallNative get_object_type 1 1
+PushB 15
+JumpNE @Label_1
+GetFrame1 3
+CallNative get_actor_from_object 1 1
+SetFrame1 5
+GetFrame1 5
+Push_0
+Push_0
+CallNative enable_vehicle_seat 3 1
+Drop
+Jump @Label_2
+
+:Label_1
+PushString "Failed to get actor from Car object!"
+CallNative log_error 1 0
+
+:Label_2
+Jump @Label_3
+
+:Label_0
+PushString "Failed to get object handle to Car!"
+CallNative log_error 1 0
+
+:Label_3
+CallNative is_gringo_active 0 1
+JumpFalse @Label_4
+Call @Function_1
+SetFrame1 4
+CallNative unk_0x5F7176D6 0 1
+CallNative get_object_owner 1 1
+SetFrame1 3
+GetFrame1 3
+CallNative is_object_valid 1 1
+JumpFalse @Label_5
+GetFrame1 3
+CallNative get_object_type 1 1
+PushB 15
+JumpNE @Label_6
+GetFrame1 3
+CallNative get_actor_from_object 1 1
+SetFrame1 5
+Jump @Label_7
+
+:Label_6
+PushString "Failed to get actor from Car object!"
+CallNative log_error 1 0
+
+:Label_7
+Jump @Label_8
+
+:Label_5
+PushString "Failed to get object handle to Car!"
+CallNative log_error 1 0
+
+:Label_8
+GetFrame1 5
+CallNative is_actor_valid 1 1
+JumpFalse @Label_9
+GetFrame1 5
+PushString "carSettings"
+CallNative decor_check_exist 2 1
+Not
+JumpFalse @Label_10
+GetFrame1 5
+Call @Function_2
+
+:Label_10
+GetFrame1 5
+Push_0
+CallNative get_actor_in_vehicle_seat 2 1
+SetFrame1 6
+GetFrame1 6
+CallNative is_actor_valid 1 1
+JumpFalse @Label_11
+Push_1
+SetFrame1 9
+GetFrame1 6
+GetFrame1 4
+JumpEQ @Label_12
+Push_1
+SetFrame1 10
+Jump @Label_13
+
+:Label_12
+Push_0
+SetFrame1 10
+
+:Label_13
+Jump @Label_14
+
+:Label_11
+Push_0
+SetFrame1 9
+GetFrame1 10
+JumpFalse @Label_15
+Push_0
+SetFrame1 8
+Jump @Label_16
+
+:Label_15
+Push_1
+SetFrame1 8
+
+:Label_16
+Push_1
+SetFrame1 10
+
+:Label_14
+GetFrame1 41
+Switch [0 @Label_17]:[1 @Label_18]:[2 @Label_19]:[3 @Label_20]
+Jump @Label_9
+
+:Label_17
+GetFrame1 5
+CallNative is_vehicle_engine_running 1 1
+JumpFalse @Label_21
+PushString "Car Stalled: Stopping engine (again)!"
+Call @Function_3
+GetFrame1 5
+Push_0
+CallNative set_vehicle_engine_running 2 0
+GetFrame1 5
+Push_4
+Call @Function_4
+
+:Label_21
+GetFrame1 5
+GetFrameP1 20
+Push_1
+CallNative get_actor_axis 3 1
+Drop
+GetFrameP1 20
+GetImm1 4
+PushF 0.25
+fCmpLe
+JumpFalse @Label_22
+GetFrame1 5
+PushString "carCrank"
+CallNative find_object_in_object 2 1
+SetFrame1 3
+GetFrame1 3
+CallNative is_object_valid 1 1
+JumpFalse @Label_23
+GetFrame1 3
+CallNative get_gringo_from_object 1 1
+SetFrame1 7
+GetFrame1 7
+CallNative is_gringo_valid 1 1
+JumpFalse @Label_23
+GetFrame1 7
+PushString "UseCase1"
+CallNative unk_0x6ADC74CE 2 1
+JumpFalse @Label_23
+PushString "Car Stalled: Deactivating crank (flipped)!"
+Call @Function_3
+GetFrame1 7
+PushString "UseCase1"
+Push_0
+CallNative unk_0xB78BC233 3 1
+Drop
+GetFrame1 5
+PushString "carCranked"
+CallNative decor_check_exist 2 1
+JumpFalse @Label_23
+GetFrame1 5
+PushString "carCranked"
+CallNative decor_remove 2 1
+Drop
+
+:Label_23
+Jump @Label_24
+
+:Label_22
+GetFrame1 5
+PushString "carCrank"
+CallNative find_object_in_object 2 1
+SetFrame1 3
+GetFrame1 3
+CallNative is_object_valid 1 1
+JumpFalse @Label_24
+GetFrame1 3
+CallNative get_gringo_from_object 1 1
+SetFrame1 7
+GetFrame1 7
+CallNative is_gringo_valid 1 1
+JumpFalse @Label_24
+GetFrame1 7
+PushString "UseCase1"
+CallNative unk_0x6ADC74CE 2 1
+Not
+JumpFalse @Label_24
+PushString "Car Stalled: Activating crank (again)!"
+Call @Function_3
+GetFrame1 7
+PushString "UseCase1"
+Push_1
+CallNative unk_0xB78BC233 3 1
+Drop
+
+:Label_24
+GetFrame1 5
+PushString "carCranked"
+CallNative decor_check_exist 2 1
+JumpFalse @Label_25
+GetFrame1 5
+PushString "carCranked"
+CallNative decor_get_bool 2 1
+JumpFalse @Label_26
+PushString "Car Starting: 'carCranked' decor set!"
+Call @Function_3
+Push_1
+SetFrame1 41
+
+:Label_26
+Jump @Label_27
+
+:Label_25
+GetFrame1 9
+GetFrame1 10
+And
+JumpFalse @Label_28
+PushString "Car Starting: driver is not a player!"
+Call @Function_3
+Push_1
+SetFrame1 41
+Jump @Label_27
+
+:Label_28
+GetFrame1 5
+Push_4
+Call @Function_5
+JumpFalse @Label_27
+PushString "Car Starting: 'ENGINE_RUNNING' setting turned on!"
+Call @Function_3
+Push_1
+SetFrame1 41
+
+:Label_27
+GetGlobal2 3380
+Not
+GetFrame1 5
+Push_1
+Call @Function_5
+And
+JumpFalse @Label_29
+GetFrame1 10
+Not
+GetFrame1 9
+Not
+GetFrame1 4
+GetFrame1 5
+PushF 15
+CallNative actors_in_range 3 1
+And
+Or
+JumpFalse @Label_29
+GetFrameP1 29
+PushF 35
+PushString "car_help_crank"
+PushF 10
+Push_1
+Push_0
+Call @Function_6
+Drop
+
+:Label_29
+Jump @Label_9
+
+:Label_18
+PushF 100
+SetFrame1 14
+GetFrame1 5
+Push_0
+Call @Function_7
+SetFrame1 15
+GetFrame1 15
+SetFrame1 16
+GetFrame1 5
+CallNative get_vehicle_bump_count 1 1
+SetFrame1 12
+GetFrame1 12
+SetFrame1 13
+GetFrameP1 29
+Call @Function_8
+GetFrameP1 32
+Call @Function_8
+GetFrameP1 35
+Call @Function_8
+GetFrameP1 38
+Call @Function_8
+GetFrame1 5
+Push_0
+Push_1
+CallNative enable_vehicle_seat 3 1
+Drop
+PushString "Car Starting: Engine started!"
+Call @Function_3
+GetFrame1 5
+Push_1
+CallNative set_vehicle_engine_running 2 0
+GetFrame1 5
+PushF_0
+CallNative vehicle_set_handbrake 2 0
+GetFrame1 5
+Push_1
+CallNative set_vehicle_allowed_to_drive 2 0
+GetFrame1 5
+Push_4
+Call @Function_9
+GetFrame1 5
+PushString "carCrank"
+CallNative find_object_in_object 2 1
+SetFrame1 3
+GetFrame1 3
+CallNative is_object_valid 1 1
+JumpFalse @Label_30
+GetFrame1 3
+CallNative get_gringo_from_object 1 1
+SetFrame1 7
+GetFrame1 7
+CallNative is_gringo_valid 1 1
+JumpFalse @Label_30
+PushString "Car Starting: Crank deactivated!"
+Call @Function_3
+GetFrame1 7
+PushString "UseCase1"
+Push_0
+CallNative unk_0xB78BC233 3 1
+Drop
+GetFrame1 5
+PushString "carCranked"
+CallNative decor_check_exist 2 1
+JumpFalse @Label_30
+GetFrame1 5
+PushString "carCranked"
+CallNative decor_remove 2 1
+Drop
+
+:Label_30
+GetGlobal2 3380
+Not
+GetFrame1 5
+Push_1
+Call @Function_5
+And
+JumpFalse @Label_31
+GetFrame1 10
+Not
+GetFrame1 9
+Not
+GetFrame1 4
+GetFrame1 5
+PushF 15
+CallNative actors_in_range 3 1
+And
+Or
+JumpFalse @Label_31
+PushString "car_help_start"
+PushF 10
+Push_1
+Call @Function_10
+
+:Label_31
+PushString "Car Started: Vroom...Vroom...Vroom!"
+Call @Function_3
+Push_2
+SetFrame1 41
+Jump @Label_9
+
+:Label_19
+GetFrame1 5
+CallNative is_vehicle_engine_running 1 1
+Not
+JumpFalse @Label_32
+PushString "Car Started: Starting engine (again)!"
+Call @Function_3
+GetFrame1 5
+Push_1
+CallNative set_vehicle_engine_running 2 0
+GetFrame1 5
+PushF_0
+CallNative vehicle_set_handbrake 2 0
+GetFrame1 5
+Push_1
+CallNative set_vehicle_allowed_to_drive 2 0
+GetFrame1 5
+Push_4
+Call @Function_9
+
+:Label_32
+GetFrame1 5
+PushString "carCrank"
+CallNative find_object_in_object 2 1
+SetFrame1 3
+GetFrame1 3
+CallNative is_object_valid 1 1
+JumpFalse @Label_33
+GetFrame1 3
+CallNative get_gringo_from_object 1 1
+SetFrame1 7
+GetFrame1 7
+CallNative is_gringo_valid 1 1
+JumpFalse @Label_33
+GetFrame1 7
+PushString "UseCase1"
+CallNative unk_0x6ADC74CE 2 1
+JumpFalse @Label_33
+PushString "Car Started: Deactivating crank (again)!"
+Call @Function_3
+GetFrame1 7
+PushString "UseCase1"
+Push_0
+CallNative unk_0xB78BC233 3 1
+Drop
+GetFrame1 5
+PushString "carCranked"
+CallNative decor_check_exist 2 1
+JumpFalse @Label_33
+GetFrame1 5
+PushString "carCranked"
+CallNative decor_remove 2 1
+Drop
+
+:Label_33
+GetFrame1 5
+GetFrameP1 17
+CallNative get_position 2 0
+GetFrame1 5
+GetFrameP1 20
+Push_1
+CallNative get_actor_axis 3 1
+Drop
+GetFrame1 5
+GetFrameP1 23
+Push_2
+CallNative get_actor_axis 3 1
+Drop
+GetFrame1 5
+Push_0
+Call @Function_7
+SetFrame1 15
+GetFrame1 5
+CallNative get_vehicle_bump_count 1 1
+SetFrame1 12
+GetFrameP1 17
+PushF 10
+GetFrameP1 26
+GetFrameP1 26
+GetFrameP1 11
+CallNative unk_0x77964B0C 5 1
+Drop
+GetFrame1 10
+Not
+GetFrame1 5
+PushB 8
+Call @Function_5
+Or
+JumpFalse @Label_34
+GetFrame1 5
+PushB 16
+Call @Function_5
+JumpFalse @Label_35
+GetFrameP1 20
+GetImm1 4
+PushF 0.25
+fCmpLe
+JumpFalse @Label_36
+GetFrameP1 32
+Call @Function_11
+GetFrameP1 32
+Call @Function_12
+PushF_5
+fCmpGe
+JumpFalse @Label_37
+PushString "Car Engine Health: Flipped too far over!"
+Call @Function_3
+PushF_0
+SetFrame1 14
+GetFrameP1 32
+Call @Function_8
+
+:Label_37
+Jump @Label_38
+
+:Label_36
+GetFrameP1 32
+Call @Function_13
+JumpFalse @Label_38
+GetFrameP1 32
+Call @Function_8
+
+:Label_38
+Jump @Label_39
+
+:Label_35
+GetFrameP1 32
+Call @Function_13
+JumpFalse @Label_39
+GetFrameP1 32
+Call @Function_8
+
+:Label_39
+GetFrame1 5
+PushB 32
+Call @Function_5
+JumpFalse @Label_40
+GetFrame1 11
+PushS 512
+Call @Function_14
+JumpFalse @Label_41
+GetFrameP1 35
+Call @Function_11
+GetFrameP1 35
+Call @Function_12
+PushF_1
+fCmpGe
+JumpFalse @Label_42
+PushString "Car Engine Health: In water for too long!"
+Call @Function_3
+PushF_0
+SetFrame1 14
+GetFrameP1 35
+Call @Function_8
+
+:Label_42
+Jump @Label_43
+
+:Label_41
+GetFrameP1 35
+Call @Function_13
+JumpFalse @Label_43
+GetFrameP1 35
+Call @Function_8
+
+:Label_43
+Jump @Label_44
+
+:Label_40
+GetFrameP1 35
+Call @Function_13
+JumpFalse @Label_44
+GetFrameP1 35
+Call @Function_8
+
+:Label_44
+GetFrame1 5
+PushB 64
+Call @Function_5
+JumpFalse @Label_45
+GetFrame1 5
+CallNative get_actor_health 1 1
+GetFrame1 5
+CallNative get_actor_max_health 1 1
+fDiv
+PushF 0.1
+fCmpLe
+JumpFalse @Label_45
+PushString "Car Engine Health: Lost too much health!"
+Call @Function_3
+PushF_0
+SetFrame1 14
+
+:Label_45
+GetFrame1 5
+PushB 128
+Call @Function_5
+JumpFalse @Label_46
+GetFrame1 11
+PushB 16
+Call @Function_14
+Not
+GetFrame1 11
+PushB 32
+Call @Function_14
+Not
+And
+GetFrame1 11
+PushB 64
+Call @Function_14
+Not
+And
+JumpFalse @Label_46
+GetFrame1 12
+GetFrame1 13
+JumpLE @Label_46
+PushString "Car Engine Health: Bumped up/down/left/right!"
+Call @Function_3
+GetFrame1 14
+GetFrame1 12
+GetFrame1 13
+Sub
+Push_1
+Div
+ItoF
+PushF 0.1
+fMult
+fSub
+SetFrame1 14
+
+:Label_46
+GetFrame1 5
+PushS 256
+Call @Function_5
+JumpFalse @Label_47
+GetFrame1 16
+GetFrame1 15
+fSub
+SetFrame1 2
+GetFrame1 2
+PushF 9.8
+fCmpGe
+JumpFalse @Label_47
+PushString "Car Engine Health: Got into a hard crash!"
+Call @Function_3
+GetFrame1 14
+GetFrame1 2
+PushF 9.8
+PushF_1
+fMult
+fDiv
+PushF_1
+fMult
+fSub
+SetFrame1 14
+
+:Label_47
+GetFrame1 5
+PushS 512
+Call @Function_5
+JumpFalse @Label_48
+GetFrameP1 23
+GetImm1 4
+PushF -0.5
+fCmpLe
+JumpFalse @Label_49
+GetFrameP1 38
+Call @Function_11
+GetFrameP1 38
+Call @Function_12
+PushF_2
+fCmpGe
+JumpFalse @Label_50
+PushString "Car Engine Health: Too steep a slope!"
+Call @Function_3
+GetFrame1 14
+PushF 0.1
+fSub
+SetFrame1 14
+GetFrameP1 38
+Call @Function_8
+
+:Label_50
+Jump @Label_51
+
+:Label_49
+GetFrameP1 38
+Call @Function_13
+JumpFalse @Label_51
+GetFrameP1 38
+Call @Function_8
+
+:Label_51
+Jump @Label_52
+
+:Label_48
+GetFrameP1 38
+Call @Function_13
+JumpFalse @Label_52
+GetFrameP1 38
+Call @Function_8
+
+:Label_52
+Jump @Label_53
+
+:Label_34
+GetFrameP1 32
+Call @Function_13
+JumpFalse @Label_54
+GetFrameP1 32
+Call @Function_8
+
+:Label_54
+GetFrameP1 35
+Call @Function_13
+JumpFalse @Label_55
+GetFrameP1 35
+Call @Function_8
+
+:Label_55
+GetFrameP1 38
+Call @Function_13
+JumpFalse @Label_53
+GetFrameP1 38
+Call @Function_8
+
+:Label_53
+GetFrame1 5
+Push_2
+Call @Function_5
+JumpFalse @Label_56
+PushString "|| CAR DEBUG BEGIN || CAR DEBUG BEGIN || CAR DEBUG BEGIN || CAR DEBUG BEGIN ||"
+CallNative printstring 1 0
+CallNative printnl 0 0
+PushString "Cur Health		: "
+CallNative printstring 1 0
+GetFrame1 5
+CallNative get_actor_health 1 1
+CallNative printfloat 1 0
+CallNative printnl 0 0
+PushString "Max Health		: "
+CallNative printstring 1 0
+GetFrame1 5
+CallNative get_actor_max_health 1 1
+CallNative printfloat 1 0
+CallNative printnl 0 0
+PushString "Engine Health	: "
+CallNative printstring 1 0
+GetFrame1 14
+CallNative printfloat 1 0
+CallNative printnl 0 0
+PushString "Position		: "
+CallNative printstring 1 0
+Push_3
+GetFrameP1 17
+ToStack
+CallNative printvector 3 0
+CallNative printnl 0 0
+PushString "Up				: "
+CallNative printstring 1 0
+Push_3
+GetFrameP1 20
+ToStack
+CallNative printvector 3 0
+CallNative printnl 0 0
+PushString "Forward		: "
+CallNative printstring 1 0
+Push_3
+GetFrameP1 23
+ToStack
+CallNative printvector 3 0
+CallNative printnl 0 0
+PushString "Cur Speed		: "
+CallNative printstring 1 0
+GetFrame1 15
+CallNative printfloat 1 0
+CallNative printnl 0 0
+PushString "Last Speed		: "
+CallNative printstring 1 0
+GetFrame1 16
+CallNative printfloat 1 0
+CallNative printnl 0 0
+PushString "Acceleration	: "
+CallNative printstring 1 0
+GetFrame1 2
+CallNative printfloat 1 0
+CallNative printnl 0 0
+PushString "Cur Bump Cnt	: "
+CallNative printstring 1 0
+GetFrame1 12
+CallNative printint 1 0
+CallNative printnl 0 0
+PushString "Last Bump Cnt	: "
+CallNative printstring 1 0
+GetFrame1 13
+CallNative printint 1 0
+CallNative printnl 0 0
+PushString "Bump Cnt Diff	: "
+CallNative printstring 1 0
+GetFrame1 12
+GetFrame1 13
+Sub
+CallNative printint 1 0
+CallNative printnl 0 0
+PushString "Help Timer		: "
+CallNative printstring 1 0
+GetFrameP1 29
+Call @Function_13
+JumpFalse @Label_57
+GetFrameP1 29
+Call @Function_12
+CallNative printfloat 1 0
+Jump @Label_58
+
+:Label_57
+PushF_0
+CallNative printfloat 1 0
+
+:Label_58
+CallNative printnl 0 0
+PushString "Flip Timer		: "
+CallNative printstring 1 0
+GetFrameP1 32
+Call @Function_13
+JumpFalse @Label_59
+GetFrameP1 32
+Call @Function_12
+CallNative printfloat 1 0
+Jump @Label_60
+
+:Label_59
+PushF_0
+CallNative printfloat 1 0
+
+:Label_60
+CallNative printnl 0 0
+PushString "Water Timer	: "
+CallNative printstring 1 0
+GetFrameP1 35
+Call @Function_13
+JumpFalse @Label_61
+GetFrameP1 35
+Call @Function_12
+CallNative printfloat 1 0
+Jump @Label_62
+
+:Label_61
+PushF_0
+CallNative printfloat 1 0
+
+:Label_62
+CallNative printnl 0 0
+PushString "Slope Timer	: "
+CallNative printstring 1 0
+GetFrameP1 38
+Call @Function_13
+JumpFalse @Label_63
+GetFrameP1 38
+Call @Function_12
+CallNative printfloat 1 0
+Jump @Label_64
+
+:Label_63
+PushF_0
+CallNative printfloat 1 0
+
+:Label_64
+CallNative printnl 0 0
+GetFrame1 11
+Push_-1
+JumpNE @Label_65
+PushString "Material		: AIMATERIALFLAG_INVALID"
+CallNative printstring 1 0
+CallNative printnl 0 0
+
+:Label_65
+GetFrame1 11
+Push_0
+JumpNE @Label_66
+PushString "Material		: AIMATERIALFLAG_ANY"
+CallNative printstring 1 0
+CallNative printnl 0 0
+
+:Label_66
+GetFrame1 11
+Push_1
+Call @Function_14
+JumpFalse @Label_67
+PushString "Material		: AIMATERIALFLAG_TERRAIN"
+CallNative printstring 1 0
+CallNative printnl 0 0
+
+:Label_67
+GetFrame1 11
+PushB 8
+Call @Function_14
+JumpFalse @Label_68
+PushString "Material		: AIMATERIALFLAG_GENERICSPAWN"
+CallNative printstring 1 0
+CallNative printnl 0 0
+
+:Label_68
+GetFrame1 11
+PushB 16
+Call @Function_14
+JumpFalse @Label_69
+PushString "Material		: AIMATERIALFLAG_PEDPATH"
+CallNative printstring 1 0
+CallNative printnl 0 0
+
+:Label_69
+GetFrame1 11
+PushB 32
+Call @Function_14
+JumpFalse @Label_70
+PushString "Material		: AIMATERIALFLAG_HORSEPATH"
+CallNative printstring 1 0
+CallNative printnl 0 0
+
+:Label_70
+GetFrame1 11
+PushB 64
+Call @Function_14
+JumpFalse @Label_71
+PushString "Material		: AIMATERIALFLAG_VEHICLEPATH"
+CallNative printstring 1 0
+CallNative printnl 0 0
+
+:Label_71
+GetFrame1 11
+PushB 128
+Call @Function_14
+JumpFalse @Label_72
+PushString "Material		: AIMATERIALFLAG_TRAINTRACKS"
+CallNative printstring 1 0
+CallNative printnl 0 0
+
+:Label_72
+GetFrame1 11
+PushS 256
+Call @Function_14
+JumpFalse @Label_73
+PushString "Material		: AIMATERIALFLAG_RESERVED"
+CallNative printstring 1 0
+CallNative printnl 0 0
+
+:Label_73
+GetFrame1 11
+PushS 512
+Call @Function_14
+JumpFalse @Label_74
+PushString "Material		: AIMATERIALFLAG_WATER"
+CallNative printstring 1 0
+CallNative printnl 0 0
+
+:Label_74
+PushString "||  CAR DEBUG END  ||  CAR DEBUG END  ||  CAR DEBUG END  ||  CAR DEBUG END  ||"
+CallNative printstring 1 0
+CallNative printnl 0 0
+
+:Label_56
+GetFrame1 12
+SetFrame1 13
+GetFrame1 15
+SetFrame1 16
+GetFrame1 10
+JumpFalse @Label_75
+GetFrame1 8
+JumpFalse @Label_76
+PushString "testInventory"
+PushString "staminaValue"
+Push_0
+CallNative unk_0x4778A580 3 1
+Drop
+
+:Label_76
+Jump @Label_77
+
+:Label_75
+PushString "testInventory"
+PushString "staminaValue"
+CallNative unk_0x03568B83 2 1
+GetFrame1 14
+CallNative ceil 1 1
+JumpEQ @Label_77
+PushString "testInventory"
+PushString "staminaValue"
+GetFrame1 14
+CallNative ceil 1 1
+CallNative unk_0x4778A580 3 1
+Drop
+
+:Label_77
+GetFrame1 14
+PushF_0
+fCmpLe
+JumpFalse @Label_78
+PushString "Car Stalling: Engine health below min!"
+Call @Function_3
+Push_3
+SetFrame1 41
+Jump @Label_79
+
+:Label_78
+GetFrame1 5
+Push_4
+Call @Function_5
+Not
+JumpFalse @Label_79
+PushString "Car Stalling: 'ENGINE_RUNNING' setting turned off!"
+Call @Function_3
+Push_3
+SetFrame1 41
+
+:Label_79
+Jump @Label_9
+
+:Label_20
+PushF_0
+SetFrame1 14
+GetFrame1 5
+Push_0
+Push_0
+CallNative enable_vehicle_seat 3 1
+Drop
+PushString "Car Stalling: Engine stopped!"
+Call @Function_3
+GetFrame1 5
+Push_0
+CallNative set_vehicle_engine_running 2 0
+GetFrame1 5
+Push_4
+Call @Function_4
+GetFrame1 5
+PushString "carCrank"
+CallNative find_object_in_object 2 1
+SetFrame1 3
+GetFrame1 3
+CallNative is_object_valid 1 1
+JumpFalse @Label_80
+GetFrame1 3
+CallNative get_gringo_from_object 1 1
+SetFrame1 7
+GetFrame1 7
+CallNative is_gringo_valid 1 1
+JumpFalse @Label_80
+PushString "Car Stalling: Crank activated!"
+Call @Function_3
+GetFrame1 7
+PushString "UseCase1"
+Push_1
+CallNative unk_0xB78BC233 3 1
+Drop
+
+:Label_80
+GetGlobal2 3380
+Not
+GetFrame1 5
+Push_1
+Call @Function_5
+And
+JumpFalse @Label_81
+GetFrame1 10
+Not
+GetFrame1 9
+Not
+GetFrame1 4
+GetFrame1 5
+PushF 15
+CallNative actors_in_range 3 1
+And
+Or
+JumpFalse @Label_81
+PushString "car_help_stall"
+PushF 10
+Push_1
+Call @Function_10
+
+:Label_81
+GetFrameP1 29
+Call @Function_15
+PushString "Car Stalling: Puttt...Puttt...Puttt!"
+Call @Function_3
+Push_0
+SetFrame1 41
+Jump @Label_9
+
+:Label_9
+PushB 250
+CallNative gringo_wait 1 0
+Jump @Label_3
+
+:Label_4
+Return 0 0
+//<
+
+:Function_15//>
+Function 1 3
+GetFrame1 0
+PushF_0
+Call @Function_16
+Return 1 0
+//<
+
+:Function_16//>
+Function 2 4
+CallNative unk_0x5842B9D1 0 1
+GetFrame1 1
+fSub
+GetFrame1 0
+SetImm1 4
+GetFrame1 0
+Push_1
+Call @Function_17
+GetFrame1 0
+Push_2
+Call @Function_18
+PushF_0
+GetFrame1 0
+SetImm1 8
+Return 2 0
+//<
+
+:Function_18//>
+Function 2 4
+GetFrame1 0
+pGet
+GetFrame1 0
+pGet
+GetFrame1 1
+And
+Sub
+GetFrame1 0
+pSet
+Return 2 0
+//<
+
+:Function_17//>
+Function 2 4
+GetFrame1 0
+pGet
+GetFrame1 1
+Or
+GetFrame1 0
+pSet
+Return 2 0
+//<
+
+:Function_14//>
+Function 2 4
+GetFrame1 0
+GetFrame1 1
+And
+Push_0
+CmpNe
+Return 2 1
+//<
+
+:Function_13//>
+Function 1 3
+GetFrame1 0
+pGet
+Push_1
+Call @Function_14
+Return 1 1
+//<
+
+:Function_12//>
+Function 1 3
+GetFrame1 0
+Call @Function_13
+JumpFalse @Label_82
+GetFrame1 0
+Call @Function_19
+JumpFalse @Label_83
+GetFrame1 0
+GetImm1 8
+Return 1 1
+Jump @Label_84
+
+:Label_83
+CallNative unk_0x5842B9D1 0 1
+GetFrame1 0
+GetImm1 4
+fSub
+Return 1 1
+
+:Label_84
+Jump @Function_19
+
+:Label_82
+PushString "ERROR: Trying to get value of TIMER that has not been started!"
+CallNative log_error 1 0
+PushString "WARNING: Trying to get value of TIMER that has not been started! Returning 0.0 \n"
+CallNative printstring 1 0
+GetFrame1 0
+GetImm1 4
+Return 1 1
+//<
+
+:Function_19//>
+Function 1 3
+GetFrame1 0
+pGet
+Push_2
+Call @Function_14
+Return 1 1
+//<
+
+:Function_11//>
+Function 1 3
+GetFrame1 0
+Call @Function_13
+Not
+JumpFalse @Label_85
+GetFrame1 0
+PushF_0
+Call @Function_16
+
+:Label_85
+Return 1 0
+//<
+
+:Function_10//>
+Function 3 5
+GetFrame1 2
+Switch [0 @Label_86]:[1 @Label_87]:[2 @Label_88]:[3 @Label_89]
+Jump @Label_90
+
+:Label_86
+GetFrame1 0
+GetFrame1 1
+Push_0
+Push_2
+Push_1
+Push_0
+Call @Function_20
+Jump @Label_90
+
+:Label_87
+GetFrame1 0
+GetFrame1 1
+Push_1
+Push_0
+Push_2
+Push_1
+Push_0
+Call @Function_21
+Jump @Label_90
+
+:Label_88
+GetFrame1 0
+GetFrame1 1
+Push_1
+Push_2
+Push_0
+Push_0
+Push_0
+Push_0
+Call @Function_22
+Jump @Label_90
+
+:Label_89
+GetFrame1 0
+GetFrame1 1
+Push_0
+Push_2
+Push_0
+CallNative print_big 5 0
+Jump @Label_90
+
+:Label_90
+Return 3 0
+//<
+
+:Function_22//>
+Function 8 15
+GetFrame1 4
+JumpFalse @Label_91
+CallNative hud_clear_objective 0 0
+CallNative unk_0xE4DACF40 0 0
+
+:Label_91
+GetGlobal2 3380
+Push_1
+CmpEq
+GetGlobal2 6269
+Push_-1
+CmpNe
+And
+JumpFalse @Label_92
+Push_4
+GetGlobal2 6269
+GetGlobalP2 3422
+GetArrayP1 40
+Add1 12
+ToStack
+Push_4
+GetFrameP1 10
+FromStack
+GetGlobal2 6269
+PushB 11
+CmpEq
+GetGlobal2 6269
+PushB 16
+CmpEq
+Or
+GetGlobal2 6269
+PushB 15
+CmpEq
+Or
+GetGlobal2 6269
+PushB 43
+CmpEq
+Or
+JumpFalse @Label_93
+GetGlobal2 6269
+Call @Function_23
+Push_4
+GetFrameP1 10
+FromStack
+
+:Label_93
+GetFrame1 0
+GetFrame1 1
+GetFrame1 7
+GetFrame1 3
+GetFrame1 2
+GetFrameP1 10
+Push_0
+GetFrame1 6
+CallNative unk_0x32394BB6 8 0
+Jump @Label_94
+
+:Label_92
+PushString ""
+pGet
+SetFrame1 14
+GetFrame1 0
+GetFrame1 1
+GetFrame1 7
+GetFrame1 3
+GetFrame1 2
+GetFrame1 14
+GetFrame1 5
+GetFrame1 6
+CallNative unk_0x32394BB6 8 0
+
+:Label_94
+Return 8 0
+//<
+
+:Function_23//>
+Function 1 7
+Call @Function_24
+Not
+JumpFalse @Label_95
+PushString "miss"
+GetFrameP1 3
+StrCopy 16
+Jump @Label_96
+
+:Label_95
+PushString "ziss"
+GetFrameP1 3
+StrCopy 16
+
+:Label_96
+GetFrame1 0
+GetFrameP1 3
+StrAddi 16
+PushString "_short"
+GetFrameP1 3
+StrAdd 16
+Push_4
+GetFrameP1 3
+ToStack
+Return 1 4
+//<
+
+:Function_24//>
+Function 0 2
+GetGlobalP3 83864
+GetImm2 1252
+PushS 1024
+Call @Function_14
+JumpFalse @Label_97
+CallNative unk_0x6CC9CCE7 0 1
+Return 0 1
+
+:Label_97
+Push_0
+Return 0 1
+//<
+
+:Function_21//>
+Function 7 14
+GetGlobal2 3380
+Push_1
+CmpEq
+GetGlobal2 6269
+Push_-1
+CmpNe
+And
+JumpFalse @Label_98
+Push_4
+GetGlobal2 6269
+GetGlobalP2 3422
+GetArrayP1 40
+Add1 12
+ToStack
+Push_4
+GetFrameP1 9
+FromStack
+GetGlobal2 6269
+PushB 11
+CmpEq
+GetGlobal2 6269
+PushB 16
+CmpEq
+Or
+GetGlobal2 6269
+PushB 15
+CmpEq
+Or
+GetGlobal2 6269
+PushB 43
+CmpEq
+Or
+JumpFalse @Label_99
+GetGlobal2 6269
+Call @Function_23
+Push_4
+GetFrameP1 9
+FromStack
+
+:Label_99
+GetFrame1 0
+GetFrame1 1
+GetFrame1 2
+GetFrame1 3
+GetFrame1 4
+GetFrame1 5
+GetFrameP1 9
+GetFrame1 6
+CallNative unk_0xE42A8278 8 0
+Jump @Label_100
+
+:Label_98
+PushString ""
+pGet
+SetFrame1 13
+GetFrame1 0
+GetFrame1 1
+GetFrame1 2
+GetFrame1 3
+GetFrame1 4
+GetFrame1 5
+GetFrame1 13
+GetFrame1 6
+CallNative unk_0xE42A8278 8 0
+
+:Label_100
+Return 7 0
+//<
+
+:Function_20//>
+Function 6 13
+GetGlobal2 3380
+Push_1
+CmpEq
+GetGlobal2 6269
+Push_-1
+CmpNe
+And
+JumpFalse @Label_101
+Push_4
+GetGlobal2 6269
+GetGlobalP2 3422
+GetArrayP1 40
+Add1 12
+ToStack
+Push_4
+GetFrameP1 8
+FromStack
+GetGlobal2 6269
+PushB 11
+CmpEq
+GetGlobal2 6269
+PushB 16
+CmpEq
+Or
+GetGlobal2 6269
+PushB 15
+CmpEq
+Or
+GetGlobal2 6269
+PushB 43
+CmpEq
+Or
+JumpFalse @Label_102
+GetGlobal2 6269
+Call @Function_23
+Push_4
+GetFrameP1 8
+FromStack
+
+:Label_102
+GetFrame1 0
+GetFrame1 1
+GetFrame1 2
+GetFrame1 3
+GetFrame1 4
+GetFrameP1 8
+GetFrame1 5
+CallNative unk_0x04A38C60 7 0
+Jump @Label_103
+
+:Label_101
+PushString ""
+pGet
+SetFrame1 12
+GetFrame1 0
+GetFrame1 1
+GetFrame1 2
+GetFrame1 3
+GetFrame1 4
+GetFrame1 12
+GetFrame1 5
+CallNative unk_0x04A38C60 7 0
+
+:Label_103
+Return 6 0
+//<
+
+:Function_9//>
+Function 2 5
+GetFrame1 0
+CallNative is_actor_valid 1 1
+Not
+JumpFalse @Label_104
+Return 2 0
+
+:Label_104
+GetFrame1 0
+CallNative get_actor_enum 1 1
+PushS 1194
+CmpNe
+GetFrame1 0
+CallNative get_actor_enum 1 1
+PushS 1193
+CmpNe
+And
+JumpFalse @Label_105
+Return 2 0
+
+:Label_105
+GetFrame1 0
+PushString "carSettings"
+CallNative decor_check_exist 2 1
+Not
+JumpFalse @Label_106
+GetFrame1 0
+Call @Function_2
+
+:Label_106
+GetFrame1 0
+PushString "carSettings"
+CallNative decor_get_int 2 1
+SetFrame1 4
+GetFrameP1 4
+GetFrame1 1
+Call @Function_17
+GetFrame1 0
+PushString "carSettings"
+GetFrame1 4
+CallNative decor_set_int 3 1
+Drop
+Return 2 0
+//<
+
+:Function_8//>
+Function 1 3
+PushF_0
+GetFrame1 0
+SetImm1 4
+PushF_0
+GetFrame1 0
+SetImm1 8
+Push_0
+GetFrame1 0
+pSet
+Return 1 0
+//<
+
+:Function_7//>
+Function 2 7
+GetFrame1 0
+GetFrameP1 4
+CallNative get_actor_velocity 2 1
+Drop
+GetFrame1 1
+JumpFalse @Label_107
+PushF_0
+GetFrameP1 4
+SetImm1 4
+
+:Label_107
+Push_3
+GetFrameP1 4
+ToStack
+CallNative vmag 3 1
+Return 2 1
+//<
+
+:Function_6//>
+Function 6 8
+GetFrame1 0
+Call @Function_12
+GetFrame1 1
+fCmpGe
+JumpFalse @Label_108
+GetFrame1 5
+JumpFalse @Label_109
+Call @Function_25
+
+:Label_109
+Call @Function_26
+Not
+JumpFalse @Label_110
+GetFrame1 2
+GetFrame1 3
+GetFrame1 4
+Call @Function_10
+GetFrame1 0
+Call @Function_15
+Push_1
+Return 6 1
+Jump @Label_108
+
+:Label_110
+GetFrame1 0
+GetFrame1 1
+PushF_1
+fSub
+Call @Function_16
+Push_0
+Return 6 1
+
+:Label_108
+Push_0
+Return 6 1
+//<
+
+:Function_26//>
+Function 0 2
+CallNative unk_0x60135878 0 1
+CallNative unk_0x4B2FCAF6 0 1
+Or
+CallNative unk_0x2F0E7DE7 0 1
+Or
+CallNative unk_0x710B3A83 0 1
+Or
+PushString "MissionFailedMenu"
+CallNative ui_isactive 1 1
+Or
+Return 0 1
+//<
+
+:Function_25//>
+Function 0 2
+CallNative hud_clear_big_text 0 0
+CallNative hud_clear_counter 0 0
+CallNative hud_clear_help 0 0
+CallNative hud_clear_objective 0 0
+CallNative hud_clear_small_text 0 0
+Return 0 0
+//<
+
+:Function_5//>
+Function 2 5
+GetFrame1 0
+CallNative is_actor_valid 1 1
+Not
+JumpFalse @Label_111
+Push_0
+Return 2 1
+
+:Label_111
+GetFrame1 0
+CallNative get_actor_enum 1 1
+PushS 1194
+CmpNe
+GetFrame1 0
+CallNative get_actor_enum 1 1
+PushS 1193
+CmpNe
+And
+JumpFalse @Label_112
+Push_0
+Return 2 1
+
+:Label_112
+GetFrame1 0
+PushString "carSettings"
+CallNative decor_check_exist 2 1
+Not
+JumpFalse @Label_113
+GetFrame1 0
+Call @Function_2
+
+:Label_113
+GetFrame1 0
+PushString "carSettings"
+CallNative decor_get_int 2 1
+SetFrame1 4
+GetFrame1 4
+GetFrame1 1
+Call @Function_14
+Return 2 1
+//<
+
+:Function_4//>
+Function 2 5
+GetFrame1 0
+CallNative is_actor_valid 1 1
+Not
+JumpFalse @Label_114
+Return 2 0
+
+:Label_114
+GetFrame1 0
+CallNative get_actor_enum 1 1
+PushS 1194
+CmpNe
+GetFrame1 0
+CallNative get_actor_enum 1 1
+PushS 1193
+CmpNe
+And
+JumpFalse @Label_115
+Return 2 0
+
+:Label_115
+GetFrame1 0
+PushString "carSettings"
+CallNative decor_check_exist 2 1
+Not
+JumpFalse @Label_116
+GetFrame1 0
+Call @Function_2
+
+:Label_116
+GetFrame1 0
+PushString "carSettings"
+CallNative decor_get_int 2 1
+SetFrame1 4
+GetFrameP1 4
+GetFrame1 1
+Call @Function_18
+GetFrame1 0
+PushString "carSettings"
+GetFrame1 4
+CallNative decor_set_int 3 1
+Drop
+Return 2 0
+//<
+
+:Function_3//>
+Function 1 3
+CallNative unk_0x5F7176D6 0 1
+CallNative get_target_object 0 1
+GetFrame1 0
+Push_0
+Push_0
+Push_0
+CallNative unk_0xC8C0C708 6 0
+Return 1 0
+//<
+
+:Function_2//>
+Function 1 4
+GetFrame1 0
+CallNative is_actor_valid 1 1
+Not
+JumpFalse @Label_117
+Return 1 0
+
+:Label_117
+GetFrame1 0
+CallNative get_actor_enum 1 1
+PushS 1194
+CmpNe
+GetFrame1 0
+CallNative get_actor_enum 1 1
+PushS 1193
+CmpNe
+And
+JumpFalse @Label_118
+Return 1 0
+
+:Label_118
+GetFrame1 0
+PushString "carSettings"
+CallNative decor_check_exist 2 1
+Not
+JumpFalse @Label_119
+GetFrame1 0
+PushString "carSettings"
+Push_0
+CallNative decor_set_int 3 1
+Drop
+
+:Label_119
+GetFrame1 0
+PushString "carSettings"
+CallNative decor_get_int 2 1
+SetFrame1 3
+GetFrameP1 3
+Push_1
+Call @Function_17
+GetFrameP1 3
+Push_2
+Call @Function_18
+GetFrameP1 3
+Push_4
+Call @Function_18
+GetFrameP1 3
+PushB 8
+Call @Function_17
+GetFrameP1 3
+PushB 16
+Call @Function_17
+GetFrameP1 3
+PushB 32
+Call @Function_17
+GetFrameP1 3
+PushB 64
+Call @Function_17
+GetFrameP1 3
+PushB 128
+Call @Function_17
+GetFrameP1 3
+PushS 256
+Call @Function_17
+GetFrameP1 3
+PushS 512
+Call @Function_17
+GetFrame1 0
+PushString "carSettings"
+GetFrame1 3
+CallNative decor_set_int 3 1
+Drop
+Return 1 0
+//<
+
+:Function_1//>
+Function 0 2
+Push_0
+CallNative is_local_player_valid 1 1
+Not
+JumpFalse @Label_120
+PushString ""
+pGet
+Return 0 1
+
+:Label_120
+Push_0
+CallNative get_player_actor 1 1
+Return 0 1
+//<
+
+:Function_0//>
+Function 2 4
+GetFrame1 0
+Call @Function_13
+Not
+JumpFalse @Label_121
+GetFrame1 0
+GetFrame1 1
+Call @Function_16
+
+:Label_121
+Return 2 0
+//<

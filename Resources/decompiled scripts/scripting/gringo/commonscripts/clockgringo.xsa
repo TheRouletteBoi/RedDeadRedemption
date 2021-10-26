@@ -1,0 +1,222 @@
+SetParamCount 1
+
+//> Default Static Information
+SetStaticsCount 1
+SetStaticName 0 ScriptParameter0
+
+//<
+
+:MainFunction//>
+Function 0 10
+GetStatic1 ScriptParameter0
+SetStatic1 ScriptParameter0
+CallNative get_target_object 0 1
+SetFrame1 2
+GetFrame1 2
+CallNative is_object_valid 1 1
+Not
+JumpFalse @Label_0
+PushString "Clock gringo expects to be attached to the prop"
+CallNative log_error 1 0
+
+:Label_0
+GetFrame1 2
+CallNative unk_0xDB70DF0C 1 1
+SetFrame1 3
+GetFrame1 3
+CallNative is_physinst_valid 1 1
+JumpFalse @Label_1
+GetFrame1 3
+CallNative has_prop_been_damaged 1 1
+JumpFalse @Label_1
+CallNative unk_0x5F7176D6 0 1
+CallNative destroy_object 1 0
+CallNative terminate_this_script 0 0
+
+:Label_1
+GetFrame1 3
+CallNative is_physinst_valid 1 1
+Not
+JumpFalse @Label_2
+PushString "Somehow this clock gringo is intialising without a valid target prop - Terminating!"
+CallNative log_error 1 0
+CallNative unk_0x5F7176D6 0 1
+CallNative destroy_object 1 0
+CallNative terminate_this_script 0 0
+
+:Label_2
+CallNative is_gringo_active 0 1
+JumpFalse @Label_3
+Call @Function_0
+JumpFalse @Label_4
+GetFrame1 2
+CallNative unk_0x5F7176D6 0 1
+Call @Function_1
+Call @Function_1
+Call @Function_1
+CallNative create_object_animator 5 1
+SetFrame1 4
+GetFrame1 2
+CallNative unk_0x5F7176D6 0 1
+Call @Function_1
+Call @Function_1
+Call @Function_1
+CallNative create_object_animator 5 1
+SetFrame1 5
+GetFrame1 4
+Push_2
+Push_2
+Push_4
+Push_4
+CallNative unk_0x188B6431 5 1
+Drop
+GetFrame1 5
+Push_1
+Push_1
+Push_3
+Push_3
+CallNative unk_0x188B6431 5 1
+Drop
+GetFrame1 3
+CallNative is_physinst_ready 1 1
+Not
+JumpFalse @Label_5
+PushString "Prop has become invalid before starting animations"
+CallNative log_error 1 0
+
+:Label_5
+GetFrame1 4
+PushString "clock_time"
+Push_1
+CallNative unk_0xB57D4110 3 1
+Drop
+GetFrame1 5
+PushString "clock_time"
+Push_1
+CallNative unk_0xB57D4110 3 1
+Drop
+GetFrame1 4
+PushF_0
+CallNative set_object_animator_rate 2 1
+Drop
+GetFrame1 5
+PushF_0
+CallNative set_object_animator_rate 2 1
+Drop
+
+:Label_8
+CallNative is_gringo_active 0 1
+Call @Function_0
+And
+JumpFalse @Label_6
+Push_0
+CallNative get_hour 1 1
+SetFrame1 6
+Push_0
+CallNative get_minute 1 1
+SetFrame1 7
+GetFrame1 6
+CallNative to_float 1 1
+PushF 12
+fDiv
+SetFrame1 8
+GetFrame1 7
+CallNative to_float 1 1
+PushF 60
+fDiv
+SetFrame1 9
+GetFrame1 4
+GetFrame1 8
+GetFrame1 9
+PushF 12
+fDiv
+fAdd
+CallNative set_object_animator_phase 2 1
+Drop
+GetFrame1 5
+GetFrame1 9
+CallNative set_object_animator_phase 2 1
+Drop
+GetFrame1 3
+CallNative is_physinst_valid 1 1
+JumpFalse @Label_7
+GetFrame1 3
+CallNative has_prop_been_damaged 1 1
+JumpFalse @Label_7
+CallNative unk_0x5F7176D6 0 1
+CallNative destroy_object 1 0
+CallNative terminate_this_script 0 0
+
+:Label_7
+Push_0
+CallNative gringo_wait 1 0
+Jump @Label_8
+
+:Label_6
+GetFrame1 4
+CallNative destroy_object_animator 1 0
+GetFrame1 5
+CallNative destroy_object_animator 1 0
+
+:Label_4
+CallNative is_gringo_active 0 1
+JumpFalse @Label_9
+Push_0
+CallNative gringo_wait 1 0
+
+:Label_9
+Jump @Label_2
+
+:Label_3
+CallNative terminate_this_script 0 0
+Return 0 0
+//<
+
+:Function_1//>
+Function 0 3
+GetFrame1 2
+Return 0 1
+//<
+
+:Function_0//>
+Function 0 4
+CallNative get_target_object 0 1
+SetFrame1 2
+GetFrame1 2
+CallNative is_object_valid 1 1
+Not
+JumpFalse @Label_10
+Push_0
+Return 0 1
+
+:Label_10
+GetFrame1 2
+CallNative unk_0xDB70DF0C 1 1
+SetFrame1 3
+GetFrame1 3
+CallNative is_physinst_valid 1 1
+Not
+JumpFalse @Label_11
+Push_0
+Return 0 1
+
+:Label_11
+GetFrame1 3
+CallNative is_physinst_ready 1 1
+Not
+JumpFalse @Label_12
+Push_0
+Return 0 1
+
+:Label_12
+GetFrame1 3
+CallNative is_physinst_in_level 1 1
+Not
+JumpFalse @Label_13
+Push_0
+Return 0 1
+
+:Label_13
+Push_1
+Return 0 1
+//<

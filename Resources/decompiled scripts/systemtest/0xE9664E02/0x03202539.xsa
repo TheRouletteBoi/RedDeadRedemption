@@ -1,0 +1,87 @@
+:MainFunction//>
+Function 0 9
+PushString "ConversationLayout"
+CallNative create_layout 1 1
+SetFrame1 2
+Push_1
+SetFrame1 3
+GetFrame1 3
+JumpFalse @Label_0
+PushS 660
+Add1 1
+CallNative unk_0xD85BAFA8 1 0
+
+:Label_0
+Push_0
+CallNative get_player_actor 1 1
+GetFrameP1 4
+CallNative get_object_position 2 1
+Drop
+GetFrame1 4
+PushF_2
+fAdd
+SetFrame1 4
+GetFrame1 2
+PushString "speaker"
+Push_4
+Push_3
+GetFrameP1 4
+ToStack
+PushF_0
+PushF_0
+PushF_0
+CallNative create_actor_in_layout 9 1
+SetFrame1 7
+GetFrame1 4
+PushF_1
+fAdd
+SetFrame1 4
+GetFrame1 2
+PushString "listener"
+Push_6
+Push_3
+GetFrameP1 4
+ToStack
+PushF_0
+PushF_0
+PushF_0
+CallNative create_actor_in_layout 9 1
+SetFrame1 8
+
+:Label_4
+CallNative is_exitflag_set 0 1
+Not
+JumpFalse @Label_1
+PushString "SPEAKING.."
+CallNative printstring 1 0
+CallNative printnl 0 0
+GetFrame1 7
+PushB 161
+GetFrame1 8
+Push_1
+Push_1
+Push_0
+Push_-1
+Push_-1
+Push_0
+Push_1
+CallNative unk_0x31BAF169 10 0
+
+:Label_3
+GetFrame1 7
+CallNative is_any_speech_playing 1 1
+Not
+JumpFalse @Label_2
+Push_0
+CallNative wait 1 0
+Jump @Label_3
+
+:Label_2
+PushS 6000
+CallNative wait 1 0
+Jump @Label_4
+
+:Label_1
+CallNative terminate_this_script 0 0
+Return 0 0
+//<

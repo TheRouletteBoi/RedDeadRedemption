@@ -1,0 +1,885 @@
+SetParamCount 6
+
+//> Default Static Information
+SetStaticsCount 10
+SetStaticName 4 ScriptParameter0
+SetStaticName 5 ScriptParameter1
+SetStaticName 6 ScriptParameter2
+SetStaticName 7 ScriptParameter3
+SetStaticName 8 ScriptParameter4
+SetStaticName 9 ScriptParameter5
+
+//<
+
+:MainFunction//>
+Function 0 9
+PushB 31
+SetStatic1 0
+PushB 33
+SetStatic1 1
+Push_1
+SetStatic1 2
+PushF_2
+SetStatic1 3
+PushF_0
+SetFrame1 4
+Push_0
+SetFrame1 5
+Push_1
+SetFrame1 6
+Push_0
+SetFrame1 7
+PushF 2.75
+SetFrame1 8
+
+:Label_44
+CallNative is_exitflag_set 0 1
+Not
+JumpFalse @Label_0
+GetStatic1 ScriptParameter0
+PushB 16
+CmpNe
+GetStatic1 ScriptParameter0
+Push_0
+CmpNe
+And
+GetStatic1 ScriptParameter0
+Push_2
+CmpNe
+And
+JumpFalse @Label_1
+Call @Function_0
+Push_6
+Push_1
+Push_0
+CallNative is_button_pressed 4 1
+Call @Function_0
+Push_6
+Push_1
+Push_0
+CallNative is_button_down 4 1
+Or
+GetStaticP1 ScriptParameter0
+GetImm1 12
+CallNative is_actor_alive 1 1
+Not
+GetStaticP1 ScriptParameter0
+GetImm1 8
+CallNative is_actor_alive 1 1
+Not
+Or
+GetFrame1 5
+Not
+And
+Or
+JumpFalse @Label_1
+CallNative unk_0x5842B9D1 0 1
+SetFrame1 4
+PushString "DesignerHelpBox"
+CallNative ui_isactive 1 1
+JumpFalse @Label_2
+PushString "DesignerHelpBox"
+CallNative ui_exit 1 0
+
+:Label_2
+PushString "RacePosition"
+CallNative ui_isactive 1 1
+JumpFalse @Label_3
+PushString "RacePosition"
+CallNative ui_exit 1 0
+
+:Label_3
+Push_1
+SetFrame1 5
+GetStatic1 ScriptParameter0
+CallNative printint 1 0
+CallNative printnl 0 0
+PushB 16
+SetStatic1 ScriptParameter0
+
+:Label_1
+GetStatic1 ScriptParameter0
+Switch [0 @Label_4]:[2 @Label_5]:[3 @Label_6]:[4 @Label_7]:[6 @Label_8]:[7 @Label_9]:[8 @Label_10]:[9 @Label_11]:[10 @Label_12]:[11 @Label_13]:[12 @Label_14]:[13 @Label_15]:[14 @Label_16]:[16 @Label_17]
+Jump @Label_18
+
+:Label_4
+CallNative hud_clear_help 0 0
+CallNative hud_clear_help_queue 0 0
+CallNative get_profile_time 0 1
+GetStaticP1 ScriptParameter0
+SetImm1 4
+CallNative unk_0x5842B9D1 0 1
+SetFrame1 4
+PushString "RacePosition"
+GetStaticP1 ScriptParameter0
+GetImm1 12
+CallNative get_actor_enum_string 1 1
+CallNative unk_0xB3FC8CB7 2 0
+PushString "RacePosition"
+CallNative ui_enter 1 0
+PushB 51
+GetGlobalP3 74542
+GetArray1 10
+Push_5
+JumpNE @Label_19
+PushString "RCM_Gunslinger_Warning"
+PushF 10
+Push_1
+Push_0
+Push_0
+Push_1
+Push_0
+Call @Function_1
+
+:Label_19
+Push_2
+SetStatic1 ScriptParameter0
+Jump @Label_18
+
+:Label_5
+CallNative unk_0x5842B9D1 0 1
+GetFrame1 4
+fSub
+PushF_5
+PushF_1
+fSub
+fCmpGt
+PushString "RacePosition"
+CallNative ui_isactive 1 1
+And
+JumpFalse @Label_20
+PushString "RacePosition"
+CallNative ui_exit 1 0
+
+:Label_20
+GetFrame1 5
+JumpFalse @Label_21
+CallNative unk_0x5842B9D1 0 1
+GetFrame1 4
+fSub
+PushF_2
+fCmpGt
+JumpFalse @Label_22
+GetStaticP1 ScriptParameter0
+GetImm1 8
+PushString "Tutorial0Complete"
+Push_1
+CallNative decor_set_bool 3 1
+Drop
+CallNative unk_0x5842B9D1 0 1
+SetFrame1 4
+Push_3
+SetStatic1 ScriptParameter0
+
+:Label_22
+Jump @Label_23
+
+:Label_21
+CallNative unk_0x5842B9D1 0 1
+GetFrame1 4
+fSub
+PushF_5
+fCmpGt
+JumpFalse @Label_23
+GetStaticP1 ScriptParameter0
+GetImm1 8
+PushString "Tutorial0Complete"
+Push_1
+CallNative decor_set_bool 3 1
+Drop
+CallNative get_profile_time 0 1
+GetStaticP1 ScriptParameter0
+SetImm1 4
+CallNative unk_0x5842B9D1 0 1
+SetFrame1 4
+CallNative unk_0x4B2FCAF6 0 1
+Not
+JumpFalse @Label_24
+PushString "Dueling_Tutorial_FirstShot"
+PushF_5
+Push_1
+Push_0
+Push_2
+Push_1
+Push_0
+Call @Function_1
+
+:Label_24
+PushString "RacePosition"
+CallNative ui_isactive 1 1
+JumpFalse @Label_25
+PushString "RacePosition"
+CallNative ui_exit 1 0
+
+:Label_25
+Push_3
+SetStatic1 ScriptParameter0
+
+:Label_23
+Jump @Label_18
+
+:Label_6
+GetFrame1 5
+JumpFalse @Label_26
+CallNative unk_0x5842B9D1 0 1
+GetFrame1 4
+fSub
+PushF_2
+fCmpGt
+JumpFalse @Label_27
+GetStaticP1 ScriptParameter0
+GetImm1 8
+PushString "Tutorial1Complete"
+Push_1
+CallNative decor_set_bool 3 1
+Drop
+CallNative unk_0x5842B9D1 0 1
+SetFrame1 4
+Push_4
+SetStatic1 ScriptParameter0
+
+:Label_27
+Jump @Label_28
+
+:Label_26
+CallNative unk_0x5842B9D1 0 1
+GetFrame1 4
+fSub
+PushF_5
+fCmpGt
+JumpFalse @Label_29
+GetStaticP1 ScriptParameter0
+GetImm1 8
+PushString "Tutorial1Complete"
+Push_1
+CallNative decor_set_bool 3 1
+Drop
+CallNative get_profile_time 0 1
+GetStaticP1 ScriptParameter0
+SetImm1 4
+CallNative unk_0x5842B9D1 0 1
+SetFrame1 4
+CallNative hud_clear_help 0 0
+Push_4
+SetStatic1 ScriptParameter0
+Jump @Label_28
+
+:Label_29
+CallNative unk_0x5842B9D1 0 1
+GetFrame1 4
+fSub
+PushF_1
+fCmpGt
+GetFrame1 7
+Not
+And
+JumpFalse @Label_28
+Push_1
+SetFrame1 7
+
+:Label_28
+Jump @Label_18
+
+:Label_7
+GetFrame1 5
+JumpFalse @Label_30
+CallNative unk_0x5842B9D1 0 1
+GetFrame1 4
+fSub
+PushF_2
+fCmpGt
+JumpFalse @Label_31
+GetStaticP1 ScriptParameter0
+GetImm1 8
+PushString "Tutorial2Complete"
+Push_1
+CallNative decor_set_bool 3 1
+Drop
+CallNative unk_0x5842B9D1 0 1
+SetFrame1 4
+Push_5
+SetStatic1 ScriptParameter0
+
+:Label_31
+Jump @Label_32
+
+:Label_30
+CallNative unk_0x5842B9D1 0 1
+GetFrame1 4
+fSub
+PushF_5
+fCmpGt
+JumpFalse @Label_32
+GetStaticP1 ScriptParameter0
+GetImm1 8
+PushString "Tutorial2Complete"
+Push_1
+CallNative decor_set_bool 3 1
+Drop
+CallNative get_profile_time 0 1
+GetStaticP1 ScriptParameter0
+SetImm1 4
+CallNative unk_0x5842B9D1 0 1
+SetFrame1 4
+CallNative hud_clear_help 0 0
+PushString "Dueling_Tutorial_Draw"
+PushF_5
+Push_1
+Push_0
+Push_2
+Push_1
+Push_0
+Call @Function_1
+Push_6
+SetStatic1 ScriptParameter0
+Jump @Label_32
+
+:Label_32
+Jump @Label_18
+
+:Label_8
+GetFrame1 4
+CallNative unk_0x49F96787 0 1
+fAdd
+SetFrame1 4
+GetStaticP1 ScriptParameter0
+GetImm1 8
+CallNative is_weapon_drawn 1 1
+JumpFalse @Label_33
+Push_7
+SetStatic1 ScriptParameter0
+Jump @Label_34
+
+:Label_33
+CallNative unk_0x5842B9D1 0 1
+GetFrame1 4
+fSub
+PushF_3
+fCmpGt
+GetStaticP1 ScriptParameter0
+GetImm1 12
+CallNative is_weapon_drawn 1 1
+Or
+JumpFalse @Label_34
+CallNative hud_clear_help 0 0
+PushString "Dueling_Tutorial_Draw_Force"
+PushF_7
+Push_1
+Push_0
+Push_2
+Push_1
+Push_0
+Call @Function_1
+CallNative get_profile_time 0 1
+GetStaticP1 ScriptParameter0
+SetImm1 4
+CallNative unk_0x5842B9D1 0 1
+SetFrame1 4
+Push_7
+SetStatic1 ScriptParameter0
+
+:Label_34
+Jump @Label_18
+
+:Label_9
+GetStaticP1 ScriptParameter0
+GetImm1 8
+CallNative is_weapon_drawn 1 1
+JumpFalse @Label_35
+CallNative hud_clear_help 0 0
+PushString "Dueling_Tutorial_Aim"
+PushF_7
+Push_1
+Push_0
+Push_2
+Push_1
+Push_0
+Call @Function_1
+CallNative get_profile_time 0 1
+GetStaticP1 ScriptParameter0
+SetImm1 4
+PushF_0
+SetFrame1 4
+PushB 8
+SetStatic1 ScriptParameter0
+
+:Label_35
+Jump @Label_18
+
+:Label_10
+GetFrame1 4
+CallNative unk_0x49F96787 0 1
+fAdd
+SetFrame1 4
+GetFrame1 4
+PushF_7
+fCmpGt
+JumpFalse @Label_36
+CallNative hud_clear_help 0 0
+PushString "Dueling_Tutorial_Reticule"
+PushF_7
+Push_1
+Push_0
+Push_2
+Push_1
+Push_0
+Call @Function_1
+CallNative get_profile_time 0 1
+GetStaticP1 ScriptParameter0
+SetImm1 4
+PushF_0
+SetFrame1 4
+Push_1
+SetFrame1 3
+PushB 9
+SetStatic1 ScriptParameter0
+
+:Label_36
+Jump @Label_18
+
+:Label_11
+GetFrame1 4
+CallNative unk_0x49F96787 0 1
+fAdd
+SetFrame1 4
+GetFrame1 4
+PushF_7
+fCmpGt
+JumpFalse @Label_37
+CallNative hud_clear_help 0 0
+PushString "Dueling_Tutorial_Aim"
+PushF 999
+Push_1
+Push_0
+Push_2
+Push_1
+Push_0
+Call @Function_1
+CallNative get_profile_time 0 1
+GetStaticP1 ScriptParameter0
+SetImm1 4
+CallNative unk_0x5842B9D1 0 1
+SetFrame1 4
+PushB 10
+SetStatic1 ScriptParameter0
+
+:Label_37
+Jump @Label_18
+
+:Label_12
+GetStaticP1 ScriptParameter0
+GetImm1 8
+CallNative get_current_duel_score 1 1
+PushF_0
+fCmpGt
+JumpFalse @Label_38
+CallNative hud_clear_help 0 0
+PushString "Dueling_Tutorial_Points"
+PushF_7
+Push_1
+Push_0
+Push_2
+Push_1
+Push_0
+Call @Function_1
+CallNative get_profile_time 0 1
+GetStaticP1 ScriptParameter0
+SetImm1 4
+PushF_0
+SetFrame1 4
+PushB 11
+SetStatic1 ScriptParameter0
+
+:Label_38
+Jump @Label_18
+
+:Label_13
+GetFrame1 4
+CallNative unk_0x49F96787 0 1
+fAdd
+SetFrame1 4
+GetFrame1 4
+PushF_7
+fCmpGt
+JumpFalse @Label_39
+CallNative hud_clear_help 0 0
+PushString "Dueling_Tutorial_Score_Player"
+PushF_7
+Push_1
+Push_0
+Push_2
+Push_1
+Push_0
+Call @Function_1
+CallNative get_profile_time 0 1
+GetStaticP1 ScriptParameter0
+SetImm1 4
+PushF_0
+SetFrame1 4
+PushF_0
+SetFrame1 2
+PushB 12
+SetStatic1 ScriptParameter0
+
+:Label_39
+Jump @Label_18
+
+:Label_14
+GetFrame1 4
+CallNative unk_0x49F96787 0 1
+fAdd
+SetFrame1 4
+GetFrame1 4
+PushF_7
+fCmpGt
+JumpFalse @Label_40
+CallNative hud_clear_help 0 0
+PushString "Dueling_Tutorial_Score_Enemy"
+PushF_7
+Push_1
+Push_0
+Push_2
+Push_1
+Push_0
+Call @Function_1
+CallNative get_profile_time 0 1
+GetStaticP1 ScriptParameter0
+SetImm1 4
+PushF_0
+SetFrame1 4
+PushF_0
+SetFrame1 2
+PushB 13
+SetStatic1 ScriptParameter0
+
+:Label_40
+Jump @Label_18
+
+:Label_15
+GetFrame1 4
+CallNative unk_0x49F96787 0 1
+fAdd
+SetFrame1 4
+GetFrame1 4
+PushF_7
+fCmpGt
+JumpFalse @Label_41
+CallNative hud_clear_help 0 0
+PushString "Dueling_Tutorial_Aim"
+PushF 999.9
+Push_1
+Push_0
+Push_2
+Push_1
+Push_0
+Call @Function_1
+CallNative get_profile_time 0 1
+GetStaticP1 ScriptParameter0
+SetImm1 4
+CallNative unk_0x5842B9D1 0 1
+SetFrame1 4
+PushB 14
+SetStatic1 ScriptParameter0
+
+:Label_41
+Jump @Label_18
+
+:Label_16
+GetStaticP1 ScriptParameter0
+GetImm1 8
+CallNative is_actor_shooting 1 1
+GetStaticP1 ScriptParameter0
+GetImm1 12
+CallNative is_actor_shooting 1 1
+Or
+JumpFalse @Label_42
+CallNative hud_clear_help 0 0
+PushString "Dueling_Tutorial_Aim"
+PushF_5
+Push_1
+Push_0
+Push_2
+Push_1
+Push_0
+Call @Function_1
+CallNative get_profile_time 0 1
+GetStaticP1 ScriptParameter0
+SetImm1 4
+CallNative unk_0x5842B9D1 0 1
+SetFrame1 4
+PushB 16
+SetStatic1 ScriptParameter0
+
+:Label_42
+Jump @Label_18
+
+:Label_17
+CallNative unk_0x5842B9D1 0 1
+GetFrame1 4
+fSub
+PushF_7
+fCmpGt
+GetFrame1 5
+Or
+JumpFalse @Label_43
+Push_6
+GetStaticP1 ScriptParameter0
+ToStack
+Call @Function_2
+PushString "Dueling_Tutorial - Terminating Exit Flag Set"
+CallNative printstring 1 0
+CallNative printnl 0 0
+CallNative terminate_this_script 0 0
+
+:Label_43
+Jump @Label_18
+
+:Label_18
+Push_0
+CallNative wait 1 0
+Jump @Label_44
+
+:Label_0
+Push_6
+GetStaticP1 ScriptParameter0
+ToStack
+Call @Function_2
+PushString "Dueling_Tutorial - Terminating Exit Flag Set"
+CallNative printstring 1 0
+CallNative printnl 0 0
+CallNative terminate_this_script 0 0
+Return 0 0
+//<
+
+:Function_2//>
+Function 6 8
+GetFrameP1 0
+GetImm1 8
+PushString "Tutorial0Complete"
+CallNative decor_check_exist 2 1
+JumpFalse @Label_45
+GetFrameP1 0
+GetImm1 8
+PushString "Tutorial0Complete"
+CallNative decor_remove 2 1
+Drop
+
+:Label_45
+GetFrameP1 0
+GetImm1 8
+PushString "Tutorial1Complete"
+CallNative decor_check_exist 2 1
+JumpFalse @Label_46
+GetFrameP1 0
+GetImm1 8
+PushString "Tutorial1Complete"
+CallNative decor_remove 2 1
+Drop
+
+:Label_46
+GetFrameP1 0
+GetImm1 8
+PushString "Tutorial2Complete"
+CallNative decor_check_exist 2 1
+JumpFalse @Label_47
+GetFrameP1 0
+GetImm1 8
+PushString "Tutorial2Complete"
+CallNative decor_remove 2 1
+Drop
+
+:Label_47
+GetFrameP1 0
+GetImm1 8
+PushString "Tutorial3Complete"
+CallNative decor_check_exist 2 1
+JumpFalse @Label_48
+GetFrameP1 0
+GetImm1 8
+PushString "Tutorial3Complete"
+CallNative decor_remove 2 1
+Drop
+
+:Label_48
+PushString "DesignerHelpBox"
+CallNative ui_isactive 1 1
+JumpFalse @Label_49
+PushString "DesignerHelpBox"
+CallNative ui_exit 1 0
+
+:Label_49
+CallNative hud_clear_help 0 0
+CallNative hud_clear_help_queue 0 0
+PushString "RacePosition"
+CallNative ui_isactive 1 1
+JumpFalse @Label_50
+PushString "RacePosition"
+CallNative ui_exit 1 0
+
+:Label_50
+GetFrameP1 0
+GetImm1 16
+JumpFalse @Label_51
+Push_0
+GetFrameP1 0
+SetImm1 16
+
+:Label_51
+Return 6 0
+//<
+
+:Function_1//>
+Function 7 14
+GetGlobal2 3380
+Push_1
+CmpEq
+GetGlobal2 6269
+Push_-1
+CmpNe
+And
+JumpFalse @Label_52
+Push_4
+GetGlobal2 6269
+GetGlobalP2 3422
+GetArrayP1 40
+Add1 12
+ToStack
+Push_4
+GetFrameP1 9
+FromStack
+GetGlobal2 6269
+PushB 11
+CmpEq
+GetGlobal2 6269
+PushB 16
+CmpEq
+Or
+GetGlobal2 6269
+PushB 15
+CmpEq
+Or
+GetGlobal2 6269
+PushB 43
+CmpEq
+Or
+JumpFalse @Label_53
+GetGlobal2 6269
+Call @Function_3
+Push_4
+GetFrameP1 9
+FromStack
+
+:Label_53
+GetFrame1 0
+GetFrame1 1
+GetFrame1 2
+GetFrame1 3
+GetFrame1 4
+GetFrame1 5
+GetFrameP1 9
+GetFrame1 6
+CallNative unk_0xE42A8278 8 0
+Jump @Label_54
+
+:Label_52
+PushString ""
+pGet
+SetFrame1 13
+GetFrame1 0
+GetFrame1 1
+GetFrame1 2
+GetFrame1 3
+GetFrame1 4
+GetFrame1 5
+GetFrame1 13
+GetFrame1 6
+CallNative unk_0xE42A8278 8 0
+
+:Label_54
+Return 7 0
+//<
+
+:Function_3//>
+Function 1 7
+Call @Function_4
+Not
+JumpFalse @Label_55
+PushString "miss"
+GetFrameP1 3
+StrCopy 16
+Jump @Label_56
+
+:Label_55
+PushString "ziss"
+GetFrameP1 3
+StrCopy 16
+
+:Label_56
+GetFrame1 0
+GetFrameP1 3
+StrAddi 16
+PushString "_short"
+GetFrameP1 3
+StrAdd 16
+Push_4
+GetFrameP1 3
+ToStack
+Return 1 4
+//<
+
+:Function_4//>
+Function 0 2
+GetGlobalP3 83864
+GetImm2 1252
+PushS 1024
+Call @Function_5
+JumpFalse @Label_57
+CallNative unk_0x6CC9CCE7 0 1
+Return 0 1
+
+:Label_57
+Push_0
+Return 0 1
+//<
+
+:Function_5//>
+Function 2 4
+GetFrame1 0
+GetFrame1 1
+And
+Push_0
+CmpNe
+Return 2 1
+//<
+
+:Function_0//>
+Function 0 3
+Call @Function_6
+SetFrame1 2
+GetFrame1 2
+CallNative is_actor_valid 1 1
+JumpFalse @Label_58
+GetFrame1 2
+CallNative unk_0x524F6981 1 1
+Return 0 1
+
+:Label_58
+Push_0
+Return 0 1
+//<
+
+:Function_6//>
+Function 0 2
+Push_0
+CallNative is_local_player_valid 1 1
+Not
+JumpFalse @Label_59
+PushString ""
+pGet
+Return 0 1
+
+:Label_59
+Push_0
+CallNative get_player_actor 1 1
+Return 0 1
+//<

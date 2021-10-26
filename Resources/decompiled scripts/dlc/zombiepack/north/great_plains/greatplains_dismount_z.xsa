@@ -1,0 +1,1744 @@
+//> Default Static Information
+SetStaticsCount 4
+//<
+
+:MainFunction//>
+Function 0 26
+PushB 31
+SetStatic1 0
+PushB 33
+SetStatic1 1
+Push_1
+SetStatic1 2
+PushF_2
+SetStatic1 3
+Push_0
+SetFrame1 2
+GetGlobal2 34573
+CallNative get_mount 1 1
+SetFrame1 9
+GetFrame1 9
+CallNative is_actor_valid 1 1
+Not
+JumpFalse @Label_0
+GetGlobal2 34573
+CallNative get_most_recent_mount 1 1
+SetFrame1 9
+
+:Label_0
+PushS 1000
+SetFrame1 19
+
+:Label_22
+CallNative is_exitflag_set 0 1
+Not
+JumpFalse @Label_1
+GetFrame1 2
+Switch [0 @Label_2]:[6 @Label_3]:[7 @Label_4]:[8 @Label_5]:[106 @Label_6]
+Jump @Label_7
+
+:Label_2
+Push_0
+Push_0
+Push_0
+Push_0
+CallNative set_player_control 4 0
+PushString "Cutscenes"
+CallNative ui_push 1 0
+GetGlobal2 34573
+CallNative is_actor_riding 1 1
+JumpFalse @Label_8
+GetGlobal2 34573
+Push_0
+Call @Function_0
+PushF 10
+fCmpGt
+JumpFalse @Label_9
+GetFrame1 9
+PushString "horse_Main/Melee/RearUp/scripted/canned_rear_up"
+CallNative set_action_node_for_actor 2 1
+Drop
+Jump @Label_8
+
+:Label_9
+GetGlobal2 34573
+Push_5
+CallNative task_override_set_movetype 2 0
+
+:Label_8
+GetFrame1 9
+CallNative is_actor_valid 1 1
+JumpFalse @Label_10
+GetFrame1 9
+Push_1
+CallNative unk_0xDCC91F8C 2 0
+GetFrame1 9
+PushF_-1
+Push_0
+Push_0
+CallNative task_stand_still 4 0
+
+:Label_10
+Push_6
+SetFrame1 2
+Jump @Label_7
+
+:Label_3
+GetGlobal2 34573
+Push_0
+Call @Function_0
+PushF_2
+fCmpLt
+JumpFalse @Label_11
+GetGlobal2 34573
+CallNative is_actor_riding 1 1
+JumpFalse @Label_12
+GetFrameP1 10
+Call @Function_1
+Push_1
+SetFrame1 18
+
+:Label_12
+GetFrameP1 3
+Call @Function_2
+GetFrameP1 6
+Call @Function_2
+Push_7
+SetFrame1 2
+
+:Label_11
+Jump @Label_7
+
+:Label_4
+GetGlobal2 34573
+Push_-1
+CallNative unk_0xD062CBF6 2 1
+Push_0
+CmpGt
+Not
+JumpFalse @Label_13
+GetFrameP1 3
+Call @Function_3
+
+:Label_13
+GetFrameP1 3
+Call @Function_4
+PushF 0.15
+fCmpGt
+GetFrame1 18
+Not
+Or
+JumpFalse @Label_14
+GetGlobal2 34573
+Call @Function_5
+PushF 565.824
+PushF 88.579
+PushF 1234.438
+CallNative vdist 6 1
+GetGlobal2 34573
+Call @Function_5
+PushF 604.287
+PushF 82.574
+PushF 1357.304
+CallNative vdist 6 1
+fCmpLt
+JumpFalse @Label_15
+PushString "Blackwater_layout"
+CallNative find_named_layout 1 1
+Push_0
+Push_1
+Push_0
+Push_0
+Call @Function_6
+GetFrameP1 19
+SetImm1 16
+Push_1
+SetFrame1 17
+Jump @Label_16
+
+:Label_15
+PushString "Blackwater_layout"
+CallNative find_named_layout 1 1
+Push_0
+Push_1
+Push_0
+Push_0
+Call @Function_7
+GetFrameP1 19
+SetImm1 16
+Push_0
+SetFrame1 17
+
+:Label_16
+GetGlobal2 34573
+CallNative is_weapon_drawn 1 1
+Not
+JumpFalse @Label_17
+GetGlobal2 34573
+Push_1
+CallNative unk_0xD86BFBD8 2 1
+Drop
+
+:Label_17
+GetFrameP1 3
+Call @Function_3
+PushB 8
+SetFrame1 2
+
+:Label_14
+Jump @Label_7
+
+:Label_5
+GetGlobal2 34573
+CallNative is_actor_riding 1 1
+Not
+GetFrameP1 3
+Call @Function_4
+PushF_5
+fCmpGt
+And
+GetFrame1 15
+Not
+And
+GetFrame1 9
+CallNative is_actor_valid 1 1
+And
+JumpFalse @Label_18
+GetFrame1 9
+Push_1
+Call @Function_8
+Push_1
+SetFrame1 15
+
+:Label_18
+GetFrame1 16
+Not
+GetFrameP1 3
+Call @Function_4
+PushF 7.25
+fCmpGt
+And
+JumpFalse @Label_19
+GetGlobal2 34573
+CallNative task_clear 1 0
+Push_0
+Push_1
+PushF_2
+Push_1
+CallNative simulate_player_input_gait 4 0
+Push_1
+SetFrame1 16
+
+:Label_19
+Push_0
+CallNative unk_0x9A4CD54B 1 1
+Not
+GetFrameP1 19
+GetImm1 16
+CallNative get_camera_from_cutsceneobject 1 1
+Push_0
+CallNative is_camera_active_on_channel 2 1
+Not
+And
+JumpFalse @Label_20
+PushString "Cutscenes"
+CallNative ui_pop 1 0
+GetFrameP1 3
+Call @Function_3
+PushB 106
+SetFrame1 2
+
+:Label_20
+Jump @Label_7
+
+:Label_6
+GetFrameP1 19
+GetImm1 16
+CallNative is_object_valid 1 1
+JumpFalse @Label_21
+GetFrameP1 19
+GetImm1 16
+CallNative destroy_object 1 0
+
+:Label_21
+GetGlobal2 34573
+PushS 360
+Push_0
+Push_1
+Push_1
+Push_4
+Push_-1
+Push_-1
+Push_0
+Push_1
+CallNative unk_0x31BAF169 10 0
+GetGlobal2 34573
+PushString "PlayerHorse_DeathTime"
+CallNative unk_0x5842B9D1 0 1
+PushF 10000
+fAdd
+CallNative decor_set_float 3 1
+Drop
+GetGlobal2 34573
+PushString "bStopSong"
+Push_1
+CallNative decor_set_bool 3 1
+Drop
+Push_0
+Push_1
+Push_0
+Push_0
+CallNative set_player_control 4 0
+CallNative terminate_this_script 0 0
+Jump @Label_7
+
+:Label_7
+Push_0
+CallNative wait 1 0
+Jump @Label_22
+
+:Label_1
+GetFrameP1 19
+GetImm1 16
+CallNative is_object_valid 1 1
+JumpFalse @Label_23
+GetFrameP1 19
+GetImm1 16
+CallNative destroy_object 1 0
+
+:Label_23
+PushString "Cutscenes"
+CallNative ui_isactive 1 1
+JumpFalse @Label_24
+PushString "Cutscenes"
+CallNative ui_pop 1 0
+
+:Label_24
+GetGlobal2 34573
+PushString "bStopSong"
+Push_1
+CallNative decor_set_bool 3 1
+Drop
+GetGlobal2 34573
+PushString "PlayerHorse_DeathTime"
+CallNative unk_0x5842B9D1 0 1
+PushF 10000
+fAdd
+CallNative decor_set_float 3 1
+Drop
+GetGlobal2 34573
+CallNative task_clear 1 0
+Push_1
+CallNative hud_enable 1 0
+Push_0
+Push_1
+Push_0
+Push_0
+CallNative set_player_control 4 0
+CallNative terminate_this_script 0 0
+Return 0 0
+//<
+
+:Function_8//>
+Function 2 11
+PushF -54.253
+PushF 116.244
+PushF 1417.837
+Push_3
+GetFrameP1 4
+FromStack
+GetFrame1 1
+JumpFalse @Label_25
+PushF 565.824
+PushF 88.579
+PushF 1234.438
+Push_3
+GetFrameP1 7
+FromStack
+PushF 36.418
+SetFrame1 10
+Jump @Label_26
+
+:Label_25
+PushF 604.287
+PushF 82.574
+PushF 1357.304
+Push_3
+GetFrameP1 7
+FromStack
+PushF 113.736
+SetFrame1 10
+
+:Label_26
+GetFrame1 0
+Push_3
+GetFrameP1 7
+ToStack
+GetFrame1 10
+Push_1
+Push_1
+Push_1
+CallNative teleport_actor_with_heading 8 0
+GetFrame1 0
+GetFrameP1 4
+Push_4
+Push -1082130432
+CallNative task_go_to_coord_nonstop 4 0
+GetFrame1 0
+CallNative release_actor 1 0
+GetGlobal2 34573
+CallNative clear_actors_horse 1 0
+GetFrame1 0
+Push_1
+CallNative task_priority_set 2 0
+GetFrame1 0
+Push_1
+CallNative set_actor_exempt_from_ambient_restrictions 2 0
+Return 2 0
+//<
+
+:Function_7//>
+Function 5 8
+GetFrame1 2
+JumpFalse @Label_27
+GetFrame1 0
+Call @Function_9
+PushB 8
+Push_1
+CallNative unk_0xA923A22D 4 1
+SetFrame1 7
+Jump @Label_28
+
+:Label_27
+GetFrame1 0
+PushString "GreatPlains_DismountSceneSouth_z"
+PushB 8
+Push_1
+CallNative unk_0xA923A22D 4 1
+SetFrame1 7
+
+:Label_28
+GetFrameP1 7
+Call @Function_10
+GetFrame1 4
+GetFrame1 7
+CallNative check_cutscene_collisions 1 1
+And
+JumpFalse @Label_29
+GetFrame1 7
+CallNative destroy_object 1 0
+Jump @Label_30
+
+:Label_29
+GetFrame1 7
+CallNative get_camera_from_cutsceneobject 1 1
+PushString ""
+CallNative set_camera_lighting_scheme 2 1
+Drop
+GetFrame1 3
+JumpFalse @Label_31
+GetFrame1 7
+GetFrame1 3
+CallNative set_cutsceneobject_paused 2 0
+Jump @Label_30
+
+:Label_31
+GetFrame1 7
+GetFrame1 1
+PushF_0
+PushF_0
+Push_-1
+Push_-1
+Push_0
+Push_0
+Push_0
+Push_0
+CallNative play_cutsceneobject 10 0
+
+:Label_30
+GetFrame1 7
+Return 5 1
+//<
+
+:Function_10//>
+Function 1 4
+GetFrame1 0
+pGet
+Push_0
+CallNative get_camerashot_from_cutsceneobject 2 1
+SetFrame1 3
+GetFrameP1 3
+Call @Function_11
+GetFrame1 0
+pGet
+Push_1
+CallNative get_camerashot_from_cutsceneobject 2 1
+SetFrame1 3
+GetFrameP1 3
+Call @Function_12
+GetFrame1 0
+pGet
+Push_2
+CallNative get_camerashot_from_cutsceneobject 2 1
+SetFrame1 3
+GetFrameP1 3
+Call @Function_13
+GetFrame1 0
+pGet
+Push_3
+CallNative get_camerashot_from_cutsceneobject 2 1
+SetFrame1 3
+GetFrameP1 3
+Call @Function_14
+GetFrame1 0
+pGet
+Push_4
+CallNative get_camerashot_from_cutsceneobject 2 1
+SetFrame1 3
+GetFrameP1 3
+Call @Function_15
+GetFrame1 0
+pGet
+Push_5
+CallNative get_camerashot_from_cutsceneobject 2 1
+SetFrame1 3
+GetFrameP1 3
+Call @Function_16
+GetFrame1 0
+pGet
+Push_6
+CallNative get_camerashot_from_cutsceneobject 2 1
+SetFrame1 3
+GetFrameP1 3
+Call @Function_17
+GetFrame1 0
+pGet
+Push_7
+CallNative get_camerashot_from_cutsceneobject 2 1
+SetFrame1 3
+GetFrameP1 3
+Call @Function_18
+GetFrame1 0
+pGet
+Push_0
+CallNative unk_0xDCD3A7DE 2 0
+GetFrame1 0
+pGet
+Push_0
+Push_1
+PushF_4
+Push_0
+Push_0
+CallNative cutsceneobject_add_transition_lerp 6 1
+Drop
+GetFrame1 0
+pGet
+Push_2
+Push_3
+PushF_1
+Push_1
+Push_0
+CallNative cutsceneobject_add_transition_lerp 6 1
+Drop
+GetFrame1 0
+pGet
+Push_4
+Push_5
+PushF_1
+Push_2
+Push_0
+CallNative cutsceneobject_add_transition_lerp 6 1
+Drop
+GetFrame1 0
+pGet
+Push_6
+Push_7
+PushF 2.5
+Push_3
+Push_0
+CallNative cutsceneobject_add_transition_lerp 6 1
+Drop
+Return 1 0
+//<
+
+:Function_18//>
+Function 1 3
+GetFrame1 0
+pGet
+Push_1
+CallNative set_camerashot_perspective 2 0
+GetFrame1 0
+pGet
+PushF 31.81922
+CallNative set_camerashot_fov 2 0
+GetFrame1 0
+pGet
+PushF 0.1
+CallNative set_camerashot_near_clip_plane 2 0
+GetFrame1 0
+pGet
+PushF 0.3
+Push_1
+CallNative set_camerashot_collision_parameters 3 0
+GetFrame1 0
+pGet
+Push_0
+CallNative set_camerashot_collision_enabled 2 0
+GetFrame1 0
+pGet
+PushF 691.3539
+PushF 79.78265
+PushF 1264.303
+CallNative set_camerashot_position 4 0
+GetFrame1 0
+pGet
+PushF 0.455154
+PushF -1.451947
+PushF -0.052576
+Push_1
+CallNative set_camerashot_orientation 5 0
+GetFrame1 0
+pGet
+Push_1
+CallNative reset_camerashot_target 2 0
+GetFrame1 0
+pGet
+CallNative reset_camerashot_targetdof 1 0
+Return 1 0
+//<
+
+:Function_17//>
+Function 1 3
+GetFrame1 0
+pGet
+Push_1
+CallNative set_camerashot_perspective 2 0
+GetFrame1 0
+pGet
+PushF 35.87983
+CallNative set_camerashot_fov 2 0
+GetFrame1 0
+pGet
+PushF 0.1
+CallNative set_camerashot_near_clip_plane 2 0
+GetFrame1 0
+pGet
+PushF 0.3
+Push_1
+CallNative set_camerashot_collision_parameters 3 0
+GetFrame1 0
+pGet
+Push_0
+CallNative set_camerashot_collision_enabled 2 0
+GetFrame1 0
+pGet
+PushF 691.3539
+PushF 79.78265
+PushF 1264.303
+CallNative set_camerashot_position 4 0
+GetFrame1 0
+pGet
+PushF 0.455154
+PushF -1.451947
+PushF -0.052576
+Push_1
+CallNative set_camerashot_orientation 5 0
+GetFrame1 0
+pGet
+Push_1
+CallNative reset_camerashot_target 2 0
+GetFrame1 0
+pGet
+CallNative reset_camerashot_targetdof 1 0
+Return 1 0
+//<
+
+:Function_16//>
+Function 1 3
+GetFrame1 0
+pGet
+Push_1
+CallNative set_camerashot_perspective 2 0
+GetFrame1 0
+pGet
+PushF 37.19021
+CallNative set_camerashot_fov 2 0
+GetFrame1 0
+pGet
+PushF 0.1
+CallNative set_camerashot_near_clip_plane 2 0
+GetFrame1 0
+pGet
+PushF 0.3
+Push_1
+CallNative set_camerashot_collision_parameters 3 0
+GetFrame1 0
+pGet
+Push_0
+CallNative set_camerashot_collision_enabled 2 0
+GetFrame1 0
+pGet
+PushF 678.9417
+PushF 79.80499
+PushF 1355.026
+CallNative set_camerashot_position 4 0
+GetFrame1 0
+pGet
+PushF 0.024492
+PushF 2.829252
+PushF -0.181216
+Push_1
+CallNative set_camerashot_orientation 5 0
+GetFrame1 0
+pGet
+Push_1
+CallNative reset_camerashot_target 2 0
+GetFrame1 0
+pGet
+CallNative reset_camerashot_targetdof 1 0
+Return 1 0
+//<
+
+:Function_15//>
+Function 1 3
+GetFrame1 0
+pGet
+Push_1
+CallNative set_camerashot_perspective 2 0
+GetFrame1 0
+pGet
+PushF 37.17745
+CallNative set_camerashot_fov 2 0
+GetFrame1 0
+pGet
+PushF 0.1
+CallNative set_camerashot_near_clip_plane 2 0
+GetFrame1 0
+pGet
+PushF 0.3
+Push_1
+CallNative set_camerashot_collision_parameters 3 0
+GetFrame1 0
+pGet
+Push_0
+CallNative set_camerashot_collision_enabled 2 0
+GetFrame1 0
+pGet
+PushF 678.9593
+PushF 79.80393
+PushF 1354.972
+CallNative set_camerashot_position 4 0
+GetFrame1 0
+pGet
+PushF 0.018486
+PushF 2.826399
+PushF -0.198012
+Push_1
+CallNative set_camerashot_orientation 5 0
+GetFrame1 0
+pGet
+Push_1
+CallNative reset_camerashot_target 2 0
+GetFrame1 0
+pGet
+CallNative reset_camerashot_targetdof 1 0
+Return 1 0
+//<
+
+:Function_14//>
+Function 1 3
+GetFrame1 0
+pGet
+Push_1
+CallNative set_camerashot_perspective 2 0
+GetFrame1 0
+pGet
+PushF 37.17745
+CallNative set_camerashot_fov 2 0
+GetFrame1 0
+pGet
+PushF 0.1
+CallNative set_camerashot_near_clip_plane 2 0
+GetFrame1 0
+pGet
+PushF 0.3
+Push_1
+CallNative set_camerashot_collision_parameters 3 0
+GetFrame1 0
+pGet
+Push_0
+CallNative set_camerashot_collision_enabled 2 0
+GetFrame1 0
+pGet
+PushF 691.6909
+PushF 79.72372
+PushF 1361.07
+CallNative set_camerashot_position 4 0
+GetFrame1 0
+pGet
+PushF -0.015156
+PushF -1.970828
+PushF 0.085266
+Push_1
+CallNative set_camerashot_orientation 5 0
+GetFrame1 0
+pGet
+Push_1
+CallNative reset_camerashot_target 2 0
+GetFrame1 0
+pGet
+CallNative reset_camerashot_targetdof 1 0
+Return 1 0
+//<
+
+:Function_13//>
+Function 1 3
+GetFrame1 0
+pGet
+Push_1
+CallNative set_camerashot_perspective 2 0
+GetFrame1 0
+pGet
+PushF 37.17745
+CallNative set_camerashot_fov 2 0
+GetFrame1 0
+pGet
+PushF 0.1
+CallNative set_camerashot_near_clip_plane 2 0
+GetFrame1 0
+pGet
+PushF 0.3
+Push_1
+CallNative set_camerashot_collision_parameters 3 0
+GetFrame1 0
+pGet
+Push_0
+CallNative set_camerashot_collision_enabled 2 0
+GetFrame1 0
+pGet
+PushF 691.6495
+PushF 79.7244
+PushF 1361.053
+CallNative set_camerashot_position 4 0
+GetFrame1 0
+pGet
+PushF -0.015156
+PushF -1.970571
+PushF 0.103266
+Push_1
+CallNative set_camerashot_orientation 5 0
+GetFrame1 0
+pGet
+Push_1
+CallNative reset_camerashot_target 2 0
+GetFrame1 0
+pGet
+CallNative reset_camerashot_targetdof 1 0
+Return 1 0
+//<
+
+:Function_12//>
+Function 1 3
+GetFrame1 0
+pGet
+Push_1
+CallNative set_camerashot_perspective 2 0
+GetFrame1 0
+pGet
+PushF 55.51708
+CallNative set_camerashot_fov 2 0
+GetFrame1 0
+pGet
+PushF 0.1
+CallNative set_camerashot_near_clip_plane 2 0
+GetFrame1 0
+pGet
+PushF 0.3
+Push_1
+CallNative set_camerashot_collision_parameters 3 0
+GetFrame1 0
+pGet
+Push_0
+CallNative set_camerashot_collision_enabled 2 0
+GetFrame1 0
+pGet
+PushF 686.2664
+PushF 81.19514
+PushF 1403.08
+CallNative set_camerashot_position 4 0
+GetFrame1 0
+pGet
+PushF 0.002919
+PushF 0.059141
+PushF_0
+Push_1
+CallNative set_camerashot_orientation 5 0
+GetFrame1 0
+pGet
+Push_1
+CallNative reset_camerashot_target 2 0
+GetFrame1 0
+pGet
+CallNative reset_camerashot_targetdof 1 0
+Return 1 0
+//<
+
+:Function_11//>
+Function 1 3
+GetFrame1 0
+pGet
+Push_1
+CallNative set_camerashot_perspective 2 0
+GetFrame1 0
+pGet
+PushF 55.51708
+CallNative set_camerashot_fov 2 0
+GetFrame1 0
+pGet
+PushF 0.1
+CallNative set_camerashot_near_clip_plane 2 0
+GetFrame1 0
+pGet
+PushF 0.3
+Push_1
+CallNative set_camerashot_collision_parameters 3 0
+GetFrame1 0
+pGet
+Push_0
+CallNative set_camerashot_collision_enabled 2 0
+GetFrame1 0
+pGet
+PushF 686.3102
+PushF 80.19514
+PushF 1403.827
+CallNative set_camerashot_position 4 0
+GetFrame1 0
+pGet
+PushF 0.054564
+PushF 0.059141
+PushF_0
+Push_1
+CallNative set_camerashot_orientation 5 0
+GetFrame1 0
+pGet
+Push_1
+CallNative reset_camerashot_target 2 0
+GetFrame1 0
+pGet
+CallNative reset_camerashot_targetdof 1 0
+Return 1 0
+//<
+
+:Function_9//>
+Function 0 3
+GetFrame1 2
+Return 0 1
+//<
+
+:Function_6//>
+Function 5 8
+GetFrame1 2
+JumpFalse @Label_32
+GetFrame1 0
+Call @Function_9
+PushB 8
+Push_1
+CallNative unk_0xA923A22D 4 1
+SetFrame1 7
+Jump @Label_33
+
+:Label_32
+GetFrame1 0
+PushString "GreatPlains_DismountScene_z"
+PushB 8
+Push_1
+CallNative unk_0xA923A22D 4 1
+SetFrame1 7
+
+:Label_33
+GetFrameP1 7
+Call @Function_19
+GetFrame1 4
+GetFrame1 7
+CallNative check_cutscene_collisions 1 1
+And
+JumpFalse @Label_34
+GetFrame1 7
+CallNative destroy_object 1 0
+Jump @Label_35
+
+:Label_34
+GetFrame1 7
+CallNative get_camera_from_cutsceneobject 1 1
+PushString ""
+CallNative set_camera_lighting_scheme 2 1
+Drop
+GetFrame1 3
+JumpFalse @Label_36
+GetFrame1 7
+GetFrame1 3
+CallNative set_cutsceneobject_paused 2 0
+Jump @Label_35
+
+:Label_36
+GetFrame1 7
+GetFrame1 1
+PushF_0
+PushF_0
+Push_-1
+Push_-1
+Push_0
+Push_0
+Push_0
+Push_0
+CallNative play_cutsceneobject 10 0
+
+:Label_35
+GetFrame1 7
+Return 5 1
+//<
+
+:Function_19//>
+Function 1 4
+GetFrame1 0
+pGet
+Push_0
+CallNative get_camerashot_from_cutsceneobject 2 1
+SetFrame1 3
+GetFrameP1 3
+Call @Function_20
+GetFrame1 0
+pGet
+Push_1
+CallNative get_camerashot_from_cutsceneobject 2 1
+SetFrame1 3
+GetFrameP1 3
+Call @Function_21
+GetFrame1 0
+pGet
+Push_2
+CallNative get_camerashot_from_cutsceneobject 2 1
+SetFrame1 3
+GetFrameP1 3
+Call @Function_22
+GetFrame1 0
+pGet
+Push_3
+CallNative get_camerashot_from_cutsceneobject 2 1
+SetFrame1 3
+GetFrameP1 3
+Call @Function_23
+GetFrame1 0
+pGet
+Push_4
+CallNative get_camerashot_from_cutsceneobject 2 1
+SetFrame1 3
+GetFrameP1 3
+Call @Function_24
+GetFrame1 0
+pGet
+Push_5
+CallNative get_camerashot_from_cutsceneobject 2 1
+SetFrame1 3
+GetFrameP1 3
+Call @Function_25
+GetFrame1 0
+pGet
+Push_6
+CallNative get_camerashot_from_cutsceneobject 2 1
+SetFrame1 3
+GetFrameP1 3
+Call @Function_26
+GetFrame1 0
+pGet
+Push_7
+CallNative get_camerashot_from_cutsceneobject 2 1
+SetFrame1 3
+GetFrameP1 3
+Call @Function_27
+GetFrame1 0
+pGet
+Push_0
+CallNative unk_0xDCD3A7DE 2 0
+GetFrame1 0
+pGet
+Push_0
+Push_1
+PushF_3
+Push_0
+Push_0
+CallNative cutsceneobject_add_transition_lerp 6 1
+Drop
+GetFrame1 0
+pGet
+Push_2
+Push_3
+PushF_1
+Push_1
+Push_0
+CallNative cutsceneobject_add_transition_lerp 6 1
+Drop
+GetFrame1 0
+pGet
+Push_4
+Push_5
+PushF_1
+Push_2
+Push_0
+CallNative cutsceneobject_add_transition_lerp 6 1
+Drop
+GetFrame1 0
+pGet
+Push_6
+Push_7
+PushF 2.5
+Push_3
+Push_0
+CallNative cutsceneobject_add_transition_lerp 6 1
+Drop
+Return 1 0
+//<
+
+:Function_27//>
+Function 1 3
+GetFrame1 0
+pGet
+Push_1
+CallNative set_camerashot_perspective 2 0
+GetFrame1 0
+pGet
+PushF 31.81922
+CallNative set_camerashot_fov 2 0
+GetFrame1 0
+pGet
+PushF 0.1
+CallNative set_camerashot_near_clip_plane 2 0
+GetFrame1 0
+pGet
+PushF 0.3
+Push_1
+CallNative set_camerashot_collision_parameters 3 0
+GetFrame1 0
+pGet
+Push_0
+CallNative set_camerashot_collision_enabled 2 0
+GetFrame1 0
+pGet
+PushF 691.3539
+PushF 79.78265
+PushF 1264.303
+CallNative set_camerashot_position 4 0
+GetFrame1 0
+pGet
+PushF 0.455154
+PushF -1.451947
+PushF -0.052576
+Push_1
+CallNative set_camerashot_orientation 5 0
+GetFrame1 0
+pGet
+Push_1
+CallNative reset_camerashot_target 2 0
+GetFrame1 0
+pGet
+CallNative reset_camerashot_targetdof 1 0
+Return 1 0
+//<
+
+:Function_26//>
+Function 1 3
+GetFrame1 0
+pGet
+Push_1
+CallNative set_camerashot_perspective 2 0
+GetFrame1 0
+pGet
+PushF 35.87983
+CallNative set_camerashot_fov 2 0
+GetFrame1 0
+pGet
+PushF 0.1
+CallNative set_camerashot_near_clip_plane 2 0
+GetFrame1 0
+pGet
+PushF 0.3
+Push_1
+CallNative set_camerashot_collision_parameters 3 0
+GetFrame1 0
+pGet
+Push_0
+CallNative set_camerashot_collision_enabled 2 0
+GetFrame1 0
+pGet
+PushF 691.3539
+PushF 79.78265
+PushF 1264.303
+CallNative set_camerashot_position 4 0
+GetFrame1 0
+pGet
+PushF 0.455154
+PushF -1.451947
+PushF -0.052576
+Push_1
+CallNative set_camerashot_orientation 5 0
+GetFrame1 0
+pGet
+Push_1
+CallNative reset_camerashot_target 2 0
+GetFrame1 0
+pGet
+CallNative reset_camerashot_targetdof 1 0
+Return 1 0
+//<
+
+:Function_25//>
+Function 1 3
+GetFrame1 0
+pGet
+Push_1
+CallNative set_camerashot_perspective 2 0
+GetFrame1 0
+pGet
+PushF 37.19021
+CallNative set_camerashot_fov 2 0
+GetFrame1 0
+pGet
+PushF 0.1
+CallNative set_camerashot_near_clip_plane 2 0
+GetFrame1 0
+pGet
+PushF 0.3
+Push_1
+CallNative set_camerashot_collision_parameters 3 0
+GetFrame1 0
+pGet
+Push_0
+CallNative set_camerashot_collision_enabled 2 0
+GetFrame1 0
+pGet
+PushF 678.9417
+PushF 79.80499
+PushF 1355.026
+CallNative set_camerashot_position 4 0
+GetFrame1 0
+pGet
+PushF 0.024492
+PushF 2.829252
+PushF -0.181216
+Push_1
+CallNative set_camerashot_orientation 5 0
+GetFrame1 0
+pGet
+Push_1
+CallNative reset_camerashot_target 2 0
+GetFrame1 0
+pGet
+CallNative reset_camerashot_targetdof 1 0
+Return 1 0
+//<
+
+:Function_24//>
+Function 1 3
+GetFrame1 0
+pGet
+Push_1
+CallNative set_camerashot_perspective 2 0
+GetFrame1 0
+pGet
+PushF 37.17745
+CallNative set_camerashot_fov 2 0
+GetFrame1 0
+pGet
+PushF 0.1
+CallNative set_camerashot_near_clip_plane 2 0
+GetFrame1 0
+pGet
+PushF 0.3
+Push_1
+CallNative set_camerashot_collision_parameters 3 0
+GetFrame1 0
+pGet
+Push_0
+CallNative set_camerashot_collision_enabled 2 0
+GetFrame1 0
+pGet
+PushF 678.9593
+PushF 79.80393
+PushF 1354.972
+CallNative set_camerashot_position 4 0
+GetFrame1 0
+pGet
+PushF 0.018486
+PushF 2.826399
+PushF -0.198012
+Push_1
+CallNative set_camerashot_orientation 5 0
+GetFrame1 0
+pGet
+Push_1
+CallNative reset_camerashot_target 2 0
+GetFrame1 0
+pGet
+CallNative reset_camerashot_targetdof 1 0
+Return 1 0
+//<
+
+:Function_23//>
+Function 1 3
+GetFrame1 0
+pGet
+Push_1
+CallNative set_camerashot_perspective 2 0
+GetFrame1 0
+pGet
+PushF 37.17745
+CallNative set_camerashot_fov 2 0
+GetFrame1 0
+pGet
+PushF 0.1
+CallNative set_camerashot_near_clip_plane 2 0
+GetFrame1 0
+pGet
+PushF 0.3
+Push_1
+CallNative set_camerashot_collision_parameters 3 0
+GetFrame1 0
+pGet
+Push_0
+CallNative set_camerashot_collision_enabled 2 0
+GetFrame1 0
+pGet
+PushF 691.6909
+PushF 79.72372
+PushF 1361.07
+CallNative set_camerashot_position 4 0
+GetFrame1 0
+pGet
+PushF -0.015156
+PushF -1.970828
+PushF 0.085266
+Push_1
+CallNative set_camerashot_orientation 5 0
+GetFrame1 0
+pGet
+Push_1
+CallNative reset_camerashot_target 2 0
+GetFrame1 0
+pGet
+CallNative reset_camerashot_targetdof 1 0
+Return 1 0
+//<
+
+:Function_22//>
+Function 1 3
+GetFrame1 0
+pGet
+Push_1
+CallNative set_camerashot_perspective 2 0
+GetFrame1 0
+pGet
+PushF 37.17745
+CallNative set_camerashot_fov 2 0
+GetFrame1 0
+pGet
+PushF 0.1
+CallNative set_camerashot_near_clip_plane 2 0
+GetFrame1 0
+pGet
+PushF 0.3
+Push_1
+CallNative set_camerashot_collision_parameters 3 0
+GetFrame1 0
+pGet
+Push_0
+CallNative set_camerashot_collision_enabled 2 0
+GetFrame1 0
+pGet
+PushF 691.6495
+PushF 79.7244
+PushF 1361.053
+CallNative set_camerashot_position 4 0
+GetFrame1 0
+pGet
+PushF -0.015156
+PushF -1.970571
+PushF 0.103266
+Push_1
+CallNative set_camerashot_orientation 5 0
+GetFrame1 0
+pGet
+Push_1
+CallNative reset_camerashot_target 2 0
+GetFrame1 0
+pGet
+CallNative reset_camerashot_targetdof 1 0
+Return 1 0
+//<
+
+:Function_21//>
+Function 1 3
+GetFrame1 0
+pGet
+Push_1
+CallNative set_camerashot_perspective 2 0
+GetFrame1 0
+pGet
+PushF 46.56985
+CallNative set_camerashot_fov 2 0
+GetFrame1 0
+pGet
+PushF 0.1
+CallNative set_camerashot_near_clip_plane 2 0
+GetFrame1 0
+pGet
+PushF 0.3
+Push_1
+CallNative set_camerashot_collision_parameters 3 0
+GetFrame1 0
+pGet
+Push_0
+CallNative set_camerashot_collision_enabled 2 0
+GetFrame1 0
+pGet
+PushF 681.5449
+PushF 81.38006
+PushF 1254.256
+CallNative set_camerashot_position 4 0
+GetFrame1 0
+pGet
+PushF 0.018056
+PushF -2.640847
+PushF_0
+Push_1
+CallNative set_camerashot_orientation 5 0
+GetFrame1 0
+pGet
+CallNative reset_camerashot_targetdof 1 0
+Return 1 0
+//<
+
+:Function_20//>
+Function 1 3
+GetFrame1 0
+pGet
+Push_1
+CallNative set_camerashot_perspective 2 0
+GetFrame1 0
+pGet
+PushF 46.5747
+CallNative set_camerashot_fov 2 0
+GetFrame1 0
+pGet
+PushF 0.1
+CallNative set_camerashot_near_clip_plane 2 0
+GetFrame1 0
+pGet
+PushF 0.3
+Push_1
+CallNative set_camerashot_collision_parameters 3 0
+GetFrame1 0
+pGet
+Push_0
+CallNative set_camerashot_collision_enabled 2 0
+GetFrame1 0
+pGet
+PushF 680.8723
+PushF 81.37363
+PushF 1254.219
+CallNative set_camerashot_position 4 0
+GetFrame1 0
+pGet
+PushF 0.018056
+PushF -2.685984
+PushF_0
+Push_1
+CallNative set_camerashot_orientation 5 0
+GetFrame1 0
+pGet
+CallNative reset_camerashot_targetdof 1 0
+Return 1 0
+//<
+
+:Function_5//>
+Function 1 6
+GetFrame1 0
+GetFrameP1 3
+CallNative get_position 2 0
+Push_3
+GetFrameP1 3
+ToStack
+Return 1 3
+//<
+
+:Function_4//>
+Function 1 3
+GetFrame1 0
+Call @Function_28
+JumpFalse @Label_37
+GetFrame1 0
+Call @Function_29
+JumpFalse @Label_38
+GetFrame1 0
+GetImm1 8
+Return 1 1
+Jump @Label_39
+
+:Label_38
+CallNative unk_0x5842B9D1 0 1
+GetFrame1 0
+GetImm1 4
+fSub
+Return 1 1
+
+:Label_39
+Jump @Function_29
+
+:Label_37
+PushString "ERROR: Trying to get value of TIMER that has not been started!"
+CallNative log_error 1 0
+PushString "WARNING: Trying to get value of TIMER that has not been started! Returning 0.0 \n"
+CallNative printstring 1 0
+GetFrame1 0
+GetImm1 4
+Return 1 1
+//<
+
+:Function_29//>
+Function 1 3
+GetFrame1 0
+pGet
+Push_2
+Call @Function_30
+Return 1 1
+//<
+
+:Function_30//>
+Function 2 4
+GetFrame1 0
+GetFrame1 1
+And
+Push_0
+CmpNe
+Return 2 1
+//<
+
+:Function_28//>
+Function 1 3
+GetFrame1 0
+pGet
+Push_1
+Call @Function_30
+Return 1 1
+//<
+
+:Function_3//>
+Function 1 3
+GetFrame1 0
+PushF_0
+Call @Function_31
+Return 1 0
+//<
+
+:Function_31//>
+Function 2 4
+CallNative unk_0x5842B9D1 0 1
+GetFrame1 1
+fSub
+GetFrame1 0
+SetImm1 4
+GetFrame1 0
+Push_1
+Call @Function_32
+GetFrame1 0
+Push_2
+Call @Function_33
+PushF_0
+GetFrame1 0
+SetImm1 8
+Return 2 0
+//<
+
+:Function_33//>
+Function 2 4
+GetFrame1 0
+pGet
+GetFrame1 0
+pGet
+GetFrame1 1
+And
+Sub
+GetFrame1 0
+pSet
+Return 2 0
+//<
+
+:Function_32//>
+Function 2 4
+GetFrame1 0
+pGet
+GetFrame1 1
+Or
+GetFrame1 0
+pSet
+Return 2 0
+//<
+
+:Function_2//>
+Function 1 3
+GetFrame1 0
+Call @Function_28
+Not
+JumpFalse @Label_40
+GetFrame1 0
+PushF_0
+Call @Function_31
+
+:Label_40
+Return 1 0
+//<
+
+:Function_1//>
+Function 1 13
+PushF_-1
+PushF_0
+PushF -5
+Push_3
+GetFrameP1 3
+FromStack
+GetGlobal2 34573
+GetFrameP1 3
+GetFrameP1 6
+CallNative unk_0xB89CC342 3 1
+Drop
+GetFrameP1 6
+GetFrame1 0
+Call @Function_34
+Drop
+GetGlobal2 34573
+CallNative task_override_clear_movetype 1 0
+GetGlobal2 34573
+Push_0
+CallNative ai_set_nav_pathfinding_enabled 2 0
+PushF 738.652
+PushF 79.567
+PushF 1285.017
+Push_3
+GetFrameP1 9
+FromStack
+CallNative task_sequence_open 0 1
+SetFrame1 12
+Push_0
+Push_1
+CallNative task_dismount 2 0
+Push_0
+GetFrameP1 9
+Push_1
+CallNative task_face_coord 3 0
+CallNative task_sequence_close 0 0
+GetGlobal2 34573
+GetFrame1 12
+CallNative task_sequence_perform 2 0
+GetFrame1 12
+Push_1
+CallNative task_sequence_release 2 0
+Return 1 0
+//<
+
+:Function_34//>
+Function 2 7
+Push_3
+GetFrame1 0
+ToStack
+PushF_0
+CallNative unk_0xC07681C1 4 1
+Not
+JumpFalse @Label_41
+Push_0
+Return 2 1
+
+:Label_41
+GetFrame1 0
+PushF 50
+GetFrame1 1
+GetFrameP1 4
+CallNative find_ground_intersection 4 1
+JumpFalse @Label_42
+Push_3
+GetFrame1 1
+ToStack
+Call @Function_35
+Not
+JumpFalse @Label_42
+Push_1
+Return 2 1
+
+:Label_42
+GetFrame1 0
+pGet
+PushF 0.01
+fAdd
+GetFrame1 0
+pSet
+GetFrame1 0
+GetImm1 8
+PushF 0.01
+fAdd
+GetFrame1 0
+SetImm1 8
+GetFrame1 0
+PushF 50
+GetFrame1 1
+GetFrameP1 4
+CallNative find_ground_intersection 4 1
+JumpFalse @Label_43
+Push_3
+GetFrame1 1
+ToStack
+Call @Function_35
+Not
+JumpFalse @Label_43
+Push_1
+Return 2 1
+
+:Label_43
+Push_0
+Return 2 1
+//<
+
+:Function_35//>
+Function 3 5
+GetFrame1 0
+PushF_0
+fCmpEq
+GetFrameP1 0
+GetImm1 4
+PushF_0
+fCmpEq
+And
+GetFrameP1 0
+GetImm1 8
+PushF_0
+fCmpEq
+And
+Return 3 1
+//<
+
+:Function_0//>
+Function 2 7
+GetFrame1 0
+GetFrameP1 4
+CallNative get_actor_velocity 2 1
+Drop
+GetFrame1 1
+JumpFalse @Label_44
+PushF_0
+GetFrameP1 4
+SetImm1 4
+
+:Label_44
+Push_3
+GetFrameP1 4
+ToStack
+CallNative vmag 3 1
+Return 2 1
+//<

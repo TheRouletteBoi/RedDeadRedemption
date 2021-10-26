@@ -1,0 +1,24 @@
+:MainFunction//>
+Function 0 3
+
+:Label_2
+CallNative is_exitflag_set 0 1
+Not
+JumpFalse @Label_0
+GetFrame1 2
+CallNative is_script_valid 1 1
+Not
+JumpFalse @Label_1
+PushString "$/content/multiplayer/playground/JT_MPPlayground"
+Push_0
+CallNative launch_new_script 2 1
+SetFrame1 2
+
+:Label_1
+Push_0
+CallNative wait 1 0
+Jump @Label_2
+
+:Label_0
+Return 0 0
+//<
