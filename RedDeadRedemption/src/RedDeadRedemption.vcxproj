@@ -50,13 +50,11 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PS3'">
     <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\$(ProjectName)\</IntDir>
-    <SourcePath>$(ProjectDir)src;$(SourcePath)</SourcePath>
     <IgnoreImportLibrary>true</IgnoreImportLibrary>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|PS3'">
     <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\$(ProjectName)\</IntDir>
-    <SourcePath>$(ProjectDir)src;$(SourcePath)</SourcePath>
     <IgnoreImportLibrary>true</IgnoreImportLibrary>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PS3'">
@@ -80,7 +78,7 @@
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions);</PreprocessorDefinitions>
       <OptimizationLevel>Level2</OptimizationLevel>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <AdditionalIncludeDirectories>.$(SN_PS3_PATH)\ppu\include\sn;$(SCE_PS3_ROOT)\target\ppu\include;$(SCE_PS3_ROOT)\target\common\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SN_PS3_PATH)\ppu\include\sn;$(SCE_PS3_ROOT)\target\ppu\include;$(SCE_PS3_ROOT)\target\common\include</AdditionalIncludeDirectories>
       <CppLanguageStd>Cpp11</CppLanguageStd>
       <FastMath>true</FastMath>
       <Branchless>Branchless2</Branchless>
@@ -95,45 +93,45 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\Game.cpp" />
-    <ClCompile Include="src\Helpers.cpp" />
-    <ClCompile Include="src\Invoker.cpp" />
-    <ClCompile Include="src\Memory\DetourHook.cpp" />
-    <ClCompile Include="src\Hooking.cpp" />
-    <ClCompile Include="src\Memory\Pattern.cpp" />
-    <ClCompile Include="src\Main.cpp" />
-    <ClCompile Include="src\Menu.cpp" />
-    <ClCompile Include="src\NativeMemory.cpp" />
-    <ClCompile Include="src\Submenus.cpp" />
-    <ClCompile Include="src\Util\Memory.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Helpers.cpp" />
+    <ClCompile Include="Invoker.cpp" />
+    <ClCompile Include="Memory\DetourHook.cpp" />
+    <ClCompile Include="Hooking.cpp" />
+    <ClCompile Include="Memory\Pattern.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="NativeMemory.cpp" />
+    <ClCompile Include="Submenus.cpp" />
+    <ClCompile Include="Util\Memory.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Game.hpp" />
-    <ClInclude Include="src\Helpers.hpp" />
-    <ClInclude Include="src\Invoker.hpp" />
-    <ClInclude Include="src\Keyboard.hpp" />
-    <ClInclude Include="src\Memory\DetourHook.hpp" />
-    <ClInclude Include="src\Hooking.hpp" />
-    <ClInclude Include="src\Memory\Pattern.hpp" />
-    <ClInclude Include="src\Menu.hpp" />
-    <ClInclude Include="src\NativeMemory.hpp" />
-    <ClInclude Include="src\Natives.hpp" />
-    <ClInclude Include="src\RDR\Actor.hpp" />
-    <ClInclude Include="src\RDR\CSCInstructions.hpp" />
-    <ClInclude Include="src\RDR\Enums.hpp" />
-    <ClInclude Include="src\RDR\Layout.hpp" />
-    <ClInclude Include="src\RDR\Native.hpp" />
-    <ClInclude Include="src\RDR\ScriptProgram.hpp" />
-    <ClInclude Include="src\RDR\ScriptThread.hpp" />
-    <ClInclude Include="src\RDR\SnuGamer.hpp" />
-    <ClInclude Include="src\RDR\Vector.hpp" />
-    <ClInclude Include="src\RDR\Weapon.hpp" />
-    <ClInclude Include="src\ScriptGlobal.hpp" />
-    <ClInclude Include="src\Submenus.hpp" />
-    <ClInclude Include="src\Util\Exports.hpp" />
-    <ClInclude Include="src\Util\Memory.hpp" />
-    <ClInclude Include="src\Util\NewDeleteOverride.hpp" />
-    <ClInclude Include="src\Util\TimeHelpers.hpp" />
+    <ClInclude Include="Game.hpp" />
+    <ClInclude Include="Helpers.hpp" />
+    <ClInclude Include="Invoker.hpp" />
+    <ClInclude Include="Keyboard.hpp" />
+    <ClInclude Include="Memory\DetourHook.hpp" />
+    <ClInclude Include="Hooking.hpp" />
+    <ClInclude Include="Memory\Pattern.hpp" />
+    <ClInclude Include="Menu.hpp" />
+    <ClInclude Include="NativeMemory.hpp" />
+    <ClInclude Include="Natives.hpp" />
+    <ClInclude Include="RDR\Actor.hpp" />
+    <ClInclude Include="RDR\CSCInstructions.hpp" />
+    <ClInclude Include="RDR\Enums.hpp" />
+    <ClInclude Include="RDR\Layout.hpp" />
+    <ClInclude Include="RDR\Native.hpp" />
+    <ClInclude Include="RDR\ScriptProgram.hpp" />
+    <ClInclude Include="RDR\ScriptThread.hpp" />
+    <ClInclude Include="RDR\SnuGamer.hpp" />
+    <ClInclude Include="RDR\Vector.hpp" />
+    <ClInclude Include="RDR\Weapon.hpp" />
+    <ClInclude Include="ScriptGlobal.hpp" />
+    <ClInclude Include="Submenus.hpp" />
+    <ClInclude Include="Util\Exports.hpp" />
+    <ClInclude Include="Util\Memory.hpp" />
+    <ClInclude Include="Util\NewDeleteOverride.hpp" />
+    <ClInclude Include="Util\TimeHelpers.hpp" />
   </ItemGroup>
   <Import Condition="'$(ConfigurationType)' == 'Makefile' and Exists('$(VCTargetsPath)\Platforms\$(Platform)\SCE.Makefile.$(Platform).targets')" Project="$(VCTargetsPath)\Platforms\$(Platform)\SCE.Makefile.$(Platform).targets" />
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
