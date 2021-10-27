@@ -25,7 +25,7 @@ void MountOptionsSubmenu()
 {
    g_Menu.banner("Mount Options");
    g_Menu.option("Infinite Horse Stamina").local(NativeMemory::HasInfiniteHorseStamina()).call(MOUNT::_CHEAT_INFINITE_HORSE_STAMINA, !NativeMemory::HasInfiniteHorseStamina()).end();
-   g_Menu.option("Delete").call(LAYOUT::DESTROY_ACTOR, g_Helper.m_localVehicle).end();
+   g_Menu.option("Delete Mount").call(LAYOUT::DESTROY_ACTOR, g_Helper.m_localVehicle).end();
 
    g_Menu.option("Spawn Mount").scroller(spawnActorsNameList, g_Helper.spawnActorsindex, ARRAYSIZE(spawnActorsNameList) - 1).action(OptionAction::EnterPress, []
    {
@@ -33,21 +33,20 @@ void MountOptionsSubmenu()
 
       g_Helper.CreateActorCallback(spawnActorsTypeList[g_Helper.spawnActorsindex], pos, [](Actor& actor)
       {
-         ACTOR::SET_ACTOR_RIDEABLE(actor, true);
-         PLAYER::SET_ALLOW_RIDE_BY_PLAYER(actor, true);
-
          if (VEHICLE::IS_ACTOR_VEHICLE(actor))
          {
-            VEHICLE::ENABLE_VEHICLE_SEAT(actor, 0, true);
             VEHICLE::SET_VEHICLE_ALLOWED_TO_DRIVE(actor, true);
-            VEHICLE::SET_VEHICLE_ENGINE_RUNNING(actor, true);
-            VEHICLE::VEHICLE_SET_HANDBRAKE(actor, false);
-            VEHICLE::START_VEHICLE(actor);
+            VEHICLE::ENABLE_VEHICLE_SEAT(actor, 0, true);
+            ACTOR::SET_ACTOR_AUTO_TRANSITION_TO_DRIVER_SEAT(g_Helper.m_localActor, 1);
             VEHICLE::SET_ACTOR_IN_VEHICLE(g_Helper.m_localActor, actor, 0);
+            VEHICLE::START_VEHICLE(actor);
+            VEHICLE::SET_VEHICLE_ENGINE_RUNNING(actor, true);
          }
          else if (ACTOR::IS_ACTOR_ANIMAL(actor))
          {
-
+            ACTOR::SET_ACTOR_RIDEABLE(actor, true);
+            PLAYER::SET_ALLOW_RIDE_BY_PLAYER(actor, true);
+            AI::SET_ACTORS_HORSE(g_Helper.m_localActor, actor);
          }
 
          LAYOUT::RELEASE_ACTOR(actor);
@@ -94,7 +93,7 @@ void TeleportOptionsSubmenu()
 
 void SelectedPlayerSubmenu()
 {
-   g_Menu.banner("Network Options");
+   g_Menu.banner(g_Helper.GetPlayerName(g_SelectedPlayer));
    g_Menu.option("Teleport To").call(TeleportEntity, g_Helper.m_localEntity, g_Helper.GetPlayerPosition(g_SelectedPlayer)).end();
    g_Menu.option("Explode Player").action(OptionAction::EnterPress, [] 
    {
@@ -126,7 +125,7 @@ void NetworkOptionsSubmenu()
    g_Menu.option("Network Players").submenu(NetworkPlayersSubmenu).end();
    g_Menu.option("Delete Nearby Actors").action(OptionAction::EnterPress, []
    {
-      g_Helper.DeleteDeadPeds();
+      g_Helper.DeleteActorsInPlayerLayout();
    }).end();
 }
 
