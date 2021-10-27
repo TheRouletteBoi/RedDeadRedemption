@@ -166,7 +166,7 @@ enum eAsset
    ASSET_TYPE_UNK = 13
 };
 
-enum eObject
+enum eObjectType
 {
    OBJECT_TYPE_Layout = 1,
    OBJECT_TYPE_Gringo = 12,
@@ -2560,6 +2560,7 @@ static const char* explosionList[] = {
 static const char* layoutList[] = {
 	"GlobalLayout",
 	"PlayerLayout",
+   "NetLayout",
    "LocalChar",
 	"Formations"
 };
