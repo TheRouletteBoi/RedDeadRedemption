@@ -117,6 +117,20 @@ const char* Helpers::GetPlayerName(Player player)
    return name;
 }
 
+bool Helpers::RequestActor(Actor actorId)
+{
+   if (STREAMING::STREAMING_IS_ACTOR_LOADED(actorId, -1))
+   {
+      return true;
+   }
+   else
+   {
+      STREAMING::STREAMING_REQUEST_ACTOR(actorId, true, false);
+   }
+
+   return false;
+}
+
 void Helpers::CreateActorCallback(eActor actorId, Vector3 position, ActorCreationHandler handler)
 {
    m_createActorType = actorId;
@@ -135,13 +149,21 @@ void Helpers::UpdateActorCreationCallbacks()
          m_createActorActivate = false;
          return;
       }
-
-      Vector3 rotation = Vector3(0.0f, 0.f, 0.0f);
-      STREAMING::STREAMING_REQUEST_ACTOR(m_createActorType, 1, 0);
-      Layout layout = LAYOUT::FIND_NAMED_LAYOUT("PlayerLayout");
-      Actor actor = LAYOUT::CREATE_ACTOR_IN_LAYOUT(layout, "", m_createActorType,
-         m_createActorPosition.x, m_createActorPosition.y, m_createActorPosition.z,
-         rotation.x, rotation.y, rotation.z);
+      
+      Actor actor = 0;
+      if (RequestActor(m_createActorType))
+      {
+         Vector3 rotation = Vector3(0.0f, 0.f, 0.0f);
+         //char actorName[30];
+         //snprintf(actorName, sizeof(actorName), "SprxActor_%d", i++);
+         actor = LAYOUT::CREATE_ACTOR_IN_LAYOUT(
+            LAYOUT::FIND_NAMED_LAYOUT("PlayerLayout"),
+            "",
+            m_createActorType,
+            m_createActorPosition.x, m_createActorPosition.y, m_createActorPosition.z,
+            rotation.x, rotation.y, rotation.z);
+      }
+      
 
       if (ACTOR::IS_ACTOR_VALID(actor))
       {
@@ -162,18 +184,16 @@ void Helpers::SetNewSkin(eActor actorId)
    ACTORINFO::SET_ACTOR_HEALTH(actor, 500.0f);
 }
 
-void Helpers::DeleteDeadPeds()
+void Helpers::DeleteActorsInPlayerLayout()
 {
    Layout layout = LAYOUT::FIND_NAMED_LAYOUT("PlayerLayout");
    int iterator = LAYOUT::CREATE_OBJECT_ITERATOR(layout);
-   LAYOUT::ITERATE_ON_OBJECT_TYPE(iterator, 15);
-   Object object = LAYOUT::START_OBJECT_ITERATOR(iterator);
+   LAYOUT::ITERATE_ON_OBJECT_TYPE(iterator, OBJECT_TYPE_Actor);
+   LAYOUT::START_OBJECT_ITERATOR(iterator);
    for (int i = 0; i < LAYOUT::GET_NUM_ITERATOR_MATCHES(iterator); i++)
    {
       Actor actor = LAYOUT::OBJECT_ITERATOR_CURRENT(iterator);
-      if (actor != m_localActor 
-         && !PLAYER::IS_ACTOR_PLAYER(actor) 
-         && ACTOR::IS_ACTOR_HUMAN(actor))
+      if (actor != m_localActor && !PLAYER::IS_ACTOR_PLAYER(actor))
       {
          LAYOUT::DESTROY_ACTOR(actor);
       }
@@ -181,4 +201,5 @@ void Helpers::DeleteDeadPeds()
       LAYOUT::OBJECT_ITERATOR_NEXT(iterator);
    }
    LAYOUT::DESTROY_ITERATOR(iterator);
+   LAYOUT::DESTROY_LAYOUT_OBJECTS(LAYOUT::FIND_NAMED_LAYOUT("NetLayout"));
 }

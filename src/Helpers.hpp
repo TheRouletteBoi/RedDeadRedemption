@@ -47,10 +47,11 @@ public:
    void GiveWeapons(Actor actor);
    void SetInfiniteDeadEye(bool toggle);
    const char* GetPlayerName(Player player);
+   bool RequestActor(Actor actorId);
    void CreateActorCallback(eActor actorId, Vector3 position, ActorCreationHandler handler);
    void UpdateActorCreationCallbacks();
    void SetNewSkin(eActor actorId);
-   void DeleteDeadPeds();
+   void DeleteActorsInPlayerLayout();
 
 
 
