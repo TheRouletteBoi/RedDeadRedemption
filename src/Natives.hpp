@@ -1455,26 +1455,26 @@ namespace GAME
    static void SAVE_SOFT_SAVE(Any p0) { invoke<Void>(0x1A3BAC68, p0); }// 0x1A3BAC68
    static void _0xED40F27D(Any p0) { invoke<Void>(0xED40F27D); } // 0xED40F27D //Auto Save?
    static int _0x8C710D3E() { return invoke<int>(0x8C710D3E); } // 0x8C710D3E
-   // 0x17F34613
-   // 0x20CE8AA8
-   // 0x8E867DDD
-   // 0x6E79F939
-   // 0x3E647734
-   // 0xE8637D2B
-   // 0x6D59A25F
-   // 0x1D177160
-   // 0x1ADA1769
+   static int _0x17F34613(int p0) { return invoke<int>(0x17F34613, p0); } // 0x17F34613
+   static int _0x20CE8AA8(int p0, int p1, unsigned int p2, int p3, int p4) { return invoke<int>(0x20CE8AA8, p0, p1, p2, p3, p4); } // 0x20CE8AA8
+   static int _0x8E867DDD(int p0) { return invoke<int>(0x8E867DDD, p0); } // 0x8E867DDD
+   static int _0x6E79F939(int p0, int p1) { return invoke<int>(0x6E79F939, p0, p1); } // 0x6E79F939
+   static int _0x3E647734(int p0, int p1, int p2) { return invoke<int>(0x3E647734, p0, p1, p2); } // 0x3E647734
+   static int _0xE8637D2B(int p0, int p1, int p2, int p3, int p4) { return invoke<int>(0xE8637D2B, p0, p1, p2, p3, p4); } // 0xE8637D2B
+   static int _0x6D59A25F(int p0, int p1) { return invoke<int>(0x6D59A25F, p0, p1); } // 0x6D59A25F
+   static int _0x1D177160() { return invoke<int>(0x1D177160); } // 0x1D177160
+   static int _0x1ADA1769() { return invoke<int>(0x1ADA1769); } // 0x1ADA1769
    static BOOL DOES_FILE_EXIST(Any p0) { return invoke<BOOL>(0xAABE1330, p0); } // 0xAABE1330
-   // 0xD44F7102
+   static void _0xD44F7102() { invoke<Void>(0xD44F7102); } // 0xD44F7102
    static BOOL IS_DEV_BUILD() { return invoke<BOOL>(0x6D9AA768); } // 0x6D9AA768
    static BOOL IS_PS3() { return invoke<BOOL>(0xA369B36F); }// 0xA369B36F
-   // 0xB427CB25
-   // 0x4BA92498
+   static BOOL _0xB427CB25() { return invoke<BOOL>(0xB427CB25); } // 0xB427CB25
+   static int _IS_CACHE_PRIMED() { return invoke<int>(0x4BA92498); } // 0x4BA92498
    static BOOL IS_PLAYER_SIGNED_IN(Player player) { return invoke<BOOL>(0xC3C0F1F2, player); } // 0xC3C0F1F2
    static int GET_LOCAL_PLAYER_NAME() { return invoke<int>(0xA183D927); } // 0xA183D927
-   // 0x8BD88B43
-   // 0x1C7C0F86
-   // 0x836F42DA
+   static int _0x8BD88B43() { return invoke<int>(0x8BD88B43); } // 0x8BD88B43
+   static int _0x1C7C0F86(int p0, int p1, int p2) { return invoke<int>(0x1C7C0F86, p0, p1, p2); } // 0x1C7C0F86
+   static int _0x836F42DA(int p0, int p1, int p2, int p3) { return invoke<int>(0x836F42DA, p0, p1, p2, p3); }
    static void PAUSE_GAME(Any p0) { invoke<Void>(0x6F32A4E2, p0); } // 0x6F32A4E2
    static void UNPAUSE_GAME() { invoke<Void>(0x0BF2CD82); } // 0x0BF2CD82
    static BOOL IS_GAME_PAUSED() { return invoke<BOOL>(0x57246C02); } // 0x57246C02
@@ -2033,9 +2033,9 @@ namespace LAYOUT
    static int _0xD60032F6(Any p0) { return invoke<int>(0xD60032F6, p0); } // 0xD60032F6
    static int _0xE77F61B2(Any p0, Any p1) { return invoke<int>(0xE77F61B2, p0, p1); } // 0xE77F61B2
    static int _0xA936E73B(Any p0, Any p1) { return invoke<int>(0xA936E73B, p0, p1); } // 0xA936E73B
-   static void RELEASE_LAYOUT_REF(Any p0) { invoke<Void>(0xD9AC8830, p0); } // 0xD9AC8830
-   static void RELEASE_LAYOUT_OBJECTS(Any p0) { invoke<Void>(0xE78E66F0, p0); } // 0xE78E66F0
-   static void DESTROY_LAYOUT_OBJECTS(Any p0) { invoke<Void>(0x28A2A4CC, p0); } // 0x28A2A4CC
+   static void RELEASE_LAYOUT_REF(Layout layout) { invoke<Void>(0xD9AC8830, layout); } // 0xD9AC8830
+   static void RELEASE_LAYOUT_OBJECTS(Layout layout) { invoke<Void>(0xE78E66F0, layout); } // 0xE78E66F0
+   static void DESTROY_LAYOUT_OBJECTS(Layout layout) { invoke<Void>(0x28A2A4CC, layout); } // 0x28A2A4CC
    static int _0x000079CB(Any p0) { return invoke<int>(0x000079CB, p0); } // 0x000079CB
    static int _0x3CD2C250(Any p0) { return invoke<int>(0x3CD2C250, p0); } // 0x3CD2C250
    static int _0x7EEC1F40(Any p0, Any p1, Any p2) { return invoke<int>(0x7EEC1F40, p0, p1, p2); } // 0x7EEC1F40
@@ -2076,91 +2076,91 @@ namespace LAYOUT
    static void DISBAND_OBJECTSET(Any p0) { invoke<Void>(0x179A07DD, p0); } // 0x179A07DD
    static void DESTROY_OBJECTSET(Any p0) { invoke<Void>(0x3A71A589, p0); } // 0x3A71A589
    static int SET_CORPSE_PERMANENT(Any p0, Any p1) { return invoke<int>(0x5720BF8A, p0, p1); } // 0x5720BF8A
-   // 0x44C07DA5
-   // 0x5F66B23E
+   static BOOL _0x44C07DA5(unsigned int p0) { return invoke<BOOL>(0x44C07DA5, p0); } // 0x44C07DA5
+   static int _0x5F66B23E(unsigned int p0, unsigned int p1) { return invoke<int>(0x5F66B23E, p0, p1); } // 0x5F66B23E
    static BOOL IS_OBJECT_IN_VOLUME(Any p0, Any p1) { return invoke<BOOL>(0x2ECF04F3, p0, p1); } // 0x2ECF04F3
-   // 0xCB3F7DA5
-   // 0xA36ED4A6
-   // 0x6F513950
-   // 0x35C8FD4A
-   // 0x0F701FF7
+   static int _0xCB3F7DA5(int* p0, float p1, float p2, float p3, float p4, int p5, int p6, int p7, int p8, char p9) { return invoke<int>(0xCB3F7DA5, p0, p1, p2, p3, p4, p5, p6, p7, p8, p9); } // 0xCB3F7DA5
+   static int _0xA36ED4A6(int* p0, float p1, float p2, float p3, float p4, int p5, int p6, int p7, int p8, char p9) { return invoke<int>(0xA36ED4A6, p0, p1, p2, p3, p4, p5, p6, p7, p8, p9); } // 0xA36ED4A6
+   static int _0x6F513950(int* p0, int p1, int p2, int p3, int p4, unsigned int p5, float p6, float p7, float p8, float p9) { return invoke<int>(0x6F513950, p0, p1, p2, p3, p4, p5, p6, p7, p8, p9); } // 0x6F513950
+   static int _LOCATE_OBJECTS_IN_VOLUME(unsigned int p0, unsigned int p1, int p2, char p3, int p4, int p5, int p6) { return invoke<int>(0x35C8FD4A, p0, p1, p2, p3, p4, p5, p5, p6); } // 0x35C8FD4A
+   static int _LOCATE_OBJECTS_IN_VOLUME_2(unsigned int p0, unsigned int p1, int p2, char p3, int p4, int p5, int p6) { return invoke<int>(0x0F701FF7, p0, p1, p2, p3, p4, p5, p5, p6); } // 0x0F701FF7
    static void SET_VOLUME_PARAMS(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5, Any p6, Any p7, Any p8, Any p9) { invoke<Void>(0xFEC1CBC6, p0, p1, p2, p3, p4, p5, p6, p7, p8, p9); } // 0xFEC1CBC6
-   // 0xB104FF3E
+   static int _0xB104FF3E(int p0, int p1) { return invoke<int>(0xB104FF3E, p0, p1); } // 0xB104FF3E
    static int COPY_VOLUME(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0x122C916E, p0, p1, p2, p3); } // 0x122C916E
    static void SCALE_VOLUME(Any p0, Any p1) { invoke<Void>(0x14DCF1EF, p0, p1); } // 0x14DCF1EF
    static void SET_ACTOR_STAY_OUTSIDE_OF_VOLUME(Any p0, Any p1, Any p2, Any p3) { invoke<Void>(0x1229C536, p0, p1, p2, p3); } // 0x1229C536
    static void ADD_ACTOR_STAY_OUTSIDE_OF_VOLUME(Any p0, Any p1) { invoke<Void>(0x617C9630, p0, p1); } // 0x617C9630
    static void SET_ACTOR_STAY_WITHIN_VOLUME(Any p0, Any p1, Any p2, Any p3) { invoke<Void>(0x6A4A1699, p0, p1, p2, p3); } // 0x6A4A1699
    static void ADD_ACTOR_STAY_WITHIN_VOLUME(Any p0, Any p1) { invoke<Void>(0xCDEF4316, p0, p1); } // 0xCDEF4316
-   // 0xED6D63FE
+   static int _0xED6D63FE(int p0, int p1, int p2, int p3) { return invoke<int>(0xED6D63FE, p0, p1, p2, p3); } // 0xED6D63FE
    static void SET_ACTOR_VOLUME_PARAMETERS(Actor actor, float value) { invoke<Void>(0x8B46B294, actor, value); } // 0x8B46B294
    static void REMOVE_ACTOR_STAY_WITHIN_VOLUME(Actor actor) { invoke<Void>(0x2974CAF6, actor); } // 0x2974CAF6
    static void REMOVE_ACTOR_STAY_OUTSIDE_OF_VOLUME(Actor actor) { invoke<Void>(0x42EF7DB7, actor); } // 0x42EF7DB7
-   // 0x0E41A6AC
-   // 0x983ED842
-   // 0x43E2808B
-   // 0xE9E8C31A
-   // 0x0ACF7E75
-   // 0x80FF115A
+   static int _0x0E41A6AC(int p0) { return invoke<int>(0x0E41A6AC, p0); } // 0x0E41A6AC
+   static int _0x983ED842(int p0) { return invoke<int>(0x983ED842, p0); } // 0x983ED842
+   static int _0x43E2808B(int p0) { return invoke<int>(0x43E2808B, p0); } // 0x43E2808B
+   static int _0xE9E8C31A(int p0) { return invoke<int>(0xE9E8C31A, p0); } // 0xE9E8C31A
+   static int _0x0ACF7E75(int p0) { return invoke<int>(0x0ACF7E75, p0); } // 0x0ACF7E75
+   static int _0x80FF115A(int p0) { return invoke<int>(0x80FF115A, p0); } // 0x80FF115A
    static void TOGGLE_COVER_PROPS(Any p0) { invoke<Void>(0x288E4BFB, p0); } // 0x288E4BFB
-   // 0x35E78298
+   static int _0x35E78298(Object p0, int p1) { return invoke<int>(0x35E78298, p0, p1); } // 0x35E78298
    static int CREATE_ZONE_VOLUME(Any p0) { return invoke<int>(0xBB05B731, p0); } // 0xBB05B731
-   // 0x9189EB8B
+   static int _0x9189EB8B(int* p0, int p1) { return invoke<int>(0x9189EB8B, p0, p1); } // 0x9189EB8B
    static int CREATE_POPULATION_SET(Any p0) { return invoke<int>(0xAF1D570B, p0); } // 0xAF1D570B
-   // 0x0B40BBE3
+   static int _0x0B40BBE3(int* p0, int p1) { return invoke<int>(0x0B40BBE3, p0, p1); } // 0x0B40BBE3
    static int CREATE_NAMED_POPULATION_SET(Any p0, Any p1) { return invoke<int>(0xB0882841, p0, p1); } // 0xB0882841
-   // 0x4251BF6C
-   // 0x64BEDDEA
+   static int _0x4251BF6C(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9) { return invoke<int>(0x4251BF6C, p0, p1, p2, p3, p4, p5, p6, p7, p8, p9); } // 0x4251BF6C
+   static int _0x64BEDDEA(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9, int p10, int p11, int p12, int p13, int p14, int p15, int p16, int p17) { return invoke<int>(0x64BEDDEA, p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17); } // 0x64BEDDEA
    static void CREATE_GATEWAY_TYPE(Any p0, Any p1) { invoke<Void>(0x92CC441F, p0, p1); } // 0x92CC441F
    static void SNAP_ACTOR_TO_GRINGO(Actor actor) { invoke<Void>(0xD0A845E9, actor); } // 0xD0A845E9
-   // 0x6745191B
-   // 0x276EFF8E
-   // 0xE18028C1
-   // 0x7246F438
-   // 0x1A59E608
-   // 0x0AFC0B99
-   // 0x547166A7
-   // 0xF1F8AFCA
-   // 0xFF8CBD07
-   // 0x2A902148
-   // 0x39286DE5
-   // 0xD3A523FD
-   // 0x1A4C98C1
-   // 0x21BCC0A9
-   // 0x5B417C9C
-   // 0x1E56BAFD
-   // 0xCFE22435
+   static int _0x6745191B(int p0, float p1, float p2, float p3) { return invoke<int>(0x6745191B, p0, p1, p2, p3); } // 0x6745191B
+   static int _0x276EFF8E(int p0, float p1, float p2, float p3) { return invoke<int>(0x276EFF8E, p0, p1, p2, p3); } // 0x276EFF8E
+   static int _0xE18028C1(int p0) { return invoke<int>(0xE18028C1, p0); } // 0xE18028C1
+   static int _0x7246F438(int p0) { return invoke<int>(0x7246F438, p0); } // 0x7246F438
+   static int _0x1A59E608(int p0) { return invoke<int>(0x1A59E608, p0); } // 0x1A59E608
+   static int _0x0AFC0B99() { return invoke<int>(0x0AFC0B99); } // 0x0AFC0B99
+   static int _0x547166A7(int p0) { return invoke<int>(0x547166A7, p0); } // 0x547166A7
+   static int _0xF1F8AFCA(int* p0, int p1, int p2, char* p3, float p4, float p5, float p6) { return invoke<int>(0xF1F8AFCA, p0, p1, p2, p3, p4, p5, p6); } // 0xF1F8AFCA
+   static int _0xFF8CBD07(int* p0, int p1, int p2, float p3, float p4, float p5) { return invoke<int>(0xFF8CBD07, p0, p1, p2, p3, p4, p5); } // 0xFF8CBD07
+   static int _0x2A902148(int* p0, int p1, int p2, int p3, float p4, float p5, float p6) { return invoke<int>(0x2A902148, p0, p1, p2, p3, p4, p5, p6); } // 0x2A902148
+   static int _0x39286DE5(int* p0, int p1, int p2, float p3) { return invoke<int>(0x39286DE5, p0, p1, p2, p3); } // 0x39286DE5
+   static int _0xD3A523FD(int p0) { return invoke<int>(0xD3A523FD, p0); } // 0xD3A523FD
+   static int _0x1A4C98C1(int p0) { return invoke<int>(0x1A4C98C1, p0); } // 0x1A4C98C1
+   static int _0x21BCC0A9(int p0) { return invoke<int>(0x21BCC0A9, p0); } // 0x21BCC0A9
+   static int _0x5B417C9C(int p0) { return invoke<int>(0x5B417C9C, p0); } // 0x5B417C9C
+   static int _0x1E56BAFD(int p0) { return invoke<int>(0x1E56BAFD, p0); } // 0x1E56BAFD
+   static int _0xCFE22435(int p0) { return invoke<int>(0xCFE22435, p0); } // 0xCFE22435
    static int ADD_FORMATION_LOCATION(Any p0, Any p1) { return invoke<int>(0xFBB1BCDF, p0, p1); } // 0xFBB1BCDF
    static void GET_FORMATION_LOCATION(Any p0, Any p1, Any p2) { invoke<Void>(0x17FC65A4, p0, p1, p2); } // 0x17FC65A4
-   // 0xBE5D84BF
+   static int _0xBE5D84BF(int p0) { return invoke<int>(0xBE5D84BF, p0); } // 0xBE5D84BF
    static Any GET_CRIME_POSITION(Any p0) { return invoke<Any>(0x391475E3, p0); } // 0x391475E3
    static Any GET_CRIME_TYPE(Any p0) { return invoke<Any>(0xDB2BDEA8, p0); } // 0xDB2BDEA8
-   // 0xA2DA4D24
-   // 0xD96DBABD
-   // 0xE07C2D99
+   static float _0xA2DA4D24(int p0) { return invoke<float>(0xA2DA4D24, p0); } // 0xA2DA4D24
+   static float _0xD96DBABD(int p0) { return invoke<float>(0xD96DBABD, p0); } // 0xD96DBABD
+   static int _0xE07C2D99(int p0) { return invoke<int>(0xE07C2D99, p0); } // 0xE07C2D99
    static Any GET_CRIME_CRIMINAL(Any p0) { return invoke<Any>(0xEC2C34A4, p0); } // 0xEC2C34A4
    static int GET_CRIME_VICTIM(Any p0) { return invoke<int>(0xD2FD7CB6, p0); } // 0xD2FD7CB6
-   // 0x67F224B4
+   static int _0x67F224B4(Any* p0, unsigned int p1) { return invoke<int>(0x67F224B4, p0, p1); } // 0x67F224B4
    static int GET_CRIME_FACTION(Any p0) { return invoke<int>(0xE2FE0673, p0); } // 0xE2FE0673
    static Any GET_CRIME_COUNTER(Any p0) { return invoke<Any>(0xB52BA7E6, p0); } // 0xB52BA7E6
-   // 0x72A048B7
-   // 0x85C58BE1
+   static BOOL _0x72A048B7(unsigned int p0) { return invoke<BOOL>(0x72A048B7, p0); } // 0x72A048B7
+   static BOOL _0x85C58BE1(unsigned int p0) { return invoke<BOOL>(0x85C58BE1, p0); } // 0x85C58BE1
    static Any GET_CRIME_OBJECTSET(Any p0) { return invoke<Any>(0x72C52B55, p0); } // 0x72C52B55
    static Any SET_CRIME_OBJECTSET(Any p0, Any p1) { return invoke<Any>(0xD60B8F77, p0, p1); } // 0xD60B8F77
    static Any SET_CRIME_POSITION(Any p0, Any p1) { return invoke<Any>(0xB3F4043B, p0, p1); } // 0xB3F4043B
    static Any SET_CRIME_TYPE(Any p0, Any p1) { return invoke<Any>(0x85425011, p0, p1); } // 0x85425011
    static int _0x2AE7D51F(Any p0, float p1) { return invoke<int>(0x2AE7D51F, p0, p1); } // 0x2AE7D51F
-   // 0x898B00F4
-   // 0x6761D53A
+   static int _0x898B00F4(unsigned int p0, float p1) { return invoke<int>(0x898B00F4, p0, p1); } // 0x898B00F4
+   static int _0x6761D53A(unsigned int p0, int p1) { return invoke<int>(0x6761D53A, p0, p1); } // 0x6761D53A
    static Any SET_CRIME_CRIMINAL(Any p0, Any p1) { return invoke<Any>(0xBA02916B, p0, p1); } // 0xBA02916B
    static void SET_CRIME_VICTIM(Any p0, Any p1) { invoke<Void>(0x7B917033, p0, p1); } // 0x7B917033
-   // 0x8521A685
+   static int _0x8521A685(unsigned int p0, int p1) { return invoke<int>(0x8521A685, p0, p1); } // 0x8521A685
    static void SET_CRIME_FACTION(Any p0, Any p1) { invoke<Void>(0x1E552B26, p0, p1); } // 0x1E552B26
    static Any SET_CRIME_COUNTER(Any p0, Any p1) { return invoke<Any>(0xCC14DC8D, p0, p1); } // 0xCC14DC8D
-   // 0x54E7F26B
-   // 0x2D6CD106
+   static int _0x54E7F26B(unsigned int p0, char p1) { return invoke<int>(0x54E7F26B, p0, p1); } // 0x54E7F26B
+   static int _0x2D6CD106(unsigned int p0, char p1) { return invoke<int>(0x2D6CD106, p0, p1); } // 0x2D6CD106
    static int CREATE_OBJECT_ITERATOR(Layout layout) { return invoke<int>(0xD8A12B74, layout); } // 0xD8A12B74
-   // 0x2F358B89
+   static int _CREATE_ITERATOR_ON_OBJECT_LAYOUT(Any* p0, int p1, int p2, int p3, int p4, int p5) { return invoke<int>(0x2F358B89, p0, p1, p2, p3, p4, p5); } // 0x2F358B89
    static Object START_OBJECT_ITERATOR(int iterator) { return invoke<Object>(0xE96A0318, iterator); } // 0xE96A0318
    static int OBJECT_ITERATOR_NEXT(int iterator) { return invoke<int>(0xD88DC865, iterator); } // 0xD88DC865
    static int OBJECT_ITERATOR_PREV(int iterator) { return invoke<int>(0x91A3A831, iterator); } // 0x91A3A831
@@ -2175,8 +2175,8 @@ namespace LAYOUT
    static void ITERATE_EVERYWHERE(Any p0) { invoke<Void>(0xF35C5859, p0); } // 0xF35C5859
    static void ITERATE_IN_LAYOUT(Any p0, Any p1) { invoke<Void>(0xF3ABE99C, p0, p1); } // 0xF3ABE99C
    static void ITERATE_IN_SET(int iterator, int iterationSet) { invoke<Void>(0xDF6B5E94, iterator, iterationSet); } // 0xDF6B5E94
-   // 0x0D8BA78E
-   // 0x8BCB6B86
+   static void _ITERATE_ON_TARGET(int p0, int p1) { invoke<Void>(0x0D8BA78E, p0, p1); } // 0x0D8BA78E
+   static void _0x8BCB6B86(int p0, int p1) { invoke<Void>(0x8BCB6B86, p0, p1); }  // 0x8BCB6B86
    static int GET_ITERATOR_PARENT(Any p0) { return invoke<int>(0x12AA009F, p0); } // 0x12AA009F
    static int GET_NUM_ITERATOR_MATCHES(int iterator) { return invoke<int>(0xA3874D8A, iterator); } // 0xA3874D8A
    static int FIND_OBJECT_IN_OBJECT(Any p0, Any p1) { return invoke<int>(0x070F9693, p0, p1); } // 0x070F9693
@@ -2216,66 +2216,66 @@ namespace LAYOUT
    static void REMOVE_OBJECT_ATTACHMENT(Any p0) { invoke<Void>(0xE894DC13, p0); } // 0xE894DC13
    static int _0x67FC68DB(Any p0) { return invoke<int>(0x67FC68DB, p0); } // 0x67FC68DB
    static int _0x8FB32562(Any p0) { return invoke<int>(0x8FB32562, p0); } // 0x8FB32562
-   // 0x2F7B457B
-   // 0xD4A54348
-   // 0xA870B28E
+   static int _0x2F7B457B(int p0, float p1, float p2, float p3) { return invoke<int>(0x2F7B457B, p0, p1, p2, p3); } // 0x2F7B457B
+   static int _0xD4A54348(int p0, float p1, float p2, float p3) { return invoke<int>(0xD4A54348, p0, p1, p2, p3); } // 0xD4A54348
+   static int _0xA870B28E(int p0, char p1) { return invoke<int>(0xA870B28E, p0, p1); } // 0xA870B28E
    static void REFERENCE_OBJECT(Any p0) { invoke<Void>(0x3EEA78A8, p0); } // 0x3EEA78A8
    static void REFERENCE_ACTOR(Any p0) { invoke<Void>(0xE9AABF2F, p0); } // 0xE9AABF2F
    static void DEREFERENCE_OBJECT(Any p0) { invoke<Void>(0xCEA40973, p0); } // 0xCEA40973
    static void DEREFERENCE_ACTOR(Any p0) { invoke<Void>(0x92339B5E, p0); } // 0x92339B5E
-   // 0xCBA75200
-   // 0x88FD9623
-   // 0x192973A0
-   // 0x4D42E285
-   // 0xE694F53A
-   // 0x6D0B8619
-   // 0x807B9519
-   // 0x1904CC1D
-   // 0x1957B498
-   // 0x05195632
-   // 0x10BD98C9
-   // 0x8A4F9046
-   // 0x495026DA
-   // 0x8C9721D6
-   // 0xF2140DEE
-   // 0x9B903F45
-   // 0x16D1E1B4
-   // 0xC741F051
+   static int _0xCBA75200(int p0, int p1, int p2) { return invoke<int>(0xCBA75200, p0, p1, p2); } // 0xCBA75200
+   static int _0x88FD9623(int p0, int p1, int p2) { return invoke<int>(0x88FD9623, p0, p1, p2); } // 0x88FD9623
+   static int _0x192973A0(int p0, int p1, int p2) { return invoke<int>(0x192973A0, p0, p1, p2); } // 0x192973A0
+   static int _0x4D42E285(int p0, int p1, int p2) { return invoke<int>(0x4D42E285, p0, p1, p2); } // 0x4D42E285
+   static int _0xE694F53A(int p0, int p1, int p2) { return invoke<int>(0xE694F53A, p0, p1, p2); } // 0xE694F53A
+   static int _0x6D0B8619(int p0, int p1, int p2) { return invoke<int>(0x6D0B8619, p0, p1, p2); } // 0x6D0B8619
+   static int _0x807B9519(int p0, int p1, int p2) { return invoke<int>(0x807B9519, p0, p1, p2); } // 0x807B9519
+   static int _0x1904CC1D(int p0, int p1, int p2) { return invoke<int>(0x1904CC1D, p0, p1, p2); } // 0x1904CC1D
+   static int _0x1957B498(int p0, int p1, int p2) { return invoke<int>(0x1957B498, p0, p1, p2); } // 0x1957B498
+   static int _0x05195632(int p0, int p1, int p2) { return invoke<int>(0x05195632, p0, p1, p2); } // 0x05195632
+   static int _0x10BD98C9(int p0, int p1, int p2) { return invoke<int>(0x10BD98C9, p0, p1, p2); } // 0x10BD98C9
+   static int _0x8A4F9046(int p0, int p1, int p2) { return invoke<int>(0x8A4F9046, p0, p1, p2); } // 0x8A4F9046
+   static int _0x495026DA(int p0, int p1, int p2) { return invoke<int>(0x495026DA, p0, p1, p2); } // 0x495026DA
+   static int _0x8C9721D6(int p0, int p1, int p2) { return invoke<int>(0x8C9721D6, p0, p1, p2); } // 0x8C9721D6
+   static int _0xF2140DEE(int p0) { return invoke<int>(0xF2140DEE, p0); } // 0xF2140DEE
+   static BOOL _0x9B903F45(int p0) { return invoke<int>(0x9B903F45, p0); } // 0x9B903F45
+   static int _0x16D1E1B4(int p0) { return invoke<int>(0x16D1E1B4, p0); } // 0x16D1E1B4
+   static int _0xC741F051(int p0) { return invoke<int>(0xC741F051, p0); } // 0xC741F051
    static Actor CREATE_ACTOR_IN_LAYOUT(Layout layout, const char* actorName, int actorID, float x, float y, float z, float rotx, float roty, float rotz) { return invoke<Actor>(0x8D67F397, layout, actorName, actorID, x, y, z, rotx, roty, rotz); } // 0x8D67F397
-   // 0x6A307D5F
+   static int _0x6A307D5F(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9) { return invoke<int>(0x6A307D5F, p0, p1, p2, p3, p4, p5, p6, p7, p8, p9); } // 0x6A307D5F
    static Any CREATE_PERS_CHAR_IN_LAYOUT(Any p0, Any p1, Any p2, Any p3, Any p5, Any p6) { return invoke<Any>(0x013B3937, p1, p2, p3, p5, p6); } // 0x013B3937
    static Any _CREATE_ENUMERATED_ACTOR_IN_LAYOUT_USING_VARIABLE_INDEX(Any p0) { return invoke<Any>(0xCCC0A3F3, p0); } // 0xCCC0A3F3
    static Actor _CREATE_ENUMERATED_PLAYER_ACTOR_IN_LAYOUT(Layout layout, Actor actor, const char* actorInLayout, int actorID, float x, float y, float z, float xRot, float yRot, float zRot, int unk0) { return invoke<Actor>(0x637E446B, layout, actor, actorInLayout, actorID, x, y, x, xRot, yRot, zRot, unk0); } // 0x637E446B
    static Any IS_ACTOR_INITED(Any p0) { return invoke<Any>(0x24F4DAB2, p0); } // 0x24F4DAB2
    static Any GET_ACTOR_ENUM(Any p0) { return invoke<Any>(0x0B28E9EC, p0); } // 0x0B28E9EC
    static int GET_ACTOR_ENUM_STRING(Any p0) { return invoke<int>(0xD98CB6F6, p0); } // 0xD98CB6F6
-   // 0xC739D1D2
-   // 0x990614C1
-   // 0xB50E95D7
+   static int _0xC739D1D2(int p0) { return invoke<int>(0xC739D1D2, p0); } // 0xC739D1D2
+   static int _0x990614C1(int p0) { return invoke<int>(0x990614C1, p0); } // 0x990614C1
+   static int _0xB50E95D7(int p0) { return invoke<int>(0xB50E95D7, p0); } // 0xB50E95D7
    static int GET_ACTOR_ENUM_FACTION() { return invoke<int>(0x2803BDA8); } // 0x2803BDA8
-   // 0x7AB17813
+   static int _0x7AB17813(int p0) { return invoke<int>(0x7AB17813, p0); } // 0x7AB17813
    static void _SET_PLAYER_TO_ENUM(Actor actor, float value) { invoke<Void>(0x95FBA0B0, actor, value); } // 0x95FBA0B0
    static void TURN_ACTOR_INTO_ZOMBIE(Actor actor, Any p1) { invoke<Void>(0x39928706, actor, p1); } // 0x39928706
-   // 0x12A86E9D
-   // 0x5613615B
-   // 0xB54567B9
+   static void _0x12A86E9D(int p0) { invoke<Void>(0x12A86E9D, p0); } // 0x12A86E9D
+   static void _0x5613615B(int p0) { invoke<Void>(0x5613615B, p0); } // 0x5613615B
+   static int _0xB54567B9(int p0) { return invoke<int>(0xB54567B9, p0); } // 0xB54567B9
    static int REQUEST_ASSET(const char* assetDir, int assetType) { return invoke<int>(0x9AA02DA7, assetDir, assetType); }; // 0x9AA02DA7
    static Any GET_ASSET_ID(Any p0) { return invoke<Any>(0x6005B514, p0); } // 0x6005B514
    static int REMOVE_ASSET(Any p0, Any p1) { return invoke<int>(0xE7829D28, p0, p1); }; // 0xE7829D28
    static Any _GET_TYPE_ID_USING_ACTOR_ENUM(Any p0) { return invoke<Any>(0x55E6227E, p0); } // 0x55E6227E
    static Any GET_ASSET_NAME(Any p0) { return invoke<Any>(0x9EDBBB84, p0); } // 0x9EDBBB84
-   // 0x214AFB8C
-   // 0xFDF42AAC
-   // 0x1FCC8FEF
-   // 0xAF2597E8
-   // 0x97951004
+   static BOOL _0x214AFB8C(int p0) { return invoke<BOOL>(0x214AFB8C, p0); } // 0x214AFB8C
+   static BOOL _IS_TYPE_ID_VALID_BY_STRING(Any p0, int p1, int p2, int p3, int p4) { return invoke<BOOL>(0xFDF42AAC, p0, p1, p2, p3, p4); } // 0xFDF42AAC
+   static int _0x1FCC8FEF(int p0) { return invoke<int>(0x1FCC8FEF, p0); } // 0x1FCC8FEF
+   static int _0xAF2597E8(int p0, int p1) { return invoke<int>(0xAF2597E8, p0, p1); } // 0xAF2597E8
+   static int _0x97951004(int p0) { return invoke<int>(0x97951004, p0); } // 0x97951004
    static int REQUEST_FIXED_CORPSE(Any p0, Any p1) { return invoke<int>(0x0D447878, p0, p1); } // 0x0D447878
-   // 0xCEC355CE
-   // 0x418A22D5
-   // 0x77403213
-   // 0x601FC9F4
-   // 0x05D69EA6
-   // 0x9AC1CA75
+   static int _0xCEC355CE(int p0, int p1) { return invoke<int>(0xCEC355CE, p0, p1); } // 0xCEC355CE
+   static int _0x418A22D5(int p0, int p1) { return invoke<int>(0x418A22D5, p0, p1); } // 0x418A22D5
+   static int _0x77403213(int p0, int p1, int p2) { return invoke<int>(0x77403213, p0, p1, p2); } // 0x77403213
+   static int _0x601FC9F4(int p0, int p1) { return invoke<int>(0x601FC9F4, p0, p1); } // 0x601FC9F4
+   static int _0x05D69EA6(int p0, int p1) { return invoke<int>(0x05D69EA6, p0, p1); } // 0x05D69EA6
+   static int _0x9AC1CA75(int p0, int p1, int p2) { return invoke<int>(0x9AC1CA75, p0, p1, p2); } // 0x9AC1CA75
    static int SET_PROP_AI_OBSTACLE_ENABLED(Any p0, Any p1) { return invoke<int>(0x0DC83543, p0, p1); } // 0x0DC83543
    static int _0x49D0DF2E(Any p0) { return invoke<int>(0x49D0DF2E, p0); } // 0x49D0DF2E
    static void _0xDF93BD7C(Any p0) { invoke<Void>(0xDF93BD7C, p0); } // 0xDF93BD7C
@@ -2872,9 +2872,9 @@ namespace PLAYER
    static float* _0x135EA21D(float p0) { return invoke<float*>(0x135EA21D, p0); } // 0x135EA21D (Mass, Size, ModelOffset)
    static float* _0xA393AC4E(float p0) { return invoke<float*>(0xA393AC4E, p0); }  // 0xA393AC4E (Mass, Size, ModelOffset)
    static void SET_NPC_TO_ACTOR_DAMAGE_SCALE_FACTOR(Any p0, Any p1) { invoke<Void>(0x05CFE1E9, p0, p1); } // 0x05CFE1E9
-   // 0x083903D1 SET_ACTOR_LOW_DROP_DAMAGE
-   // 0x1540A309 SET_ACTOR_MEDIUM_DROP_DAMAGE
-   // 0x7CC57FDA SET_ACTOR_HIGH_DROP_DAMAGE
+   static int SET_ACTOR_LOW_DROP_DAMAGE(int p0, float p1) { return invoke<int>(0x083903D1, p0, p1); } // 0x083903D1 
+   static int SET_ACTOR_MEDIUM_DROP_DAMAGE(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, float p8) { return invoke<int>(0x1540A309, p0, p1, p2, p3, p4, p5, p6, p7, p8); } // 0x1540A309
+   static int SET_ACTOR_HIGH_DROP_DAMAGE(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, float p8) { return invoke<int>(0x7CC57FDA, p0, p1, p2, p3, p4, p5, p6, p7, p8); }  // 0x7CC57FDA
    static void SET_ACTOR_DEATH_DROP_DISTANCE(Any p0, Any p1) { invoke<Void>(0x9F6B04C8, p0, p1); } // 0x9F6B04C8
    static void SET_DAMAGE_SCALE_ENABLE(Any p0, Any p1) { invoke<Void>(0xDA0CDC91, p0, p1); } // 0xDA0CDC91
    static void SET_CRIPPLE_ENABLE(Any p0, Any p1) { invoke<Void>(0x3AD31762, p0, p1); } // 0x3AD31762
@@ -3209,7 +3209,7 @@ namespace STAT
 namespace STREAMING
 {
    static void STREAMING_REQUEST_ACTOR(Any p0, Any p1, Any p2) { invoke<Void>(0xB0A79FEE, p0, p1, p2); } // 0xB0A79FEE
-   static BOOL STREAMING_IS_ACTOR_LOADED(Any p0) { return invoke<BOOL>(0x7DF72579, p0); } // 0x7DF72579
+   static BOOL STREAMING_IS_ACTOR_LOADED(Any p0, int p1) { return invoke<BOOL>(0x7DF72579, p0, p1); } // 0x7DF72579
    static void STREAMING_EVICT_ACTOR(Any p0) { invoke<Void>(0x6661CF89, p0); } // 0x6661CF89
    static BOOL STREAMING_IS_WORLD_LOADED() { return invoke<BOOL>(0x87B74064); } // 0x87B74064
    static BOOL _STREAMING_IS_WORLD_LOADED_2() { return invoke<BOOL>(0x943BE053); } // 0x943BE053
