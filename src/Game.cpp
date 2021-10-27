@@ -166,6 +166,7 @@ bool GameVariables::FindSignatures()
       "\xF8\x21\x00\x00\x7C\x08\x02\xA6\xFA\xC1\x00\x00\x3A\xC1\x00\x00", "xx??xxxxxx??xx??",
       &__vsnprintf);
 
+#ifdef DEBUG
    SetFn<sscanf_t>("sscanf",
       "\xF8\x21\x00\x00\x7C\x08\x02\xA6\x39\x61\x00\x00", "xx??xxxxxx??",
       &__sscanf);
@@ -245,6 +246,7 @@ bool GameVariables::FindSignatures()
       "\xF8\x01\x00\x00\xA0\x03\x00\x00\x78\x7C\x00\x20", "xx??xx??xxxx",
       &__fclose,
       -0xC);
+#endif // DEBUG
 
    bool found = pNativeRegistration
       && pRDRUIGame

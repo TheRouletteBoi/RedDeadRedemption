@@ -55,6 +55,7 @@ public:
    using vsnprintf_t = int(*)(char* s, size_t n, const char* format, va_list arg);
    vsnprintf_t __vsnprintf{};
 
+#if DEBUG
    using sscanf_t = int(*)(const char* str, const char* format, ...);
    sscanf_t __sscanf{};
 
@@ -108,6 +109,7 @@ public:
 
    using fclose_t = int(*)(FILE* stream);
    fclose_t __fclose{};
+#endif // DEBUG
 
    bool FindSignatures();
 
