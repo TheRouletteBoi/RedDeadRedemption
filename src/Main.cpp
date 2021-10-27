@@ -68,7 +68,7 @@ int RedDeadRedemption_Main(int argc, char* argv[])
 
       sys_ppu_thread_exit(0);
 
-   }, 0, 3000, 8192, SYS_PPU_THREAD_CREATE_JOINABLE, "RedDeadRedemption");
+   }, 0, 3000, 2048, SYS_PPU_THREAD_CREATE_JOINABLE, "RedDeadRedemption");
 
    return 0;
 }
