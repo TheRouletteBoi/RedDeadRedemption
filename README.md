@@ -3,7 +3,7 @@
  - Includes IDA database file  
 
 # Download 
- https://github.com/TheRouletteBoi/RedDeadRedemption/releases
+ [Releases]( https://github.com/TheRouletteBoi/RedDeadRedemption/releases)
  
 # Prerequisites
 - Visual Studio 2013+
