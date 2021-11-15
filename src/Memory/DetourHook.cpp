@@ -35,11 +35,15 @@ const uint32_t jumpASMNoPreserve[] = { /*Don't always have enough space to prese
    0x4C800420  // bcctr (Used For PatchInJumpEx bcctr 20, 0 == bctr)
 };
 
-uint8_t DetourHook::stubs[];
+uint8_t DetourHook::stubs[]{};
 size_t DetourHook::stubOffset = 0;
 
 DetourHook::DetourHook(uint32_t fnAddress, uintptr_t fnCallback, bool preserveRegisters, uint32_t tocOverride)
+   : stubAddress(nullptr), hookAddress(0), originalLength(0), stubIndex(0)
 {
+   memset(stubOpd, 0, sizeof(stubOpd));
+   memset(originalInstructions, 0, sizeof(originalInstructions));
+
    Hook(fnAddress, fnCallback, preserveRegisters);
 }
 
@@ -50,6 +54,7 @@ DetourHook::~DetourHook()
 
 void* DetourHook::Hook(uint32_t fnAddress, uintptr_t fnCallback, bool preserveRegisters, uint32_t tocOverride)
 {
+   stubIndex = 0;
    stubAddress = &stubs[stubOffset];
 
    size_t hookInstructionCount = preserveRegisters ? ARRAYSIZE(jumpASMPreserve) : ARRAYSIZE(jumpASMNoPreserve);
