@@ -1,4 +1,4 @@
-# RedDeadRedemption
+# RedDeadRedemption Mod Menu
  - Supports all RDR game versions
  - Includes IDA database file  
 
