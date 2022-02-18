@@ -30,22 +30,22 @@ public:
 
    Status Update()
    {
-		if (IsRunning())
-		{
-			switch (keyboardStatus)
-			{
-			case 0x00000000: 
-				return Unk;
+      if (IsRunning())
+      {
+         switch (keyboardStatus)
+         {
+         case 0x00000000:
+            return Unk;
          case 0x00000001: // keyboard active
             return Active;
          case 0x00000002: // keyboard canceled
             return Canceled;
          case 0xFFFFFFFF: // keyboard isn't active
             return NotActive;
-			}
-		}
+         }
+      }
 
-		return NotActive;
+      return NotActive;
    }
 
    std::string GetResult()
