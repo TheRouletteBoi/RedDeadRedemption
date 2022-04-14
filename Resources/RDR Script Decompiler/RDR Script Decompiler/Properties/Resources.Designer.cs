@@ -73,16 +73,6 @@ namespace Decompiler.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] native_translation {
-            get {
-                object obj = ResourceManager.GetObject("native_translation", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
         internal static byte[] natives {
             get {
                 object obj = ResourceManager.GetObject("natives", resourceCulture);

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("GTA V Script Decompiler")]
+[assembly: AssemblyTitle("RDR Script Decompiler")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Nathan James")]
-[assembly: AssemblyProduct("GTA V Script Decompiler")]
+[assembly: AssemblyProduct("RDR Script Decompiler")]
 [assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
