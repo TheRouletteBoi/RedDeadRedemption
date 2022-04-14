@@ -128,7 +128,6 @@
 			this.fctb1.Cursor = System.Windows.Forms.Cursors.IBeam;
 			this.fctb1.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
 			this.fctb1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.fctb1.Font = new System.Drawing.Font("Courier New", 9.75F);
 			this.fctb1.IsReplaceMode = false;
 			this.fctb1.Language = FastColoredTextBoxNS.Language.CSharp;
 			this.fctb1.LeftBracket = '(';
@@ -271,7 +270,7 @@
             this.uintToolStripMenuItem,
             this.hexToolStripMenuItem});
 			this.intStyleToolStripMenuItem.Name = "intStyleToolStripMenuItem";
-			this.intStyleToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+			this.intStyleToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
 			this.intStyleToolStripMenuItem.Text = "IntStyle";
 			this.intStyleToolStripMenuItem.ToolTipText = "Choose how to display int32 data types";
 			// 
@@ -299,12 +298,12 @@
 			// toolStripSeparator5
 			// 
 			this.toolStripSeparator5.Name = "toolStripSeparator5";
-			this.toolStripSeparator5.Size = new System.Drawing.Size(233, 6);
+			this.toolStripSeparator5.Size = new System.Drawing.Size(235, 6);
 			// 
 			// showArraySizeToolStripMenuItem
 			// 
 			this.showArraySizeToolStripMenuItem.Name = "showArraySizeToolStripMenuItem";
-			this.showArraySizeToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+			this.showArraySizeToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
 			this.showArraySizeToolStripMenuItem.Text = "Show Array Size";
 			this.showArraySizeToolStripMenuItem.ToolTipText = "Shows the size of the items in an array \r\nuLocal_5[index <item_size>]\r\nan array o" +
     "f vector3s would look like this\r\nvStatic_1[0 <3>];";
@@ -313,7 +312,7 @@
 			// reverseHashesToolStripMenuItem
 			// 
 			this.reverseHashesToolStripMenuItem.Name = "reverseHashesToolStripMenuItem";
-			this.reverseHashesToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+			this.reverseHashesToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
 			this.reverseHashesToolStripMenuItem.Text = "Reverse Hashes";
 			this.reverseHashesToolStripMenuItem.ToolTipText = "Reverse known hashes into their text equivalent\r\ne.g 0xB779A091 -> joaat(\"adder\")" +
     "";
@@ -322,14 +321,14 @@
 			// includeNativeNamespaceToolStripMenuItem
 			// 
 			this.includeNativeNamespaceToolStripMenuItem.Name = "includeNativeNamespaceToolStripMenuItem";
-			this.includeNativeNamespaceToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+			this.includeNativeNamespaceToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
 			this.includeNativeNamespaceToolStripMenuItem.Text = "Include Native Namespace";
 			this.includeNativeNamespaceToolStripMenuItem.Click += new System.EventHandler(this.includeNativeNamespaceToolStripMenuItem_Click);
 			// 
 			// declareVariablesToolStripMenuItem
 			// 
 			this.declareVariablesToolStripMenuItem.Name = "declareVariablesToolStripMenuItem";
-			this.declareVariablesToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+			this.declareVariablesToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
 			this.declareVariablesToolStripMenuItem.Text = "Declare Variables";
 			this.declareVariablesToolStripMenuItem.ToolTipText = "Include Variable declarations at the start of file and functions";
 			this.declareVariablesToolStripMenuItem.Click += new System.EventHandler(this.declareVariablesToolStripMenuItem_Click);
@@ -337,7 +336,7 @@
 			// shiftVariablesToolStripMenuItem
 			// 
 			this.shiftVariablesToolStripMenuItem.Name = "shiftVariablesToolStripMenuItem";
-			this.shiftVariablesToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+			this.shiftVariablesToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
 			this.shiftVariablesToolStripMenuItem.Text = "Shift Variables";
 			this.shiftVariablesToolStripMenuItem.ToolTipText = resources.GetString("shiftVariablesToolStripMenuItem.ToolTipText");
 			this.shiftVariablesToolStripMenuItem.Click += new System.EventHandler(this.shiftVariablesToolStripMenuItem_Click);
@@ -345,42 +344,42 @@
 			// globalAndStructHexIndexingToolStripMenuItem
 			// 
 			this.globalAndStructHexIndexingToolStripMenuItem.Name = "globalAndStructHexIndexingToolStripMenuItem";
-			this.globalAndStructHexIndexingToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+			this.globalAndStructHexIndexingToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
 			this.globalAndStructHexIndexingToolStripMenuItem.Text = "Global and Struct Hex Indexing";
 			this.globalAndStructHexIndexingToolStripMenuItem.Click += new System.EventHandler(this.globalAndStructHexIndexingToolStripMenuItem_Click);
 			// 
 			// showFuncPointerToolStripMenuItem
 			// 
 			this.showFuncPointerToolStripMenuItem.Name = "showFuncPointerToolStripMenuItem";
-			this.showFuncPointerToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+			this.showFuncPointerToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
 			this.showFuncPointerToolStripMenuItem.Text = "Show Func Pointer";
 			this.showFuncPointerToolStripMenuItem.Click += new System.EventHandler(this.showFuncPointerToolStripMenuItem_Click);
 			// 
 			// useMultiThreadingToolStripMenuItem
 			// 
 			this.useMultiThreadingToolStripMenuItem.Name = "useMultiThreadingToolStripMenuItem";
-			this.useMultiThreadingToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+			this.useMultiThreadingToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
 			this.useMultiThreadingToolStripMenuItem.Text = "Use MultiThreading";
 			this.useMultiThreadingToolStripMenuItem.Click += new System.EventHandler(this.useMultiThreadingToolStripMenuItem_Click);
 			// 
 			// includeFunctionPositionToolStripMenuItem
 			// 
 			this.includeFunctionPositionToolStripMenuItem.Name = "includeFunctionPositionToolStripMenuItem";
-			this.includeFunctionPositionToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+			this.includeFunctionPositionToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
 			this.includeFunctionPositionToolStripMenuItem.Text = "Include Function Position";
 			this.includeFunctionPositionToolStripMenuItem.Click += new System.EventHandler(this.includeFunctionPositionToolStripMenuItem_Click);
 			// 
 			// uppercaseNativesToolStripMenuItem
 			// 
 			this.uppercaseNativesToolStripMenuItem.Name = "uppercaseNativesToolStripMenuItem";
-			this.uppercaseNativesToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+			this.uppercaseNativesToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
 			this.uppercaseNativesToolStripMenuItem.Text = "Uppercase Natives";
 			this.uppercaseNativesToolStripMenuItem.Click += new System.EventHandler(this.uppercaseNativesToolStripMenuItem_Click);
 			// 
 			// toolStripSeparator4
 			// 
 			this.toolStripSeparator4.Name = "toolStripSeparator4";
-			this.toolStripSeparator4.Size = new System.Drawing.Size(233, 6);
+			this.toolStripSeparator4.Size = new System.Drawing.Size(235, 6);
 			// 
 			// exportTablesToolStripMenuItem
 			// 
@@ -389,7 +388,7 @@
             this.nativesToolStripMenuItem,
             this.fullNativeInfoToolStripMenuItem});
 			this.exportTablesToolStripMenuItem.Name = "exportTablesToolStripMenuItem";
-			this.exportTablesToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+			this.exportTablesToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
 			this.exportTablesToolStripMenuItem.Text = "Export Tables";
 			// 
 			// entitiesToolStripMenuItem
@@ -440,7 +439,7 @@
 			// findHashFromStringsToolStripMenuItem
 			// 
 			this.findHashFromStringsToolStripMenuItem.Name = "findHashFromStringsToolStripMenuItem";
-			this.findHashFromStringsToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+			this.findHashFromStringsToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
 			this.findHashFromStringsToolStripMenuItem.Text = "Reverse Hashes From Strings";
 			this.findHashFromStringsToolStripMenuItem.Click += new System.EventHandler(this.findHashFromStringsToolStripMenuItem_Click);
 			// 
@@ -507,7 +506,7 @@
             this.nativehFileToolStripMenuItem});
 			this.extractToolStripMenuItem.Enabled = false;
 			this.extractToolStripMenuItem.Name = "extractToolStripMenuItem";
-			this.extractToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+			this.extractToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
 			this.extractToolStripMenuItem.Text = "Extract";
 			this.extractToolStripMenuItem.Visible = false;
 			// 
@@ -551,6 +550,7 @@
 			this.listView1.FullRowSelect = true;
 			this.listView1.GridLines = true;
 			this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+			this.listView1.HideSelection = false;
 			this.listView1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.listView1.Location = new System.Drawing.Point(0, 0);
 			this.listView1.MultiSelect = false;
