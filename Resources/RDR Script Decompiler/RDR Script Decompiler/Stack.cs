@@ -1030,16 +1030,6 @@ namespace Decompiler
 			return _stack[_stack.Count - newIndex - 1].NatHash;
 		}
 
-		public ulong PeekNat64(int index)
-		{
-			int newIndex = GetIndex(index);
-			if (newIndex == -1)
-			{
-				return 0;
-			}
-			return _stack[_stack.Count - newIndex - 1].X64NatHash;
-		}
-
 		public bool isnat(int index)
 		{
 			int newIndex = GetIndex(index);
@@ -1075,17 +1065,7 @@ namespace Decompiler
 			Push(new StackValue(value, hash, type));
 		}
 
-		public void PushNative(string value, ulong hash, DataType type)
-		{
-			Push(new StackValue(value, hash, type));
-		}
-
 		public void PushStructNative(string value, uint hash, int structsize, DataType dt = DataType.Unk)
-		{
-			Push(new StackValue(value, structsize, hash, dt));
-		}
-
-		public void PushStructNative(string value, ulong hash, int structsize, DataType dt = DataType.Unk)
 		{
 			Push(new StackValue(value, structsize, hash, dt));
 		}
@@ -1273,7 +1253,6 @@ namespace Decompiler
 			DataType _datatype;
 			Vars_Info.Var _var = null;
 			uint _hash = 0;
-			ulong _xhash = 0;
 			bool global = false;
 			Function _function = null;
 
@@ -1320,30 +1299,12 @@ namespace Decompiler
 				_datatype = datatype;
 			}
 
-			public StackValue(string value, ulong hash, DataType datatype)
-			{
-				_type = Type.Literal;
-				_value = value;
-				_structSize = 0;
-				_xhash = hash;
-				_datatype = datatype;
-			}
-
 			public StackValue(string value, int structsize, uint hash, DataType datatype = DataType.Unk)
 			{
 				_type = Type.Struct;
 				_value = value;
 				_structSize = structsize;
 				_hash = hash;
-				_datatype = datatype;
-			}
-
-			public StackValue(string value, int structsize, ulong hash, DataType datatype = DataType.Unk)
-			{
-				_type = Type.Struct;
-				_value = value;
-				_structSize = structsize;
-				_xhash = hash;
 				_datatype = datatype;
 			}
 
@@ -1401,17 +1362,12 @@ namespace Decompiler
 			}
 			public bool isNative
 			{
-				get { return _hash != 0 || _xhash != 0; }
+				get { return _hash != 0; }
 			}
 
 			public uint NatHash
 			{
 				get { return _hash; }
-			}
-
-			public ulong X64NatHash
-			{
-				get { return _xhash; }
 			}
 
 			public bool isNotVar
