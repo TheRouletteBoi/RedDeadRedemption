@@ -7,7 +7,6 @@ namespace Decompiler
 	static class Program
 	{
 		public static NativeFile nativefile;
-		public static x64NativeFile x64nativefile;
 		internal static Ini.IniFile Config;
 		public static Object ThreadLock;
 		public static int ThreadCount;
@@ -29,14 +28,6 @@ namespace Decompiler
 				nativefile = new NativeFile(File.OpenRead(path));
 			else
 				nativefile = new NativeFile(new MemoryStream(Properties.Resources.natives));
-
-
-			path = Path.Combine(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location),
-				"x64natives.dat");
-			if (File.Exists(path))
-				x64nativefile = new x64NativeFile(File.OpenRead(path));
-			else
-				x64nativefile = new x64NativeFile(new MemoryStream(Properties.Resources.x64natives));
 
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);

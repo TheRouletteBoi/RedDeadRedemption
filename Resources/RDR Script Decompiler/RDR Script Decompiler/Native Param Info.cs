@@ -354,64 +354,6 @@ namespace Decompiler
 
 		}
 
-		public string getnativeinfo(ulong hash)
-		{
-			if (!Natives.ContainsKey(hash))
-			{
-				throw new Exception("Native not found");
-			}
-			string dec = Types.gettype(Natives[hash].Item1).returntype + Program.x64nativefile.nativefromhash(hash) + "(";
-			int max = Natives[hash].Item2.Length;
-			if (max == 0)
-				return dec + ");";
-			for (int i = 0; i < max; i++)
-			{
-				dec += Types.gettype(Natives[hash].Item2[i]).vardec + i + ", ";
-			}
-			return dec.Remove(dec.Length - 2) + ");";
-		}
-
-		public void exportnativeinfo()
-		{
-			Stream natfile =
-				File.Create(Path.Combine(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location),
-					"natives.h"));
-			StreamWriter sw = new StreamWriter(natfile);
-			sw.WriteLine("/*************************************************************");
-			sw.WriteLine("****************** GTA V Native Header file ******************");
-			sw.WriteLine("*************************************************************/\n");
-			sw.WriteLine("#define TRUE 1\n#define FALSE 0\n#define true 1\n#define false 0\n");
-			sw.WriteLine("typedef unsigned int uint;");
-			sw.WriteLine("typedef uint bool;");
-			sw.WriteLine("typedef uint var;");
-			sw.WriteLine("");
-			List<Tuple<string, string>> natives = new List<Tuple<string, string>>();
-
-			foreach (KeyValuePair<ulong, Tuple<Stack.DataType, Stack.DataType[]>> native in Natives)
-			{
-				string type = Types.gettype(native.Value.Item1).returntype;
-				string line = Program.x64nativefile.nativefromhash(native.Key) + "(";
-
-				int max = native.Value.Item2.Length;
-				if (max == 0)
-				{
-					natives.Add(new Tuple<string, string>(line + ");\n", type));
-					continue;
-				}
-				for (int i = 0; i < max; i++)
-				{
-					line += Types.gettype(native.Value.Item2[i]).vardec + i + ", ";
-				}
-				natives.Add(new Tuple<string, string>(line.Remove(line.Length - 2) + ");\n", type));
-			}
-			natives.Sort();
-			foreach (Tuple<string, string> native in natives)
-			{
-				sw.Write("extern " + native.Item2 + native.Item1);
-			}
-			sw.Close();
-		}
-
 		public string TypeToString(Stack.DataType type)
 		{
 			return Types.gettype(type).singlename;

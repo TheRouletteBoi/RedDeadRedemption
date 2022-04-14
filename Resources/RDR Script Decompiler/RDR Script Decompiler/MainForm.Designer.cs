@@ -69,7 +69,6 @@
 			this.nativesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.fullNativeInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.consoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.pCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.findHashFromStringsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.expandAllBlocksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -128,6 +127,7 @@
 			this.fctb1.Cursor = System.Windows.Forms.Cursors.IBeam;
 			this.fctb1.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
 			this.fctb1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.fctb1.Font = new System.Drawing.Font("Courier New", 9.75F);
 			this.fctb1.IsReplaceMode = false;
 			this.fctb1.Language = FastColoredTextBoxNS.Language.CSharp;
 			this.fctb1.LeftBracket = '(';
@@ -394,7 +394,7 @@
 			// entitiesToolStripMenuItem
 			// 
 			this.entitiesToolStripMenuItem.Name = "entitiesToolStripMenuItem";
-			this.entitiesToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+			this.entitiesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.entitiesToolStripMenuItem.Text = "Entities";
 			this.entitiesToolStripMenuItem.ToolTipText = "Export The entites file (entities_exp.dat) built into the program so you can edit" +
     " it.\r\nThe program will search for entities.dat in its directory and use that for" +
@@ -404,7 +404,7 @@
 			// nativesToolStripMenuItem
 			// 
 			this.nativesToolStripMenuItem.Name = "nativesToolStripMenuItem";
-			this.nativesToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+			this.nativesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.nativesToolStripMenuItem.Text = "Natives";
 			this.nativesToolStripMenuItem.ToolTipText = "Export The natives file (natives_exp.dat) built into the program so you can edit " +
     "it.\r\nThe program will search for natives.dat in its directory and use that for r" +
@@ -414,10 +414,9 @@
 			// fullNativeInfoToolStripMenuItem
 			// 
 			this.fullNativeInfoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.consoleToolStripMenuItem,
-            this.pCToolStripMenuItem});
+            this.consoleToolStripMenuItem});
 			this.fullNativeInfoToolStripMenuItem.Name = "fullNativeInfoToolStripMenuItem";
-			this.fullNativeInfoToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+			this.fullNativeInfoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.fullNativeInfoToolStripMenuItem.Text = "Full Native info";
 			this.fullNativeInfoToolStripMenuItem.ToolTipText = "Export a file containing definitions of natives to a h file in programs directory" +
     "\r\n";
@@ -425,16 +424,9 @@
 			// consoleToolStripMenuItem
 			// 
 			this.consoleToolStripMenuItem.Name = "consoleToolStripMenuItem";
-			this.consoleToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+			this.consoleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.consoleToolStripMenuItem.Text = "Console";
 			this.consoleToolStripMenuItem.Click += new System.EventHandler(this.fullNativeInfoToolStripMenuItem_Click);
-			// 
-			// pCToolStripMenuItem
-			// 
-			this.pCToolStripMenuItem.Name = "pCToolStripMenuItem";
-			this.pCToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
-			this.pCToolStripMenuItem.Text = "PC";
-			this.pCToolStripMenuItem.Click += new System.EventHandler(this.fullPCNativeInfoToolStripMenuItem_Click);
 			// 
 			// findHashFromStringsToolStripMenuItem
 			// 
@@ -513,21 +505,21 @@
 			// stringsTableToolStripMenuItem
 			// 
 			this.stringsTableToolStripMenuItem.Name = "stringsTableToolStripMenuItem";
-			this.stringsTableToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+			this.stringsTableToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.stringsTableToolStripMenuItem.Text = "Strings table";
 			this.stringsTableToolStripMenuItem.Click += new System.EventHandler(this.stringsTableToolStripMenuItem_Click);
 			// 
 			// nativeTableToolStripMenuItem
 			// 
 			this.nativeTableToolStripMenuItem.Name = "nativeTableToolStripMenuItem";
-			this.nativeTableToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+			this.nativeTableToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.nativeTableToolStripMenuItem.Text = "Native table";
 			this.nativeTableToolStripMenuItem.Click += new System.EventHandler(this.nativeTableToolStripMenuItem_Click);
 			// 
 			// nativehFileToolStripMenuItem
 			// 
 			this.nativehFileToolStripMenuItem.Name = "nativehFileToolStripMenuItem";
-			this.nativehFileToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+			this.nativehFileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.nativehFileToolStripMenuItem.Text = "Native.h file";
 			this.nativehFileToolStripMenuItem.Click += new System.EventHandler(this.nativehFileToolStripMenuItem_Click);
 			// 
@@ -735,7 +727,6 @@
 		private System.Windows.Forms.ToolStripMenuItem useMultiThreadingToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem showFuncPointerToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem consoleToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem pCToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem findHashFromStringsToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem includeNativeNamespaceToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem globalAndStructHexIndexingToolStripMenuItem;

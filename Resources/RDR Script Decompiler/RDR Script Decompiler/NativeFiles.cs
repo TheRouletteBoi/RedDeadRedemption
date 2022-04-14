@@ -91,20 +91,6 @@ namespace Decompiler
 			}
 			return hash;
 		}
-		public string nativefromhash(ulong hash)
-		{
-			if (Program.x64nativefile.ContainsKey(hash))
-			{
-				return this[hash];
-			}
-			else
-			{
-				string temps = hash.ToString("X");
-				while (temps.Length < 8)
-					temps = "0" + temps;
-				return "unk_0x" + temps;
-			}
-		}
 		public Dictionary<string, ulong> revmap = new Dictionary<string, ulong>();
 		public Dictionary<ulong, ulong> TranslationTable = new Dictionary<ulong, ulong>();
 		public x64NativeFile(Stream Nativefile)

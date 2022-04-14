@@ -150,10 +150,7 @@ namespace Decompiler
 				SetFileName(filename);
 				ScriptOpen = true;
 				updatestatus("Ready, Time taken: " + (DateTime.Now - Start).ToString());
-				if (ext != ".ysc")
-					ScriptFile.npi.savefile();
-				else
-					ScriptFile.X64npi.savefile();
+				ScriptFile.npi.savefile();
 
 			}
 		}
@@ -170,7 +167,7 @@ namespace Decompiler
 				if (!Directory.Exists(SaveDirectory))
 					Directory.CreateDirectory(SaveDirectory);
 				this.Hide();
-				bool console = false, pc = false;
+				bool console = false;
 
 				foreach (string file in Directory.GetFiles(fsd.SelectedPath, "*.xsc"))
 				{
@@ -181,16 +178,6 @@ namespace Decompiler
 				{
 					console = true;
 					CompileList.Enqueue(new Tuple<string, bool>(file, true));
-				}
-				foreach (string file in Directory.GetFiles(fsd.SelectedPath, "*.ysc"))
-				{
-					pc = true;
-					CompileList.Enqueue(new Tuple<string, bool>(file, false));
-				}
-				foreach (string file in Directory.GetFiles(fsd.SelectedPath, "*.ysc.full"))
-				{
-					pc = true;
-					CompileList.Enqueue(new Tuple<string, bool>(file, false));
 				}
 				if (Program.Use_MultiThreading)
 				{
@@ -216,8 +203,6 @@ namespace Decompiler
 				updatestatus("Directory Extracted, Time taken: " + (DateTime.Now - Start).ToString());
 				if (console)
 					ScriptFile.npi.savefile();
-				if (pc)
-					ScriptFile.X64npi.savefile();
 			}
 			this.Show();
 		}
@@ -261,10 +246,7 @@ namespace Decompiler
 					file.Save(Path.Combine(Path.GetDirectoryName(ofd.FileName),
 						Path.GetFileNameWithoutExtension(ofd.FileName) + ".c"));
 					file.Close();
-					if ((Path.GetExtension(ofd.FileName) != ".ysc"))
-						ScriptFile.npi.savefile();
-					else
-						ScriptFile.X64npi.savefile();
+					ScriptFile.npi.savefile();
 					updatestatus("File Saved, Time taken: " + (DateTime.Now - Start).ToString());
 				}
 #if !DEBUG
@@ -344,15 +326,6 @@ namespace Decompiler
 					Program.nativefile = new NativeFile(File.OpenRead(path));
 				else
 					Program.nativefile = new NativeFile(new MemoryStream(Properties.Resources.natives));
-			}
-			if (Program.x64nativefile != null)
-			{
-				string path = Path.Combine(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location),
-					"x64natives.dat");
-				if(File.Exists(path))
-					Program.x64nativefile = new x64NativeFile(File.OpenRead(path));
-				else
-					Program.x64nativefile = new x64NativeFile(new MemoryStream(Properties.Resources.x64natives));
 			}
 		}
 
@@ -754,12 +727,6 @@ namespace Decompiler
 		{
 			ScriptFile.npi.exportnativeinfo();
 		}
-
-		private void fullPCNativeInfoToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			ScriptFile.X64npi.exportnativeinfo();
-		}
-
 
 		private void stringsTableToolStripMenuItem_Click(object sender, EventArgs e)
 		{

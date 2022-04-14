@@ -1033,16 +1033,10 @@ namespace Decompiler
 						writeline(temp as string);
 					break;
 				case Instruction.Native:
-					if (_consoleVer)
-						tempstring =
-							Stack.NativeCallTest(this.Scriptfile.NativeTable.GetNativeHashFromIndex(Instructions[Offset].GetNativeIndex),
-								this.Scriptfile.NativeTable.GetNativeFromIndex(Instructions[Offset].GetNativeIndex),
-								Instructions[Offset].GetNativeParams, Instructions[Offset].GetNativeReturns);
-					else
-						tempstring =
-							Stack.NativeCallTest(this.Scriptfile.X64NativeTable.GetNativeHashFromIndex(Instructions[Offset].GetNativeIndex),
-								this.Scriptfile.X64NativeTable.GetNativeFromIndex(Instructions[Offset].GetNativeIndex),
-								Instructions[Offset].GetNativeParams, Instructions[Offset].GetNativeReturns);
+					tempstring =
+						Stack.NativeCallTest(this.Scriptfile.NativeTable.GetNativeHashFromIndex(Instructions[Offset].GetNativeIndex),
+							this.Scriptfile.NativeTable.GetNativeFromIndex(Instructions[Offset].GetNativeIndex),
+							Instructions[Offset].GetNativeParams, Instructions[Offset].GetNativeReturns);
 					//tempstring = Stack.FunctionCall(this.Scriptfile.NativeTable.GetNativeFromIndex(Instructions[Offset].GetNativeIndex), Instructions[Offset].GetNativeParams, Instructions[Offset].GetNativeReturns);
 					if (tempstring != "")
 					{
@@ -1399,10 +1393,7 @@ namespace Decompiler
 				}
 				if (Stack.isnat(index + i))
 				{
-					if (_consoleVer)
-						ScriptFile.npi.updaterettype(Stack.PeekNat(index + i), type);
-					else
-						ScriptFile.X64npi.updaterettype(Stack.PeekNat64(index + i), type);
+					ScriptFile.npi.updaterettype(Stack.PeekNat(index + i), type);
 				}
 
 			}
@@ -1429,10 +1420,7 @@ namespace Decompiler
 				}
 				if (Stack.isnat(index + i))
 				{
-					if (_consoleVer)
-						ScriptFile.npi.updaterettype(Stack.PeekNat(index + i), Stack.DataType.StringPtr);
-					else
-						ScriptFile.X64npi.updaterettype(Stack.PeekNat64(index + i), Stack.DataType.StringPtr);
+					ScriptFile.npi.updaterettype(Stack.PeekNat(index + i), Stack.DataType.StringPtr);
 				}
 			}
 		}
@@ -1749,12 +1737,8 @@ namespace Decompiler
 						Stack.Drop();
 						break;
 					case Instruction.Native:
-						if (_consoleVer)
-							tempstring = Stack.NativeCallTest(this.Scriptfile.NativeTable.GetNativeHashFromIndex(ins.GetNativeIndex),
-								this.Scriptfile.NativeTable.GetNativeFromIndex(ins.GetNativeIndex), ins.GetNativeParams, ins.GetNativeReturns);
-						else
-							tempstring = Stack.NativeCallTest(this.Scriptfile.X64NativeTable.GetNativeHashFromIndex(ins.GetNativeIndex),
-								this.Scriptfile.X64NativeTable.GetNativeFromIndex(ins.GetNativeIndex), ins.GetNativeParams, ins.GetNativeReturns);
+						tempstring = Stack.NativeCallTest(this.Scriptfile.NativeTable.GetNativeHashFromIndex(ins.GetNativeIndex),
+							this.Scriptfile.NativeTable.GetNativeFromIndex(ins.GetNativeIndex), ins.GetNativeParams, ins.GetNativeReturns);
 						break;
 					case Instruction.Enter:
 						throw new Exception("Unexpected Function Definition");

@@ -85,7 +85,7 @@ namespace Decompiler
 			Console.WriteLine("CodeLength {0:X}", header.CodeLength); // 35D45
 
 			//header.StringBlocks = (header.StringsSize + (1 << 14) - 1) >> 14; //(header.StringsSize + 0x3FFF) >> 14;
-			header.CodeBlocks = (header.CodeLength + (1 << 14) - 1) >> 14; //(header.CodeLength + 0x3FFF) >> 14;
+			header.CodeBlocks = (header.CodeLength + (1 << 14) - 1) >> 14;
 			Console.WriteLine("CodeBlocks {0}", header.CodeBlocks.ToString()); // 14
 
 			//header.StringTableOffsets = new Int32[header.StringBlocks];

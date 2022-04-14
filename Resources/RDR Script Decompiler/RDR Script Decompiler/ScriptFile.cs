@@ -15,7 +15,6 @@ namespace Decompiler
         List<byte> CodeTable;
 		public StringTable StringTable;
 		public NativeTable NativeTable;
-		public X64NativeTable X64NativeTable;
         private int offset = 0;
         public readonly bool ConsoleVer;
 		public List<Function> Functions;
@@ -27,7 +26,6 @@ namespace Decompiler
         internal Vars_Info Statics;
         internal bool CheckNative = true;
 		internal static NativeParamInfo npi = new NativeParamInfo();
-		internal static x64BitNativeParamInfo X64npi = new x64BitNativeParamInfo();
         
 
      
@@ -40,10 +38,8 @@ namespace Decompiler
             file = scriptStream;
             Header = ScriptHeader.Generate(scriptStream, _Console);
             //StringTable = new StringTable(scriptStream, Header.StringTableOffsets, Header.StringBlocks, Header.StringsSize);
-            if (_Console)
-                NativeTable = new NativeTable(scriptStream, Header.NativesOffset, Header.NativesCount);
-            else
-                X64NativeTable = new X64NativeTable(scriptStream, Header.NativesOffset + Header.RSC7Offset, Header.NativesCount, Header.CodeLength);
+            NativeTable = new NativeTable(scriptStream, Header.NativesOffset, Header.NativesCount);
+
             //name = Header.ScriptName;
             CodeTable = new List<byte>();
 			Console.WriteLine("new CodeTable");
@@ -130,17 +126,11 @@ namespace Decompiler
 
         public string[] GetNativeTable()
         {
-	        if (ConsoleVer)
-		        return NativeTable.GetNativeTable();
-	        else
-		        return X64NativeTable.GetNativeTable();
+            return NativeTable.GetNativeTable();
         }
         public string[] GetNativeHeader()
         {
-	        if (ConsoleVer)
-		        return NativeTable.GetNativeHeader();
-	        else
-		        return X64NativeTable.GetNativeHeader();
+            return NativeTable.GetNativeHeader();
         }
 
         public void GetFunctionCode()
