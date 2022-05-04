@@ -1,20 +1,20 @@
 #pragma once
 #include <string>
 #include "../Util/Exports.hpp"
-#include "../Util/Memory.hpp"
+#include "Memory.hpp"
 
 #define MARK_AS_EXECUTABLE __attribute__((section(".text")))
 
-class DetourHook
+class Detour
 {
 public:
-   DetourHook();
-   DetourHook(uintptr_t fnAddress, uintptr_t fnCallback);
-   DetourHook(DetourHook const&) = delete;
-   DetourHook(DetourHook&&) = delete;
-   DetourHook& operator=(DetourHook const&) = delete;
-   DetourHook& operator=(DetourHook&&) = delete;
-   virtual ~DetourHook();
+   Detour();
+   Detour(uintptr_t fnAddress, uintptr_t fnCallback);
+   Detour(Detour const&) = delete;
+   Detour(Detour&&) = delete;
+   Detour& operator=(Detour const&) = delete;
+   Detour& operator=(Detour&&) = delete;
+   virtual ~Detour();
 
    virtual void Hook(uintptr_t fnAddress, uintptr_t fnCallback, uintptr_t tocOverride = 0);
    virtual bool UnHook();
@@ -98,13 +98,13 @@ protected:
 };
 
 // list of fnids https://github.com/aerosoul94/ida_gel/blob/master/src/ps3/ps3.xml
-class ImportExportHook : public DetourHook
+class ImportExportDetour : public Detour
 {
 public:
    enum HookType { Import = 0, Export = 1 };
 public:
-   ImportExportHook(HookType type, const std::string& libaryName, uint32_t fnid, uintptr_t fnCallback);
-   virtual ~ImportExportHook();
+   ImportExportDetour(HookType type, const std::string& libaryName, uint32_t fnid, uintptr_t fnCallback);
+   virtual ~ImportExportDetour();
 
    virtual void Hook(uintptr_t fnAddress, uintptr_t fnCallback, uintptr_t tocOverride = 0) override;
    virtual bool UnHook() override;

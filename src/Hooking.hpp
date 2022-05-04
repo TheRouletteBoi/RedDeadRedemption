@@ -9,7 +9,7 @@
 #include "Helpers.hpp"
 
 #ifdef _DEBUG
-extern DetourHook* registerNativeHk;
+extern Detour* registerNativeHk;
 /***
  * Dump all Natives Hashes
  * NOTE: hook must be called on startup because that's when the game registers the natives

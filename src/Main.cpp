@@ -41,7 +41,7 @@ int RedDeadRedemption_Main(int argc, char* argv[])
    sys_ppu_thread_create(&gRedDeadRedemptionThreadId, [](uint64_t arg)
    {
 #ifdef _DEBUG
-      registerNativeHk = new DetourHook(0x84F324, (uintptr_t)RegisterNativeHook);
+      registerNativeHk = new Detour(0x84F324, (uintptr_t)RegisterNativeHook);
 #endif
 
       sleep_for(10000);

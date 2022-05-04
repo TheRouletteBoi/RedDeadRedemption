@@ -1,7 +1,7 @@
 #include "Hooking.hpp"
 
 #ifdef _DEBUG
-DetourHook* registerNativeHk;
+Detour* registerNativeHk;
 void RegisterNativeHook(uint32_t nativeHash, uint32_t nativeFunctionOpd)
 {
    printf("Function Hash = 0x%08X, Function Opd = 0x%08X\n", nativeHash, nativeFunctionOpd);
@@ -23,7 +23,7 @@ void VmOpCode44_NativeCallHook(NativeContext* context, uintptr_t funcAddr)
 }
 #endif
 
-DetourHook* parseScrInstructionsHk;
+Detour* parseScrInstructionsHk;
 int g_coreTimer{};
 uint32_t ParseScrInstructionsHook(uintptr_t scriptStack, uintptr_t** globalBase, uintptr_t scrPageTable, uint32_t r6, rage::NoVmt::scrThread* scrThread)
 {
@@ -47,7 +47,7 @@ uint32_t ParseScrInstructionsHook(uintptr_t scriptStack, uintptr_t** globalBase,
    return parseScrInstructionsHk->GetOriginal<uint32_t>(scriptStack, globalBase, scrPageTable, r6, scrThread);
 }
 
-DetourHook* remoteExplosionEvent_SetExplosionHk;
+Detour* remoteExplosionEvent_SetExplosionHk;
 void RemoteExplosionEvent_SetExplosionHook(uintptr_t netProjectile_RemoteExplosionEvent, uintptr_t netObjectManager, uint64_t uuid)
 {
    if (g_Helper.m_ExplosionProtection)
@@ -62,11 +62,11 @@ void HookingInitiate()
    PatchInBranch(g_GameVariables->VmOpCode44_bcctrl, *(uint32_t*)(VmOpCode44_NativeCallHook), true);
 #endif
 
-   parseScrInstructionsHk = new DetourHook(
+   parseScrInstructionsHk = new Detour(
       *(uint32_t*)(g_GameVariables->ParseScrInstructions),
       (uintptr_t)ParseScrInstructionsHook);
 
-   remoteExplosionEvent_SetExplosionHk = new DetourHook(
+   remoteExplosionEvent_SetExplosionHk = new Detour(
       *(uint32_t*)(g_GameVariables->RemoteExplosionEvent_SetExplosion), 
       (uintptr_t)RemoteExplosionEvent_SetExplosionHook);
 }
