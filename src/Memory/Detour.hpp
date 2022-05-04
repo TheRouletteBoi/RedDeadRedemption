@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <sys/prx.h> // for sys_prx_id_t
 #include "../Util/Exports.hpp"
 #include "Memory.hpp"
 
@@ -7,6 +8,13 @@
 
 class Detour
 {
+public:
+    struct HookInformation
+    {
+        sys_prx_module_info_t prxInfo;
+        uint32_t hookBytes[4];
+    };
+
 public:
    Detour();
    Detour(uintptr_t fnAddress, uintptr_t fnCallback);
@@ -83,6 +91,14 @@ private:
    * @returns size of hook in bytes
    */
    size_t GetHookSize(const void* branchTarget, bool linked, bool preserveRegister);
+
+   /***
+   * Retrieve infomation about address which contains bytes and name of hook owner
+   * @param addr function to check to see if it has been hooked
+   * @param hookInfo structure contained sprx name, path and hook bytes. nullptr can be passed to check return value
+   * @returns true address is already hooked
+   */
+   //bool GetHookInfo(uintptr_t addr, HookInformation* hookInfo);
 
 protected:
    const void*  m_HookTarget;                // The funtion we are pointing the hook to.

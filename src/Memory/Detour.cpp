@@ -1,4 +1,4 @@
-#include "../Memory/DetourHook.hpp"
+#include "Detour.hpp"
 
 #define POWERPC_REGISTERINDEX_R0      0
 #define POWERPC_REGISTERINDEX_R1      1
@@ -48,6 +48,7 @@
 #define POWERPC_OPCODE(OP)       (uint32_t)( OP << 26 )
 #define POWERPC_OPCODE_ADDI      POWERPC_OPCODE( 14 )
 #define POWERPC_OPCODE_ADDIS     POWERPC_OPCODE( 15 )
+#define POWERPC_OPCODE_LIS       POWERPC_OPCODE( 15 )
 #define POWERPC_OPCODE_BC        POWERPC_OPCODE( 16 )
 #define POWERPC_OPCODE_B         POWERPC_OPCODE( 18 )
 #define POWERPC_OPCODE_BCCTR     POWERPC_OPCODE( 19 )
@@ -279,6 +280,40 @@ bool Detour::UnHook()
 
    return false;
 }
+
+/*bool Detour::GetHookInfo(uintptr_t addr, HookInformation* hookInfo)
+{
+    uint32_t firstSecond[2];
+    WriteProcessMemory(sys_process_getpid(), firstSecond, (const void*)addr, sizeof(firstSecond));
+
+    // check if the function is already hooked by us or someone else
+    if (((firstSecond[0] & POWERPC_OPCODE_MASK) == POWERPC_OPCODE_LIS)
+        && ((firstSecond[1] & POWERPC_OPCODE_MASK) == POWERPC_OPCODE_ORI))
+    {
+        // fast check if function is hooked
+        if (hookInfo == nullptr)
+            return true;
+
+        WriteProcessMemory(sys_process_getpid(), hookInfo->hookBytes, (const void*)addr, sizeof(hookInfo->hookBytes));
+
+        uint16_t lowFirstInstruction = static_cast<uint16_t>(hookInfo->hookBytes[0]); // first instruction
+        uint16_t lowSecondInstruction = static_cast<uint16_t>(hookInfo->hookBytes[1]); // second instruction
+
+        uint32_t hookAddr = (lowFirstInstruction << 16) | lowSecondInstruction;
+
+        sys_prx_id_t prxId = sys_prx_get_module_id_by_address((void*)hookAddr);
+        if (prxId == 0)
+            return false;
+
+        static sys_prx_module_info_t prxInfo = GetModuleInfo(prxId);
+
+        hookInfo->prxInfo = prxInfo;
+
+        return true;
+    }
+
+    return false;
+}*/
 
 
 

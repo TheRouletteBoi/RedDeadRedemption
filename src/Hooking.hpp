@@ -1,6 +1,6 @@
 #pragma once
 #include "Util/Exports.hpp"
-#include "Memory/DetourHook.hpp"
+#include "Memory/Detour.hpp"
 #include "RDR/ScriptThread.hpp"
 #include "RDR/ScriptProgram.hpp"
 #include "Game.hpp"
