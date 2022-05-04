@@ -5,7 +5,7 @@
 #include <string.h>
 #include <sys/process.h>
 #include "../Util/Exports.hpp"
-#include "../Util/Memory.hpp"
+#include "Memory.hpp"
 
 constexpr uintptr_t gBaseAddress = 0x00010200;    // first sub in the eboot in ida
 constexpr size_t gInfo_SizeOfImage = 0x018FFFFF;  // open the eboot in ida then go all the way to the end and then added FFFF to the last bytes

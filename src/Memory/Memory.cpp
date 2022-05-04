@@ -1,4 +1,4 @@
-#include "../Util/Memory.hpp"
+#include "Memory.hpp"
 
 uint32_t GetCurrentToc()
 {
