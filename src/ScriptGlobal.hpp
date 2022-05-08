@@ -13,7 +13,9 @@ public:
       Global_Money = 3391,
       Global_DeadEyePoints = 25986,
       Global_CurrentRegionLayout = 30616,
-      Global_StatsArray1 = 34581, // increase/decrease set
+      Global_RankLevel = 83864,
+      Global_StatIndices = 35278,
+      Global_StatsArrayInts = 34581, // increase/decrease set
       Global_StatsArray2 = 49205,
       Global_NetPlayersData = 76943,
       Global_MyNetPlayerData = 78480,
@@ -28,7 +30,6 @@ public:
       Global_MPAmbientMissions = 3084,
       Global_iLastInsertedCollectible = 62336,
       Global_ShopColletibleLookup = 61639,
-      Global_RDR2_Stats = 34581,
       Global_bIsFreshStart = 3364,
       Global_ResetData = 34165,
       Global_MP_SavedTitle = 76886,
