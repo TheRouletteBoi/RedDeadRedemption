@@ -12,3 +12,7 @@
 - [Fixed std::string library](https://github.com/skiff/libpsutil/releases "Fixed std::string library")
 
 ![Preview](https://github.com/TheRouletteBoi/RedDeadRedemption/blob/master/Resources/Preview.png)
+
+
+# Credits
+[@Foxxyyy](https://github.com/Foxxyyy) for updated natives and global
