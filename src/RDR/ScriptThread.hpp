@@ -3,7 +3,7 @@
 
 #define CONTENT_MAIN             0x25E94D18    // content/main
 #define PR_FRONTIER              0x4377FE36    // $/content/frontier/pr_frontier
-#define DESIGNERDEFINED_PLAYER   0x4377FE36    // $/content/scripting/designerdefined/player
+#define DESIGNERDEFINED_PLAYER   0xE47D3366    // $/content/scripting/designerdefined/player
 
 namespace rage
 {
