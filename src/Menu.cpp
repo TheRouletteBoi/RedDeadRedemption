@@ -121,7 +121,7 @@ void Menu::UpdateDrawing()
 
    HUD::_HUD_CLEAR_PRINTS();     // required but this also blocks from subtitles from showing up
    HUD::HUD_CLEAR_HELP_QUEUE();  // remove queue messages so the menu doesn't overlay
-   HUD::_PRINT_HELP(m_MenuOptionText, 1, 0, 1, 0, 0, 0, 0);
+   HUD::PRINT_HELP_B(m_MenuOptionText, 1, 0, 1, 0, 0, 0, 0);
 }
 
 void Menu::UpdateKeyboard()
