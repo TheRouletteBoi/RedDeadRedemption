@@ -78,6 +78,8 @@ int RedDeadRedemption_Stop(int argc, char* argv[])
    uint64_t retVal;
    sys_ppu_thread_join(gRedDeadRedemptionThreadId, &retVal);
 
+   g_GameVariables->Shutdown();
+
    delete g_GameVariables;
    delete g_Invoker;
    HookingRemoveAll();

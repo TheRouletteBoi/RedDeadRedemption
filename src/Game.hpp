@@ -3,6 +3,8 @@
 #include <stdio.h>
 #include <time.h>
 #include "Memory/Pattern.hpp"
+#undef vector
+#include <vector>
 
 class GameVariables
 {
@@ -112,16 +114,74 @@ public:
 #endif // DEBUG
 
    bool FindSignatures();
+   void Shutdown();
 
 
-
-
+public:
    uintptr_t pNativeRegistration{};
    uintptr_t pRDRUIGame{};
    uintptr_t** pGlobalVars{};
    uint32_t VmOpCode44_bcctrl{};
    uint32_t pHasInfiniteHorseStamina{};
    uintptr_t pBlazingGuns{};
+
+
+private:
+    template <typename T>
+    void SetPat(const char* name, const char* pattern, const char* mask, T* out,
+        int32_t relativeOffset = 0x00,
+        bool getFromHighLow = false, int32_t highAdditive = 0x00, int32_t lowAdditive = 0x00)
+    {
+        uintptr_t ptr = FindPatternInTextSegment((uint8_t*)pattern, mask);
+        if (ptr == 0)
+        {
+            printf("Failed to find %s pattern.\n", name);
+            *out = 0;
+            return;
+        }
+
+        ptr = ptr + relativeOffset;
+
+        if (getFromHighLow)
+            ptr = ReadHighLow(ptr, highAdditive, lowAdditive);
+
+        printf("found ptr %s at 0x%X\n", name, ptr);
+
+        *out = (T)ptr;
+    }
+
+    template <typename T>
+    void SetFn(const char* name, const char* pattern, const char* mask, T* out,
+        int32_t relativeOffset = 0x00, bool resolveBranch = false)
+    {
+        uintptr_t ptr = FindPatternInTextSegment((uint8_t*)pattern, mask);
+        if (ptr == 0)
+        {
+            printf("Failed to find %s pattern.\n", name);
+            *out = nullptr;
+            return;
+        }
+
+        uint32_t* opd = (uint32_t*)malloc(2 * sizeof(uint32_t));
+
+        m_OpdTable.push_back(opd);
+
+        ptr = ptr + relativeOffset;
+
+        if (resolveBranch)
+            opd[0] = ResolveBranch(ptr);
+        else
+            opd[0] = ptr;
+
+        opd[1] = GetCurrentToc();
+
+        printf("found func %s at 0x%X\n", name, opd[0]);
+
+        *out = (T)opd;
+    }
+
+private:
+    std::vector<void*> m_OpdTable;
 };
 
 extern GameVariables* g_GameVariables;
