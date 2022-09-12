@@ -15,4 +15,5 @@
 
 
 # Credits
-[@Foxxyyy](https://github.com/Foxxyyy) for updated natives and global
+[@mizdx](https://github.com/mizdx) for massive native help
+[@Foxxyyy](https://github.com/Foxxyyy) for menu base, natives, and global help
