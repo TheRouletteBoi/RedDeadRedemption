@@ -2639,7 +2639,7 @@ namespace NET4
    static BOOL _0x75F27D60(Any p0) { return invoke<BOOL>(0x75F27D60, p0); } // 0x75F27D60
    static int NET_PLAYER_SHOW_CONTEXT_MENU(Any p0, Any p1) { return invoke<int>(0xA64A451E, p0, p1); } // 0xA64A451E
    static int NET_PLAYER_LIST_RESET() { return invoke<int>(0x67031EDA); } // 0x67031EDA
-   static BOOL NET_PLAYER_LIST_ADD_ITEM(const char* text, int menuEntry) { return invoke<BOOL>(0xFD355ED1, text, menuEntry); } // 0xFD355ED1
+   static BOOL NET_PLAYER_LIST_ADD_ITEM(const char* text, int rowIndex) { return invoke<BOOL>(0xFD355ED1, text, rowIndex); } // 0xFD355ED1
    static int _0x805AC16A(Any p0, Any p1) { return invoke<int>(0x805AC16A, p0, p1); } // 0x805AC16A
    static int NET_PLAYER_LIST_SET_HIGHLIGHT(Any p0) { return invoke<int>(0x0AAE9E6B, p0); } // 0x0AAE9E6B
    static int NET_PLAYER_LIST_SET_TOP_TEAM(Any p0) { return invoke<int>(0x20B684AB, p0); } // 0x20B684AB
@@ -2647,13 +2647,13 @@ namespace NET4
    static int NET_PLAYER_LIST_SET_TEAM_SORT(Any p0) { return invoke<int>(0xA56B459C, p0); } // 0xA56B459C
    static int NET_PLAYER_LIST_SET_TITLE(const char* gxtName) { return invoke<int>(0x0547A660, gxtName); } // 0x0547A660
    static int NET_PLAYER_LIST_SET_TEMPLATE(int menuTemplate) { return invoke<int>(0xD6111569, menuTemplate); } // 0xD6111569
-   static int NET_PLAYER_LIST_SET_HEADER(int menuColumna, const char* entry) { return invoke<int>(0xFA382FCB, menuColumna, entry); } // 0xFA382FCB
+   static int NET_PLAYER_LIST_SET_HEADER(int columnIndex, const char* entry) { return invoke<int>(0xFA382FCB, columnIndex, entry); } // 0xFA382FCB
    static int NET_PLAYER_LIST_SET_DESCRIPTION(const char* str) { return invoke<int>(0xCF065186, str); } // 0xCF065186
    static int _0xBE7965C8(Any p0) { return invoke<int>(0xBE7965C8, p0); } // 0xBE7965C8
    static int _0xD4C7E0D5(Any p0) { return invoke<int>(0xD4C7E0D5, p0); } // 0xD4C7E0D5
    static int NET_PLAYER_LIST_SET_CURRENT_ITEM() { return invoke<int>(0x98FC68AF); } // 0x98FC68AF
    static int _0x95A543E2(Any p0) { return invoke<int>(0x95A543E2, p0); } // 0x95A543E2
-   static int _NET_PLAYER_LIST_SET_RIGHT_TEXT(int menuColumna, char* text) { return invoke<int>(0xC673362C, menuColumna, text); } // 0xC673362C
+   static int _NET_PLAYER_LIST_SET_RIGHT_TEXT(int columnIndex, const char* text) { return invoke<int>(0xC673362C, columnIndex, text); } // 0xC673362C
    static int _0xEC6F465F(Any p0, Any p1) { return invoke<int>(0xEC6F465F, p0, p1); } // 0xEC6F465F
    static int _NET_PLAYER_LIST_SET_ITEM_COLOR(int groupColor) { return invoke<int>(0x794F5C21, groupColor); } // 0x794F5C21
    static int NET_PLAYER_LIST_SET_CURRENT_ITEM_PRIORITY(Any p0) { return invoke<int>(0xBD42097A, p0); } // 0xBD42097A
