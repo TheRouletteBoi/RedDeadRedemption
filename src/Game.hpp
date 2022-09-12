@@ -45,6 +45,10 @@ public:
    using GetSagActorAddress_t = uintptr_t(*)(void* nativeContext, void* outBuf);
    GetSagActorAddress_t GetSagActorAddress{};
 
+   using GetHudGamerList_t = uintptr_t(*)();
+   GetHudGamerList_t GetHudGamerList{};
+
+#if DEBUG
    using printf_t = int(*)(const char* format, ...);
    printf_t __printf{};
 
@@ -57,7 +61,6 @@ public:
    using vsnprintf_t = int(*)(char* s, size_t n, const char* format, va_list arg);
    vsnprintf_t __vsnprintf{};
 
-#if DEBUG
    using sscanf_t = int(*)(const char* str, const char* format, ...);
    sscanf_t __sscanf{};
 
@@ -155,6 +158,37 @@ private:
         int32_t relativeOffset = 0x00, bool resolveBranch = false)
     {
         uintptr_t ptr = FindPatternInTextSegment((uint8_t*)pattern, mask);
+        if (ptr == 0)
+        {
+            printf("Failed to find %s pattern.\n", name);
+            *out = nullptr;
+            return;
+        }
+
+        uint32_t* opd = (uint32_t*)malloc(2 * sizeof(uint32_t));
+
+        m_OpdTable.push_back(opd);
+
+        ptr = ptr + relativeOffset;
+
+        if (resolveBranch)
+            opd[0] = ResolveBranch(ptr);
+        else
+            opd[0] = ptr;
+
+        opd[1] = GetCurrentToc();
+
+        printf("found func %s at 0x%X\n", name, opd[0]);
+
+        *out = (T)opd;
+    }
+
+    // @occurancesIndex starts from 0
+    template <typename T>
+    void SetFnWithOccurances(const char* name, const char* pattern, const char* mask, T* out,
+        int occurancesIndex, int32_t relativeOffset = 0x00, bool resolveBranch = false)
+    {
+        uintptr_t ptr = FindPatternInTextSegment((uint8_t*)pattern, mask, occurancesIndex);
         if (ptr == 0)
         {
             printf("Failed to find %s pattern.\n", name);

@@ -97,6 +97,11 @@ bool GameVariables::FindSignatures()
       "\x60\x65\x00\x00\x80\xC4\x00\x00\x38\x60\x00\x00\x54\xC7\x00\x00\x30\xC6\x00\x00\x80\xA5\x00\x00", "xx??xx??xx??xx??xx??xx??",
       &GetSagActorAddress);
 
+   SetFnWithOccurances<GetHudGamerList_t>("GetHudGamerList",
+       "\xF8\x21\x00\x00\x7C\x08\x00\x00\xF8\x01\x00\x00\x3C\x60\x00\x00\x80\x63\x00\x00\x2C\x03\x00\x00\x40\x82\x00\x00\x3C\x80\x00\x00\x80\x84\x00\x00", "xx??xx??xx??xx??xx??xx??xx??xx??xx??",
+       &GetHudGamerList, 2);
+
+#ifdef DEBUG
    SetFn<printf_t>("printf",
       "\xFB\xA1\x00\x00\xF8\x01\x00\x00\x7C\x7D\x1B\x78\x38\x01\x00\x00", "xx??xx??xxxxxx??",
       &__printf,
@@ -115,7 +120,6 @@ bool GameVariables::FindSignatures()
       "\xF8\x21\x00\x00\x7C\x08\x02\xA6\xFA\xC1\x00\x00\x3A\xC1\x00\x00", "xx??xxxxxx??xx??",
       &__vsnprintf);
 
-#ifdef DEBUG
    SetFn<sscanf_t>("sscanf",
       "\xF8\x21\x00\x00\x7C\x08\x02\xA6\x39\x61\x00\x00", "xx??xxxxxx??",
       &__sscanf);
@@ -198,15 +202,13 @@ bool GameVariables::FindSignatures()
 #endif // DEBUG
 
    bool found = pNativeRegistration
-      && pRDRUIGame
-      && RegisterNative
-      && ParseScrInstructions
-      && GetScrProgramFromHash
-      && pGlobalVars
-      && GetSnuGamerList
-      && __printf
-      && __sprintf
-      && __snprintf;
+       && pRDRUIGame
+       && RegisterNative
+       && ParseScrInstructions
+       && GetScrProgramFromHash
+       && pGlobalVars
+       && GetSnuGamerList
+       && GetHudGamerList;
 
    return found;
 }
