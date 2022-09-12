@@ -22,7 +22,7 @@ public:
    ~Menu() noexcept = default;
 
    void RegisterOnMain(Function onMain);
-   void OnGameTick();
+   void OnUpdate();
    void ShowSubtitle(const char* text, float duration = 5.0f);
 
    bool IsEnterPressed();
@@ -33,10 +33,9 @@ public:
    bool pressed();
    bool hovered();
    void ChangeSubmenu(Function submenu);
-   void banner(const char* text);
+   void title(const char* text);
    Menu& submenu(Function sub);
    Menu& option(const char* text);
-   Menu& end();
    Menu& toggle(bool& var);
    Menu& toggle(bool& var, Function onEnable, Function onDisable);
    Menu& local(bool var);
@@ -56,7 +55,6 @@ public:
 private:
    bool IsInitialized();
    void Initialize();
-   void Tick();
    void UpdateUI();
    bool IsBinds();
    void OpenKeyboard(KeyboardHandler handler);
@@ -70,10 +68,8 @@ private:
    void OnBack();
    void OnScrollUp();
    void OnScrollDown();
+   void DrawHeader();
    void DrawMenuOption(const char* text);
-   void DrawMenuToggle(bool var);
-   void DrawMenuTextScroller(const char* var);
-   void DrawMenuCount();
    void EnterSubmenu(Function submenu);
    template <typename T>
    void processOptionItemControls(T& var, T min, T max, T step)
@@ -106,7 +102,7 @@ private:
    
 
 public:
-   size_t m_CurrentOption = 0;
+    int32_t m_CurrentOption = 0;
 
 
 private:
@@ -119,18 +115,19 @@ private:
    Function m_SubmenuDelay{};
    static const unsigned maxSubmenuLevels = 50;
    Function m_LastSubmenu[maxSubmenuLevels]{};
-   size_t m_LastOption[maxSubmenuLevels]{};
-   int m_SavedSubmenuLevel = 0;
-   size_t m_SavedCurrentOption = 1;
-   int m_SubmenuLevel = 0;
-   size_t m_PrintingOption = 0;
-   size_t m_TotalOptions = 0;
-   static const int maxMenuCharacterLimit = 1000;
-   char m_MenuOptionText[maxMenuCharacterLimit]{};
+   int32_t m_LastOption[maxSubmenuLevels]{};
+   size_t m_SavedSubmenuLevel = 0;
+   int32_t m_SavedCurrentOption = 1;
+   size_t m_SubmenuLevel = 0;
+   int32_t m_PrintingOption = 0;
+   int32_t m_TotalOptions = 0;
 
    // Keyboard
    bool m_KeyboardActive{};
    KeyboardHandler m_KeyboardHandler{};
+
+   // native menu handling
+   int m_InstructionsTextContext = 0;
 
 };
 

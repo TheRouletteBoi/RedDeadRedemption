@@ -36,7 +36,7 @@ static const eActor skinChangerTypeList[] = {
 class Helpers
 {
 public:
-   void Update();
+   void OnUpdate();
    bool IsVehicleAvailable();
    Actor GetLocalVehicle();
    Actor GetLocalActor();

@@ -9,12 +9,12 @@ Menu::Menu(Function mainSubmenu) : m_MainMenu(mainSubmenu)
 
 }
 
-void Menu::OnGameTick()
+void Menu::OnUpdate()
 {
    if (!IsInitialized())
       Initialize();
 
-   Tick();
+   UpdateUI();
 }
 
 bool Menu::IsInitialized()
@@ -103,25 +103,54 @@ void Menu::OpenKeyboard(KeyboardHandler handler)
    m_KeyboardActive = true;
 }
 
+void SetCursorIndex(int index)
+{
+    uintptr_t gamerList = g_GameVariables->GetHudGamerList();
+
+    if (!gamerList)
+        return;
+    
+    *(int*)(gamerList + 0x30) = index;
+}
+
+int GetCursorIndex()
+{
+    return UI::UI_GET_SELECTED_INDEX("HudGamerList", false);
+}
+
 void Menu::UpdateDrawing()
 {
-   m_TotalOptions = m_PrintingOption;
-   m_PrintingOption = 0;
+    m_TotalOptions = m_PrintingOption;
+    m_PrintingOption = -1;
 
-   if (m_CurrentMenu != nullptr)
-      m_CurrentMenu();
+    DrawHeader();
 
-   if (m_SubmenuDelay != nullptr)
-   {
-      EnterSubmenu(m_SubmenuDelay);
-      m_SubmenuDelay = nullptr;
-   }
+    if (m_CurrentMenu != nullptr)
+        m_CurrentMenu();
 
-   DrawMenuCount();
+    if (m_SubmenuDelay != nullptr)
+    {
+        EnterSubmenu(m_SubmenuDelay);
+        m_SubmenuDelay = nullptr;
+    }
 
-   HUD::_HUD_CLEAR_PRINTS();     // required but this also blocks from subtitles from showing up
-   HUD::HUD_CLEAR_HELP_QUEUE();  // remove queue messages so the menu doesn't overlay
-   HUD::PRINT_HELP_B(m_MenuOptionText, 1, 0, 1, 0, 0, 0, 0);
+
+
+    UI::UI_FOCUS("HudGamerList");
+    UI::UI_REFRESH("HudGamerList");
+
+    HUD::HUD_CLEAR_HELP_QUEUE(); // Gets ride of PRINT_HELP
+    DECORATOR::DECOR_SET_BOOL(PLAYER::GET_PLAYER_ACTOR(PLAYER::GET_LOCAL_SLOT()), "DISABLE_HORSE_WHISTLE", true); // Disables whistling when menu is open
+    AUDIO::CANCEL_CURRENTLY_PLAYING_AMBIENT_SPEECH(PLAYER::GET_PLAYER_ACTOR(PLAYER::GET_LOCAL_SLOT())); // Disables speeches when menu is open (animation is still visible)
+    ACTOR::_ACTOR_ALLOW_BUMP_REACTIONS(PLAYER::GET_PLAYER_ACTOR(PLAYER::GET_LOCAL_SLOT()), false); // Disables bump reactions
+
+    if (GAME::GET_STICK_X(0, false, 0) > 0.2f
+        || GAME::GET_STICK_X(0, false, 0) < -0.2f
+        || GAME::GET_STICK_Y(0, false, 0) > 0.2f
+        || GAME::GET_STICK_Y(0, false, 0) < -0.2f)
+        PLAYER::SET_PLAYER_CONTROL(0, true, false, false);
+    else
+        PLAYER::SET_PLAYER_CONTROL(0, false, true, true);
 }
 
 void Menu::UpdateKeyboard()
@@ -166,15 +195,15 @@ void Menu::UpdateButtons()
 
 void Menu::WhileOpen()
 {
-   UpdateDrawing();
-   UpdateKeyboard();
-   UpdateButtons();
+    UpdateDrawing();
+    UpdateKeyboard();
+    UpdateButtons();
 }
 
 void Menu::WhileClosed()
 {
-   if (IsBinds())
-      OnOpen();
+    if (IsBinds())
+        OnOpen();
 }
 
 void Menu::OnOpen()
@@ -182,7 +211,23 @@ void Menu::OnOpen()
    m_Opened = true;
    m_CurrentMenu = (m_SavedMenu == nullptr) ? m_MainMenu : m_SavedMenu;
    m_SubmenuLevel = (m_SavedMenu == nullptr) ? 0 : m_SavedSubmenuLevel;
-   m_CurrentOption = (m_SavedMenu == nullptr) ? 1 : m_SavedCurrentOption;
+   m_CurrentOption = (m_SavedMenu == nullptr) ? 0 : m_SavedCurrentOption;
+   SetCursorIndex(m_CurrentOption);
+
+
+   UI::UI_PUSH("HudGamerList");
+   UI::UI_INCLUDE("HudGamerList");
+   UI::UI_ENABLE("HudGamerList");
+   UI::UI_ACTIVATE("HudGamerList");
+   HUD::UI_ENTER("HudGamerList");
+   UI::UI_FOCUS("HudGamerList");
+   UI::UI_REFRESH("HudGamerList");
+   AUDIO::PLAY_SOUND_FRONTEND("HUD_MP_UNLOCK_MASTER");
+   m_InstructionsTextContext = SOCIALCLUB::ADD_SCRIPT_USE_CONTEXT("Generic_Dbuffer128_1", 0, 11, 0, 0, 0, 0, -1, 0);
+
+   if (DECORATOR::DECOR_CHECK_EXIST(PLAYER::GET_PLAYER_ACTOR(PLAYER::GET_LOCAL_SLOT()), "DISABLE_HORSE_WHISTLE"))
+       DECORATOR::DECOR_REMOVE(PLAYER::GET_PLAYER_ACTOR(PLAYER::GET_LOCAL_SLOT()), "DISABLE_HORSE_WHISTLE");
+
 
    AUDIO::PLAY_SOUND_FRONTEND("HUD_MENU_SELECT_MASTER");
 }
@@ -193,6 +238,52 @@ void Menu::OnClose()
    m_SavedMenu = m_CurrentMenu;
    m_SavedSubmenuLevel = m_SubmenuLevel;
    m_SavedCurrentOption = m_CurrentOption;
+   SetCursorIndex(m_SavedCurrentOption);
+
+
+   NET4::NET_PLAYER_LIST_RESET();
+   ACTOR::_ACTOR_ALLOW_BUMP_REACTIONS(PLAYER::GET_PLAYER_ACTOR(PLAYER::GET_LOCAL_SLOT()), true);
+
+   if (SOCIALCLUB::IS_SCRIPT_USE_CONTEXT_VALID(m_InstructionsTextContext))
+       SOCIALCLUB::RELEASE_SCRIPT_USE_CONTEXT(m_InstructionsTextContext);
+
+   PLAYER::SET_PLAYER_CONTROL(0, true, false, false);
+   if (UI::UI_ISFOCUSED("HudGamerList"))
+       UI::UI_UNFOCUS("HudGamerList");
+   else
+   {
+       UI::UI_FOCUS("HudGamerList");
+       UI::UI_RESTORE("HudGamerList");
+       UI::UI_REFRESH("HudGamerList");
+   }
+
+   // Basically while menu is not opened and playerlist is focused
+   if (UI::UI_ISFOCUSED("HudGamerList"))
+   {
+       // Make sure the bottom right message is removed, this should've already been handled by ShutdownMenu()
+       if (SOCIALCLUB::IS_SCRIPT_USE_CONTEXT_VALID(m_InstructionsTextContext))
+           SOCIALCLUB::RELEASE_SCRIPT_USE_CONTEXT(m_InstructionsTextContext);
+
+       // Remove all the remaining items, this should've already been handled by ShutdownMenu()
+       NET4::NET_PLAYER_LIST_RESET();
+
+       // Fix the playerlist and add its original title
+       if (NET4::NET_GET_FREE_ROAM_MODE() == 1)
+           UI::UI_SET_STRING_FORMAT("Generic_Dbuffer64_0", "%s", "Hardcore Free Roam", NULL, NULL);
+       else if (NET4::NET_GET_FREE_ROAM_MODE() == 2)
+           UI::UI_SET_STRING_FORMAT("Generic_Dbuffer64_0", "%s", "Friendly Free Roam", NULL, NULL);
+       else
+           UI::UI_SET_STRING_FORMAT("Generic_Dbuffer64_0", "%s", "Free Roam", NULL, NULL);
+       NET4::NET_PLAYER_LIST_SET_TITLE("Generic_Dbuffer64_0");
+
+       // Make sure the playerlist doesn't get fucked up with random messages from our menu
+       UI::UI_SET_STRING("Generic_Dbuffer128_0", "");
+       NET4::NET_PLAYER_LIST_SET_DESCRIPTION("Generic_Dbuffer128_0");
+
+       // UI_DISABLE_INPUT("HudGamerList"); //Disable all inputs from the playerlist - not needed anymore
+       UI::UI_UNFOCUS("HudGamerList");
+   }
+
 
    AUDIO::PLAY_SOUND_FRONTEND("HUD_MENU_BACK_MASTER");
 }
@@ -203,6 +294,7 @@ void Menu::OnBack()
    //m_LastOption[m_SubmenuLevel] = m_CurrentOption;
    m_CurrentMenu = m_LastSubmenu[m_SubmenuLevel];
    m_CurrentOption = m_LastOption[m_SubmenuLevel];
+   SetCursorIndex(m_CurrentOption);
 
    AUDIO::PLAY_SOUND_FRONTEND("HUD_MENU_BACK_MASTER");
 }
@@ -210,9 +302,11 @@ void Menu::OnBack()
 void Menu::OnScrollUp()
 {
    m_CurrentOption--;
-   if (m_CurrentOption < 1)
+   SetCursorIndex(m_CurrentOption);
+   if (m_CurrentOption < 0)
    {
       m_CurrentOption = m_TotalOptions;
+      SetCursorIndex(m_CurrentOption);
    }
    AUDIO::PLAY_SOUND_FRONTEND("HUD_MENU_NAV_UP_MASTER");
 }
@@ -220,41 +314,13 @@ void Menu::OnScrollUp()
 void Menu::OnScrollDown()
 {
    m_CurrentOption++;
+   SetCursorIndex(m_CurrentOption);
    if (m_CurrentOption > m_TotalOptions)
    {
-      m_CurrentOption = 1;
+      m_CurrentOption = 0;
+      SetCursorIndex(m_CurrentOption);
    }
    AUDIO::PLAY_SOUND_FRONTEND("HUD_MENU_NAV_DOWN_MASTER");
-}
-
-void Menu::DrawMenuOption(const char* text)
-{
-   char activeColor[300];
-   snprintf(activeColor, sizeof(activeColor), "%s%s%s", hovered() ? "<blue>" : "<grey>", text, hovered() ? "</blue>" : "</grey>");
-   strncat(m_MenuOptionText, activeColor, sizeof(activeColor));
-}
-
-void Menu::DrawMenuToggle(bool var)
-{
-   strncat(m_MenuOptionText, var ? " <green>On</green>" : " <red>Off</red>", 30);
-}
-
-void Menu::DrawMenuTextScroller(const char* var)
-{
-   char leftRightText[300];
-   snprintf(leftRightText, sizeof(leftRightText), 
-      " <dpadleft> %s%s%s <dpadright>", 
-      hovered() ? "<blue>" : "<grey>", 
-      var, 
-      hovered() ? "</blue>" : "</grey>");
-   strncat(m_MenuOptionText, leftRightText, sizeof(leftRightText));
-}
-
-void Menu::DrawMenuCount()
-{
-   char optionCountStr[30];
-   snprintf(optionCountStr, sizeof(optionCountStr), "<red>(%d/%d)</red>", m_CurrentOption, m_TotalOptions);
-   strncat(m_MenuOptionText, optionCountStr, sizeof(optionCountStr));
 }
 
 bool Menu::pressed()
@@ -274,7 +340,8 @@ void Menu::EnterSubmenu(Function submenu)
    m_LastSubmenu[m_SubmenuLevel] = m_CurrentMenu;
    m_LastOption[m_SubmenuLevel] = m_CurrentOption;
    m_CurrentMenu = submenu;
-   m_CurrentOption = 1;
+   m_CurrentOption = 0;
+   SetCursorIndex(m_CurrentOption);
    m_SubmenuLevel++;
 }
 
@@ -286,22 +353,13 @@ void Menu::ChangeSubmenu(Function submenu)
 
 bool Menu::hovered()
 {
-   return m_CurrentOption == m_PrintingOption;
+    return m_CurrentOption == m_PrintingOption;
 }
 
-void Menu::banner(const char* text)
+void Menu::title(const char* text)
 {
-   char titleColor[200];
-   snprintf(titleColor, sizeof(titleColor), "<red>%s</red>", text);
-   strncpy(m_MenuOptionText, titleColor, sizeof(titleColor));
-   strncat(m_MenuOptionText, " \n", 5);
-}
-
-Menu& Menu::end()
-{
-   strncat(m_MenuOptionText, " \n", 5);
-   m_MenuOptionText[maxMenuCharacterLimit - 1] = 0; // null terminator
-   return *this;
+    UI::UI_SET_STRING_FORMAT("Generic_Dbuffer128_0", "%s", text, NULL, NULL);
+    NET4::NET_PLAYER_LIST_SET_DESCRIPTION("Generic_Dbuffer128_0");
 }
 
 Menu& Menu::submenu(Function sub)
@@ -322,7 +380,7 @@ Menu& Menu::option(const char* text)
 
 Menu& Menu::toggle(bool& var)
 {
-   DrawMenuToggle(var);
+   //DrawMenuToggle(var);
 
    if (pressed())
    {
@@ -334,7 +392,7 @@ Menu& Menu::toggle(bool& var)
 
 Menu& Menu::toggle(bool& var, Function onEnable, Function onDisable)
 {
-   DrawMenuToggle(var);
+   //DrawMenuToggle(var);
 
    if (pressed())
    {
@@ -357,7 +415,7 @@ Menu& Menu::toggle(bool& var, Function onEnable, Function onDisable)
 
 Menu& Menu::local(bool var)
 {
-   DrawMenuToggle(var);
+   //DrawMenuToggle(var);
    return *this;
 }
 
@@ -401,7 +459,7 @@ Menu& Menu::scroller(const char** display, int& index, int numItems)
    if (index > numItems || index < 0)
       return *this;
 
-   DrawMenuTextScroller(display[index]);
+   //DrawMenuTextScroller(display[index]);
    return *this;
 }
 
@@ -416,13 +474,31 @@ Menu& Menu::keyboard(KeyboardHandler handler)
 
 void Menu::ShowSubtitle(const char* text, float duration)
 {
-   HUD::_HUD_CLEAR_PRINTS();
+   HUD::HUD_CLEAR_OBJECTIVE_QUEUE();
    HUD::_PRINT_SUBTITLE(text, duration, true, 2, 1, 0, 0, 0);
 }
 
-void Menu::Tick()
+void Menu::DrawHeader()
 {
-   UpdateUI();
+    // Clear menu items
+    NET4::NET_PLAYER_LIST_RESET();
+
+    UI::UI_SET_STRING_FORMAT("Generic_Dbuffer64_0", "%s", "RouLetteBoiMenu 2.0", NULL, NULL);
+    NET4::NET_PLAYER_LIST_SET_TITLE("Generic_Dbuffer64_0");
+}
+
+void Menu::DrawMenuOption(const char* text)
+{
+    char buffer[256];
+    snprintf(buffer, sizeof(buffer), "%s%s", "<blue>", text); // Other items
+    NET4::NET_PLAYER_LIST_ADD_ITEM(buffer, 0); // Draw item text at defined menu slot
+    NET4::_NET_PLAYER_LIST_SET_ITEM_COLOR(10); // Use defined scrollbar color (have to be used for each items)
+    NET4::NET_PLAYER_LIST_SET_TEMPLATE(4); // Set up the menu style
+    //NET4::NET_PLAYER_LIST_SET_HEADER(1, "");
+    //NET4::NET_PLAYER_LIST_SET_HEADER(2, "");
+    //NET4::NET_PLAYER_LIST_SET_HEADER(3, "");
+    //NET4::NET_PLAYER_LIST_SET_HEADER(4, "");
+    UI::UI_DISABLE_INPUT("HudGamerList"); // Disable all UI inputs
 }
 
 void Menu::UpdateUI()

@@ -3,7 +3,7 @@
 Helpers g_Helper;
 Player g_SelectedPlayer{};
 
-void Helpers::Update()
+void Helpers::OnUpdate()
 {
    m_localActor = GetLocalActor();
 

@@ -37,8 +37,8 @@ uint32_t ParseScrInstructionsHook(uintptr_t scriptStack, uintptr_t** globalBase,
    {
       //if (g_coreTimer + 1 < HUD::HUD_TIMER_GET())
       //{
-         g_Menu.OnGameTick();
-         g_Helper.Update();
+         g_Menu.OnUpdate();
+         g_Helper.OnUpdate();
 
       //   g_coreTimer = HUD::HUD_TIMER_GET();
       //}
