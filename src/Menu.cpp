@@ -380,7 +380,7 @@ Menu& Menu::option(const char* text)
 
 Menu& Menu::toggle(bool& var)
 {
-   //DrawMenuToggle(var);
+   DrawMenuToggle(var);
 
    if (pressed())
    {
@@ -392,7 +392,7 @@ Menu& Menu::toggle(bool& var)
 
 Menu& Menu::toggle(bool& var, Function onEnable, Function onDisable)
 {
-   //DrawMenuToggle(var);
+   DrawMenuToggle(var);
 
    if (pressed())
    {
@@ -415,7 +415,7 @@ Menu& Menu::toggle(bool& var, Function onEnable, Function onDisable)
 
 Menu& Menu::local(bool var)
 {
-   //DrawMenuToggle(var);
+   DrawMenuToggle(var);
    return *this;
 }
 
@@ -499,6 +499,11 @@ void Menu::DrawMenuOption(const char* text)
     //NET4::NET_PLAYER_LIST_SET_HEADER(3, "");
     //NET4::NET_PLAYER_LIST_SET_HEADER(4, "");
     UI::UI_DISABLE_INPUT("HudGamerList"); // Disable all UI inputs
+}
+
+void Menu::DrawMenuToggle(bool var)
+{
+    NET4::_NET_PLAYER_LIST_SET_RIGHT_TEXT(0, var ? "[<green>ON</green>]" : "[<red>OFF</red>]");
 }
 
 void Menu::UpdateUI()

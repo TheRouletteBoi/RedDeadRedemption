@@ -70,6 +70,7 @@ private:
    void OnScrollDown();
    void DrawHeader();
    void DrawMenuOption(const char* text);
+   void DrawMenuToggle(bool var);
    void EnterSubmenu(Function submenu);
    template <typename T>
    void processOptionItemControls(T& var, T min, T max, T step)
