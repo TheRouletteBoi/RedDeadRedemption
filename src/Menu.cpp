@@ -113,13 +113,13 @@ void Menu::UpdateDrawing()
     if (m_CurrentMenu != nullptr)
         m_CurrentMenu();
 
-    NET4::NET_PLAYER_LIST_SET_HIGHLIGHT(m_CurrentOption);
-
     if (m_SubmenuDelay != nullptr)
     {
         EnterSubmenu(m_SubmenuDelay);
         m_SubmenuDelay = nullptr;
     }
+
+    NET4::NET_PLAYER_LIST_SET_HIGHLIGHT(m_CurrentOption);
 
 
 

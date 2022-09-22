@@ -145,9 +145,9 @@ void MainSubmenu()
 {
    g_Menu.title("Main Menu");
    g_Menu.option("Player Options").submenu(PlayerOptionsSubmenu);
-   //g_Menu.option("Mount Options").submenu(MountOptionsSubmenu);
+   g_Menu.option("Mount Options").submenu(MountOptionsSubmenu);
    //g_Menu.option("Weapon Options").submenu(WeaponOptionsSubmenu);
-   //g_Menu.option("Teleport Options").submenu(TeleportOptionsSubmenu);
+   g_Menu.option("Teleport Options").submenu(TeleportOptionsSubmenu);
    g_Menu.option("Network Options").submenu(NetworkOptionsSubmenu);
    //g_Menu.option("Debug").submenu(DebugOptionsSubmenu);
 }
