@@ -103,21 +103,6 @@ void Menu::OpenKeyboard(KeyboardHandler handler)
    m_KeyboardActive = true;
 }
 
-void SetCursorIndex(int index)
-{
-    uintptr_t gamerList = g_GameVariables->GetHudGamerList();
-
-    if (!gamerList)
-        return;
-    
-    *(int*)(gamerList + 0x30) = index;
-}
-
-int GetCursorIndex()
-{
-    return UI::UI_GET_SELECTED_INDEX("HudGamerList", false);
-}
-
 void Menu::UpdateDrawing()
 {
     m_TotalOptions = m_PrintingOption;
@@ -127,6 +112,8 @@ void Menu::UpdateDrawing()
 
     if (m_CurrentMenu != nullptr)
         m_CurrentMenu();
+
+    NET4::NET_PLAYER_LIST_SET_HIGHLIGHT(m_CurrentOption);
 
     if (m_SubmenuDelay != nullptr)
     {
@@ -212,7 +199,6 @@ void Menu::OnOpen()
    m_CurrentMenu = (m_SavedMenu == nullptr) ? m_MainMenu : m_SavedMenu;
    m_SubmenuLevel = (m_SavedMenu == nullptr) ? 0 : m_SavedSubmenuLevel;
    m_CurrentOption = (m_SavedMenu == nullptr) ? 0 : m_SavedCurrentOption;
-   SetCursorIndex(m_CurrentOption);
 
 
    UI::UI_PUSH("HudGamerList");
@@ -238,7 +224,6 @@ void Menu::OnClose()
    m_SavedMenu = m_CurrentMenu;
    m_SavedSubmenuLevel = m_SubmenuLevel;
    m_SavedCurrentOption = m_CurrentOption;
-   SetCursorIndex(m_SavedCurrentOption);
 
 
    NET4::NET_PLAYER_LIST_RESET();
@@ -294,7 +279,6 @@ void Menu::OnBack()
    //m_LastOption[m_SubmenuLevel] = m_CurrentOption;
    m_CurrentMenu = m_LastSubmenu[m_SubmenuLevel];
    m_CurrentOption = m_LastOption[m_SubmenuLevel];
-   SetCursorIndex(m_CurrentOption);
 
    AUDIO::PLAY_SOUND_FRONTEND("HUD_MENU_BACK_MASTER");
 }
@@ -302,11 +286,9 @@ void Menu::OnBack()
 void Menu::OnScrollUp()
 {
    m_CurrentOption--;
-   SetCursorIndex(m_CurrentOption);
    if (m_CurrentOption < 0)
    {
       m_CurrentOption = m_TotalOptions;
-      SetCursorIndex(m_CurrentOption);
    }
    AUDIO::PLAY_SOUND_FRONTEND("HUD_MENU_NAV_UP_MASTER");
 }
@@ -314,11 +296,9 @@ void Menu::OnScrollUp()
 void Menu::OnScrollDown()
 {
    m_CurrentOption++;
-   SetCursorIndex(m_CurrentOption);
    if (m_CurrentOption > m_TotalOptions)
    {
       m_CurrentOption = 0;
-      SetCursorIndex(m_CurrentOption);
    }
    AUDIO::PLAY_SOUND_FRONTEND("HUD_MENU_NAV_DOWN_MASTER");
 }
@@ -341,7 +321,6 @@ void Menu::EnterSubmenu(Function submenu)
    m_LastOption[m_SubmenuLevel] = m_CurrentOption;
    m_CurrentMenu = submenu;
    m_CurrentOption = 0;
-   SetCursorIndex(m_CurrentOption);
    m_SubmenuLevel++;
 }
 

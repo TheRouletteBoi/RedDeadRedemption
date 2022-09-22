@@ -2641,7 +2641,7 @@ namespace NET4
    static int NET_PLAYER_LIST_RESET() { return invoke<int>(0x67031EDA); } // 0x67031EDA
    static BOOL NET_PLAYER_LIST_ADD_ITEM(const char* text, int rowIndex) { return invoke<BOOL>(0xFD355ED1, text, rowIndex); } // 0xFD355ED1
    static int _0x805AC16A(Any p0, Any p1) { return invoke<int>(0x805AC16A, p0, p1); } // 0x805AC16A
-   static int NET_PLAYER_LIST_SET_HIGHLIGHT(Any p0) { return invoke<int>(0x0AAE9E6B, p0); } // 0x0AAE9E6B
+   static int NET_PLAYER_LIST_SET_HIGHLIGHT(int highlightIndex) { return invoke<int>(0x0AAE9E6B, highlightIndex); } // 0x0AAE9E6B
    static int NET_PLAYER_LIST_SET_TOP_TEAM(Any p0) { return invoke<int>(0x20B684AB, p0); } // 0x20B684AB
    static int NET_PLAYER_LIST_SET_TEAM_SCORE(Any p0, Any p1, Any p2) { return invoke<int>(0x84CD0651, p0, p1, p2); } // 0x84CD0651
    static int NET_PLAYER_LIST_SET_TEAM_SORT(Any p0) { return invoke<int>(0xA56B459C, p0); } // 0xA56B459C
