@@ -18,6 +18,8 @@ R invoke(rage::scrNativeHash hash)
    return g_Invoker->GetReturn<R>();
 }
 
+// Generated Mon, 04 Sep 2023 03:30:37 GMT
+
 namespace SYSTEM
 {
    static void WAIT(int ms) { invoke<Void>(0x7715C03B, ms); } // 0x7715C03B
@@ -61,9 +63,9 @@ namespace ACTOR
    static int ACTORS_IN_RANGE(Any p0, Any p1, Any p2) { return invoke<int>(0x50A3BF5D, p0, p1, p2); } // 0x50A3BF5D
    static Any GET_ACTOR_VELOCITY(Actor actor, Any* p1, Any* p2, Any* p3) { return invoke<Any>(0xAD6AF65C, actor, p1, p2, p3); } // 0xAD6AF65C
    static float GET_ACTOR_HEIGHT(Actor actor) { return invoke<float>(0xE173CE48, actor); } // 0xE173CE48
-   static int* _0xAB8A1C15(float p0) { return invoke<int*>(0xAB8A1C15, p0); } // 0xAB8A1C15 ->(RIENS001, 15)
-   static const char* _0xDAD46FAB() { return invoke<const char*>(0xDAD46FAB); }// 0xDAD46FAB ->(RIENS001, 15)
-   static int _ACTOR_IN_WORLD(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5) { return invoke<int>(0xA2DEC153, p0, p1, p2, p3, p4, p5); } // 0xA2DEC153 
+   static int* _0xAB8A1C15(float p0) { return invoke<int*>(0xAB8A1C15, p0); } // 0xAB8A1C15
+   static const char* _0xDAD46FAB() { return invoke<const char*>(0xDAD46FAB); } // 0xDAD46FAB
+   static int _ACTOR_IN_WORLD(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5) { return invoke<int>(0xA2DEC153, p0, p1, p2, p3, p4, p5); } // 0xA2DEC153
    static BOOL IS_AREA_OBSTRUCTED(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5) { return invoke<BOOL>(0x5F655C68, p0, p1, p2, p3, p4, p5); } // 0x5F655C68
    static BOOL _0x0733E811(float p0, float p1, float p2, float p3, Any p4, Any p5, Any p6, Any p7, Any p8) { return invoke<BOOL>(0x0733E811, p0, p1, p2, p3, p4, p5, p6, p7, p8); } // 0x0733E811
    static int GET_ACTORENUM_SPECIES(Any p0) { return invoke<int>(0x6AC01FCB, p0); } // 0x6AC01FCB
@@ -74,7 +76,7 @@ namespace ACTOR
    static int SET_ACTOR_STAMINA(Any p0, float p1) { return invoke<int>(0xDE0B9673, p0, p1); } // 0xDE0B9673
    static int GET_ACTOR_GAIT_TYPE(Any p0) { return invoke<int>(0xAC232F6E, p0); } // 0xAC232F6E
    static Any GET_ACTOR_POSTURE(Any p0) { return invoke<Any>(0xDB993A4F, p0); } // 0xDB993A4F
-   static void SET_ACTOR_POSTURE(Actor actor, Any p1) { invoke<Void>(0x708D9BD3, actor, p1); }	// 0x708D9BD3
+   static void SET_ACTOR_POSTURE(Actor actor, Any p1) { invoke<Void>(0x708D9BD3, actor, p1); } // 0x708D9BD3
    static int _0xDCC91F8C(Any p0, const char* p1) { return invoke<int>(0xDCC91F8C, p0, p1); } // 0xDCC91F8C
    static Any GET_ACTOR_TYPE(Any p0) { return invoke<Any>(0xABFD3560, p0); } // 0xABFD3560
    static BOOL IS_ACTOR_MALE(Any p0) { return invoke<BOOL>(0x2091F142, p0); } // 0x2091F142
@@ -102,11 +104,11 @@ namespace ACTOR
    static BOOL IS_MOVER_FROZEN(Any p0) { return invoke<BOOL>(0x9C12BD5A, p0); } // 0x9C12BD5A
    static int _SET_USE_COARSE_BOUNDS(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0x63925367, p0, p1, p2, p3); } // 0x63925367
    static int _SUPPRESS_MOVE_COLLISIONS(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0x61664EC0, p0, p1, p2, p3); } // 0x61664EC0
-   static BOOL IS_ACTOR_ON_GROUND(Actor actor) { return invoke<int>(0x709EC06C, actor); } // 0x709EC06C
+   static BOOL IS_ACTOR_ON_GROUND(Actor actor) { return invoke<BOOL>(0x709EC06C, actor); } // 0x709EC06C
    static BOOL IS_ACTOR_ON_PATH(Actor actor, Any p1, Any p2, Any p3, Any p4) { return invoke<BOOL>(0x8ED9DAFC, actor, p1, p2, p3, p4); } // 0x8ED9DAFC
-   static int _IS_MOVER_ON_VEHICLE_PATH(Actor actor, Any p1, Any p2, Any p3, Any p4) { return invoke<BOOL>(0x4A2DE1D0, actor, p1, p2, p3, p4); } // 0x4A2DE1D0
+   static int _IS_MOVER_ON_VEHICLE_PATH(Actor actor, Any p1, Any p2, Any p3, Any p4) { return invoke<int>(0x4A2DE1D0, actor, p1, p2, p3, p4); } // 0x4A2DE1D0
    static BOOL IS_ACTOR_IN_WATER(Any p0) { return invoke<BOOL>(0x7D65D9C7, p0); } // 0x7D65D9C7
-   static BOOL _IS_ACTOR_IN_WATER_OF_DEPTH(Any p0, Any p1, Any p2, Any p3, float p5) { return invoke<int>(0xA6AA7B9E, p0, p1, p2, p3, p5); } // 0xA6AA7B9E
+   static BOOL _IS_ACTOR_IN_WATER_OF_DEPTH(Any p0, Any p1, Any p2, Any p3, float p5) { return invoke<BOOL>(0xA6AA7B9E, p0, p1, p2, p3, p5); } // 0xA6AA7B9E
    static int GET_ACTOR_STUCK_STATE(Any p0) { return invoke<int>(0x7B4F9EAC, p0); } // 0x7B4F9EAC
    static int _0xE39E89BD(Any p0) { return invoke<int>(0xE39E89BD, p0); } // 0xE39E89BD
    static BOOL IS_ACTOR_RIDEABLE(Any p0) { return invoke<BOOL>(0x8842C62D, p0); } // 0x8842C62D
@@ -119,7 +121,7 @@ namespace ACTOR
    static int _0x4A1D2E25(Any p0) { return invoke<int>(0x4A1D2E25, p0); } // 0x4A1D2E25
    static int _0xC17BAD12(Any p0) { return invoke<int>(0xC17BAD12, p0); } // 0xC17BAD12
    static int _0x0B5E1904(Any p0, Any p1) { return invoke<int>(0x0B5E1904, p0, p1); } // 0x0B5E1904
-   static int _0x50ED77F1(Any p0, Any p1) { return invoke<int>(0x50ED77F1, p0, p1); }// 0x50ED77F1
+   static int _0x50ED77F1(Any p0, Any p1) { return invoke<int>(0x50ED77F1, p0, p1); } // 0x50ED77F1
    static void ACTOR_ENABLE_VARIABLE_MESH(Any p0, Any p1, Any p2) { invoke<Void>(0xDA2F6203, p0, p1, p2); } // 0xDA2F6203
    static int ACTOR_IS_VARIABLE_MESH_ENABLED(Any p0, Any p1) { return invoke<int>(0x5DE31288, p0, p1); } // 0x5DE31288
    static void ACTOR_SET_GRABBED_BY_CUTSCENE(Any p0, Any p1) { invoke<Void>(0x6D3E430D, p0, p1); } // 0x6D3E430D
@@ -154,10 +156,10 @@ namespace ACTOR
    static int SET_ACTOR_ALLOW_DISARM(Any p0, const char* p1) { return invoke<int>(0x76A72D9A, p0, p1); } // 0x76A72D9A
    static void SET_ANIMAL_CAN_ATTACK(Any p0, Any p1) { invoke<Void>(0x2B403538, p0, p1); } // 0x2B403538
    static Any GET_CURRENT_GRINGO(Any p0) { return invoke<Any>(0x5D9DB7A5, p0); } // 0x5D9DB7A5
-   static int _SET_GRINGO_RESTRICTION(Any p0) { return invoke<int>(0x527CB774, p0); }  // 0x527CB774
+   static int _SET_GRINGO_RESTRICTION(Any p0) { return invoke<int>(0x527CB774, p0); } // 0x527CB774
    static int _SET_GRINGO_RESTRICTION_2(Any p0) { return invoke<int>(0x660DBDDD, p0); } // 0x660DBDDD
    static int _0xF04335A6(Any p0, Any p1) { return invoke<int>(0xF04335A6, p0, p1); } // 0xF04335A6
-   static BOOL _0xFB2B0CCF(Any p0) { return invoke<int>(0xFB2B0CCF, p0); } // 0xFB2B0CCF
+   static BOOL _0xFB2B0CCF(Any p0) { return invoke<BOOL>(0xFB2B0CCF, p0); } // 0xFB2B0CCF
    static void REPORT_GRINGO_USE_PHASE(Any p0, Any p1) { invoke<Void>(0xA41B161C, p0, p1); } // 0xA41B161C
    static int _0x9028B082() { return invoke<int>(0x9028B082); } // 0x9028B082
    static int CAN_PLAYER_DIE() { return invoke<int>(0x90F9555B); } // 0x90F9555B
@@ -170,11 +172,11 @@ namespace ACTOR
    static int GET_ACTOR_MAX_SPEED(Any p0) { return invoke<int>(0x627E52EA, p0); } // 0x627E52EA
    static int GET_ACTOR_MAX_SPEED_ABSOLUTE(Any p0) { return invoke<int>(0x56DE7F21, p0); } // 0x56DE7F21
    static int GET_ACTOR_MIN_SPEED(Any p0) { return invoke<int>(0x8D0DCEB6, p0); } // 0x8D0DCEB6
-   static void GET_ACTOR_MIN_SPEED(Any p0, Any p1) { invoke<Void>(0x8D0DCEB6, p0, p1); } // 0x09D78931
+   static void _0x09D78931(Any p0, Any p1) { invoke<Void>(0x09D78931, p0, p1); } // 0x09D78931
    static void CLEAR_LAST_ATTACK(Any p0) { invoke<Void>(0x68D4A021, p0); } // 0x68D4A021
    static int _0xEB40C2FC(Any p0, Any p1) { return invoke<int>(0xEB40C2FC, p0, p1); } // 0xEB40C2FC
    static float _0x69FA5315(Any p0) { return invoke<float>(0x69FA5315, p0); } // 0x69FA5315
-   static float _0x8C221B4D(Any p0) { return invoke<float>(0x8C221B4D, p0); }// 0x8C221B4D
+   static float _0x8C221B4D(Any p0) { return invoke<float>(0x8C221B4D, p0); } // 0x8C221B4D
    static int GET_ACTOR_COMBAT_CLASS(Any p0) { return invoke<int>(0x0129B715, p0); } // 0x0129B715
    static int _0x8062BD74(Any p0, Any p1, float p2) { return invoke<int>(0x8062BD74, p0, p1, p2); } // 0x8062BD74
    static Any BEGIN_DUEL(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5, Any p6, Any p7, Any p8, Any p9, Any p10, Any p11, Any p12) { return invoke<Any>(0x44B7FF7E, p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12); } // 0x44B7FF7E
@@ -219,7 +221,7 @@ namespace ACTORENUM
    static int* _0x886E06C2(Any p0, const char* p1, Any p2, Any p3, Any p4, Any p5) { return invoke<int*>(0x886E06C2, p0, p1, p2, p3, p4, p5); } // 0x886E06C2
    static int* _0xB6839756() { return invoke<int*>(0xB6839756); } // 0xB6839756
    static const char* _0xCB139D15(Any p0) { return invoke<const char*>(0xCB139D15, p0); } // 0xCB139D15
-   static int _0xF07F5E41() { return invoke<int>(0xF07F5E41); } // 0xF07F5E41 Unused
+   static int _0xF07F5E41() { return invoke<int>(0xF07F5E41); } // 0xF07F5E41
 }
 
 namespace ACTORINFO
@@ -352,7 +354,7 @@ namespace AI
    static int AI_GET_IS_RETREATING(Any p0) { return invoke<int>(0x2FABB559, p0); } // 0x2FABB559
    static BOOL AI_HAS_PLAYER_FIRED_GUN_WITHIN(Any p0, float p1) { return invoke<BOOL>(0x1530A3DE, p0, p1); } // 0x1530A3DE
    static int AI_HAS_PLAYER_PROJECTILE_IMPACTED_WITHIN(Any p0, Any p1) { return invoke<int>(0x059F64B8, p0, p1); } // 0x059F64B8
-   static int AI_HAS_PLAYER_PROJECTILE_NEAR_MISSED_WITHIN(Any p0, Any p1, Any p2) { return invoke<int>(0xD8574E09, p0, p1); } // 0xD8574E09
+   static int AI_HAS_PLAYER_PROJECTILE_NEAR_MISSED_WITHIN(Any p0, Any p1, Any p2) { return invoke<int>(0xD8574E09, p0, p1, p2); } // 0xD8574E09
    static void AI_SET_PLAYER_PROJECTILE_IMPACT_HEAR_RANGE(Any p0, Any p1) { invoke<Void>(0xDCD2FC0F, p0, p1); } // 0xDCD2FC0F
    static int AI_DONT_SLOW_DOWN_TO_WALK_FOR_TURNS(Any p0, const char* p1) { return invoke<int>(0x0A421F94, p0, p1); } // 0x0A421F94
    static int AI_HAS_ACTOR_BUMPED_INTO_ME(Any p0, Any p1, Any p2) { return invoke<int>(0x6BCC744A, p0, p1, p2); } // 0x6BCC744A
@@ -381,9 +383,9 @@ namespace AI2
    static void AI_SET_NAV_MATERIAL_USAGE(Any p0, Any p1, Any p2) { invoke<Void>(0x7B00615F, p0, p1, p2); } // 0x7B00615F
    static void AI_SET_NAV_PATHFINDING_ENABLED(Any p0, Any p1) { invoke<Void>(0x4495F5FC, p0, p1); } // 0x4495F5FC
    static void AI_SET_NAV_PATHFINDING_ENABLED_WHEN_DRIVING(Any p0, Any p1) { invoke<Void>(0x98966941, p0, p1); } // 0x98966941
-   static int  AI_SET_NAV_MAX_SLOPE(Any p0, float p1) { return invoke<int>(0xF64D5452, p0, p1); } // 0xF64D5452
+   static int AI_SET_NAV_MAX_SLOPE(Any p0, float p1) { return invoke<int>(0xF64D5452, p0, p1); } // 0xF64D5452
    static void AI_SET_NAV_MAX_WATER_DEPTH_LEVEL(Any p0, Any p1) { invoke<Void>(0x29D07F70, p0, p1); } // 0x29D07F70
-   static void AI_SET_NAV_ACTOR_AVOIDANCE_MODE(Any p0, Any p1) { invoke<Void>(0x5B483036, p0, p1); }  // 0x5B483036
+   static void AI_SET_NAV_ACTOR_AVOIDANCE_MODE(Any p0, Any p1) { invoke<Void>(0x5B483036, p0, p1); } // 0x5B483036
    static void AI_SET_NAV_ACTOR_AVOIDANCE_ALLOW_TURNS(Any p0, Any p1) { invoke<Void>(0xFCB31704, p0, p1); } // 0xFCB31704
    static int AI_GET_NAV_ACTOR_AVOIDANCE_ALLOW_TURNS(Any p0) { return invoke<int>(0x7C13266C, p0); } // 0x7C13266C
    static void AI_RESET_NAV_SUBGRID_CELL_SIZE(Any p0) { invoke<Void>(0x750A1EF6, p0); } // 0x750A1EF6
@@ -408,7 +410,7 @@ namespace AI3
 namespace AI4
 {
    static int AI_RIDING_SET_ATTRIBUTE(Any p0, Any p1, float p2) { return invoke<int>(0x9DDFA9CA, p0, p1, p2); } // 0x9DDFA9CA
-   static int _0xF8AFEFA1(Any p1, Any p0) { return invoke<int>(0xF8AFEFA1, p0, p1); } // 0xF8AFEFA1
+   static int _0xF8AFEFA1(Any p0, Any p1) { return invoke<int>(0xF8AFEFA1, p0, p1); } // 0xF8AFEFA1
 }
 
 namespace AI5
@@ -424,7 +426,7 @@ namespace AI5
    static void AI_SPEECH_SET_ALLOW_CONTEXT_GLOBAL(Any p0, Any p1) { invoke<Void>(0x10DDB016, p0, p1); } // 0x10DDB016
    static void AI_SPEECH_SET_ALLOW_FOR_ACTOR(Any p0, Any p1) { invoke<Void>(0x56421F1A, p0, p1); } // 0x56421F1A
    static void DEBUG_PLAYER_LOG(Any p0) { invoke<Void>(0x829F3E70, p0); } // 0x829F3E70
-   static int _0xD8C8BEA1(Any p0) { return invoke<int>(0xD8C8BEA1, p0); }// 0xD8C8BEA1
+   static int _0xD8C8BEA1(Any p0) { return invoke<int>(0xD8C8BEA1, p0); } // 0xD8C8BEA1
    static int _0x679C5955(Any p0) { return invoke<int>(0x679C5955, p0); } // 0x679C5955
 }
 
@@ -464,8 +466,8 @@ namespace AMBIENT
    static int DOES_AMBIENT_SPAWN_RESTRICTION_VOLUME_EXIST(Any p0) { return invoke<int>(0x02E15363, p0); } // 0x02E15363
    static void RELEASE_ACTOR_AS_AMBIENT(Any p0) { invoke<Void>(0xC8AD4A8C, p0); } // 0xC8AD4A8C
    static int WOULD_ACTOR_BE_VISIBLE(Any p0, Any p1, Any p2) { return invoke<int>(0xD8BE8E0C, p0, p1, p2); } // 0xD8BE8E0C
-   static int _0x515E17DC(Any p0) { return invoke<int>(0x515E17DC, p0); }  // 0x515E17DC
-   static int _0x8ED2B0BC(Any p0, Any p1, float p2, float p3, float p4) { return invoke<int>(0x8ED2B0BC, p0, p1, p2, p3, p4); }  // 0x8ED2B0BC
+   static int _0x515E17DC(Any p0) { return invoke<int>(0x515E17DC, p0); } // 0x515E17DC
+   static int _0x8ED2B0BC(Any p0, Any p1, float p2, float p3, float p4) { return invoke<int>(0x8ED2B0BC, p0, p1, p2, p3, p4); } // 0x8ED2B0BC
    static int _0x08FD1D81(Any p0) { return invoke<int>(0x08FD1D81, p0); } // 0x08FD1D81
    static int _0x257C73C5(Any p0) { return invoke<int>(0x257C73C5, p0); } // 0x257C73C5
    static void SET_ACTOR_OBEY_AMBIENT_MOVE_RESTRICTIONS(Any p0, Any p1) { invoke<Void>(0xED3071A5, p0, p1); } // 0xED3071A5
@@ -479,7 +481,7 @@ namespace AMBIENT2
    static void _0x831FC466() { invoke<Void>(0x831FC466); } // 0x831FC466
    static int _0xCC9E6F4C(float x, float y, float z) { return invoke<int>(0xCC9E6F4C, x, y, z); } // 0xCC9E6F4C
    static int _0x7B07D449() { return invoke<int>(0x7B07D449); } // 0x7B07D449
-   static int _0x205E891C(float x, float y, float z) { return invoke<int>(0x205E891C, x, y, z); }// 0x205E891C
+   static int _0x205E891C(float x, float y, float z) { return invoke<int>(0x205E891C, x, y, z); } // 0x205E891C
    static void _0x8B011F5D() { invoke<Void>(0x8B011F5D); } // 0x8B011F5D
    static int _0x19B26C78(Any p0, Any p1) { return invoke<int>(0x19B26C78, p0, p1); } // 0x19B26C78
    static Any _0xA337135A(Any p0) { return invoke<Any>(0xA337135A, p0); } // 0xA337135A
@@ -493,7 +495,7 @@ namespace AMBIENT2
    static int _0x561C9A6D(Any p0) { return invoke<int>(0x561C9A6D, p0); } // 0x561C9A6D
    static int _0x912EEC43(float p0, float p1, float p2) { return invoke<int>(0x912EEC43, p0, p1, p2); } // 0x912EEC43
    static Any _0x528C7F3D(Any p0) { return invoke<Any>(0x528C7F3D, p0); } // 0x528C7F3D
-   static void* _0xA89B77A7(float p0, float p1) { return invoke<Void*>(0xA89B77A7, p0, p1); } // 0xA89B77A7
+   static Any* _0xA89B77A7(float p0, float p1) { return invoke<Any*>(0xA89B77A7, p0, p1); } // 0xA89B77A7
    static void _0x762192EB(Any p0) { invoke<Void>(0x762192EB, p0); } // 0x762192EB
    static void _0x1900A97E(Any p0, Any p1) { invoke<Void>(0x1900A97E, p0, p1); } // 0x1900A97E
    static void _0x609514AE(Any p0, Any p1, Any p2, Any p3) { invoke<Void>(0x609514AE, p0, p1, p2, p3); } // 0x609514AE
@@ -518,7 +520,7 @@ namespace ANIM
    static int GET_ACTOR_ANIM_CURRENT_TIME(Any p0, Any p1) { return invoke<int>(0x8609F5E1, p0, p1); } // 0x8609F5E1
    static int SET_ACTOR_ANIM_CURRENT_TIME(Any p0, Any p1) { return invoke<int>(0x8626C1A0, p0, p1); } // 0x8626C1A0
    static BOOL IS_ACTOR_ANIM_PLAYING(Any p0, Any p1) { return invoke<BOOL>(0x1ADE21EB, p0, p1); } // 0x1ADE21EB
-   static BOOL ACTOR_HAS_ANIM_LOADED(Any p0, Any p1) { return invoke<BOOL>(0x6B54BABD, p0, p1); }// 0x6B54BABD
+   static BOOL ACTOR_HAS_ANIM_LOADED(Any p0, Any p1) { return invoke<BOOL>(0x6B54BABD, p0, p1); } // 0x6B54BABD
    static int ACTOR_HAS_ANIM_SET(Any p0, Any p1) { return invoke<int>(0x31F5F57D, p0, p1); } // 0x31F5F57D
    static int _SET_ANIMATION_RATE_OVERRIDE_SCALE(Any p0) { return invoke<int>(0x3E30A514, p0); } // 0x3E30A514
    static int SET_PANIM_PARAMS(Any p0, Any p1, Any p2) { return invoke<int>(0x5941295A, p0, p1, p2); } // 0x5941295A
@@ -610,17 +612,17 @@ namespace ANIMAL
 namespace ANIMATOR
 {
    static BOOL IS_OBJECT_ANIMATOR_VALID(Any p0) { return invoke<BOOL>(0x19BD222F, p0); } // 0x19BD222F
-   static int CREATE_OBJECT_ANIMATOR(Any p0, Any p1, Any p2, Any p3, Any p4) { return invoke<int>(0x856D5842, p0, p1, p3, p4); } // 0x856D5842
+   static int CREATE_OBJECT_ANIMATOR(Any p0, Any p1, Any p2, Any p3, Any p4) { return invoke<int>(0x856D5842, p0, p1, p2, p3, p4); } // 0x856D5842
    static int CREATE_OBJECT_ANIMATOR_ON_OBJECT(int* p0, Any p1, Any p2, Any p3, Any p4) { return invoke<int>(0x0D0A66B6, p0, p1, p2, p3, p4); } // 0x0D0A66B6
-   static BOOL IS_OBJECT_ANIMATOR_READY(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5, Any p6, Any p7, Any p8, Any p9, Any p10, Any p11, Any p12, Any p13, Any p14, Any p15, Any p16) { return invoke<BOOL>(0x554CF528, p0, p1, p2, p3, p4, p5, p6, p7, p8, p8, p10, p11, p12, p13, p14, p14, p15, p16); } // 0x554CF528
+   static BOOL IS_OBJECT_ANIMATOR_READY(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5, Any p6, Any p7, Any p8, Any p9, Any p10, Any p11, Any p12, Any p13, Any p14, Any p15, Any p16) { return invoke<BOOL>(0x554CF528, p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16); } // 0x554CF528
    static int GET_OBJECT_ANIMATOR_ON_OBJECT(int* p0, Any p1) { return invoke<int>(0x5908F7FE, p0, p1); } // 0x5908F7FE
    static int SET_OBJECT_ANIMATOR_NODE(Any p0, Any p1) { return invoke<int>(0xB9D7B63B, p0, p1); } // 0xB9D7B63B
-   static int SET_OBJECT_ANIMATOR_PHASE(Any p0, Any p1) { return invoke<int>(0xC0128653, p0, p1); }// 0xC0128653
+   static int SET_OBJECT_ANIMATOR_PHASE(Any p0, Any p1) { return invoke<int>(0xC0128653, p0, p1); } // 0xC0128653
    static int SET_OBJECT_ANIMATOR_RATE(Any p0, Any p1) { return invoke<int>(0x0B4D9AFA, p0, p1); } // 0x0B4D9AFA
    static float GET_OBJECT_ANIMATOR_PHASE(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5, Any p6) { return invoke<float>(0xC5205015, p0, p1, p2, p3, p4, p5, p6); } // 0xC5205015
    static int _SET_BONE_RANGE_ARRAY(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0x188B6431, p0, p1, p2, p3); } // 0x188B6431
    static int _0xB57D4110(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5, Any p6) { return invoke<int>(0xB57D4110, p0, p1, p2, p3, p4, p5, p6); } // 0xB57D4110
-   static BOOL _IS_OBJECT_ANIMATOR_ANIM_PLAYING(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5, Any p6, Any p7, Any p8, Any p9, Any p10, Any p11, Any p12, Any p13, Any p14, Any p15, Any p16) { return invoke<BOOL>(0x46A69DAF, p0, p1, p2, p3, p4, p5, p6, p7, p8, p8, p10, p11, p12, p13, p14, p14, p15, p16); } // 0x46A69DAF
+   static BOOL _IS_OBJECT_ANIMATOR_ANIM_PLAYING(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5, Any p6, Any p7, Any p8, Any p9, Any p10, Any p11, Any p12, Any p13, Any p14, Any p15, Any p16) { return invoke<BOOL>(0x46A69DAF, p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16); } // 0x46A69DAF
    static int DESTROY_OBJECT_ANIMATOR(Any p0) { return invoke<int>(0x1E5A227A, p0); } // 0x1E5A227A
    static Any GET_OBJECT_FROM_ANIMATOR(Any p0, Any p1) { return invoke<Any>(0x4F10FD5B, p0, p1); } // 0x4F10FD5B
    static Any LINK_OBJECT_ANIMATOR_TO_ACTOR(Any p0, Any p1, Any p2) { return invoke<Any>(0xBEDB066C, p0, p1, p2); } // 0xBEDB066C
@@ -712,11 +714,11 @@ namespace AUDIO
    static int _0xA4F209D5() { return invoke<int>(0xA4F209D5); } // 0xA4F209D5
    static void ADD_COMPANION_PERMANENT() { invoke<Void>(0x45E20057); } // 0x45E20057
    static int* _0x15547025() { return invoke<int*>(0x15547025); } // 0x15547025
-   static int _0xE0553D6B(int result, Any p1) { return invoke<int>(0xE0553D6B, result, p1); } // 0xE0553D6B //WantedMeter
-   static int _0xD68E04BB(int result, Any p1) { return invoke<int>(0xD68E04BB, result, p1); }  // 0xD68E04BB //WantedMeter
+   static int _0xE0553D6B(int result, Any p1) { return invoke<int>(0xE0553D6B, result, p1); } // 0xE0553D6B
+   static int _0xD68E04BB(int result, Any p1) { return invoke<int>(0xD68E04BB, result, p1); } // 0xD68E04BB
    static int _0x638EAF70(Any p0, Any p1) { return invoke<int>(0x638EAF70, p0, p1); } // 0x638EAF70
-   static int _0xEA975A79(Any p0, Any p1) { return invoke<int>(0xEA975A79, p0, p1); }  // 0xEA975A79
-   static int _0x6BB42C21(int result) { return invoke<int>(0x6BB42C21, result); } // 0x6BB42C21 //WantedMeter
+   static int _0xEA975A79(Any p0, Any p1) { return invoke<int>(0xEA975A79, p0, p1); } // 0xEA975A79
+   static int _0x6BB42C21(int result) { return invoke<int>(0x6BB42C21, result); } // 0x6BB42C21
    static int _0x0E634931(int result) { return invoke<int>(0x0E634931, result); } // 0x0E634931
    static int _0x567712E5(int result) { return invoke<int>(0x567712E5, result); } // 0x567712E5
    static int _0xB888B369(int result) { return invoke<int>(0xB888B369, result); } // 0xB888B369
@@ -743,7 +745,7 @@ namespace AUDIO
    static Any _0x90DD37E7(Any p0, Any p1, Any p2) { return invoke<Any>(0x90DD37E7, p0, p1, p2); } // 0x90DD37E7
    static void STOP_PED_SPEAKING(Any p0, Any p1) { invoke<Void>(0xFF92B49D, p0, p1); } // 0xFF92B49D
    static void AUDIO_MISSION_INIT() { invoke<Void>(0xEB8A51C2); } // 0xEB8A51C2
-   static void AUDIO_MISSION_RELEASE() { invoke<Void>(0xFF92B49D); } // 0xD1FD31DE
+   static void AUDIO_MISSION_RELEASE() { invoke<Void>(0xD1FD31DE); } // 0xD1FD31DE
    static void _0xEB866555() { invoke<Void>(0xEB866555); } // 0xEB866555
    static void AUDIO_MUSIC_FORCE_TRACK(const char* p0, const char* p1, Any p2, Any p3, Any p4, float p5, Any p6) { invoke<Void>(0xA2A356A7, p0, p1, p2, p3, p4, p5, p6); } // 0xA2A356A7
    static void AUDIO_MUSIC_FORCE_TRACK_HASH(int hash, const char* p1, float p2, float p3, Any p4, Any p5, Any p6) { invoke<Void>(0x6CEFA97A, hash, p1, p2, p3, p4, p5, p6); } // 0x6CEFA97A
@@ -761,14 +763,14 @@ namespace AUDIO
    static BOOL AUDIO_IS_MUSIC_PLAYING() { return invoke<BOOL>(0x84435231); } // 0x84435231
    static int AUDIO_IS_SCRIPTED_MUSIC_PLAYING() { return invoke<int>(0x86E995D1); } // 0x86E995D1
    static BOOL AUDIO_IS_FRONTEND_MUSIC_PLAYING() { return invoke<BOOL>(0x9EC502D6); } // 0x9EC502D6
-   static void AUDIO_MUSIC_SET_SUSPENSE_ALLOWED() { invoke<BOOL>(0xE0DE16BD); } // 0xE0DE16BD
+   static void AUDIO_MUSIC_SET_SUSPENSE_ALLOWED() { invoke<Void>(0xE0DE16BD); } // 0xE0DE16BD
    static void AUDIO_MUSIC_PLAY_UNSCRIPTED_NOW() { invoke<Void>(0xE2A37056); } // 0xE2A37056
    static void _0x72168160() { invoke<Void>(0x72168160); } // 0x72168160
    static int* _0xB3C3FF5E() { return invoke<int*>(0xB3C3FF5E); } // 0xB3C3FF5E
    static int* _0xEA2B35DB() { return invoke<int*>(0xEA2B35DB); } // 0xEA2B35DB
    static int _0x0CCE435E(float p0, float p1, float p2) { return invoke<int>(0x0CCE435E, p0, p1, p2); } // 0x0CCE435E
    static int _0x7784BB85() { return invoke<int>(0x7784BB85); } // 0x7784BB85
-   static int _0x24AE7AFB() { return invoke<int>(0x24AE7AFB); }  // 0x24AE7AFB
+   static int _0x24AE7AFB() { return invoke<int>(0x24AE7AFB); } // 0x24AE7AFB
    static int _0xDE7C65CE() { return invoke<int>(0xDE7C65CE); } // 0xDE7C65CE
    static int _0x338DF299() { return invoke<int>(0x338DF299); } // 0x338DF299
    static int _0x2D40E85C(Any p0, Any p1, Any p2) { return invoke<int>(0x2D40E85C, p0, p1, p2); } // 0x2D40E85C
@@ -780,7 +782,7 @@ namespace AUDIO
    static BOOL _IS_AUDIO_BANK_LOADING(const char* p0, const char* p1) { return invoke<BOOL>(0x98CD7340, p0, p1); } // 0x98CD7340
    static void LOAD_AUDIO_BANK(const char* p0, const char* p1) { invoke<Void>(0x08F4B5B8, p0, p1); } // 0x08F4B5B8
    static int _0x176E921C() { return invoke<int>(0x176E921C); } // 0x176E921C
-   static int _0xBAEC56D1(Any p0) { return invoke<int>(0xBAEC56D1); } // 0xBAEC56D1
+   static int _0xBAEC56D1(Any p0) { return invoke<int>(0xBAEC56D1, p0); } // 0xBAEC56D1
 }
 
 namespace CAM
@@ -801,14 +803,14 @@ namespace CAM
    static int _0x72960AE2() { return invoke<int>(0x72960AE2); } // 0x72960AE2
    static int _0x382C47C5(Any p0) { return invoke<int>(0x382C47C5, p0); } // 0x382C47C5
    static int _0x6E303287(Any p0, Any p1) { return invoke<int>(0x6E303287, p0, p1); } // 0x6E303287
-   static int _0xE13B49BD(Any p0) { return invoke<int>(0xE13B49BD); } // 0xE13B49BD
+   static int _0xE13B49BD(Any p0) { return invoke<int>(0xE13B49BD, p0); } // 0xE13B49BD
    static int _0x9603D3B2(Any p0, Any p1) { return invoke<int>(0x9603D3B2, p0, p1); } // 0x9603D3B2
    static int _0x4062688A(Any p0) { return invoke<int>(0x4062688A, p0); } // 0x4062688A
    static int* _0x3AE77125(float p0, float p1, float p2, Any p3, Any p4, Any p5) { return invoke<int*>(0x3AE77125, p0, p1, p2, p3, p4, p5); } // 0x3AE77125
-   static int ENABLE_GAME_CAMERA_FOCUS(float p0, float p1, float p2, float p3, Any p4, Any p5, Any p6, Any p7, Any p8, Any p9, Any p10) { return invoke<int>(0x87E40FB8, p0, p1, p2, p3, p4, p5, p6, p7, p8, p9); } // 0x87E40FB8
+   static int ENABLE_GAME_CAMERA_FOCUS(float p0, float p1, float p2, float p3, Any p4, Any p5, Any p6, Any p7, Any p8, Any p9, Any p10) { return invoke<int>(0x87E40FB8, p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10); } // 0x87E40FB8
    static int DISABLE_GAME_CAMERA_FOCUS() { return invoke<int>(0x4FA19C01); } // 0x4FA19C01
    static int _0x5BD2295E() { return invoke<int>(0x5BD2295E); } // 0x5BD2295E
-   static int  _0xF3623B64() { return invoke<int>(0xF3623B64); } // 0xF3623B64
+   static int _0xF3623B64() { return invoke<int>(0xF3623B64); } // 0xF3623B64
    static int _0xAE168124() { return invoke<int>(0xAE168124); } // 0xAE168124
    static BOOL _0x9F1F8669(BOOL p0) { return invoke<BOOL>(0x9F1F8669, p0); } // 0x9F1F8669
 }
@@ -817,7 +819,7 @@ namespace CAMERA
 {
    static int _0x0B1569C5(Any p0, Any p1, Any p2) { return invoke<int>(0x0B1569C5, p0, p1, p2); } // 0x0B1569C5
    static int _0xBCC98808(Any p0) { return invoke<int>(0xBCC98808, p0); } // 0xBCC98808
-   static void SET_CURRENT_CAMERA_ON_CHANNEL(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5, Any p6, Any p7, Any p8, Any p9) { invoke<Void>(0x3EA55678, p0, p1, p3, p4, p5, p6, p7, p8, p9); } // 0x3EA55678
+   static void SET_CURRENT_CAMERA_ON_CHANNEL(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5, Any p6, Any p7, Any p8, Any p9) { invoke<Void>(0x3EA55678, p0, p1, p2, p3, p4, p5, p6, p7, p8, p9); } // 0x3EA55678
    static void REMOVE_CAMERA_FROM_CHANNEL(Any p0, Any p1) { invoke<Void>(0x423DB420, p0, p1); } // 0x423DB420
    static int GET_CAMERA_CHANNEL_POSITION(Any p0, Any p1) { return invoke<int>(0xE017E2F7, p0, p1); } // 0xE017E2F7
    static int GET_CAMERA_CHANNEL_DIRECTION(Any p0, Any p1) { return invoke<int>(0x6ED00237, p0, p1); } // 0x6ED00237
@@ -850,7 +852,7 @@ namespace CAMERA
    static Any SET_CAMERA_LIGHTING_SCHEME(Any p0, Any p1) { return invoke<Any>(0x7C864F17, p0, p1); } // 0x7C864F17
    static int CAMERA_GET_CURRENT_TRANSITION_TYPE(Any p0) { return invoke<int>(0xE55B5ADB, p0); } // 0xE55B5ADB
    static int CAMERA_IS_VISIBLE_OBJECT(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5, Any p6) { return invoke<int>(0x965A4652, p0, p1, p2, p3, p4, p5, p6); } // 0x965A4652
-   static int CAMERA_IS_VISIBLE_ACTOR(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5, Any p6) { return invoke<int>(p0, p1, p2, p3, p4, p5, p6); } // 0xBB6FDF5F
+   static int CAMERA_IS_VISIBLE_ACTOR(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5, Any p6) { return invoke<int>(0xBB6FDF5F, p0, p1, p2, p3, p4, p5, p6); } // 0xBB6FDF5F
    static int CAMERA_IS_VISIBLE_POINT(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5, Any p6, Any p7, Any p8) { return invoke<int>(0xA97770FE, p0, p1, p2, p3, p4, p5, p6, p7, p8); } // 0xA97770FE
    static Camera CAMERA_IS_VISIBLE_VOLUME(Cam p0, Cam p1, Cam p2, Cam p3, Cam p4, Cam p5, Cam p6) { return invoke<Camera>(0xA161768C, p0, p1, p2, p3, p4, p5, p6); } // 0xA161768C
    static int _0x54A417F3(Any p0, Any p1) { return invoke<int>(0x54A417F3, p0, p1); } // 0x54A417F3
@@ -873,7 +875,7 @@ namespace CAMERA
    static void SET_CAMERASHOT_TARGET_OBJECT(Any p0, Any p1, Any p2) { invoke<Void>(0x3F719473, p0, p1, p2); } // 0x3F719473
    static void SET_CAMERASHOT_TARGET_OBJECT_OFFSETS(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5, Any p6, Any p7) { invoke<Void>(0x839E9502, p0, p1, p2, p3, p4, p5, p6, p7); } // 0x839E9502
    static void SET_CAMERASHOT_TARGET_OBJECT_ROLL(Any p0, Any p1) { invoke<Void>(0x8014323A, p0, p1); } // 0x8014323A
-   static void SET_CAMERASHOT_TARGET_OBJECT_BONE(Any p0, Any p1, Any p2) { invoke<Void>(0x4E6DDD27, p0, p1); } // 0x4E6DDD27
+   static void SET_CAMERASHOT_TARGET_OBJECT_BONE(Any p0, Any p1, Any p2) { invoke<Void>(0x4E6DDD27, p0, p1, p2); } // 0x4E6DDD27
    static void SET_CAMERASHOT_FROM_LENS(Any p0, Any p1) { invoke<Void>(0x6F483443, p0, p1); } // 0x6F483443
    static void SET_CAMERASHOT_TARGETDOF_OBJECT(Any p0, Any p1) { invoke<Void>(0xB6BDCF62, p0, p1); } // 0xB6BDCF62
    static void SET_CAMERASHOT_TARGETDOF_TARGET_OFFSET(Any p0, Any p1) { invoke<Void>(0x087B8DCE, p0, p1); } // 0x087B8DCE
@@ -895,7 +897,7 @@ namespace CAMERA
    static int ADD_CAMERA_SHOT_TRANSITION_INDEFINITE(Any p0, Any p1, Any p2) { return invoke<int>(0xBF9B4FC6, p0, p1, p2); } // 0xBF9B4FC6
    static int ADD_CAMERA_SHOT_TRANSITION_EASE_OUT(Any p0, Any p1, Any p2, Any p3, Any p4, float p5, Any p6, Any p7, const char* p8) { return invoke<int>(0x6D72797D, p0, p1, p2, p3, p4, p5, p6, p7, p8); } // 0x6D72797D
    static int ADD_CAMERA_SHOT_TRANSITION_EASE_IN_OUT(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5) { return invoke<int>(0x6E10E587, p0, p1, p2, p3, p4, p5); } // 0x6E10E587
-   static void SET_FIXED_TRANSITION_T(Any p0, Any p1) { invoke<Void>(0x143A617C, p0, p1); }// 0x143A617C
+   static void SET_FIXED_TRANSITION_T(Any p0, Any p1) { invoke<Void>(0x143A617C, p0, p1); } // 0x143A617C
    static void SET_TRANSITION_COLLISION_PARAMS(Any p0, Any p1, Any p2) { invoke<Void>(0x22A746E1, p0, p1, p2); } // 0x22A746E1
    static int GET_CAMERA_SHOT_TRANSITION(Any p0) { return invoke<int>(0x7AC13DF5, p0); } // 0x7AC13DF5
    static BOOL IS_PROCESSING_CAMERA_SHOT_TRANSITION(Any p0) { return invoke<BOOL>(0xDDB64AA9, p0); } // 0xDDB64AA9
@@ -920,7 +922,7 @@ namespace CAMERA
    static int CUTSCENEOBJECT_ADD_TRANSITION_EASE_IN_OUT(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5) { return invoke<int>(0xDB07C72B, p0, p1, p2, p3, p4, p5); } // 0xDB07C72B
    static int CUTSCENEOBJECT_ADD_TRANSITION_INDEFINITE(Any p0, Any p1, Any p2) { return invoke<int>(0x94B288F9, p0, p1, p2); } // 0x94B288F9
    static int CUTSCENEOBJECT_ADD_TRANSITION_DECORATOR(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5, Any p6) { return invoke<int>(0xA9AB9A06, p0, p1, p2, p3, p4, p5, p6); } // 0xA9AB9A06
-   static int CUTSCENEOBJECT_ADD_TRANSITION_FIXED(Any p0, Any p1, Any p2, Any p3, Any p4) { return invoke<int>(0x7A48EDDF, p0, p1, p2, p3, p4); }   // 0x7A48EDDF
+   static int CUTSCENEOBJECT_ADD_TRANSITION_FIXED(Any p0, Any p1, Any p2, Any p3, Any p4) { return invoke<int>(0x7A48EDDF, p0, p1, p2, p3, p4); } // 0x7A48EDDF
    static int CUTSCENEOBJECT_GET_CURRENT_TRANSITION_TYPE(Any p0) { return invoke<int>(0x0A776763, p0); } // 0x0A776763
    static void END_CURRENT_TRANSITION_FROM_CUTSCENEOBJECT(Any p0) { invoke<Void>(0xBE3F0168, p0); } // 0xBE3F0168
    static void SET_CUTSCENEOBJECT_PAUSED(Any p0, Any p1) { invoke<Void>(0x18643DC2, p0, p1); } // 0x18643DC2
@@ -937,7 +939,7 @@ namespace CAMERA
    static int _0xCDA6BB6C() { return invoke<int>(0xCDA6BB6C); } // 0xCDA6BB6C
    static void _0xE7A1C191() { invoke<Void>(0xE7A1C191); } // 0xE7A1C191
    static int _0x93050734() { return invoke<int>(0x93050734); } // 0x93050734
-   static int _0xFF1F1730() { return invoke<int>(0xFF1F1730); }// 0xFF1F1730
+   static int _0xFF1F1730() { return invoke<int>(0xFF1F1730); } // 0xFF1F1730
    static int* _0x74EE96B8() { return invoke<int*>(0x74EE96B8); } // 0x74EE96B8
    static int _0xD8218A5B() { return invoke<int>(0xD8218A5B); } // 0xD8218A5B
    static int _0x6AD6A400(int* p0, Any p1, Any p2, float p3, float p4, float p5, float p6, float p7) { return invoke<int>(0x6AD6A400, p0, p1, p2, p3, p4, p5, p6, p7); } // 0x6AD6A400
@@ -967,7 +969,7 @@ namespace CHALLENGE
    static int UI_CHALLENGE_SET_OBJECTIVE_STYLE_B(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0x9272926C, p0, p1, p2, p3); } // 0x9272926C
    static int UI_CHALLENGE_SET_COLUMN_HEADER(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0xAFC9071D, p0, p1, p2, p3); } // 0xAFC9071D
    static int UI_CHALLENGE_SET_TIME_HEADER(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0x761A6750, p0, p1, p2, p3); } // 0x761A6750
-   static int UI_CHALLENGE_SET_TIME_INFO(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0xC201524D, p0, p1, p2, p3); }  // 0xC201524D
+   static int UI_CHALLENGE_SET_TIME_INFO(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0xC201524D, p0, p1, p2, p3); } // 0xC201524D
    static void UI_CHALLENGE_MAKE_CURRENT(Any p0) { invoke<Void>(0x04A3022E, p0); } // 0x04A3022E
 }
 
@@ -989,7 +991,7 @@ namespace COMBAT
    static void COMBAT_CLASS_NAME_REGISTER_INT(Any p0, Any p1) { invoke<Void>(0x8DE6AF29, p0, p1); } // 0x8DE6AF29
    static int _0x629E2E88() { return invoke<int>(0x629E2E88); } // 0x629E2E88
    static int COMBAT_CLASS_REQUEST_GET_ACTOR() { return invoke<int>(0x0EDD5D43); } // 0x0EDD5D43
-   static int _0x76478D6E() { return invoke<int>(0x76478D6E); }   // 0x76478D6E
+   static int _0x76478D6E() { return invoke<int>(0x76478D6E); } // 0x76478D6E
    static void COMBAT_CLASS_REQUEST_COMPLETED() { invoke<Void>(0xE66AD206); } // 0xE66AD206
    static void _0xAD3877AF(Any p0) { invoke<Void>(0xAD3877AF, p0); } // 0xAD3877AF
    static void AI_COMBAT_SET_NEW_STATE_MACHINE_ENABLED(Any p0, Any p1) { invoke<Void>(0x7F73E1E8, p0, p1); } // 0x7F73E1E8
@@ -1039,13 +1041,13 @@ namespace CUTSCENE
    static int CUTSCENE_MANAGER_LOAD_CUTFILE(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0x99D215B4, p0, p1, p2, p3); } // 0x99D215B4
    static int _0xA6CFA220() { return invoke<int>(0xA6CFA220); } // 0xA6CFA220
    static const char* _0x0FE90DCB() { return invoke<const char*>(0x0FE90DCB); } // 0x0FE90DCB
-   static int _0x7716B12B() { return invoke<int>(0x7716B12B); }  // 0x7716B12B
+   static int _0x7716B12B() { return invoke<int>(0x7716B12B); } // 0x7716B12B
    static int CUTSCENE_MANAGER_LOAD_CUTSCENE(Any p0, Any p1, Any p2, Any p3, Any p4) { return invoke<int>(0xFD300D15, p0, p1, p2, p3, p4); } // 0xFD300D15
-   static int _0xEDF1D0B4() { return invoke<int>(0xEDF1D0B4); }  // 0xEDF1D0B4
+   static int _0xEDF1D0B4() { return invoke<int>(0xEDF1D0B4); } // 0xEDF1D0B4
    static int CUTSCENE_MANAGER_UNLOAD_CUTSCENE() { return invoke<int>(0xE7F781B8); } // 0xE7F781B8
    static int CUTSCENE_MANAGER_PLAY_CUTSCENE() { return invoke<int>(0x98A9AC9E); } // 0x98A9AC9E
    static int CUTSCENE_MANAGER_STOP_CUTSCENE(Any p0, Any p1) { return invoke<int>(0x9E6CAD1D, p0, p1); } // 0x9E6CAD1D
-   static int _0xA61FA36B() { return invoke<int>(0xA61FA36B); }// 0xA61FA36B
+   static int _0xA61FA36B() { return invoke<int>(0xA61FA36B); } // 0xA61FA36B
    static int _0xDE339CE1() { return invoke<int>(0xDE339CE1); } // 0xDE339CE1
    static int _0x82F80FEA(Any p0) { return invoke<int>(0x82F80FEA, p0); } // 0x82F80FEA
    static int _0xCBE7BE6A(Any p0) { return invoke<int>(0xCBE7BE6A, p0); } // 0xCBE7BE6A
@@ -1079,8 +1081,8 @@ namespace CUTSCENE
    static int CUTSCENE_MANAGER_GET_INITIAL_STREAMING_LOAD_SCENE_EXT(Any p0, Any p1) { return invoke<int>(0xD79C7D6A, p0, p1); } // 0xD79C7D6A
    static int _0x5C553565(Any p0, Any p1) { return invoke<int>(0x5C553565, p0, p1); } // 0x5C553565
    static void _0xB0479CB8(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5) { invoke<Void>(0xB0479CB8, p0, p1, p2, p3, p4, p5); } // 0xB0479CB8
-   static int _0x35DBDD67(Any p0, Any p1) { return invoke<int>(0x35DBDD67, p0, p1); } // 0x35DBDD67 //Overrode with in Cutscene
-   static int _0x250232CF(Any p0, Any p1) { return invoke<int>(0x250232CF, p0, p1); } // 0x250232CF //Overrode with in Cutscene
+   static int _0x35DBDD67(Any p0, Any p1) { return invoke<int>(0x35DBDD67, p0, p1); } // 0x35DBDD67
+   static int _0x250232CF(Any p0, Any p1) { return invoke<int>(0x250232CF, p0, p1); } // 0x250232CF
    static void _0x7007019D(Any p0, Any p1) { invoke<Void>(0x7007019D, p0, p1); } // 0x7007019D
    static int _0x24F97294() { return invoke<int>(0x24F97294); } // 0x24F97294
    static const char* _0xDE79FA4E() { return invoke<const char*>(0xDE79FA4E); } // 0xDE79FA4E
@@ -1099,7 +1101,7 @@ namespace DECAL
    static void _0x7BCE4845(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5, Any p6, Any p7, Any p8, Any p9, Any p10) { invoke<Void>(0x7BCE4845, p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10); } // 0x7BCE4845
    static int _0x9E54C297(Any p0, Any p1, float p2, float p3, float p4, float p5, float p6, float p7) { return invoke<int>(0x9E54C297, p0, p1, p2, p3, p4, p5, p6, p7); } // 0x9E54C297
    static void AT_FIRED_LAST(Any p0, Any p1, Any p2) { invoke<Void>(0x013A0D25, p0, p1, p2); } // 0x013A0D25
-   static void _0x1182C34F(Any p0) { invoke<Void>(0x1182C34F, p0); }// 0x1182C34F
+   static void _0x1182C34F(Any p0) { invoke<Void>(0x1182C34F, p0); } // 0x1182C34F
    static void _0xD0FB6AF0(Any p0, Any p1, Any p2, Any p3) { invoke<Void>(0xD0FB6AF0, p0, p1, p2, p3); } // 0xD0FB6AF0
    static void _0xC00F8181(Any p0, float p1) { invoke<Void>(0xC00F8181, p0, p1); } // 0xC00F8181
    static void _0x4897DD37(Any p0) { invoke<Void>(0x4897DD37, p0); } // 0x4897DD37
@@ -1129,7 +1131,7 @@ namespace DECAL
    static void _0x9D9E093E(Any p0) { invoke<Void>(0x9D9E093E, p0); } // 0x9D9E093E
    static int _0x32F2D6F1(Any p0) { return invoke<int>(0x32F2D6F1, p0); } // 0x32F2D6F1
    static void BURN_ACTOR(Any p0, Any p1, Any p2) { invoke<Void>(0xA257C16D, p0, p1, p2); } // 0xA257C16D
-   static int _0x3627F773(Any p0, int a2) { return invoke<int>(0x3627F773); } // 0x3627F773
+   static int _0x3627F773(Any p0, int a2) { return invoke<int>(0x3627F773, p0, a2); } // 0x3627F773
    static int _0x48123591(Any p0) { return invoke<int>(0x48123591, p0); } // 0x48123591
    static void _0xA0AE0C98(Any p0, Any p1) { invoke<Void>(0xA0AE0C98, p0, p1); } // 0xA0AE0C98
 }
@@ -1163,7 +1165,7 @@ namespace DLC
    static int _DLC_INIT() { return invoke<int>(0xEC86DB0E); } // 0xEC86DB0E
    static int _DLC_FRAGMENT(const char* p0) { return invoke<int>(0x57D9950B, p0); } // 0x57D9950B
    static int _DLC_CLIST(Any p0, Any p1) { return invoke<int>(0xF4D0807E, p0, p1); } // 0xF4D0807E
-   static BOOL _0x853F71F6(Any p0) { return invoke<int>(0x853F71F6, p0); } // 0x853F71F6
+   static BOOL _0x853F71F6(Any p0) { return invoke<BOOL>(0x853F71F6, p0); } // 0x853F71F6
 }
 
 namespace DOOR
@@ -1197,7 +1199,7 @@ namespace ELEMENT
    static int _0x7E0CDD87() { return invoke<int>(0x7E0CDD87); } // 0x7E0CDD87
    static int _0xE6C1DBD9(Any p0) { return invoke<int>(0xE6C1DBD9, p0); } // 0xE6C1DBD9
    static int _0x00EF33EF() { return invoke<int>(0x00EF33EF); } // 0x00EF33EF
-   static Any _0xDF505043(Any result) { return invoke<Any>(0xDF505043, result); }// 0xDF505043
+   static Any _0xDF505043(Any result) { return invoke<Any>(0xDF505043, result); } // 0xDF505043
    static void _0xE613AE52(float p0) { invoke<Void>(0xE613AE52, p0); } // 0xE613AE52
    static void _0x84F3DD81(float p0, float p1) { invoke<Void>(0x84F3DD81, p0, p1); } // 0x84F3DD81
    static Any _0xF55B50ED(Any result) { return invoke<Any>(0xF55B50ED, result); } // 0xF55B50ED
@@ -1222,7 +1224,7 @@ namespace EVENT
    static void _0x85D62384() { invoke<Void>(0x85D62384); } // 0x85D62384
    static void _0xFB227D11(Any p0) { invoke<Void>(0xFB227D11, p0); } // 0xFB227D11
    static int GET_EVENT_TIME(Any p0) { return invoke<int>(0x82112B85, p0); } // 0x82112B85
-   static int _GET_ITERATION_SET(int setId) { return invoke<int>(0xBC58F1EA, setId); }
+   static int _GET_ITERATION_SET(int setId) { return invoke<int>(0xBC58F1EA, setId); } // 0xBC58F1EA
    static int CREATE_EVENT_TRAP(Any p0, Any p1, Any p2) { return invoke<int>(0x24C18749, p0, p1, p2); } // 0x24C18749
    static void _0x88943B5B(Any p0, Any p1) { invoke<Void>(0x88943B5B, p0, p1); } // 0x88943B5B
    static int _0x3D2786E5(Any p0, float p1, float p2, float p3, float p4) { return invoke<int>(0x3D2786E5, p0, p1, p2, p3, p4); } // 0x3D2786E5
@@ -1292,7 +1294,7 @@ namespace FIRE
    static int _0x88863344() { return invoke<int>(0x88863344); } // 0x88863344
    static int _0xE7371670() { return invoke<int>(0xE7371670); } // 0xE7371670
    static int _0x03E2B631() { return invoke<int>(0x03E2B631); } // 0x03E2B631
-   static Any _0xCA840DBB(Any p0) { return invoke<Any>(0xCA840DBB, p0); }// 0xCA840DBB
+   static Any _0xCA840DBB(Any p0) { return invoke<Any>(0xCA840DBB, p0); } // 0xCA840DBB
    static int _0x4F3F3CA5() { return invoke<int>(0x4F3F3CA5); } // 0x4F3F3CA5
    static Any CREATE_FIRE_ON_OBJECT(Any p0) { return invoke<Any>(0xC587FA2B, p0); } // 0xC587FA2B
    static Any CREATE_FIRE_IN_VOLUME(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5, Any p6, Any p7, Any p8, Any p9) { return invoke<Any>(0xD4799325, p0, p1, p2, p3, p4, p5, p6, p7, p8, p9); } // 0xD4799325
@@ -1334,7 +1336,7 @@ namespace FIRE
    static int _0xDEE6523D(float p0, float p1, float p2, float p3) { return invoke<int>(0xDEE6523D, p0, p1, p2, p3); } // 0xDEE6523D
    static int COUNT_FLAMES_IN_VOLUME(Any p0) { return invoke<int>(0x3DD3E1EB, p0); } // 0x3DD3E1EB
    static int FIRE_ARE_ANY_FLAMES_IN_VOLUME(Any p0) { return invoke<int>(0x28DAED2A, p0); } // 0x28DAED2A
-   static int _CHEAT_BLAZING_GUNS(BOOL toggle) { return invoke<int>(0x3F67DEDB, toggle); }
+   static int _CHEAT_BLAZING_GUNS(BOOL toggle) { return invoke<int>(0x3F67DEDB, toggle); } // 0x3F67DEDB
 }
 
 namespace GAME
@@ -1343,7 +1345,7 @@ namespace GAME
    static int _0xFF0B53EF() { return invoke<int>(0xFF0B53EF); } // 0xFF0B53EF
    static int _0x6DE957C6() { return invoke<int>(0x6DE957C6); } // 0x6DE957C6
    static void SCRIPT_BREAKPOINT(Any p0) { invoke<Void>(0xA81DABA3, p0); } // 0xA81DABA3
-   static void _0x5AC72FCC(Any p0) { invoke<Void>(0x5AC72FCC, p0); } // 0x5AC72FCC Unused
+   static void _0x5AC72FCC(Any p0) { invoke<Void>(0x5AC72FCC, p0); } // 0x5AC72FCC
    static void _0x9FEFA743(Any p0) { invoke<Void>(0x9FEFA743, p0); } // 0x9FEFA743
    static const char* GET_SCRIPT_NAME() { return invoke<const char*>(0x0BC52445); } // 0x0BC52445
    static const char* GET_SHORT_SCRIPT_NAME() { return invoke<const char*>(0x960DB7A5); } // 0x960DB7A5
@@ -1360,11 +1362,11 @@ namespace GAME
    static int _0x4C48EA4D() { return invoke<int>(0x4C48EA4D); } // 0x4C48EA4D
    static int _0xD058BD70() { return invoke<int>(0xD058BD70); } // 0xD058BD70
    static int _0x26884138() { return invoke<int>(0x26884138); } // 0x26884138
-   static void RAND_SET_SEED(Any p0) { invoke<Void>(0xC0C6245E, p0); }  // 0xC0C6245E
+   static void RAND_SET_SEED(Any p0) { invoke<Void>(0xC0C6245E, p0); } // 0xC0C6245E
    static int RAND_INT_RANGE(int min, int max) { return invoke<int>(0xF8D0D165, min, max); } // 0xF8D0D165
-   static float RAND_FLOAT_RANGE(float min, float max) { return invoke<Any>(0xCA6229BF, min, max); } // 0xCA6229BF
-   static Any RAND_INT_RANGE_DIFFERENT(Any min, Any max, Any p2) { return invoke<float>(0x1D69F321, min, max, p2); } // 0x1D69F321
-   static Any RAND_FLOAT_GAUSSIAN(Any p0) { return invoke<float>(0x5D934CCB, p0); } // 0x5D934CCB
+   static float RAND_FLOAT_RANGE(float min, float max) { return invoke<float>(0xCA6229BF, min, max); } // 0xCA6229BF
+   static Any RAND_INT_RANGE_DIFFERENT(Any min, Any max, Any p2) { return invoke<Any>(0x1D69F321, min, max, p2); } // 0x1D69F321
+   static Any RAND_FLOAT_GAUSSIAN(Any p0) { return invoke<Any>(0x5D934CCB, p0); } // 0x5D934CCB
    static void FILE_START_PATH(Any p0) { invoke<Void>(0x973BC454, p0); } // 0x973BC454
    static void _0x63CDBB01(Any p0) { invoke<Void>(0x63CDBB01, p0); } // 0x63CDBB01
    static void FILE_END_PATH() { invoke<Void>(0x9A202E1B); } // 0x9A202E1B
@@ -1380,14 +1382,14 @@ namespace GAME
    static void _0xF76F2BB3(Any p0, Any p1, Any p2, Any p3) { invoke<Void>(0xF76F2BB3, p0, p1, p2, p3); } // 0xF76F2BB3
    static void _0x65DAA654(Any p0, Any p1, Any p2, Any p3, Any p4) { invoke<Void>(0x65DAA654, p0, p1, p2, p3, p4); } // 0x65DAA654
    static void _0x1BD78730(Any p0, Any p1, Any p2) { invoke<Void>(0x1BD78730, p0, p1, p2); } // 0x1BD78730
-   static int _0x141201A3(float p0, float p1, float p2, float p3, float p4, float p5, Any p6, Any p7, Any p8, Any p9, Any p10) { return invoke<int>(0x141201A3, p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10); }  // 0x141201A3
+   static int _0x141201A3(float p0, float p1, float p2, float p3, float p4, float p5, Any p6, Any p7, Any p8, Any p9, Any p10) { return invoke<int>(0x141201A3, p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10); } // 0x141201A3
    static float FABS(float value) { return invoke<float>(0xACF9A5E4, value); } // 0xACF9A5E4
    static int ABS(int value) { return invoke<int>(0x5AABFA97, value); } // 0x5AABFA97
    static float SIN_DEGREE(float value) { return invoke<float>(0x55842354, value); } // 0x55842354
    static float COS_DEGREE(float value) { return invoke<float>(0x430207A4, value); } // 0x430207A4
    static float TAN_DEGREE(float value) { return invoke<float>(0x9BD37A3D, value); } // 0x9BD37A3D
    static float ATAN_DEGREE(float value) { return invoke<float>(0x69BE2817, value); } // 0x69BE2817
-   static float ATAN2_DEGREE(float x, float y) { return invoke<float>(0x8A0D25F2, x, y); }// 0x8A0D25F2
+   static float ATAN2_DEGREE(float x, float y) { return invoke<float>(0x8A0D25F2, x, y); } // 0x8A0D25F2
    static float _0x9C40E671(float* p0) { return invoke<float>(0x9C40E671, p0); } // 0x9C40E671
    static float _0xADF7D54B(float* p0, float p1, float p2, float p3, float p4, float p5, float p6, float p7, float p8) { return invoke<float>(0xADF7D54B, p0, p1, p2, p3, p4, p5, p6, p7, p8); } // 0xADF7D54B
    static int _0x3DD1DC3F(Any p0, Any p1) { return invoke<int>(0x3DD1DC3F, p0, p1); } // 0x3DD1DC3F
@@ -1397,8 +1399,8 @@ namespace GAME
    static float _0xF83666A6() { return invoke<float>(0xF83666A6); } // 0xF83666A6
    static Any GET_SYSTEM_TIME() { return invoke<Any>(0x17CEE67A); } // 0x17CEE67A
    static int GET_TIMESTAMP() { return invoke<int>(0xD66B6C8E); } // 0xD66B6C8E
-   static void GET_UTC_TIME(int* year, int* month, int* day, int* hour, int* minute, int* second) { invoke<Void>(0xC589CD7D, year, month, day, hour, minute, second); }// 0xC589CD7D
-   static float _0x49F96787() { return invoke<float>(0x49F96787); }// 0x49F96787
+   static void GET_UTC_TIME(int* year, int* month, int* day, int* hour, int* minute, int* second) { invoke<Void>(0xC589CD7D, year, month, day, hour, minute, second); } // 0xC589CD7D
+   static float _0x49F96787() { return invoke<float>(0x49F96787); } // 0x49F96787
    static float GET_PROFILE_TIME() { return invoke<float>(0x6E189771); } // 0x6E189771
    static float GET_LAST_FRAME_TIME() { return invoke<float>(0x59466B4D); } // 0x59466B4D
    static void LOG_MESSAGE(const char* message) { invoke<Void>(0x676167C3, message); } // 0x676167C3
@@ -1427,14 +1429,14 @@ namespace GAME
    static int _0xEF4F4F20(Any p0) { return invoke<int>(0xEF4F4F20, p0); } // 0xEF4F4F20
    static int DEBUG_DRAW_VECTOR(Any p0, Any p1) { return invoke<int>(0xF7974EBA, p0, p1); } // 0xF7974EBA
    static void DEBUG_DRAW_LINE(Any p0, Any p1, Any p2, Any p3) { invoke<Void>(0x7C55C775, p0, p1, p2, p3); } // 0x7C55C775
-   static int DEBUG_DRAW_SPHERE(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5, Any p6) { return invoke<int>(0x4A1BAD30, p0, p1, p2, p4, p5, p6); } // 0x4A1BAD30
+   static int DEBUG_DRAW_SPHERE(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5, Any p6) { return invoke<int>(0x4A1BAD30, p0, p1, p2, p3, p4, p5, p6); } // 0x4A1BAD30
    static void DEBUG_DRAW_STRING() { invoke<Void>(0x993E45D8); } // 0x993E45D8
    static void _0x3C2D93C1(float x, float y, const char* text, float r, float g, float b, float a) { invoke<Void>(0x3C2D93C1, x, y, text, r, g, b, a); } // 0x3C2D93C1
    static void _0x73BE57AF(Any p0) { invoke<Void>(0x73BE57AF, p0); } // 0x73BE57AF
-   static int _0xD1D88EB8(Any p0) { return invoke<int>(0xD1D88EB8, p0); } // 0xD1D88EB8 Debug
-   static int _0x21E19CD5(Any p0) { return invoke<int>(0x21E19CD5, p0); } // 0x21E19CD5 Debug
-   static int _0x1B6FE39B(Any p0) { return invoke<int>(0x1B6FE39B, p0); } // 0x1B6FE39B Debug
-   static int _0xAAEBAC28(Any p0) { return invoke<int>(0xAAEBAC28, p0); } // 0xAAEBAC28 Debug
+   static int _0xD1D88EB8(Any p0) { return invoke<int>(0xD1D88EB8, p0); } // 0xD1D88EB8
+   static int _0x21E19CD5(Any p0) { return invoke<int>(0x21E19CD5, p0); } // 0x21E19CD5
+   static int _0x1B6FE39B(Any p0) { return invoke<int>(0x1B6FE39B, p0); } // 0x1B6FE39B
+   static int _0xAAEBAC28(Any p0) { return invoke<int>(0xAAEBAC28, p0); } // 0xAAEBAC28
    static int _0x913A5CB6() { return invoke<int>(0x913A5CB6); } // 0x913A5CB6
    static int _0xD34F7B3A() { return invoke<int>(0xD34F7B3A); } // 0xD34F7B3A
    static int ACTOR_NOTE_USAGE_CHEAT() { return invoke<int>(0x191658C0); } // 0x191658C0
@@ -1452,11 +1454,11 @@ namespace GAME
    static Any LOAD_GAME(Any p0) { return invoke<Any>(0x7C5901EF, p0); } // 0x7C5901EF
    static Any LOAD_SOFT_SAVE(Any p0) { return invoke<Any>(0x0234F932, p0); } // 0x0234F932
    static Any SAVE_GAME(Any p0) { return invoke<Any>(0x09C5D8D5, p0); } // 0x09C5D8D5
-   static void SAVE_SOFT_SAVE(Any p0) { invoke<Void>(0x1A3BAC68, p0); }// 0x1A3BAC68
-   static void _0xED40F27D(Any p0) { invoke<Void>(0xED40F27D); } // 0xED40F27D //Auto Save?
+   static void SAVE_SOFT_SAVE(Any p0) { invoke<Void>(0x1A3BAC68, p0); } // 0x1A3BAC68
+   static void _0xED40F27D(Any p0) { invoke<Void>(0xED40F27D, p0); } // 0xED40F27D
    static int _0x8C710D3E() { return invoke<int>(0x8C710D3E); } // 0x8C710D3E
    static int _0x17F34613(int p0) { return invoke<int>(0x17F34613, p0); } // 0x17F34613
-   static int _0x20CE8AA8(int p0, int p1, unsigned int p2, int p3, int p4) { return invoke<int>(0x20CE8AA8, p0, p1, p2, p3, p4); } // 0x20CE8AA8
+   static int _0x20CE8AA8(int p0, int p1, int p2, int p3, int p4) { return invoke<int>(0x20CE8AA8, p0, p1, p2, p3, p4); } // 0x20CE8AA8
    static int _0x8E867DDD(int p0) { return invoke<int>(0x8E867DDD, p0); } // 0x8E867DDD
    static int _0x6E79F939(int p0, int p1) { return invoke<int>(0x6E79F939, p0, p1); } // 0x6E79F939
    static int _0x3E647734(int p0, int p1, int p2) { return invoke<int>(0x3E647734, p0, p1, p2); } // 0x3E647734
@@ -1467,14 +1469,14 @@ namespace GAME
    static BOOL DOES_FILE_EXIST(Any p0) { return invoke<BOOL>(0xAABE1330, p0); } // 0xAABE1330
    static void _0xD44F7102() { invoke<Void>(0xD44F7102); } // 0xD44F7102
    static BOOL IS_DEV_BUILD() { return invoke<BOOL>(0x6D9AA768); } // 0x6D9AA768
-   static BOOL IS_PS3() { return invoke<BOOL>(0xA369B36F); }// 0xA369B36F
+   static BOOL IS_PS3() { return invoke<BOOL>(0xA369B36F); } // 0xA369B36F
    static BOOL _0xB427CB25() { return invoke<BOOL>(0xB427CB25); } // 0xB427CB25
    static int _IS_CACHE_PRIMED() { return invoke<int>(0x4BA92498); } // 0x4BA92498
    static BOOL IS_PLAYER_SIGNED_IN(Player player) { return invoke<BOOL>(0xC3C0F1F2, player); } // 0xC3C0F1F2
    static int GET_LOCAL_PLAYER_NAME() { return invoke<int>(0xA183D927); } // 0xA183D927
    static int _0x8BD88B43() { return invoke<int>(0x8BD88B43); } // 0x8BD88B43
    static int _0x1C7C0F86(int p0, int p1, int p2) { return invoke<int>(0x1C7C0F86, p0, p1, p2); } // 0x1C7C0F86
-   static int _0x836F42DA(int p0, int p1, int p2, int p3) { return invoke<int>(0x836F42DA, p0, p1, p2, p3); }
+   static int _0x836F42DA(int p0, int p1, int p2, int p3) { return invoke<int>(0x836F42DA, p0, p1, p2, p3); } // 0x836F42DA
    static void PAUSE_GAME(Any p0) { invoke<Void>(0x6F32A4E2, p0); } // 0x6F32A4E2
    static void UNPAUSE_GAME() { invoke<Void>(0x0BF2CD82); } // 0x0BF2CD82
    static BOOL IS_GAME_PAUSED() { return invoke<BOOL>(0x57246C02); } // 0x57246C02
@@ -1549,13 +1551,13 @@ namespace GRINGO
    static int _0xC426D16F(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5, Any p6, Any p7, Any p8, Any p9, Any p10, Any p11) { return invoke<int>(0xC426D16F, p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11); } // 0xC426D16F
    static int _0xF8F80679(Any p0, Any p1, Any p2) { return invoke<int>(0xF8F80679, p0, p1, p2); } // 0xF8F80679
    static void GRINGO_LOAD_ANIMATION(Any p0) { invoke<Void>(0x78B655B1, p0); } // 0x78B655B1
-   static void GRINGO_UNLOAD_ANIMATION(Any p0) { invoke<Void>(0x777842E3, p0); }// 0x777842E3
+   static void GRINGO_UNLOAD_ANIMATION(Any p0) { invoke<Void>(0x777842E3, p0); } // 0x777842E3
    static int _0x7D600F2F(Any p0, Any p1, Any p2) { return invoke<int>(0x7D600F2F, p0, p1, p2); } // 0x7D600F2F
    static int _0xBEF32D17(Any p0, Any p1, Any p2) { return invoke<int>(0xBEF32D17, p0, p1, p2); } // 0xBEF32D17
    static int _0x2C57A529(Any p0, Any p1, Any p2) { return invoke<int>(0x2C57A529, p0, p1, p2); } // 0x2C57A529
    static int _0x8EB5CE58(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0x8EB5CE58, p0, p1, p2, p3); } // 0x8EB5CE58
    static int _0x7A759A53(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0x7A759A53, p0, p1, p2, p3); } // 0x7A759A53
-   static BOOL _0x0DC149BD(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0x0DC149BD, p0, p1, p2, p3); }  // 0x0DC149BD
+   static BOOL _0x0DC149BD(Any p0, Any p1, Any p2, Any p3) { return invoke<BOOL>(0x0DC149BD, p0, p1, p2, p3); } // 0x0DC149BD
    static void GRINGO_ENABLE_PLAYER_CONTROL(Any p0, Any p1) { invoke<Void>(0x0B853FD5, p0, p1); } // 0x0B853FD5
    static int _GET_USE_COMPONENT(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5) { return invoke<int>(0xF8D9688A, p0, p1, p2, p3, p4, p5); } // 0xF8D9688A
    static void _GET_USE_COMPONENT_2(Any p0, Any p1, Any p2, Any p3, Any p4) { invoke<Void>(0x80317230, p0, p1, p2, p3, p4); } // 0x80317230
@@ -1613,7 +1615,7 @@ namespace GRINGO
    static void GRINGO_SET_COMPONENT_USER(Any p0, Any p1) { invoke<Void>(0x94F442D0, p0, p1); } // 0x94F442D0
    static int _0x15A0E28B(Any p0) { return invoke<int>(0x15A0E28B, p0); } // 0x15A0E28B
    static void _0x90FBBB8B(Any p0) { invoke<Void>(0x90FBBB8B, p0); } // 0x90FBBB8B
-   static int _0x0208A8E0(Any p0, Any p1) { return invoke<int>(0x0208A8E0, p0, p1); } // 0x0208A8E0 
+   static int _0x0208A8E0(Any p0, Any p1) { return invoke<int>(0x0208A8E0, p0, p1); } // 0x0208A8E0
    static int _0x217B4264(Any p0, Any p1, Any p2) { return invoke<int>(0x217B4264, p0, p1, p2); } // 0x217B4264
    static int _0x5C11B011(Any p0, Any p1) { return invoke<int>(0x5C11B011, p0, p1); } // 0x5C11B011
    static int _0x5F516FC3(Any p0) { return invoke<int>(0x5F516FC3, p0); } // 0x5F516FC3
@@ -1627,9 +1629,9 @@ namespace GRINGO
    static int ATTACH_PROP_TO_ANIM(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5) { return invoke<int>(0x0436C0BF, p0, p1, p2, p3, p4, p5); } // 0x0436C0BF
    static int _0x4DB7C61C(Any p0, Any p1, Any p2, Any p3, Any p4) { return invoke<int>(0x4DB7C61C, p0, p1, p2, p3, p4); } // 0x4DB7C61C
    static int _0xB96874B4(Any p0) { return invoke<int>(0xB96874B4, p0); } // 0xB96874B4
-   static int ATTACH_SLOT_FROM_STRING(Any p0) { return invoke<int>(0x4A61BD63); } // 0x4A61BD63
+   static int ATTACH_SLOT_FROM_STRING(Any p0) { return invoke<int>(0x4A61BD63, p0); } // 0x4A61BD63
    static int _0xADBF3ADF(Any p0) { return invoke<int>(0xADBF3ADF, p0); } // 0xADBF3ADF
-   static int _0x721FC9A4(Any p0) { return invoke<int>(0x721FC9A4, p0); }  // 0x721FC9A4
+   static int _0x721FC9A4(Any p0) { return invoke<int>(0x721FC9A4, p0); } // 0x721FC9A4
    static int _0x87BA5FE9(Any p0, Any p1) { return invoke<int>(0x87BA5FE9, p0, p1); } // 0x87BA5FE9
    static int _GET_ANIM_ACT_ROOT_NODE(Any p0) { return invoke<int>(0x6263F909, p0); } // 0x6263F909
    static int _IS_SUBNODE_PLAYING_BY_HASH(Any p0, Any p1, Any p2) { return invoke<int>(0xB555A648, p0, p1, p2); } // 0xB555A648
@@ -1650,7 +1652,7 @@ namespace GRINGO
    static int GET_GRINGO_STRUCT_ATTR(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0xFA22A365, p0, p1, p2, p3); } // 0xFA22A365
    static int GET_GRINGO_FLOAT_ATTR(Any p0, Any p1, Any p2) { return invoke<int>(0x2EFD2B55, p0, p1, p2); } // 0x2EFD2B55
    static int GET_GRINGO_VECTOR_ATTR(Any p0, Any p1, Any p2) { return invoke<int>(0x5851C408, p0, p1, p2); } // 0x5851C408
-   static int _0x1F74EE6C(Any p0, Any p1, Any p2) { return invoke<int>(0x1F74EE6C, p0, p1, p2); }  // 0x1F74EE6C
+   static int _0x1F74EE6C(Any p0, Any p1, Any p2) { return invoke<int>(0x1F74EE6C, p0, p1, p2); } // 0x1F74EE6C
    static int _0x7E4681E8(Any p0, Any p1, Any p2) { return invoke<int>(0x7E4681E8, p0, p1, p2); } // 0x7E4681E8
    static int GET_GRINGO_STRING_ATTR(Any p0, Any p1, Any p2) { return invoke<int>(0x6BA58AC7, p0, p1, p2); } // 0x6BA58AC7
    static int SET_GRINGO_BOOL_ATTR(Any p0, Any p1, Any p2) { return invoke<int>(0xCF6822D7, p0, p1, p2); } // 0xCF6822D7
@@ -1674,7 +1676,7 @@ namespace GRINGO
    static int _0xBED45A9A(Any p0) { return invoke<int>(0xBED45A9A, p0); } // 0xBED45A9A
    static int GRINGO_GET_ATTRIBUTE_HASH(Any p0) { return invoke<int>(0xD2680017, p0); } // 0xD2680017
    static int _0xF0991C9F(Any p0, Any p1) { return invoke<int>(0xF0991C9F, p0, p1); } // 0xF0991C9F
-   static int _0xD7BB1792(Any p0, Any p1) { return invoke<int>(0xD7BB1792, p0, p1); } // 0xD7BB1792 //NO_STRING
+   static int _0xD7BB1792(Any p0, Any p1) { return invoke<int>(0xD7BB1792, p0, p1); } // 0xD7BB1792
    static int _0xF573B7DE(Any p0, Any p1) { return invoke<int>(0xF573B7DE, p0, p1); } // 0xF573B7DE
    static int _GET_ATTRIBUTE_TYPE_BY_HANDLE(Any p0) { return invoke<int>(0xBF322F5C, p0); } // 0xBF322F5C
 }
@@ -1683,11 +1685,11 @@ namespace GUI
 {
    static int GUI_MAKE_WINDOW(GUIWindow parent, Any p1, const char* windowName, const char* p3) { return invoke<int>(0xA20246AB, parent, p1, windowName, p3); } // 0xA20246AB
    static int GUI_MAKE_TEXT(int guiHandle, float x, float y, float z, const char* menuTitle, const char* gxtText, float p4) { return invoke<int>(0x68FC1001, guiHandle, x, y, z, menuTitle, gxtText, p4); } // 0x68FC1001
-   static int GUI_MAKE_OVERLAY(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5) { return invoke<Any>(0xA2A68BAD, p0, p1, p2, p3, p4, p5); } // 0xA2A68BAD
+   static int GUI_MAKE_OVERLAY(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5) { return invoke<int>(0xA2A68BAD, p0, p1, p2, p3, p4, p5); } // 0xA2A68BAD
    static GUIWindow _GUI_GET_WINDOW(int guiHandle, const char* windowName) { return invoke<GUIWindow>(0xF6207DF5, guiHandle, windowName); } // 0xF6207DF5
    static int _0xA7FF2899(Any p0, Any p1, Any p2) { return invoke<int>(0xA7FF2899, p0, p1, p2); } // 0xA7FF2899
    static int GUI_CLOSE_WINDOW(Any p0) { return invoke<int>(0xFDED9B11, p0); } // 0xFDED9B11
-   static int GUI_WINDOW_VALID(GUIWindow p0) { return invoke<int>(0xA2E6FECB, p0); }
+   static int GUI_WINDOW_VALID(GUIWindow p0) { return invoke<int>(0xA2E6FECB, p0); } // 0xA2E6FECB
    static int GUI_SET_TEXT(int textHandle, const char* menuName) { return invoke<int>(0x5F3A1C35, textHandle, menuName); } // 0x5F3A1C35
    static int GUI_SET_TEXT_JUSTIFY(int textHandle, int JustifyType) { return invoke<int>(0x9CC6F183, textHandle, JustifyType); } // 0x9CC6F183
    static int GUI_SET_TEXT_COLOR(int textHandle, float R, float G, float B, float A) { return invoke<int>(0x7600ED4B, textHandle, R, G, B, A); } // 0x7600ED4B
@@ -1695,7 +1697,7 @@ namespace GUI
    static int _0xB498108A() { return invoke<int>(0xB498108A); } // 0xB498108A
    static int _0xC7DEB717() { return invoke<int>(0xC7DEB717); } // 0xC7DEB717
    static int _0xD019FF37(Any p0) { return invoke<int>(0xD019FF37, p0); } // 0xD019FF37
-   static int _0x4803C120(float p0, Any p1, Any p2, Any p3, Any p4, Any p5, Any p6) { return invoke<int>(0x4803C120, p0, p1, p2, p4, p5, p6); } // 0x4803C120
+   static int _0x4803C120(float p0, Any p1, Any p2, Any p3, Any p4, Any p5, Any p6) { return invoke<int>(0x4803C120, p0, p1, p2, p3, p4, p5, p6); } // 0x4803C120
    static int _CREATE_FONT(Any p0, Any p1, Any p2) { return invoke<int>(0xFA6BDD8E, p0, p1, p2); } // 0xFA6BDD8E
    static const char* _0x47EF426D(const char* p0) { return invoke<const char*>(0x47EF426D, p0); } // 0x47EF426D
    static int _0x52C10147(Any p0) { return invoke<int>(0x52C10147, p0); } // 0x52C10147
@@ -1707,7 +1709,7 @@ namespace GUI
 
 namespace HOLSTER
 {
-   static Any ACTOR_HOLSTER_WEAPON(Any p0, Any p1) { return invoke<Any>(0xFE9903CC, p0, p1); } // FE9903CC
+   static Any ACTOR_HOLSTER_WEAPON(Any p0, Any p1) { return invoke<Any>(0xFE9903CC, p0, p1); } // 0xFE9903CC
    static int _0x7957CA4F(Any p0, Any p1, Any p2) { return invoke<int>(0x7957CA4F, p0, p1, p2); } // 0x7957CA4F
    static int _END_FORCE_HOLSTER(Any p0, Any p1, Any p2, Any p3, Any p4) { return invoke<int>(0x231E7034, p0, p1, p2, p3, p4); } // 0x231E7034
    static int _DRAW_LAST_WEAPON(Any p0, Any p1, Any p2, Any p3, Any p4) { return invoke<int>(0x8FFDCE5C, p0, p1, p2, p3, p4); } // 0x8FFDCE5C
@@ -1730,7 +1732,7 @@ namespace HUD
    static void UI_HIDE_PROMPT(Any p0) { invoke<Void>(0x545EC471, p0); } // 0x545EC471
    static int FLASH_SET_BOOL(Any p0, Any p1, const char* p2) { return invoke<int>(0x34F03EC7, p0, p1, p2); } // 0x34F03EC7
    static int FLASH_SET_INT(const char* scaleformName, const char* scaleformVarName, int value) { return invoke<int>(0x4778A580, scaleformName, scaleformVarName, value); } // 0x4778A580
-   static int FLASH_SET_FLOAT(Any p0, Any p1, float p2) { return invoke<float>(0xDF024C94, p0, p1, p2); } // 0xDF024C94
+   static int FLASH_SET_FLOAT(Any p0, Any p1, float p2) { return invoke<int>(0xDF024C94, p0, p1, p2); } // 0xDF024C94
    static int _0x8A2A1A51(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0x8A2A1A51, p0, p1, p2, p3); } // 0x8A2A1A51
    static int FLASH_SET_STRING(const char* scaleformName, const char* scaleformVarName, Any p2, Any p3) { return invoke<int>(0x9E31EEA7, scaleformName, scaleformVarName, p2, p3); } // 0x9E31EEA7
    static int _0x35CDFDC5(Any p0, Any p1, Any p2, Any p3, Any p4) { return invoke<int>(0x35CDFDC5, p0, p1, p2, p3, p4); } // 0x35CDFDC5
@@ -1764,27 +1766,27 @@ namespace HUD
    static void HUD_CLEAR_HELP_QUEUE() { invoke<Void>(0x495164AD); } // 0x495164AD
    static const char* SET_RADAR_STREAMING(const char* p0) { return invoke<const char*>(0x0A07FE74, p0); } // 0x0A07FE74
    static int ADD_BLIP_FOR_ACTOR(Any p0, Any p1, Any p2, Any p3, Any p4) { return invoke<int>(0xEFB9362F, p0, p1, p2, p3, p4); } // 0xEFB9362F
-   static int ADD_BLIP_FOR_OBJECT(Any p0, Any p1, Any p2, Any p3, Any p4) { return invoke<int>(0x0E5372EC, p0, p1, p2, p3, p4); }// 0x0E5372EC
+   static int ADD_BLIP_FOR_OBJECT(Any p0, Any p1, Any p2, Any p3, Any p4) { return invoke<int>(0x0E5372EC, p0, p1, p2, p3, p4); } // 0x0E5372EC
    static Any ADD_BLIP_FOR_COORD(Any p0, Any p1, Any p2, Any p3, Any p4) { return invoke<Any>(0xC6F43D0E, p0, p1, p2, p3, p4); } // 0xC6F43D0E
    static int CHANGE_BLIP_ICON(Any p0, Any p1) { return invoke<int>(0xABD125F6, p0, p1); } // 0xABD125F6
    static int SET_BLIP_POS(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0xB2EAF8DD, p0, p1, p2, p3); } // 0xB2EAF8DD
    static void SET_BLIP_SCALE(Any p0, Any p1, Any p2, Any p3, Any p4) { invoke<Void>(0x1E6EC434, p0, p1, p2, p3, p4); } // 0x1E6EC434
    static void SET_BLIP_COLOR(Any p0, Any p1, Any p2, Any p3, Any p4) { invoke<Void>(0xA2B8A736, p0, p1, p2, p3, p4); } // 0xA2B8A736
-   static void SET_BLIP_PRIORITY(Any p0, Any p1) { invoke<Void>(0xCE87DA6F, p0, p1); }// 0xCE87DA6F
+   static void SET_BLIP_PRIORITY(Any p0, Any p1) { invoke<Void>(0xCE87DA6F, p0, p1); } // 0xCE87DA6F
    static void SET_BLIP_BLINK(Any p0, Any p1, Any p2, Any p3) { invoke<Void>(0x04B8C8C6, p0, p1, p2, p3); } // 0x04B8C8C6
    static void SET_BLIP_FLAG(Any p0, Any p1, Any p2) { invoke<Void>(0xA9A01C70, p0, p1, p2); } // 0xA9A01C70
    static void SET_BLIP_VISIBLE(Any p0, Any p1) { invoke<Void>(0x9318D3D2, p0, p1); } // 0x9318D3D2
-   static Blip IS_BLIP_VISIBLE(Blip p0) { return invoke<Blip>(0x1E7A6623, p0); }// 0x1E7A6623
+   static Blip IS_BLIP_VISIBLE(Blip p0) { return invoke<Blip>(0x1E7A6623, p0); } // 0x1E7A6623
    static BOOL IS_BLIP_VALID(Any p0) { return invoke<BOOL>(0xDCC10BA9, p0); } // 0xDCC10BA9
-   static void REMOVE_BLIP(Blip* blip) { invoke<Void>(0xD8C3C1CD, *blip); } // 0xD8C3C1CD
+   static void REMOVE_BLIP(Blip* blip) { invoke<Void>(0xD8C3C1CD, blip); } // 0xD8C3C1CD
    static int _0x1449EE9E(Any p0) { return invoke<int>(0x1449EE9E, p0); } // 0x1449EE9E
-   static Blip GET_BLIP_ON_OBJECT(Object p0) { return invoke<Blip>(0xE3E30992, p0); }// 0xE3E30992
+   static Blip GET_BLIP_ON_OBJECT(Object p0) { return invoke<Blip>(0xE3E30992, p0); } // 0xE3E30992
    static int GET_BLIP_ICON(Any p0) { return invoke<int>(0xEE4F4B7D, p0); } // 0xEE4F4B7D
    static int SET_CURRENT_MAP(Any p0) { return invoke<int>(0x014C7C29, p0); } // 0x014C7C29
    static void SET_STAMINA_BLINK(Any p0) { invoke<Void>(0x39F2E5F1, p0); } // 0x39F2E5F1
    static void SET_DEADEYE_BLINK(Any p0) { invoke<Void>(0xA543B120, p0); } // 0xA543B120
    static void _0x7FF20D84(Any p0) { invoke<Void>(0x7FF20D84, p0); } // 0x7FF20D84
-   static void _0x364450B1(Any p0) { invoke<Void>(0x364450B1, p0); }  // 0x364450B1
+   static void _0x364450B1(Any p0) { invoke<Void>(0x364450B1, p0); } // 0x364450B1
    static void _0xB4614D11(Any p0, Any p1) { invoke<Void>(0xB4614D11, p0, p1); } // 0xB4614D11
    static Any GET_RADAR_RADIUS() { return invoke<Any>(0x6B33CBCC); } // 0x6B33CBCC
    static void _0x33CE49C9() { invoke<Void>(0x33CE49C9); } // 0x33CE49C9
@@ -1794,12 +1796,12 @@ namespace HUD
    static void _0x1E98AFEC(Any p0, Any p1) { invoke<Void>(0x1E98AFEC, p0, p1); } // 0x1E98AFEC
    static void _0xFF3DB575(Any p0, Any p1) { invoke<Void>(0xFF3DB575, p0, p1); } // 0xFF3DB575
    static int _0xD76F1E9A(Any p0) { return invoke<int>(0xD76F1E9A, p0); } // 0xD76F1E9A
-   static void SET_BLIP_IMPAIRMENT_MASK(Any p0, Any p1) { invoke<Void>(0xBC05EBB3, p0, p1); }// 0xBC05EBB3
+   static void SET_BLIP_IMPAIRMENT_MASK(Any p0, Any p1) { invoke<Void>(0xBC05EBB3, p0, p1); } // 0xBC05EBB3
    static void _0xCE79F8E2(Any p0, Any p1) { invoke<Void>(0xCE79F8E2, p0, p1); } // 0xCE79F8E2
    static void _0xFBA76D7E(Any p0, Any p1) { invoke<Void>(0xFBA76D7E, p0, p1); } // 0xFBA76D7E
    static void _0x6077F3AE(Any p0, Any p1) { invoke<Void>(0x6077F3AE, p0, p1); } // 0x6077F3AE
    static void SET_BLIP_NAME(Any p0, Any p1) { invoke<Void>(0xDC249B12, p0, p1); } // 0xDC249B12
-   static void CLEAR_REGIONS() { invoke<Void>(0xB1DAEF0C); }  // 0xB1DAEF0C
+   static void CLEAR_REGIONS() { invoke<Void>(0xB1DAEF0C); } // 0xB1DAEF0C
    static int APPEND_REGION(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5, Any p6) { return invoke<int>(0x95666EE0, p0, p1, p2, p3, p4, p5, p6); } // 0x95666EE0
    static void _0x970AC1F7(Any p0, Any p1) { invoke<Void>(0x970AC1F7, p0, p1); } // 0x970AC1F7
    static int _0xF5B7B208() { return invoke<int>(0xF5B7B208); } // 0xF5B7B208
@@ -1813,8 +1815,8 @@ namespace HUD
    static int _0xE78A0469(Any p0) { return invoke<int>(0xE78A0469, p0); } // 0xE78A0469
    static void _0x02755628(Any p0, Any p1) { invoke<Void>(0x02755628, p0, p1); } // 0x02755628
    static void SET_STAT_MESSAGE(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5, Any p6, Any p7, Any p8, Any p9, Any p10, Any p11, Any p12) { invoke<Void>(0x73DA6AF1, p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12); } // 0x73DA6AF1
-   static void CLEAR_STAT_MESSAGE() { invoke<Void>(0x906E0138); }  // 0x906E0138
-   static int _0x919142BE() { return invoke<int>(0x919142BE); }// 0x919142BE
+   static void CLEAR_STAT_MESSAGE() { invoke<Void>(0x906E0138); } // 0x906E0138
+   static int _0x919142BE() { return invoke<int>(0x919142BE); } // 0x919142BE
    static void HUD_TIMER_DISPLAY(Any p0) { invoke<Void>(0x149F9E46, p0); } // 0x149F9E46
    static int HUD_TIMER_GET() { return invoke<int>(0x1C6919EF); } // 0x1C6919EF
    static int HUD_TIMER_SET(float p0) { return invoke<int>(0xB6A24203, p0); } // 0xB6A24203
@@ -1849,7 +1851,7 @@ namespace HUD
    static void _0x4486E8C7() { invoke<Void>(0x4486E8C7); } // 0x4486E8C7
    static void _0x175CD937(Any p0, Any p1, Any p2, Any p3) { invoke<Void>(0x175CD937, p0, p1, p2, p3); } // 0x175CD937
    static void _0x47D2DE08(Any p0, Any p1) { invoke<Void>(0x47D2DE08, p0, p1); } // 0x47D2DE08
-   static void SET_GPS_PATH(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5, Any p6, Any p7, Any p8) { invoke<Void>(p0, p1, p2, p3, p4, p5, p6, p7, p8); } // 0xD82F910C
+   static void SET_GPS_PATH(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5, Any p6, Any p7, Any p8) { invoke<Void>(0xD82F910C, p0, p1, p2, p3, p4, p5, p6, p7, p8); } // 0xD82F910C
    static int _0xAA322DFC(Any p0) { return invoke<int>(0xAA322DFC, p0); } // 0xAA322DFC
    static void CLEAR_GPS_PATH(Any p0) { invoke<Void>(0xD077D8B6, p0); } // 0xD077D8B6
    static int _0x82F63365(Any p0) { return invoke<int>(0x82F63365, p0); } // 0x82F63365
@@ -1914,8 +1916,8 @@ namespace JOURNAL
    static int CLEAR_JOURNAL_ENTRY_DETAIL_LIST(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0xD0567D03, p0, p1, p2, p3); } // 0xD0567D03
    static int GET_JOURNAL_ENTRY_NUM_DETAILS(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0xCF3A69FC, p0, p1, p2, p3); } // 0xCF3A69FC
    static int GET_JOURNAL_ENTRY_DETAIL_HASH_BY_INDEX(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0x1630EFC5, p0, p1, p2, p3); } // 0x1630EFC5
-   static int  GET_JOURNAL_ENTRY_DETAIL_STYLE_BY_HASH(Any p0, Any p1, Any p2, Any p3, Any p4) { return invoke<int>(0xEBC9C2FD, p0, p1, p2, p3, p4); }// 0xEBC9C2FD
-   static int SET_JOURNAL_ENTRY_DETAIL_STYLE(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0x539D0404, p0, p1, p2, p3); }// 0x539D0404
+   static int GET_JOURNAL_ENTRY_DETAIL_STYLE_BY_HASH(Any p0, Any p1, Any p2, Any p3, Any p4) { return invoke<int>(0xEBC9C2FD, p0, p1, p2, p3, p4); } // 0xEBC9C2FD
+   static int SET_JOURNAL_ENTRY_DETAIL_STYLE(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0x539D0404, p0, p1, p2, p3); } // 0x539D0404
    static int _SET_JOURNAL_ENTRY_DETAIL_STYLE2(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0x5209C0C0, p0, p1, p2, p3); } // 0x5209C0C0
    static BOOL IS_JOURNAL_ENTRY_TARGETED(Any p0, Any p1, Any p2, Any p3) { return invoke<BOOL>(0xF0C4E96F, p0, p1, p2, p3); } // 0xF0C4E96F
    static int GET_JOURNAL_ENTRY_TYPE(Any p0, Any p1, Any p2, Any p3, Any p4) { return invoke<int>(0xF6FEC269, p0, p1, p2, p3, p4); } // 0xF6FEC269
@@ -1925,11 +1927,11 @@ namespace JOURNAL
    static int TARGET_JOURNAL_ENTRY(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0xC3DC9490, p0, p1, p2, p3); } // 0xC3DC9490
    static int SET_JOURNAL_ENTRY_UPDATED(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0xCD4633BD, p0, p1, p2, p3); } // 0xCD4633BD
    static int SET_JOURNAL_ENTRY_TROPHY(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0x5CB9D376, p0, p1, p2, p3); } // 0x5CB9D376
-   static int DEACTIVATE_JOURNAL_ENTRY(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0x196A1EDE, p0, p1, p2, p3); }// 0x196A1EDE
+   static int DEACTIVATE_JOURNAL_ENTRY(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0x196A1EDE, p0, p1, p2, p3); } // 0x196A1EDE
    static int SET_JOURNAL_ENTRY_PROGRESS(Any p0, Any p1, Any p2, Any p3, float p4) { return invoke<int>(0x5DC073DE, p0, p1, p2, p3, p4); } // 0x5DC073DE
    static float GET_JOURNAL_ENTRY_PROGRESS(Any p0, Any p1, Any p2, Any p3) { return invoke<float>(0xF2C1D690, p0, p1, p2, p3); } // 0xF2C1D690
    static int SET_JOURNAL_ENTRY_DISALLOW_TRACKING(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0xF7687D41, p0, p1, p2, p3); } // 0xF7687D41
-   static BOOL GET_JOURNAL_ENTRY_DISALLOW_TRACKING(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0x93CA45DE, p0, p1, p2, p3); } // 0x93CA45DE
+   static BOOL GET_JOURNAL_ENTRY_DISALLOW_TRACKING(Any p0, Any p1, Any p2, Any p3) { return invoke<BOOL>(0x93CA45DE, p0, p1, p2, p3); } // 0x93CA45DE
    static int SET_JOURNAL_ENTRY_CURRENT_OBJECTIVE(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0x2AA8E2FA, p0, p1, p2, p3); } // 0x2AA8E2FA
    static int GET_LAST_NOTE_OBJECTIVE(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0xDC28C12F, p0, p1, p2, p3); } // 0xDC28C12F
    static int APPEND_JOURNAL_NOTE(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0x2B969E73, p0, p1, p2, p3); } // 0x2B969E73
@@ -1965,7 +1967,7 @@ namespace LAYOUT
 {
    static Any _GET_NUM_SCRIPTS_ACTIVE(Hash p0) { return invoke<Any>(0x0B396DFF, p0); } // 0x0B396DFF
    static void _0x24F3A0DB(Any p0) { invoke<Void>(0x24F3A0DB, p0); } // 0x24F3A0DB
-   static int  _0x26011C78(Any p0) { return invoke<int>(0x26011C78, p0); } // 0x26011C78
+   static int _0x26011C78(Any p0) { return invoke<int>(0x26011C78, p0); } // 0x26011C78
    static int _0xC8C0C708(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5) { return invoke<int>(0xC8C0C708, p0, p1, p2, p3, p4, p5); } // 0xC8C0C708
    static int _0x9A756A72(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5, Any p6) { return invoke<int>(0x9A756A72, p0, p1, p2, p3, p4, p5, p6); } // 0x9A756A72
    static BOOL IS_LAYOUTREF_VALID(Layout layout) { return invoke<BOOL>(0xFC8E55ED, layout); } // 0xFC8E55ED
@@ -1992,7 +1994,7 @@ namespace LAYOUT
    static Any GET_OBJECT_FROM_VOLUME(int* p0, Any p1) { return invoke<Any>(0xFADF0B96, p0, p1); } // 0xFADF0B96
    static Any GET_OBJECT_FROM_PERS_CHAR(int* p0, Any p1) { return invoke<Any>(0x35B5587D, p0, p1); } // 0x35B5587D
    static Any GET_OBJECT_FROM_SQUAD(int* p0, Any p1) { return invoke<Any>(0xEDA897FA, p0, p1); } // 0xEDA897FA
-   static Any GET_OBJECT_FROM_CRIME(int* p0, Any p1) { return invoke<Any>(0x831338D9, p0, p1); }  // 0x831338D9
+   static Any GET_OBJECT_FROM_CRIME(int* p0, Any p1) { return invoke<Any>(0x831338D9, p0, p1); } // 0x831338D9
    static Any GET_OBJECT_FROM_PHYSINST(int* p0, Any p1) { return invoke<Any>(0x0550E178, p0, p1); } // 0x0550E178
    static int GET_ACTOR_FROM_OBJECT(Any p0) { return invoke<int>(0x34F0AD96, p0); } // 0x34F0AD96
    static int _0x502DAC62(Any p0) { return invoke<int>(0x502DAC62, p0); } // 0x502DAC62
@@ -2020,9 +2022,9 @@ namespace LAYOUT
    static int _0x66A8AF91(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5, Any p6, Any p7, Any p8) { return invoke<int>(0x66A8AF91, p0, p1, p2, p3, p4, p5, p6, p7, p8); } // 0x66A8AF91
    static int _0x80FB8BDE(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5, Any p6, Any p7, Any p8) { return invoke<int>(0x80FB8BDE, p0, p1, p2, p3, p4, p5, p6, p7, p8); } // 0x80FB8BDE
    static int _0x779267C3(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5, Any p6, Any p7, Any p8) { return invoke<int>(0x779267C3, p0, p1, p2, p3, p4, p5, p6, p7, p8); } // 0x779267C3
-   static Object CREATE_PROP_IN_LAYOUT(Layout p0, const char* p1, const char* p2, Vector3 p3, Vector3 p4, BOOL p5) { return invoke<Object>(0xE351587D, p0, p1, p2, p3, p4, p5); }	// 0xE351587D
+   static Object CREATE_PROP_IN_LAYOUT(Layout p0, const char* p1, const char* p2, Vector3 p3, Vector3 p4, BOOL p5) { return invoke<Object>(0xE351587D, p0, p1, p2, p3, p4, p5); } // 0xE351587D
    static int _0xD92BA5B6(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5, Any p6, Any p7, Any p8, Any p9) { return invoke<int>(0xD92BA5B6, p0, p1, p2, p3, p4, p5, p6, p7, p8, p9); } // 0xD92BA5B6
-   static Any _0xAF4F1910(Any p0, Any p1) { return invoke<Any>(0xAF4F1910, p0, p1); }// 0xAF4F1910
+   static Any _0xAF4F1910(Any p0, Any p1) { return invoke<Any>(0xAF4F1910, p0, p1); } // 0xAF4F1910
    static int _0xB20CA4DF(int* p0, Any p1, Any p2, Any p3, float p4, float p5, float p6, float p7, float p8, float p9, float p10) { return invoke<int>(0xB20CA4DF, p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10); } // 0xB20CA4DF
    static int _0x80B8A1BE(Any p0, Any p1, Any p2) { return invoke<int>(0x80B8A1BE, p0, p1, p2); } // 0x80B8A1BE
    static int _0xB6709FF4(Any p0, Any p1, Any p2) { return invoke<int>(0xB6709FF4, p0, p1, p2); } // 0xB6709FF4
@@ -2067,7 +2069,7 @@ namespace LAYOUT
    static BOOL IS_OBJECTSET_VALID(Any p0) { return invoke<BOOL>(0x552189FD, p0); } // 0x552189FD
    static int _0x43FBBDE1(Any p0, Any p1) { return invoke<int>(0x43FBBDE1, p0, p1); } // 0x43FBBDE1
    static int GET_OBJECTSET_SIZE(Any p0) { return invoke<int>(0xE09DE8A0, p0); } // 0xE09DE8A0
-   static int* GET_OBJECT_FROM_OBJECTSET(Any p0, Any p1) { return invoke<int*>(0xBF680846, p0, p1); }  // 0xBF680846
+   static int* GET_OBJECT_FROM_OBJECTSET(Any p0, Any p1) { return invoke<int*>(0xBF680846, p0, p1); } // 0xBF680846
    static int _0x2CB3B980(Any p0) { return invoke<int>(0x2CB3B980, p0); } // 0x2CB3B980
    static int _0x50D39153(Any p0, Any p1) { return invoke<int>(0x50D39153, p0, p1); } // 0x50D39153
    static BOOL IS_OBJECT_IN_OBJECTSET(Any p0, Any p1) { return invoke<BOOL>(0x0114FCBD, p0, p1); } // 0x0114FCBD
@@ -2076,14 +2078,14 @@ namespace LAYOUT
    static void DISBAND_OBJECTSET(Any p0) { invoke<Void>(0x179A07DD, p0); } // 0x179A07DD
    static void DESTROY_OBJECTSET(Any p0) { invoke<Void>(0x3A71A589, p0); } // 0x3A71A589
    static int SET_CORPSE_PERMANENT(Any p0, Any p1) { return invoke<int>(0x5720BF8A, p0, p1); } // 0x5720BF8A
-   static BOOL _0x44C07DA5(unsigned int p0) { return invoke<BOOL>(0x44C07DA5, p0); } // 0x44C07DA5
-   static int _0x5F66B23E(unsigned int p0, unsigned int p1) { return invoke<int>(0x5F66B23E, p0, p1); } // 0x5F66B23E
+   static BOOL _0x44C07DA5(int p0) { return invoke<BOOL>(0x44C07DA5, p0); } // 0x44C07DA5
+   static int _0x5F66B23E(int p0, int p1) { return invoke<int>(0x5F66B23E, p0, p1); } // 0x5F66B23E
    static BOOL IS_OBJECT_IN_VOLUME(Any p0, Any p1) { return invoke<BOOL>(0x2ECF04F3, p0, p1); } // 0x2ECF04F3
    static int _0xCB3F7DA5(int* p0, float p1, float p2, float p3, float p4, int p5, int p6, int p7, int p8, char p9) { return invoke<int>(0xCB3F7DA5, p0, p1, p2, p3, p4, p5, p6, p7, p8, p9); } // 0xCB3F7DA5
    static int _0xA36ED4A6(int* p0, float p1, float p2, float p3, float p4, int p5, int p6, int p7, int p8, char p9) { return invoke<int>(0xA36ED4A6, p0, p1, p2, p3, p4, p5, p6, p7, p8, p9); } // 0xA36ED4A6
-   static int _0x6F513950(int* p0, int p1, int p2, int p3, int p4, unsigned int p5, float p6, float p7, float p8, float p9) { return invoke<int>(0x6F513950, p0, p1, p2, p3, p4, p5, p6, p7, p8, p9); } // 0x6F513950
-   static int _LOCATE_OBJECTS_IN_VOLUME(unsigned int p0, unsigned int p1, int p2, char p3, int p4, int p5, int p6) { return invoke<int>(0x35C8FD4A, p0, p1, p2, p3, p4, p5, p5, p6); } // 0x35C8FD4A
-   static int _LOCATE_OBJECTS_IN_VOLUME_2(unsigned int p0, unsigned int p1, int p2, char p3, int p4, int p5, int p6) { return invoke<int>(0x0F701FF7, p0, p1, p2, p3, p4, p5, p5, p6); } // 0x0F701FF7
+   static int _0x6F513950(int* p0, int p1, int p2, int p3, int p4, int p5, float p6, float p7, float p8, float p9) { return invoke<int>(0x6F513950, p0, p1, p2, p3, p4, p5, p6, p7, p8, p9); } // 0x6F513950
+   static int _LOCATE_OBJECTS_IN_VOLUME(int p0, int p1, int p2, char p3, int p4, int p5, int p6) { return invoke<int>(0x35C8FD4A, p0, p1, p2, p3, p4, p5, p6); } // 0x35C8FD4A
+   static int _LOCATE_OBJECTS_IN_VOLUME_2(int p0, int p1, int p2, char p3, int p4, int p5, int p6) { return invoke<int>(0x0F701FF7, p0, p1, p2, p3, p4, p5, p6); } // 0x0F701FF7
    static void SET_VOLUME_PARAMS(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5, Any p6, Any p7, Any p8, Any p9) { invoke<Void>(0xFEC1CBC6, p0, p1, p2, p3, p4, p5, p6, p7, p8, p9); } // 0xFEC1CBC6
    static int _0xB104FF3E(int p0, int p1) { return invoke<int>(0xB104FF3E, p0, p1); } // 0xB104FF3E
    static int COPY_VOLUME(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0x122C916E, p0, p1, p2, p3); } // 0x122C916E
@@ -2120,7 +2122,7 @@ namespace LAYOUT
    static int _0x1A59E608(int p0) { return invoke<int>(0x1A59E608, p0); } // 0x1A59E608
    static int _0x0AFC0B99() { return invoke<int>(0x0AFC0B99); } // 0x0AFC0B99
    static int _0x547166A7(int p0) { return invoke<int>(0x547166A7, p0); } // 0x547166A7
-   static int _0xF1F8AFCA(int* p0, int p1, int p2, char* p3, float p4, float p5, float p6) { return invoke<int>(0xF1F8AFCA, p0, p1, p2, p3, p4, p5, p6); } // 0xF1F8AFCA
+   static int _0xF1F8AFCA(int* p0, int p1, int p2, const char* p3, float p4, float p5, float p6) { return invoke<int>(0xF1F8AFCA, p0, p1, p2, p3, p4, p5, p6); } // 0xF1F8AFCA
    static int _0xFF8CBD07(int* p0, int p1, int p2, float p3, float p4, float p5) { return invoke<int>(0xFF8CBD07, p0, p1, p2, p3, p4, p5); } // 0xFF8CBD07
    static int _0x2A902148(int* p0, int p1, int p2, int p3, float p4, float p5, float p6) { return invoke<int>(0x2A902148, p0, p1, p2, p3, p4, p5, p6); } // 0x2A902148
    static int _0x39286DE5(int* p0, int p1, int p2, float p3) { return invoke<int>(0x39286DE5, p0, p1, p2, p3); } // 0x39286DE5
@@ -2140,25 +2142,25 @@ namespace LAYOUT
    static int _0xE07C2D99(int p0) { return invoke<int>(0xE07C2D99, p0); } // 0xE07C2D99
    static Any GET_CRIME_CRIMINAL(Any p0) { return invoke<Any>(0xEC2C34A4, p0); } // 0xEC2C34A4
    static int GET_CRIME_VICTIM(Any p0) { return invoke<int>(0xD2FD7CB6, p0); } // 0xD2FD7CB6
-   static int _0x67F224B4(Any* p0, unsigned int p1) { return invoke<int>(0x67F224B4, p0, p1); } // 0x67F224B4
+   static int _0x67F224B4(Any* p0, int p1) { return invoke<int>(0x67F224B4, p0, p1); } // 0x67F224B4
    static int GET_CRIME_FACTION(Any p0) { return invoke<int>(0xE2FE0673, p0); } // 0xE2FE0673
    static Any GET_CRIME_COUNTER(Any p0) { return invoke<Any>(0xB52BA7E6, p0); } // 0xB52BA7E6
-   static BOOL _0x72A048B7(unsigned int p0) { return invoke<BOOL>(0x72A048B7, p0); } // 0x72A048B7
-   static BOOL IS_CRIME_IN_PROGRESS(unsigned int p0) { return invoke<BOOL>(0x85C58BE1, p0); } // 0x85C58BE1
+   static BOOL _0x72A048B7(int p0) { return invoke<BOOL>(0x72A048B7, p0); } // 0x72A048B7
+   static BOOL IS_CRIME_IN_PROGRESS(int p0) { return invoke<BOOL>(0x85C58BE1, p0); } // 0x85C58BE1
    static Any GET_CRIME_OBJECTSET(Any p0) { return invoke<Any>(0x72C52B55, p0); } // 0x72C52B55
    static Any SET_CRIME_OBJECTSET(Any p0, Any p1) { return invoke<Any>(0xD60B8F77, p0, p1); } // 0xD60B8F77
    static Any SET_CRIME_POSITION(Any p0, Any p1) { return invoke<Any>(0xB3F4043B, p0, p1); } // 0xB3F4043B
    static Any SET_CRIME_TYPE(Any p0, Any p1) { return invoke<Any>(0x85425011, p0, p1); } // 0x85425011
    static int _0x2AE7D51F(Any p0, float p1) { return invoke<int>(0x2AE7D51F, p0, p1); } // 0x2AE7D51F
-   static int _0x898B00F4(unsigned int p0, float p1) { return invoke<int>(0x898B00F4, p0, p1); } // 0x898B00F4
-   static int _0x6761D53A(unsigned int p0, int p1) { return invoke<int>(0x6761D53A, p0, p1); } // 0x6761D53A
+   static int _0x898B00F4(int p0, float p1) { return invoke<int>(0x898B00F4, p0, p1); } // 0x898B00F4
+   static int _0x6761D53A(int p0, int p1) { return invoke<int>(0x6761D53A, p0, p1); } // 0x6761D53A
    static Any SET_CRIME_CRIMINAL(Any p0, Any p1) { return invoke<Any>(0xBA02916B, p0, p1); } // 0xBA02916B
    static void SET_CRIME_VICTIM(Any p0, Any p1) { invoke<Void>(0x7B917033, p0, p1); } // 0x7B917033
-   static int _0x8521A685(unsigned int p0, int p1) { return invoke<int>(0x8521A685, p0, p1); } // 0x8521A685
+   static int _0x8521A685(int p0, int p1) { return invoke<int>(0x8521A685, p0, p1); } // 0x8521A685
    static void SET_CRIME_FACTION(Any p0, Any p1) { invoke<Void>(0x1E552B26, p0, p1); } // 0x1E552B26
    static Any SET_CRIME_COUNTER(Any p0, Any p1) { return invoke<Any>(0xCC14DC8D, p0, p1); } // 0xCC14DC8D
-   static int _0x54E7F26B(unsigned int p0, char p1) { return invoke<int>(0x54E7F26B, p0, p1); } // 0x54E7F26B
-   static int _0x2D6CD106(unsigned int p0, char p1) { return invoke<int>(0x2D6CD106, p0, p1); } // 0x2D6CD106
+   static int _0x54E7F26B(int p0, char p1) { return invoke<int>(0x54E7F26B, p0, p1); } // 0x54E7F26B
+   static int _0x2D6CD106(int p0, char p1) { return invoke<int>(0x2D6CD106, p0, p1); } // 0x2D6CD106
    static int CREATE_OBJECT_ITERATOR(Layout layout) { return invoke<int>(0xD8A12B74, layout); } // 0xD8A12B74
    static int CREATE_NAMED_OBJECT_ITERATOR(Any* p0, int p1, int p2, int p3, int p4, int p5) { return invoke<int>(0x2F358B89, p0, p1, p2, p3, p4, p5); } // 0x2F358B89
    static Object START_OBJECT_ITERATOR(int iterator) { return invoke<Object>(0xE96A0318, iterator); } // 0xE96A0318
@@ -2176,7 +2178,7 @@ namespace LAYOUT
    static void ITERATE_IN_LAYOUT(Any p0, Any p1) { invoke<Void>(0xF3ABE99C, p0, p1); } // 0xF3ABE99C
    static void ITERATE_IN_SET(int iterator, int iterationSet) { invoke<Void>(0xDF6B5E94, iterator, iterationSet); } // 0xDF6B5E94
    static void ITERATE_IN_EVENT_TRAP(int p0, int p1) { invoke<Void>(0x0D8BA78E, p0, p1); } // 0x0D8BA78E
-   static void _0x8BCB6B86(int p0, int p1) { invoke<Void>(0x8BCB6B86, p0, p1); }  // 0x8BCB6B86
+   static void _0x8BCB6B86(int p0, int p1) { invoke<Void>(0x8BCB6B86, p0, p1); } // 0x8BCB6B86
    static int GET_ITERATOR_PARENT(Any p0) { return invoke<int>(0x12AA009F, p0); } // 0x12AA009F
    static int GET_NUM_ITERATOR_MATCHES(int iterator) { return invoke<int>(0xA3874D8A, iterator); } // 0xA3874D8A
    static int FIND_OBJECT_IN_OBJECT(Any p0, Any p1) { return invoke<int>(0x070F9693, p0, p1); } // 0x070F9693
@@ -2238,14 +2240,14 @@ namespace LAYOUT
    static int _0x495026DA(int p0, int p1, int p2) { return invoke<int>(0x495026DA, p0, p1, p2); } // 0x495026DA
    static int _0x8C9721D6(int p0, int p1, int p2) { return invoke<int>(0x8C9721D6, p0, p1, p2); } // 0x8C9721D6
    static int _0xF2140DEE(int p0) { return invoke<int>(0xF2140DEE, p0); } // 0xF2140DEE
-   static BOOL _0x9B903F45(int p0) { return invoke<int>(0x9B903F45, p0); } // 0x9B903F45
+   static BOOL _0x9B903F45(int p0) { return invoke<BOOL>(0x9B903F45, p0); } // 0x9B903F45
    static int _0x16D1E1B4(int p0) { return invoke<int>(0x16D1E1B4, p0); } // 0x16D1E1B4
    static int _0xC741F051(int p0) { return invoke<int>(0xC741F051, p0); } // 0xC741F051
    static Actor CREATE_ACTOR_IN_LAYOUT(Layout layout, const char* actorName, int actorID, float x, float y, float z, float rotx, float roty, float rotz) { return invoke<Actor>(0x8D67F397, layout, actorName, actorID, x, y, z, rotx, roty, rotz); } // 0x8D67F397
    static int _0x6A307D5F(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9) { return invoke<int>(0x6A307D5F, p0, p1, p2, p3, p4, p5, p6, p7, p8, p9); } // 0x6A307D5F
-   static Any CREATE_PERS_CHAR_IN_LAYOUT(Any p0, Any p1, Any p2, Any p3, Any p5, Any p6) { return invoke<Any>(0x013B3937, p1, p2, p3, p5, p6); } // 0x013B3937
+   static Any CREATE_PERS_CHAR_IN_LAYOUT(Any p0, Any p1, Any p2, Any p3, Any p5, Any p6) { return invoke<Any>(0x013B3937, p0, p1, p2, p3, p5, p6); } // 0x013B3937
    static Any _CREATE_ENUMERATED_ACTOR_IN_LAYOUT_USING_VARIABLE_INDEX(Any p0) { return invoke<Any>(0xCCC0A3F3, p0); } // 0xCCC0A3F3
-   static Actor _CREATE_ENUMERATED_PLAYER_ACTOR_IN_LAYOUT(Layout layout, Actor actor, const char* actorInLayout, int actorID, float x, float y, float z, float xRot, float yRot, float zRot, int unk0) { return invoke<Actor>(0x637E446B, layout, actor, actorInLayout, actorID, x, y, x, xRot, yRot, zRot, unk0); } // 0x637E446B
+   static Actor _CREATE_ENUMERATED_PLAYER_ACTOR_IN_LAYOUT(Layout layout, Actor actor, const char* actorInLayout, int actorID, float x, float y, float z, float xRot, float yRot, float zRot, int unk0) { return invoke<Actor>(0x637E446B, layout, actor, actorInLayout, actorID, x, y, z, xRot, yRot, zRot, unk0); } // 0x637E446B
    static Any IS_ACTOR_INITED(Any p0) { return invoke<Any>(0x24F4DAB2, p0); } // 0x24F4DAB2
    static Any GET_ACTOR_ENUM(Any p0) { return invoke<Any>(0x0B28E9EC, p0); } // 0x0B28E9EC
    static int GET_ACTOR_ENUM_STRING(Any p0) { return invoke<int>(0xD98CB6F6, p0); } // 0xD98CB6F6
@@ -2259,9 +2261,9 @@ namespace LAYOUT
    static void _0x12A86E9D(int p0) { invoke<Void>(0x12A86E9D, p0); } // 0x12A86E9D
    static void _0x5613615B(int p0) { invoke<Void>(0x5613615B, p0); } // 0x5613615B
    static int _0xB54567B9(int p0) { return invoke<int>(0xB54567B9, p0); } // 0xB54567B9
-   static int REQUEST_ASSET(const char* assetDir, int assetType) { return invoke<int>(0x9AA02DA7, assetDir, assetType); }; // 0x9AA02DA7
+   static int REQUEST_ASSET(const char* assetDir, int assetType) { return invoke<int>(0x9AA02DA7, assetDir, assetType); } // 0x9AA02DA7
    static Any GET_ASSET_ID(Any p0) { return invoke<Any>(0x6005B514, p0); } // 0x6005B514
-   static int REMOVE_ASSET(Any p0, Any p1) { return invoke<int>(0xE7829D28, p0, p1); }; // 0xE7829D28
+   static int REMOVE_ASSET(Any p0, Any p1) { return invoke<int>(0xE7829D28, p0, p1); } // 0xE7829D28
    static Any _GET_TYPE_ID_USING_ACTOR_ENUM(Any p0) { return invoke<Any>(0x55E6227E, p0); } // 0x55E6227E
    static Any GET_ASSET_NAME(Any p0) { return invoke<Any>(0x9EDBBB84, p0); } // 0x9EDBBB84
    static BOOL _0x214AFB8C(int p0) { return invoke<BOOL>(0x214AFB8C, p0); } // 0x214AFB8C
@@ -2284,7 +2286,7 @@ namespace LAYOUT
    static Any CREATE_WORLD_SECTOR(Any p0, Any p1) { return invoke<Any>(0xC94CC336, p0, p1); } // 0xC94CC336
    static BOOL IS_WORLD_SECTOR_LOADED(Any p0) { return invoke<BOOL>(0xBF81A6C4, p0); } // 0xBF81A6C4
    static void MARK_REGION_READY(Any p0) { invoke<Void>(0x276A420B, p0); } // 0x276A420B
-   static int _0xA5F229C9(Any p0, Any p1, Any p2) { return invoke<int>(0xA5F229C9, p0, p1, p1); } // 0xA5F229C9
+   static int _0xA5F229C9(Any p0, Any p1, Any p2) { return invoke<int>(0xA5F229C9, p0, p1, p2); } // 0xA5F229C9
    static int _0x0F146D2C(Any p0) { return invoke<int>(0x0F146D2C, p0); } // 0x0F146D2C
    static int _0xF46FC138() { return invoke<int>(0xF46FC138); } // 0xF46FC138
    static int _0x03B2D067(Any p0) { return invoke<int>(0x03B2D067, p0); } // 0x03B2D067
@@ -2297,7 +2299,7 @@ namespace LAYOUT
    static int _0x4193D42F() { return invoke<int>(0x4193D42F); } // 0x4193D42F
    static void _0xF037DCA2(Any p0) { invoke<Void>(0xF037DCA2, p0); } // 0xF037DCA2
    static void SET_TOWN_DENSITY(Any p0) { invoke<Void>(0x3748F199, p0); } // 0x3748F199
-   static void _0x03CD9C87(Any p0, Any p1) { invoke<Void>(0x03CD9C87, p0); } // 0x03CD9C87
+   static void _0x03CD9C87(Any p0, Any p1) { invoke<Void>(0x03CD9C87, p0, p1); } // 0x03CD9C87
    static int _0x43FF4632(Any p0) { return invoke<int>(0x43FF4632, p0); } // 0x43FF4632
 }
 
@@ -2306,8 +2308,8 @@ namespace LEASH
    static int CREATE_LEASH_OBJECT(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5) { return invoke<int>(0x9BCC06E2, p0, p1, p2, p3, p4, p5); } // 0x9BCC06E2
    static int LEASH_CONSTRAIN(Any p0) { return invoke<int>(0x8EA68EB5, p0); } // 0x8EA68EB5
    static Any LEASH_RESTART(Any p0) { return invoke<Any>(0xE58339B3, p0); } // 0xE58339B3
-   static int _0x7F190CA3(Any p0) { return invoke<int>(0x7F190CA3, p0); }  // 0x7F190CA3
-   static int _0x14BEC6F5(Any p0) { return invoke<int>(0x14BEC6F5, p0); }  // 0x14BEC6F5
+   static int _0x7F190CA3(Any p0) { return invoke<int>(0x7F190CA3, p0); } // 0x7F190CA3
+   static int _0x14BEC6F5(Any p0) { return invoke<int>(0x14BEC6F5, p0); } // 0x14BEC6F5
    static int LEASH_RELEASE_CONSTRAINT(Any p0) { return invoke<int>(0x7A1376B0, p0); } // 0x7A1376B0
    static int LEASH_ATTACH_TO_WORLD(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5, Any p6, Any p7) { return invoke<int>(0x0FCDB481, p0, p1, p2, p3, p4, p5, p6, p7); } // 0x0FCDB481
    static int LEASH_ATTACH_TO_OBJECT(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5, Any p6, Any p7, Any p8, Any p9) { return invoke<int>(0x35D8B21E, p0, p1, p2, p3, p4, p5, p6, p7, p8, p9); } // 0x35D8B21E
@@ -2331,7 +2333,7 @@ namespace MEMORY
    static void MEMORY_CONSIDER_ACCORDING_TO_FACTION(Any p0, Any p1) { invoke<Void>(0xACD4084D, p0, p1); } // 0xACD4084D
    static void MEMORY_CONSIDER_AS(Any p0, Any p1, Any p2) { invoke<Void>(0x296C01A4, p0, p1, p2); } // 0x296C01A4
    static void MEMORY_CONSIDER_AS_ENEMY(Any p0, Any p1) { invoke<Void>(0x745A1BA3, p0, p1); } // 0x745A1BA3
-   static int MEMORY_GET_IS_IDENTIFIED(Any p0, Any p1) { return invoke<Void>(0x0810A7BA, p0, p1); } // 0x0810A7BA
+   static int MEMORY_GET_IS_IDENTIFIED(Any p0, Any p1) { return invoke<int>(0x0810A7BA, p0, p1); } // 0x0810A7BA
    static int MEMORY_GET_IS_VISIBLE(Any p0, Any p1) { return invoke<int>(0x45CE40FD, p0, p1); } // 0x45CE40FD
    static int MEMORY_GET_WAS_VISIBLE_WITHIN_TIME(Any p0, Any p1, Any p2) { return invoke<int>(0xC407497F, p0, p1, p2); } // 0xC407497F
    static void MEMORY_IDENTIFY(Any p0, Any p1) { invoke<Void>(0xBA09085C, p0, p1); } // 0xBA09085C
@@ -2453,17 +2455,17 @@ namespace NAV
 namespace NET
 {
    static int* _0x6BCFE549(Any p0, float p1) { return invoke<int*>(0x6BCFE549, p0, p1); } // 0x6BCFE549
-   static void _0x50E637D7() { invoke<Void>(0x50E637D7); } // 0x50E637D7 unused
-   static void NET_LOG(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5, Any p6) { invoke<Void>(0x48275716, p0, p2, p3, p4, p5, p6); } // 0x48275716
+   static void _0x50E637D7() { invoke<Void>(0x50E637D7); } // 0x50E637D7
+   static void NET_LOG(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5, Any p6) { invoke<Void>(0x48275716, p0, p1, p2, p3, p4, p5, p6); } // 0x48275716
    static int _0xD164026F() { return invoke<int>(0xD164026F); } // 0xD164026F
    static int NET_ENABLE_MULTIPLAYER(Any p0) { return invoke<int>(0x9180FF1C, p0); } // 0x9180FF1C
    static int _0x84B0B5D6() { return invoke<int>(0x84B0B5D6); } // 0x84B0B5D6
-   static BOOL NET_IS_IN_SESSION() { return invoke<BOOL>(0xCDAC0F0E); } // 0x8CA54980
+   static BOOL NET_IS_IN_SESSION() { return invoke<BOOL>(0x8CA54980); } // 0x8CA54980
    static BOOL NET_IS_ONLINE_AVAILABLE() { return invoke<BOOL>(0x5FF2BAE0); } // 0x5FF2BAE0
    static int _0x7AB722D8() { return invoke<int>(0x7AB722D8); } // 0x7AB722D8
    static int NET_GET_PLAYMODE() { return invoke<int>(0xBC4B6B74); } // 0xBC4B6B74
    static int _0x18EC9CF0(Any p0) { return invoke<int>(0x18EC9CF0, p0); } // 0x18EC9CF0
-   static const char* _NET_IS_PLAYER_ONLINE_GAMESPY(const char* result, const char* p1, void* p2) { return invoke<const char*>(0x17D14553, result, p1, p2); } // 0x17D14553
+   static const char* _NET_IS_PLAYER_ONLINE_GAMESPY(const char* result, const char* p1, Any* p2) { return invoke<const char*>(0x17D14553, result, p1, p2); } // 0x17D14553
    static BOOL NET_IS_SESSION_HOST() { return invoke<BOOL>(0xCDAC0F0E); } // 0xCDAC0F0E
    static BOOL NET_IS_SESSION_CLIENT(Any p0) { return invoke<BOOL>(0xFF65A07C, p0); } // 0xFF65A07C
    static void _0x75DD203B(Any p0) { invoke<Void>(0x75DD203B, p0); } // 0x75DD203B
@@ -2505,7 +2507,7 @@ namespace NET
    static int _0x1C147E14(int result, Any p1) { return invoke<int>(0x1C147E14, result, p1); } // 0x1C147E14
    static int _0xCA6231C1(Any p0) { return invoke<int>(0xCA6231C1, p0); } // 0xCA6231C1
    static int _NET_ACTOR_OBJECT_ID(int result, Any p0) { return invoke<int>(0xC09B114B, result, p0); } // 0xC09B114B
-   static int _NET_ACTOR_OBJECT_ID_2(int result, Any p0) { return invoke<int>(0x7284A71B, result, p0); }  // 0x7284A71B
+   static int _NET_ACTOR_OBJECT_ID_2(int result, Any p0) { return invoke<int>(0x7284A71B, result, p0); } // 0x7284A71B
    static int _0x7AB65B0C() { return invoke<int>(0x7AB65B0C); } // 0x7AB65B0C
    static Any AWARD_ACHIEVEMENT(Any p0) { return invoke<Any>(0xCAA24B1A, p0); } // 0xCAA24B1A
    static Any HAS_ACHIEVEMENT_BEEN_PASSED(Any p0) { return invoke<Any>(0x136A5BE9, p0); } // 0x136A5BE9
@@ -2530,7 +2532,7 @@ namespace NET
    static int NET_SESSION_START_GAMEPLAY() { return invoke<int>(0x86FF3A9B); } // 0x86FF3A9B
    static int NET_SESSION_END_GAMEPLAY() { return invoke<int>(0x81FD9851); } // 0x81FD9851
    static int NET_SESSION_SET_INVITABLE(Any p0) { return invoke<int>(0x3A5C56E3, p0); } // 0x3A5C56E3
-   static int _0xFA0E1F8B(Any p0) { return invoke<int>(0xFA0E1F8B, p0); }  // 0xFA0E1F8B
+   static int _0xFA0E1F8B(Any p0) { return invoke<int>(0xFA0E1F8B, p0); } // 0xFA0E1F8B
    static int _0xCC7D0431(Any p0) { return invoke<int>(0xCC7D0431, p0); } // 0xCC7D0431
    static int NET_SESSION_IS_GAMEPLAY_STARTED() { return invoke<int>(0xDC88B308); } // 0xDC88B308
    static int _0xD923CD1B(Any p0, Any p1) { return invoke<int>(0xD923CD1B, p0, p1); } // 0xD923CD1B
@@ -2575,19 +2577,19 @@ namespace NET
 
 namespace NET2
 {
-   static int _0x55C5BB93(Any p0) { return invoke<int>(0x55C5BB93); } // 0x55C5BB93
+   static int _0x55C5BB93(Any p0) { return invoke<int>(0x55C5BB93, p0); } // 0x55C5BB93
    static int _0xFAD5A270(Any p0, Any p1) { return invoke<int>(0xFAD5A270, p0, p1); } // 0xFAD5A270
    static BOOL _0x4A721118(Any p0) { return invoke<BOOL>(0x4A721118, p0); } // 0x4A721118
    static int _0x4500B98A(Any p0) { return invoke<int>(0x4500B98A, p0); } // 0x4500B98A
    static int _0x85049505(Any p0, Any p1) { return invoke<int>(0x85049505, p0, p1); } // 0x85049505
    static int _0x5C51D43C(Any p0, Any p1) { return invoke<int>(0x5C51D43C, p0, p1); } // 0x5C51D43C
    static int _0x0E2C4B68(Any p0, Any p1) { return invoke<int>(0x0E2C4B68, p0, p1); } // 0x0E2C4B68
-   static int _0xB514ECA7(Any p0, Any p1) { return invoke<int>(0xB514ECA7, p0, p1); }  // 0xB514ECA7
+   static int _0xB514ECA7(Any p0, Any p1) { return invoke<int>(0xB514ECA7, p0, p1); } // 0xB514ECA7
 }
 
 namespace NET3
 {
-   static void NET_UPDATE_LEADERBOARD(Any p0, Any p1, Any p2, Any p3) { invoke<Void>(0x12304873, p0, p2, p3); } // 0x12304873
+   static void NET_UPDATE_LEADERBOARD(Any p0, Any p1, Any p2, Any p3) { invoke<Void>(0x12304873, p0, p1, p2, p3); } // 0x12304873
    static int _0x4D0C8AA4(Any p0) { return invoke<int>(0x4D0C8AA4, p0); } // 0x4D0C8AA4
    static int _0x89277EA3() { return invoke<int>(0x89277EA3); } // 0x89277EA3
    static int _0x2B8F86ED(Any p0) { return invoke<int>(0x2B8F86ED, p0); } // 0x2B8F86ED
@@ -2599,11 +2601,11 @@ namespace NET3
    static int _0xE5C5CE63() { return invoke<int>(0xE5C5CE63); } // 0xE5C5CE63
    static int _0x4F652A00() { return invoke<int>(0x4F652A00); } // 0x4F652A00
    static int _0xFC564903() { return invoke<int>(0xFC564903); } // 0xFC564903
-   static int _0x7154D15B() { return invoke<int>(0x7154D15B); }  // 0x7154D15B
+   static int _0x7154D15B() { return invoke<int>(0x7154D15B); } // 0x7154D15B
    static int _0x86BC0A55(Any p0, Any p1) { return invoke<int>(0x86BC0A55, p0, p1); } // 0x86BC0A55
    static int _0xEB4A6D85() { return invoke<int>(0xEB4A6D85); } // 0xEB4A6D85
-   static BOOL _0x5FD52711() { return invoke<int>(0x5FD52711); } // 0x5FD52711
-   static BOOL _0xD0808C42() { return invoke<int>(0xD0808C42); } // 0xD0808C42
+   static BOOL _0x5FD52711() { return invoke<BOOL>(0x5FD52711); } // 0x5FD52711
+   static BOOL _0xD0808C42() { return invoke<BOOL>(0xD0808C42); } // 0xD0808C42
    static int _0x097BB984() { return invoke<int>(0x097BB984); } // 0x097BB984
    static int _0xEA7ADF42() { return invoke<int>(0xEA7ADF42); } // 0xEA7ADF42
    static int _0x3A8C77AD(Any p0) { return invoke<int>(0x3A8C77AD, p0); } // 0x3A8C77AD
@@ -2612,7 +2614,7 @@ namespace NET3
    static int _0x49C2B05F(Any p0) { return invoke<int>(0x49C2B05F, p0); } // 0x49C2B05F
    static int _0xC813DBEF() { return invoke<int>(0xC813DBEF); } // 0xC813DBEF
    static int _0xE6B4F505() { return invoke<int>(0xE6B4F505); } // 0xE6B4F505
-   static int _0x70AF0351(Any p0) { return invoke<int>(0x70AF0351); } // 0x70AF0351
+   static int _0x70AF0351(Any p0) { return invoke<int>(0x70AF0351, p0); } // 0x70AF0351
    static int _0x293C3288() { return invoke<int>(0x293C3288); } // 0x293C3288
    static int _0xA7F231B0() { return invoke<int>(0xA7F231B0); } // 0xA7F231B0
    static int _0x984749B4(Any p0) { return invoke<int>(0x984749B4, p0); } // 0x984749B4
@@ -2631,7 +2633,7 @@ namespace NET4
    static int _0x03962973() { return invoke<int>(0x03962973); } // 0x03962973
    static int _0x8E0D7219(Any p0, Any p1) { return invoke<int>(0x8E0D7219, p0, p1); } // 0x8E0D7219
    static int _0xC00C8C94(Any p0) { return invoke<int>(0xC00C8C94, p0); } // 0xC00C8C94
-   static int _0x9BC05C90(Any p0, Any p1) { return invoke<int>(0x9BC05C90, p0, p1); }  // 0x9BC05C90
+   static int _0x9BC05C90(Any p0, Any p1) { return invoke<int>(0x9BC05C90, p0, p1); } // 0x9BC05C90
    static int NET_GET_GAMER_RGB_COLOR(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0x97931B87, p0, p1, p2, p3); } // 0x97931B87
    static int _0xFE83A4FE(Any p0) { return invoke<int>(0xFE83A4FE, p0); } // 0xFE83A4FE
    static int _0x8DEC3E03(Any p0) { return invoke<int>(0x8DEC3E03, p0); } // 0x8DEC3E03
@@ -2658,15 +2660,15 @@ namespace NET4
    static int _NET_PLAYER_LIST_SET_ITEM_COLOR(int groupColor) { return invoke<int>(0x794F5C21, groupColor); } // 0x794F5C21
    static int NET_PLAYER_LIST_SET_CURRENT_ITEM_PRIORITY(Any p0) { return invoke<int>(0xBD42097A, p0); } // 0xBD42097A
    static int _0xC09ACD5C(Any p0) { return invoke<int>(0xC09ACD5C, p0); } // 0xC09ACD5C
-   static int _PRINT_CHAT(const char* text1, const char* text2, const char* text3, Any p3, Any p4, Any p5, Any p6) { return invoke<int>(0xC73DAD2B, text1, text2, text3, p3, p4, p5, p6); } // 0xC73DAD2B //MP_Ticker
-   static int _0x8A1D83F2() { return invoke<int>(0x8A1D83F2); } // 0x8A1D83F2 //MP_Ticker
-   static int _0xA6403262(Any p0, Any p1) { return invoke<int>(0xA6403262, p0, p1); } // 0xA6403262 XpCounter
-   static int _0x27D40FD1(Any p0, Any p1, Any p2) { return invoke<int>(0x27D40FD1, p0, p1, p2); } // 0x27D40FD1 //ScoreGraph
-   static int _0xA3AE09EF() { return invoke<int>(0xA3AE09EF); } // 0xA3AE09EF //ScoreGraph
-   static int _0x746897AB(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0x746897AB, p0, p1, p2, p3); } // 0x746897AB //ScoreGraph
-   static int _0xB4C867BD() { return invoke<int>(0xB4C867BD); } // 0xB4C867BD //ScoreGraph
-   static int _0x12558DBD(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0x12558DBD, p0, p1, p2, p3); } // 0x12558DBD //ScoreGraph
-   static int _0x134AAF17(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0x134AAF17, p0, p1, p2, p3); } // 0x134AAF17 //ScoreGraph
+   static int _PRINT_CHAT(const char* text1, const char* text2, const char* text3, Any p3, Any p4, Any p5, Any p6) { return invoke<int>(0xC73DAD2B, text1, text2, text3, p3, p4, p5, p6); } // 0xC73DAD2B
+   static int _0x8A1D83F2() { return invoke<int>(0x8A1D83F2); } // 0x8A1D83F2
+   static int _0xA6403262(Any p0, Any p1) { return invoke<int>(0xA6403262, p0, p1); } // 0xA6403262
+   static int _0x27D40FD1(Any p0, Any p1, Any p2) { return invoke<int>(0x27D40FD1, p0, p1, p2); } // 0x27D40FD1
+   static int _0xA3AE09EF() { return invoke<int>(0xA3AE09EF); } // 0xA3AE09EF
+   static int _0x746897AB(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0x746897AB, p0, p1, p2, p3); } // 0x746897AB
+   static int _0xB4C867BD() { return invoke<int>(0xB4C867BD); } // 0xB4C867BD
+   static int _0x12558DBD(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0x12558DBD, p0, p1, p2, p3); } // 0x12558DBD
+   static int _0x134AAF17(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0x134AAF17, p0, p1, p2, p3); } // 0x134AAF17
 }
 
 namespace NETCONNECTION
@@ -2674,10 +2676,10 @@ namespace NETCONNECTION
    static int _0x2547029C(Any p0, Any p1) { return invoke<int>(0x2547029C, p0, p1); } // 0x2547029C
    static Any _0x6F6D942B(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5, Any p6) { return invoke<Any>(0x6F6D942B, p0, p1, p2, p3, p4, p5, p6); } // 0x6F6D942B
    static Any _0x713B1D7F(Any p0, Any p1) { return invoke<Any>(0x713B1D7F, p0, p1); } // 0x713B1D7F
-   static Any _START(Any p0, Any p1, Any p2, Any p3, Any p4) { return invoke<int>(0x9C80A3A4, p0, p1, p2, p3, p4); } // 0x9C80A3A4
+   static Any _START(Any p0, Any p1, Any p2, Any p3, Any p4) { return invoke<Any>(0x9C80A3A4, p0, p1, p2, p3, p4); } // 0x9C80A3A4
    static Any _MP_DEED_START(Any p0) { return invoke<Any>(0x27A00456, p0); } // 0x27A00456
    static Any _MP_DEED_COMPLETE(Any p0) { return invoke<Any>(0x120E6123, p0); } // 0x120E6123
-   static Any _MP_DEED_COMPLETE_EX(Any p0, Any p1, Any p2, Any p3) { return invoke<Any>(0x4585821E, p0, p1, p2, p3); }// 0x4585821E
+   static Any _MP_DEED_COMPLETE_EX(Any p0, Any p1, Any p2, Any p3) { return invoke<Any>(0x4585821E, p0, p1, p2, p3); } // 0x4585821E
    static Any _MP_COOP_COMPLETE(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5) { return invoke<Any>(0x46C39437, p0, p1, p2, p3, p4, p5); } // 0x46C39437
 }
 
@@ -2725,7 +2727,7 @@ namespace PHYSINST
    static void ACTIVATE_PHYSINST(Any p0) { invoke<Void>(0xC0961D18, p0); } // 0xC0961D18
    static int _0x65CA3037(Any p0) { return invoke<int>(0x65CA3037, p0); } // 0x65CA3037
    static int _0x734CC17B(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5) { return invoke<int>(0x734CC17B, p0, p1, p2, p3, p4, p5); } // 0x734CC17B
-   static int _0x4FF36FA7(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5) { return invoke<int>(0x4FF36FA7, p0, p1, p2, p3, p4, p5); }  // 0x4FF36FA7
+   static int _0x4FF36FA7(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5) { return invoke<int>(0x4FF36FA7, p0, p1, p2, p3, p4, p5); } // 0x4FF36FA7
    static int _0xC5E372BC(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0xC5E372BC, p0, p1, p2, p3); } // 0xC5E372BC
    static int ATTACH_PHYSINST_TO_WORLD2(Any p0, Any p1, Any p2, Any p3, Any p4, float p5) { return invoke<int>(0x441CDD55, p0, p1, p2, p3, p4, p5); } // 0x441CDD55
    static int _0x4A05AA7D(Any p0, Any p1, Any p2, Any p3, Any p4) { return invoke<int>(0x4A05AA7D, p0, p1, p2, p3, p4); } // 0x4A05AA7D
@@ -2734,7 +2736,7 @@ namespace PHYSINST
    static void SHOW_PHYSINST(Any p0) { invoke<Void>(0x342FDCD6, p0); } // 0x342FDCD6
    static void SET_SECTOR_PROPS_SUPER_LOCKED(Any p0, Any p1) { invoke<Void>(0xED3ADF67, p0, p1); } // 0xED3ADF67
    static void LIGHTS_SET_ON_TIME(Any p0, Any p1) { invoke<Void>(0x3774465F, p0, p1); } // 0x3774465F
-   static void LIGHTS_SET_OFF_TIME(Any p0, Any p1) { invoke<Void>(0x3774465F, p0, p1); } // 0xD0CDEED4
+   static void LIGHTS_SET_OFF_TIME(Any p0, Any p1) { invoke<Void>(0xD0CDEED4, p0, p1); } // 0xD0CDEED4
    static int SET_PROP_NO_FADE(Any p0) { return invoke<int>(0x1260ACCC, p0); } // 0x1260ACCC
 }
 
@@ -2850,9 +2852,9 @@ namespace PLAYER
    static int _SET_ACTOR_OVER_HEALTH_MODE(Any p0) { return invoke<int>(0xF2F77F44, p0); } // 0xF2F77F44
    static int _REPAIR_INCAPACITATION(Any p0) { return invoke<int>(0x437588E6, p0); } // 0x437588E6
    static int GET_ACTOR_INCAPACITATED(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0xEE4E2461, p0, p1, p2, p3); } // 0xEE4E2461
-   static void SET_ALLOW_RIDE_BY_AI(Any p0, Any p1) { invoke<Void>(0x2D9C0C0F, p0, p1); }// 0x2D9C0C0F
+   static void SET_ALLOW_RIDE_BY_AI(Any p0, Any p1) { invoke<Void>(0x2D9C0C0F, p0, p1); } // 0x2D9C0C0F
    static int GET_ALLOW_RIDE_BY_PLAYER(Any p0) { return invoke<int>(0x0318FF2A, p0); } // 0x0318FF2A
-   static void SET_ALLOW_RIDE_BY_PLAYER(Actor actor, BOOL p0) { invoke<Void>(0xCF1A1BC5, actor, p0); }// 0xCF1A1BC5
+   static void SET_ALLOW_RIDE_BY_PLAYER(Actor actor, BOOL p0) { invoke<Void>(0xCF1A1BC5, actor, p0); } // 0xCF1A1BC5
    static int SET_ALLOW_RIDE(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5) { return invoke<int>(0xF83A8D2B, p0, p1, p2, p3, p4, p5); } // 0xF83A8D2B
    static BOOL GET_ALLOW_RIDE(Any p0) { return invoke<BOOL>(0x0111E8E0, p0); } // 0x0111E8E0
    static void SET_ALLOW_JACK(Any p0, Any p1) { invoke<Void>(0x5D5BD1F0, p0, p1); } // 0x5D5BD1F0
@@ -2869,12 +2871,12 @@ namespace PLAYER
    static int _0x5C7F63E3(Any p0) { return invoke<int>(0x5C7F63E3, p0); } // 0x5C7F63E3
    static int _ACTOR_IN_WORLD_ITERATOR(Any p0, float p1) { return invoke<int>(0x87C49DBD, p0, p1); } // 0x87C49DBD
    static Any _0xB42EBC65(Any result) { return invoke<Any>(0xB42EBC65, result); } // 0xB42EBC65
-   static float* _0x135EA21D(float p0) { return invoke<float*>(0x135EA21D, p0); } // 0x135EA21D (Mass, Size, ModelOffset)
-   static float* _0xA393AC4E(float p0) { return invoke<float*>(0xA393AC4E, p0); }  // 0xA393AC4E (Mass, Size, ModelOffset)
+   static float* _0x135EA21D(float p0) { return invoke<float*>(0x135EA21D, p0); } // 0x135EA21D
+   static float* _0xA393AC4E(float p0) { return invoke<float*>(0xA393AC4E, p0); } // 0xA393AC4E
    static void SET_NPC_TO_ACTOR_DAMAGE_SCALE_FACTOR(Any p0, Any p1) { invoke<Void>(0x05CFE1E9, p0, p1); } // 0x05CFE1E9
-   static int SET_ACTOR_LOW_DROP_DAMAGE(int p0, float p1) { return invoke<int>(0x083903D1, p0, p1); } // 0x083903D1 
+   static int SET_ACTOR_LOW_DROP_DAMAGE(int p0, float p1) { return invoke<int>(0x083903D1, p0, p1); } // 0x083903D1
    static int SET_ACTOR_MEDIUM_DROP_DAMAGE(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, float p8) { return invoke<int>(0x1540A309, p0, p1, p2, p3, p4, p5, p6, p7, p8); } // 0x1540A309
-   static int SET_ACTOR_HIGH_DROP_DAMAGE(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, float p8) { return invoke<int>(0x7CC57FDA, p0, p1, p2, p3, p4, p5, p6, p7, p8); }  // 0x7CC57FDA
+   static int SET_ACTOR_HIGH_DROP_DAMAGE(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, float p8) { return invoke<int>(0x7CC57FDA, p0, p1, p2, p3, p4, p5, p6, p7, p8); } // 0x7CC57FDA
    static void SET_ACTOR_DEATH_DROP_DISTANCE(Any p0, Any p1) { invoke<Void>(0x9F6B04C8, p0, p1); } // 0x9F6B04C8
    static void SET_DAMAGE_SCALE_ENABLE(Any p0, Any p1) { invoke<Void>(0xDA0CDC91, p0, p1); } // 0xDA0CDC91
    static void SET_CRIPPLE_ENABLE(Any p0, Any p1) { invoke<Void>(0x3AD31762, p0, p1); } // 0x3AD31762
@@ -2886,11 +2888,11 @@ namespace PLAYER
    static void SET_EMOTION(Any p0, Any p1, Any p2) { invoke<Void>(0x1D1D9387, p0, p1, p2); } // 0x1D1D9387
    static int SET_ACTOR_STOP_UPDATE(Any p0, Any p1) { return invoke<int>(0xC0F77310, p0, p1); } // 0xC0F77310
    static int GET_ACTOR_STOP_UPDATE(Any p0) { return invoke<int>(0x4EFC58BC, p0); } // 0x4EFC58BC
-   static BOOL IS_ACTOR_IN_ROOM(Any p0) { return invoke<BOOL>(0x22558E3F, p0); }  // 0x22558E3F
+   static BOOL IS_ACTOR_IN_ROOM(Any p0) { return invoke<BOOL>(0x22558E3F, p0); } // 0x22558E3F
    static void REGISTER_TRAFFIC_OBJECTSET(Any p0) { invoke<Void>(0x398735FA, p0); } // 0x398735FA
-   static void REGISTER_TRAFFIC_ACTOR(Any p0, Any p1) { invoke<Void>(0x398735FA, p0, p1); } // 0x67FA18A1
+   static void REGISTER_TRAFFIC_ACTOR(Any p0, Any p1) { invoke<Void>(0x67FA18A1, p0, p1); } // 0x67FA18A1
    static void REGISTER_GPS_CURVE_OBJECTSET(Any p0) { invoke<Void>(0x1444F022, p0); } // 0x1444F022
-   static float* _0x4B90D22A(float p0) { return invoke<float*>(0x4B90D22A, p0); } // 0x4B90D22A (Mass, Size, ModelOffset)
+   static float* _0x4B90D22A(float p0) { return invoke<float*>(0x4B90D22A, p0); } // 0x4B90D22A
    static float* _0xF1779E65() { return invoke<float*>(0xF1779E65); } // 0xF1779E65
    static int* _0xA819497B(float p0, float p1) { return invoke<int*>(0xA819497B, p0, p1); } // 0xA819497B
    static Any _0x8BE2D8B0(Any p0) { return invoke<Any>(0x8BE2D8B0, p0); } // 0x8BE2D8B0
@@ -2947,7 +2949,7 @@ namespace POPULATION
 namespace PROBE
 {
    static int _0x7080E24A(Any p0, float p1) { return invoke<int>(0x7080E24A, p0, p1); } // 0x7080E24A
-   static void _0x1D7845B7(Any p0) { invoke<Void>(0x1D7845B7, p0); } // 0x1D7845B7 Unused
+   static void _0x1D7845B7(Any p0) { invoke<Void>(0x1D7845B7, p0); } // 0x1D7845B7
 }
 
 namespace PROP
@@ -2967,7 +2969,7 @@ namespace PROP
    static void SET_PROP_TARGETABLE(Any p0, Any p1, Any p2) { invoke<Void>(0x32C810BF, p0, p1, p2); } // 0x32C810BF
    static void SET_PROP_TARGETABLE_ACQUISITION_RADIUS(Any p0, Any p1) { invoke<Void>(0xE84EB2D5, p0, p1); } // 0xE84EB2D5
    static void SET_PROP_TARGETABLE_TARGET_BOX_SIZE(Any p0, Any p1, Any p2) { invoke<Void>(0x6A937CBB, p0, p1, p2); } // 0x6A937CBB
-   static void SET_PROP_TARGETABLE_SCORE_BIAS(Any p0, Any p1) { invoke<Void>(0x0E2B0212, p0, p1); }  // 0x0E2B0212
+   static void SET_PROP_TARGETABLE_SCORE_BIAS(Any p0, Any p1) { invoke<Void>(0x0E2B0212, p0, p1); } // 0x0E2B0212
    static void SET_PROP_TARGETABLE_AS_ENEMY(Any p0, Any p1) { invoke<Void>(0x5895EBBE, p0, p1); } // 0x5895EBBE
    static int SET_PROP_CAUSE_ARM_UP(Any p0, Any p1) { return invoke<int>(0xCC004171, p0, p1); } // 0xCC004171
    static BOOL IS_PROP_STREAMED_IN(Any p0) { return invoke<BOOL>(0x5131AEF1, p0); } // 0x5131AEF1
@@ -2985,7 +2987,7 @@ namespace PROP
 
 namespace RENDER
 {
-   static Any _0x6AF07F86(Any p0) { return invoke<Any>(0x6AF07F86, p0); }  // 0x6AF07F86
+   static Any _0x6AF07F86(Any p0) { return invoke<Any>(0x6AF07F86, p0); } // 0x6AF07F86
    static void PRINT_FRAME_TIME(Any p0) { invoke<Void>(0xB84DE79E, p0); } // 0xB84DE79E
 }
 
@@ -3015,7 +3017,7 @@ namespace SHOP
 {
    static int SHOP_CLEAR(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0xCEBD595A, p0, p1, p2, p3); } // 0xCEBD595A
    static void SHOP_REFRESH(Any p0) { invoke<Void>(0xE7F6AA5D, p0); } // 0xE7F6AA5D
-   static void SHOP_SET_PLAYER_BANK(Any p0) { invoke<Void>(0xB75FAD6A, p0); }// 0xB75FAD6A
+   static void SHOP_SET_PLAYER_BANK(Any p0) { invoke<Void>(0xB75FAD6A, p0); } // 0xB75FAD6A
    static int SHOP_ADD_ITEM(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5) { return invoke<int>(0x2FCD8CCA, p0, p1, p2, p3, p4, p5); } // 0x2FCD8CCA
    static int SHOP_SET_ITEM_QUANTITY(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0x777CF9FA, p0, p1, p2, p3); } // 0x777CF9FA
    static int SHOP_GET_ITEM_QUANTITY(Any p0, Any p1, Any p2, Any p3, Any p4) { return invoke<int>(0xFAF37414, p0, p1, p2, p3, p4); } // 0xFAF37414
@@ -3047,7 +3049,7 @@ namespace SIMULATOR
    static BOOL IS_PHYSINST_FROZEN(Any p0) { return invoke<BOOL>(0x789AA2B2, p0); } // 0x789AA2B2
    static int SET_PHYSINST_HIDE(Any p0) { return invoke<int>(0xEBD9DFE6, p0); } // 0xEBD9DFE6
    static BOOL IS_PHYSINST_HIDE(Any p0) { return invoke<BOOL>(0x445990D8, p0); } // 0x445990D8
-   static void BREAK_OFF_ABOVE(Any p0, Any p1) { invoke<Void>(0xB5F9F4CF, p0, p1); }// 0xB5F9F4CF
+   static void BREAK_OFF_ABOVE(Any p0, Any p1) { invoke<Void>(0xB5F9F4CF, p0, p1); } // 0xB5F9F4CF
    static int GET_LOCATOR_OFFSETS(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0x0BA5E579, p0, p1, p2, p3); } // 0x0BA5E579
    static int _0xFD759593(Any p0, Any p1) { return invoke<int>(0xFD759593, p0, p1); } // 0xFD759593
    static int _0x87A2C1D5(const char* p0) { return invoke<int>(0x87A2C1D5, p0); } // 0x87A2C1D5
@@ -3067,7 +3069,7 @@ namespace SOCIALCLUB
    static Any ENABLE_USE_CONTEXTS(Any p0) { return invoke<Any>(0xFEA58D57, p0); } // 0xFEA58D57
    static Any _0x2ADA3DD4() { return invoke<Any>(0x2ADA3DD4); } // 0x2ADA3DD4
    static Any IS_SCRIPT_USE_CONTEXT_VALID(Any p0) { return invoke<Any>(0x115CD0CC, p0); } // 0x115CD0CC
-   static Any ADD_SCRIPT_USE_CONTEXT_IN_VOLUME(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5, Any p6, Any p7, Any p8, Any p9, Any p10, Any p11, Any p12, Any p13, Any p14, Any p15) { return invoke<Any>(0x039E7F1D, p0, p1, p2, p3, p4, p5, p6, p7, p8, p8, p10, p11, p12, p13, p14, p14, p15); } // 0x039E7F1D
+   static Any ADD_SCRIPT_USE_CONTEXT_IN_VOLUME(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5, Any p6, Any p7, Any p8, Any p9, Any p10, Any p11, Any p12, Any p13, Any p14, Any p15) { return invoke<Any>(0x039E7F1D, p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15); } // 0x039E7F1D
    static int ADD_SCRIPT_USE_CONTEXT(const char* gxtName, Any p1, int button, Any p3, Any p4, Any p5, Any p6, int p7, Any p8) { return invoke<int>(0xD7591B0E, gxtName, p1, button, p3, p4, p5, p6, p7, p8); } // 0xD7591B0E
    static Any _0xF48F8F09(Any p0) { return invoke<Any>(0xF48F8F09, p0); } // 0xF48F8F09
    static Any IS_SCRIPT_USE_CONTEXT_PRESSED(Any p0) { return invoke<Any>(0x45C1C061, p0); } // 0x45C1C061
@@ -3129,7 +3131,7 @@ namespace SQUAD
    static int SQUAD_GOAL_ADD_STAY_WITHIN_VOLUME(Any p0, Any p1, Any p2, Any p3, Any p4) { return invoke<int>(0xE775EF0D, p0, p1, p2, p3, p4); } // 0xE775EF0D
    static int _0x48588CCB(int* p0, Any p1, Any p2, Any p3) { return invoke<int>(0x48588CCB, p0, p1, p2, p3); } // 0x48588CCB
    static int _0xC6AF3662(int* p0, Any p1) { return invoke<int>(0xC6AF3662, p0, p1); } // 0xC6AF3662
-   static BOOL _0xFAD7A113(Any p0) { return invoke<int>(0xFAD7A113, p0); } // 0xFAD7A113
+   static BOOL _0xFAD7A113(Any p0) { return invoke<BOOL>(0xFAD7A113, p0); } // 0xFAD7A113
    static int SQUAD_GOAL_REMOVE(Any p0, Any p1) { return invoke<int>(0xBB3A34B0, p0, p1); } // 0xBB3A34B0
    static Any _0xCA950EF0(Any p0) { return invoke<Any>(0xCA950EF0, p0); } // 0xCA950EF0
    static int SQUAD_IS_GOAL_CONTROLLING_ACTOR(Any p0, Any p1, Any p2) { return invoke<int>(0x817AC6D6, p0, p1, p2); } // 0x817AC6D6
@@ -3158,7 +3160,7 @@ namespace SQUAD
    static int _0x55DAC120(Any p0) { return invoke<int>(0x55DAC120, p0); } // 0x55DAC120
    static void SQUAD_SET_NOT_ELIMINATED_IMPAIRMENT_MASK(Any p0, Any p1) { invoke<Void>(0xE7D45FB3, p0, p1); } // 0xE7D45FB3
    static int _0xAEDD7512(Any p0) { return invoke<int>(0xAEDD7512, p0); } // 0xAEDD7512
-   static int SQUAD_BATTLE_ALLIES_SET_OBJECTIVE(Any p0, Any p1, Any p2) { return invoke<int>(0x907D4081, p0, p1, p2); }  // 0x907D4081
+   static int SQUAD_BATTLE_ALLIES_SET_OBJECTIVE(Any p0, Any p1, Any p2) { return invoke<int>(0x907D4081, p0, p1, p2); } // 0x907D4081
    static void SQUAD_BATTLE_ALLIES_SET_FORMATION_DENSITY(Any p0, Any p1, Any p2) { invoke<Void>(0x6BC42101, p0, p1, p2); } // 0x6BC42101
    static int SQUAD_FOLLOW_TRAFFIC_CURVE_GET_ALL_BEHAVIOR_FLAGS(Any p0, Any p1) { return invoke<int>(0xE21D4785, p0, p1); } // 0xE21D4785
    static int SQUAD_FOLLOW_TRAFFIC_CURVE_SET_ALL_BEHAVIOR_FLAGS(Any p0, Any p1, Any p2) { return invoke<int>(0xF3C07A17, p0, p1, p2); } // 0xF3C07A17
@@ -3171,7 +3173,6 @@ namespace SQUAD
    static int SQUAD_FOLLOW_TRAFFIC_CURVE_SET_SPEED_NORMALIZED(Any p0, Any p1, float p2) { return invoke<int>(0x70E0654A, p0, p1, p2); } // 0x70E0654A
    static void SQUAD_FOLLOW_TRAFFIC_CURVE_SET_TASK_PRIORITY(Any p0, Any p1, Any p2) { invoke<Void>(0x8C8EEEF2, p0, p1, p2); } // 0x8C8EEEF2
    static int SQUAD_FOLLOW_TRAFFIC_CURVE_SET_OFFSET_X(Any p0, Any p1, float p2) { return invoke<int>(0x0F163466, p0, p1, p2); } // 0x0F163466
-   static int SQUAD_FOLLOW_TRAFFIC_CURVE_SET_DESIRED_LEADER(Any p0, Any p1, Any p2) { return invoke<int>(0x430993FC, p0, p1, p2); } // 0x430993FC
    static int _SQUAD_FOLLOW_TRAFFIC_CURVE_ALLOW_PLAYER_JOIN(Any p0) { return invoke<int>(0x430993FC, p0); } // 0x430993FC
    static int _0x27F7C1E4(int* p0, Any p1, Any p2) { return invoke<int>(0x27F7C1E4, p0, p1, p2); } // 0x27F7C1E4
    static int SQUAD_FOLLOW_TRAFFIC_CURVE_CLEAR_DESIRED_LEADER(Any p0, Any p1) { return invoke<int>(0x5BADEFDC, p0, p1); } // 0x5BADEFDC
@@ -3186,7 +3187,7 @@ namespace SQUAD
    static int SQUAD_FOLLOW_PATH_IN_FORMATION_SET_SPEED_NORMALIZED(Any p0, float p1) { return invoke<int>(0xD618C1C7, p0, p1); } // 0xD618C1C7
    static int SQUAD_FOLLOW_PATH_IN_FORMATION_SET_TASK_PRIORITY(Any p0, Any p1, Any p2) { return invoke<int>(0xF661D354, p0, p1, p2); } // 0xF661D354
    static int SQUAD_FOLLOW_PATH_IN_FORMATION_SET_OFFSET_X(Any p0, Any p1, float p2) { return invoke<int>(0x554EFABE, p0, p1, p2); } // 0x554EFABE
-   static int _SQUAD_FOLLOW_PATH_IN_FORMATION_ALLOW_PLAYER_JOIN(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0x3966E20B, p0, p1, p2); } // 0x3966E20B
+   static int _SQUAD_FOLLOW_PATH_IN_FORMATION_ALLOW_PLAYER_JOIN(Any p0, Any p1, Any p2, Any p3) { return invoke<int>(0x3966E20B, p0, p1, p2, p3); } // 0x3966E20B
    static int SQUAD_FOLLOW_PATH_IN_FORMATION_SET_NONSTOP(Any p0, Any p1, Any p2) { return invoke<int>(0x8BE72016, p0, p1, p2); } // 0x8BE72016
    static int SQUAD_FOLLOW_PATH_IN_FORMATION_SET_DESIRED_LEADER(Any p0, Any p1, Any p2) { return invoke<int>(0xA8A50DF5, p0, p1, p2); } // 0xA8A50DF5
    static int SQUAD_FOLLOW_PATH_IN_FORMATION_CLEAR_DESIRED_LEADER(Any p0, Any p1) { return invoke<int>(0x47F31A41, p0, p1); } // 0x47F31A41
@@ -3324,19 +3325,19 @@ namespace TASK
    static int TASK_FOLLOW_AND_ATTACK_OBJECT_ALONG_PATH(Any p0, Any p1, Any p2, Any p3, Any p4, float p5, float p6) { return invoke<int>(0x467D0FD5, p0, p1, p2, p3, p4, p5, p6); } // 0x467D0FD5
    static void TASK_FOLLOW_OBJECT(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5, Any p6, Any p7, Any p8, Any p9) { invoke<Void>(0xFF3E3DCE, p0, p1, p2, p3, p4, p5, p6, p7, p8, p9); } // 0xFF3E3DCE
    static void TASK_FOLLOW_OBJECT_ALONG_PATH(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5) { invoke<Void>(0x626C97D5, p0, p1, p2, p3, p4, p5); } // 0x626C97D5
-   static void TASK_FOLLOW_OBJECT_AT_DISTANCE(Any p0, Any p1, Any p2, Any p3) { invoke<Void>(0x75A4E05E, p0, p1, p2, p3); }	// 0x75A4E05E
+   static void TASK_FOLLOW_OBJECT_AT_DISTANCE(Any p0, Any p1, Any p2, Any p3) { invoke<Void>(0x75A4E05E, p0, p1, p2, p3); } // 0x75A4E05E
    static int TASK_FOLLOW_OBJECT_IN_FORMATION(Any p0, Any p1, Any p2, Any p3, Any p4) { return invoke<int>(0xE2104FED, p0, p1, p2, p3, p4); } // 0xE2104FED
    static void TASK_FOLLOW_PATH(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5, Any p6) { invoke<Void>(0x973DCC5B, p0, p1, p2, p3, p4, p5, p6); } // 0x973DCC5B
    static void TASK_FOLLOW_PATH_FROM_NEAREST_POINT(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5, Any p6) { invoke<Void>(0x9591A996, p0, p1, p2, p3, p4, p5, p6); } // 0x9591A996
-   static int TASK_FOLLOW_PATH_FROM_POINT() { return invoke<int>(0xCC8B2ECC); } //0xCC8B2ECC
+   static int TASK_FOLLOW_PATH_FROM_POINT() { return invoke<int>(0xCC8B2ECC); } // 0xCC8B2ECC
    static void TASK_GO_NEAR_ACTORSET(Any p0, Any p1, Any p2, Any p3) { invoke<Void>(0xF7B01E74, p0, p1, p2, p3); } // 0xF7B01E74
    static void TASK_GO_NEAR_COORD(Any p0, Any p1, Any p2, Any p3) { invoke<Void>(0x55EC940B, p0, p1, p2, p3); } // 0x55EC940B
    static void TASK_GO_NEAR_OBJECT(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5) { invoke<Void>(0x5EA4F1FE, p0, p1, p2, p3, p4, p5); } // 0x5EA4F1FE
    static void TASK_GO_TO_COORD(Any p0, Any p1, Any p2) { invoke<Void>(0x8C574832, p0, p1, p2); } // 0x8C574832
-   static void TASK_GO_TO_COORD_AND_STAY(Any p0, Any p1, Any p2, Any p3) { invoke<Void>(0x8636587A, p0, p1, p3); } // 0x8636587A
+   static void TASK_GO_TO_COORD_AND_STAY(Any p0, Any p1, Any p2, Any p3) { invoke<Void>(0x8636587A, p0, p1, p2, p3); } // 0x8636587A
    static void TASK_GO_TO_COORD_NONSTOP(Any p0, Any p1, Any p2, Any p3) { invoke<Void>(0xD62D6CE5, p0, p1, p2, p3); } // 0xD62D6CE5
    static void TASK_GO_TO_COORD_PRECISELY(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5, Any p6, Any p7) { invoke<Void>(0x6BDB3257, p0, p1, p2, p3, p4, p5, p6, p7); } // 0x6BDB3257
-   static int TASK_GO_TO_COORD_USING_MATERIAL(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5) { return invoke<int>(0xAA3E5851, p0, p1, p2, p3, p4); } // 0xAA3E5851
+   static int TASK_GO_TO_COORD_USING_MATERIAL(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5) { return invoke<int>(0xAA3E5851, p0, p1, p2, p3, p4, p5); } // 0xAA3E5851
    static void TASK_GO_TO_OBJECT(Any p0, Any p1, Any p2, Any p3, Any p4) { invoke<Void>(0x01BACD08, p0, p1, p2, p3, p4); } // 0x01BACD08
    static int TASK_GUARD_PATROL_AUTO(Any p0, Any p1, float p2, Any p3, Any p4) { return invoke<int>(0x1AF7CE0E, p0, p1, p2, p3, p4); } // 0x1AF7CE0E
    static void TASK_GUARD_PATROL_PATH(Any p0, Any p1, Any p2, Any p3, Any p4, Any p5, Any p6) { invoke<Void>(0xFA5BB172, p0, p1, p2, p3, p4, p5, p6); } // 0xFA5BB172
@@ -3354,7 +3355,7 @@ namespace TASK
    static void TASK_POINT_GUN_AT_OBJECT(Any p0, Any p1, Any p2, Any p3) { invoke<Void>(0x95C206C2, p0, p1, p2, p3); } // 0x95C206C2
    static void TASK_RESPOND_TO_HORSE_WHISTLE(Any p0, Any p1) { invoke<Void>(0x69B924A7, p0, p1); } // 0x69B924A7
    static void TASK_SEARCH(Any p0, Any p1, Any p2) { invoke<Void>(0x4E17E039, p0, p1, p2); } // 0x4E17E039
-   static void TASK_SEARCH_FOR_OBJECT(Any p0, Any p1, Any p2, Any p3) { invoke<Void>(0xD9B57910, p0, p1, p3); } // 0xD9B57910
+   static void TASK_SEARCH_FOR_OBJECT(Any p0, Any p1, Any p2, Any p3) { invoke<Void>(0xD9B57910, p0, p1, p2, p3); } // 0xD9B57910
    static void TASK_SEEK_COVER_FROM_ACTOR(Any p0, Any p1) { invoke<Void>(0xE1C8A1B3, p0, p1); } // 0xE1C8A1B3
    static int TASK_SEEK_COVER_FROM_COORD(Any p0, Any p1, Any p2) { return invoke<int>(0x3B0F53F4, p0, p1, p2); } // 0x3B0F53F4
    static void TASK_SEQUENCE_PERFORM(Any p0, Any p1) { invoke<Void>(0x2DF2298C, p0, p1); } // 0x2DF2298C
@@ -3385,10 +3386,10 @@ namespace TASK
    static void TASK_VEHICLE_ENTER_SPECIFIC_LOCATION(Any p0, Any p1, Any p2, Any p3, Any p4) { invoke<Void>(0xDC087173, p0, p1, p2, p3, p4); } // 0xDC087173
    static void TASK_VEHICLE_LEAVE(Any p0) { invoke<Void>(0x6C1218A4, p0); } // 0x6C1218A4
    static void TASK_WANDER(Any p0, Any p1) { invoke<Void>(0x17BCA08E, p0, p1); } // 0x17BCA08E
-   static void TASK_WANDER_IN_BOX(Any p0, Any p1, Any p2, Any p3) { invoke<Void>(0x6840D3C1, p0, p1, p3); } // 0x6840D3C1
+   static void TASK_WANDER_IN_BOX(Any p0, Any p1, Any p2, Any p3) { invoke<Void>(0x6840D3C1, p0, p1, p2, p3); } // 0x6840D3C1
    static void TASK_WANDER_IN_VOLUME(Any p0, Any p1, Any p2) { invoke<Void>(0xA5F2BFAA, p0, p1, p2); } // 0xA5F2BFAA
    static int TASK_WARN_CHAR(Any p0, Any p1, Any p2) { return invoke<int>(0x9ABE6BC0, p0, p1, p2); } // 0x9ABE6BC0
-   static void TASK_GO_NEAR_ACTOR(Any p0, Any p1, Any p2, Any p3) { invoke<Void>(0x3EB7590C, p0, p1, p3); } // 0x3EB7590C
+   static void TASK_GO_NEAR_ACTOR(Any p0, Any p1, Any p2, Any p3) { invoke<Void>(0x3EB7590C, p0, p1, p2, p3); } // 0x3EB7590C
    static int GET_TASK_STATUS(Any p0, Any p1) { return invoke<int>(0xCCE01E8A, p0, p1); } // 0xCCE01E8A
    static int _0x600A0EE4(Any p0, Any p1) { return invoke<int>(0x600A0EE4, p0, p1); } // 0x600A0EE4
    static int _0x016C6801(Any p0, Any p1) { return invoke<int>(0x016C6801, p0, p1); } // 0x016C6801
@@ -3426,7 +3427,7 @@ namespace TIME
    static void ADD_TIME(Any p0, Any p1, Any p2, Any p3, Any p4) { invoke<Void>(0xBA4FEEBC, p0, p1, p2, p3, p4); } // 0xBA4FEEBC
    static Any _0x2F7CB0E3(Any p0) { return invoke<Any>(0x2F7CB0E3, p0); } // 0x2F7CB0E3
    static Any GET_TIME_OF_DAY() { return invoke<Any>(0x4E1DE7A5); } // 0x4E1DE7A5
-   static float MAKE_TIME_OF_DAY(int hour, int minute, int second) { return invoke<float>(0xC09EAB6E, hour, minute, second); }
+   static float MAKE_TIME_OF_DAY(int hour, int minute, int second) { return invoke<float>(0xC09EAB6E, hour, minute, second); } // 0xC09EAB6E
    static Any _0x0E453CF0(Any p0) { return invoke<Any>(0x0E453CF0, p0); } // 0x0E453CF0
    static Any _0x2DB3AC0F(Any p0) { return invoke<Any>(0x2DB3AC0F, p0); } // 0x2DB3AC0F
    static Any _0x9C9529D8(Any p0, Any p1) { return invoke<Any>(0x9C9529D8, p0, p1); } // 0x9C9529D8
@@ -3454,7 +3455,7 @@ namespace UI
    static void UI_DISABLE(const char* uiLayer) { invoke<Void>(0xC4532F84, uiLayer); } // 0xC4532F84
    static BOOL UI_ISACTIVE(const char* UiLayer) { return invoke<BOOL>(0xB1FDB70D, UiLayer); } // 0xB1FDB70D
    static void UI_ACTIVATE(const char* UiLayer) { invoke<Void>(0xD11BD55A, UiLayer); } // 0xD11BD55A
-   static void UI_DEACTIVATE(const char* UiLayer) { invoke<const char*>(0xCA35BB5E, UiLayer); }// 0xCA35BB5E
+   static void UI_DEACTIVATE(const char* UiLayer) { invoke<Void>(0xCA35BB5E, UiLayer); } // 0xCA35BB5E
    static void UI_EXCLUDE(const char* uiLayer) { invoke<Void>(0x4A005F2A, uiLayer); } // 0x4A005F2A
    static void UI_INCLUDE(const char* uiLayer) { invoke<Void>(0x209255AD, uiLayer); } // 0x209255AD
    static int UI_ISFOCUSED(const char* uiLayer) { return invoke<int>(0x6F2509E8, uiLayer); } // 0x6F2509E8
@@ -3476,11 +3477,11 @@ namespace UI
    static void UI_SET_STRING_FORMAT(const char* gxtName, const char* formatString, const char* string1, const char* string2, const char* string3) { invoke<Void>(0xEDA84121, gxtName, formatString, string1, string2, string3); } // 0xEDA84121
    static void UI_SET_MONEY(Any p0, Any p1, Any p2) { invoke<Void>(0xF71BD93A, p0, p1, p2); } // 0xF71BD93A
    static const char* UI_GET_STRING(const char* gxtEntry) { return invoke<const char*>(0xCCCFF80B, gxtEntry); } // 0xCCCFF80B
-   static int  _0xBA89F5EA(Any p0, Any p1) { return invoke<int>(0xBA89F5EA, p0, p1); } // 0xBA89F5EA
+   static int _0xBA89F5EA(Any p0, Any p1) { return invoke<int>(0xBA89F5EA, p0, p1); } // 0xBA89F5EA
    static int _0x591339B9(const char* p0, const char* p1) { return invoke<int>(0x591339B9, p0, p1); } // 0x591339B9
    static int UI_LABEL_SET_TEXT(Any p0) { return invoke<int>(0xB3FC8CB7, p0); } // 0xB3FC8CB7
    static int UI_LABEL_SET_VALUE(Any p0, Any p1) { return invoke<int>(0xDF50D8DE, p0, p1); } // 0xDF50D8DE
-   static void AI_SET_SPECIAL_AREAS_TIME(Any p0, Any p1) { invoke<Void>(0xF53EB511, p0, p1); }// 0xF53EB511
+   static void AI_SET_SPECIAL_AREAS_TIME(Any p0, Any p1) { invoke<Void>(0xF53EB511, p0, p1); } // 0xF53EB511
    static void UI_BUTTON_SET_TEXT(Any p0, Any p1) { invoke<Void>(0x3DB16A3D, p0, p1); } // 0x3DB16A3D
    static int _0x9A56C3F3(Any p0) { return invoke<int>(0x9A56C3F3, p0); } // 0x9A56C3F3
    static int UI_TEXTURE_SET_HASH(Any p0) { return invoke<int>(0x573BEF3B, p0); } // 0x573BEF3B
@@ -3684,7 +3685,7 @@ namespace VOLUME
 
 namespace WEAPON
 {
-   static int ADD_ITEM(const char* ItemName, Actor actor, Any p0) { return invoke<int>(0xBAA5D41B, ItemName, actor, p0); } //0xBAA5D41B
+   static int ADD_ITEM(const char* ItemName, Actor actor, Any p0) { return invoke<int>(0xBAA5D41B, ItemName, actor, p0); } // 0xBAA5D41B
    static void _GIVE_ITEM_BY_CRC(Actor actor, Any p1) { invoke<Void>(0xAB2D8A68, actor, p1); } // 0xAB2D8A68
    static Any _0x7609A328() { return invoke<Any>(0x7609A328); } // 0x7609A328
    static Any GET_ITEM_COUNT(Any p0) { return invoke<Any>(0xD91ED898, p0); } // 0xD91ED898
@@ -3747,11 +3748,11 @@ namespace WEAPON
    static void SET_WEAPON_GOLD(Actor actor, int weaponId, Any p2) { invoke<Void>(0xAE44869D, actor, weaponId, p2); } // 0xAE44869D
    static int GET_WEAPON_GOLD(Actor actor, int weapon) { return invoke<int>(0x6DBD1DDB, actor, weapon); } // 0x6DBD1DDB
    static Any _0x80B30545(Any p0) { return invoke<Any>(0x80B30545, p0); } // 0x80B30545
-   static void FIRE_PROJECTILE(Actor actor, int weapGroup, float p2, Vector3* origin, Vector3* target) { invoke<Void>(0x195A4286, actor, weapGroup, p2, origin, target); }
+   static void FIRE_PROJECTILE(Actor actor, int weapGroup, float p2, Vector3* origin, Vector3* target) { invoke<Void>(0x195A4286, actor, weapGroup, p2, origin, target); } // 0x195A4286
    static Any _ADD_AMMO_OF_TYPE(Any p0) { return invoke<Any>(0x98B3ABFA, p0); } // 0x98B3ABFA
    static void _SET_ACTOR_AMMO_OF_TYPE(Any p0) { invoke<Void>(0x4372593E, p0); } // 0x4372593E
-   static void _SET_ACTOR_MAX_AMMO_AMOUNT(Any p0, Any p1) { invoke<Void>(0x6ADAAD87, p0, p1); } // 0x6ADAAD87 
-   static void _SET_ACTOR_INFINITE_AMMO_FLAG(Actor actor, int weaponGroup, BOOL toggle) { invoke<Void>(0x4FE2B586, actor, weaponGroup, toggle); } // 0x4FE2B586 
+   static void _SET_ACTOR_MAX_AMMO_AMOUNT(Any p0, Any p1) { invoke<Void>(0x6ADAAD87, p0, p1); } // 0x6ADAAD87
+   static void _SET_ACTOR_INFINITE_AMMO_FLAG(Actor actor, int weaponGroup, BOOL toggle) { invoke<Void>(0x4FE2B586, actor, weaponGroup, toggle); } // 0x4FE2B586
    static Any IS_FRONTEND_DEATH(Any p0, Any p1, Any p2, Any p3) { return invoke<Any>(0xE224AC6F, p0, p1, p2, p3); } // 0xE224AC6F
    static Any _GET_MAX_AMMO_AMOUNT(Any p0, Any p1) { return invoke<Any>(0x7AB368CF, p0, p1); } // 0x7AB368CF
    static BOOL _GET_ACTOR_INFINITE_AMMO_FLAG(Actor actor, Any p1) { return invoke<BOOL>(0xC666B987, actor, p1); } // 0xC666B987
@@ -3791,7 +3792,7 @@ namespace WEAPONENUM
    static const char* _0x87C5471F(Any p0) { return invoke<const char*>(0x87C5471F, p0); } // 0x87C5471F
    static int* _0xBE06C265(Any p0) { return invoke<int*>(0xBE06C265, p0); } // 0xBE06C265
    static int* GET_WEAPON_FRAGMENT_NAME() { return invoke<int*>(0xE8739A48); } // 0xE8739A48
-   static int _0x01C7193C() { return invoke<int>(0x01C7193C); }// 0x01C7193C
+   static int _0x01C7193C() { return invoke<int>(0x01C7193C); } // 0x01C7193C
    static int _0x0A23A69C() { return invoke<int>(0x0A23A69C); } // 0x0A23A69C
    static int _SET_WEAPON_ENUM_LOCKED(Any p0, Any p1) { return invoke<int>(0x0E4B7A33, p0, p1); } // 0x0E4B7A33
    static int _0xCCE4A339(Any p0) { return invoke<int>(0xCCE4A339, p0); } // 0xCCE4A339
